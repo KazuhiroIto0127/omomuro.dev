@@ -1,7 +1,7 @@
 # omomuro.dev
 
-https://omomuro.dev
-https://KazuhiroIto0127.github.io/omomuro.dev/
+- https://omomuro.dev
+- https://KazuhiroIto0127.github.io/omomuro.dev/
 
 ## 参考にさせていただいた記事
 
