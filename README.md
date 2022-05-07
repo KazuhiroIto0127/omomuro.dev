@@ -5,4 +5,5 @@
 
 ## 参考にさせていただいた記事
 
-https://dev-moyashi.hatenablog.com/entry/2021/01/10/222249
+- カスタムドメインの設定について
+- https://dev-moyashi.hatenablog.com/entry/2021/01/10/222249
