@@ -1,0 +1,17 @@
+@import './common/variable.scss';
+
+.wrap{
+  grid-area: foot;
+  background-color: var(--footer-bg);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  svg{
+    font-size: 24px;
+    margin: 0 8px;
+  }
+}
+

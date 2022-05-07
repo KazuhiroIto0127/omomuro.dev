@@ -1,0 +1,25 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+
+  .avatar {
+    border-radius: 100%;
+    background: white;
+
+    // https://shadows.brumm.af/
+    box-shadow:
+      0 2.9px 7.9px rgba(0, 0, 0, 0.024),
+      0 7.9px 21.9px rgba(0, 0, 0, 0.035),
+      0 19px 52.8px rgba(0, 0, 0, 0.046),
+      0 63px 175px rgba(0, 0, 0, 0.07)
+    ;
+
+
+    transition:transform .3s;
+    cursor:pointer;
+    &:hover{
+      transform:scale(1.2)
+    }
+  }
+}
+

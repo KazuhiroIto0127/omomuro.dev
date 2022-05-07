@@ -1,0 +1,76 @@
+@import './common/variable.scss';
+
+.wrap {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -200px;
+  width: 200px;
+  background-color: var(--sub-bg);
+  z-index: 2;
+  transition: left .3s;
+  padding: var(--spacing-5);
+
+  [data-is-menu-open="true"] > &{
+    left: 0px;
+  }
+
+  .header{
+    display: flex;
+    align-items: center;
+    height: 50px;
+  }
+
+  .closeIcon{
+    display: flex;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 32px;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li{
+      margin: 0;
+      border-bottom: 1px solid #c7c7c7;
+
+      a{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 16px;
+
+        svg{
+          margin-right: 4px;
+        }
+
+        &:hover{
+          background-color: #3c70ff;
+          color: white;
+          font-weight: bold;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+  .active{
+    background-color: #3c70ff;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+}
+.themeToggleBtn{
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
