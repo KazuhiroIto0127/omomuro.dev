@@ -7,3 +7,7 @@
 
 - カスタムドメインの設定について
 - https://dev-moyashi.hatenablog.com/entry/2021/01/10/222249
+
+
+- tailwind公式
+- https://tailwindcss.com/docs/guides/vite
