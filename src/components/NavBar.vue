@@ -7,22 +7,24 @@ const showMenu = ref(false)
 <template>
   <nav class="w-full bg-white bg-white">
     <div class="container mx-auto py-5 flex justify-between items-center">
-      <div class="flex items-center gap-2">
-        <img class="w-8" src="../assets/omo_pen.png" alt="logo">
-        <span class="text-2xl font-bold text-indigo-900">omomuro.dev</span>
-      </div>
+      <router-link to="/">
+        <div class="flex items-center gap-2">
+          <img class="w-8" src="../assets/omo_pen.png" alt="logo">
+          <span class="text-2xl font-bold text-indigo-900">omomuro.dev</span>
+        </div>
+      </router-link>
       <ul class="hidden md:flex space-x-10 text-gray-600 font-bold text-sm uppercase">
         <li class="hover:text-gray-500">
-          <a href="#">home</a>
+          <router-link to="/">home</router-link>
         </li>
         <li class="hover:text-gray-500">
-          <a href="#">about</a>
+          <router-link to="/labo">
+            <font-awesome-icon icon="fa-solid fa-flask" />
+            labo
+          </router-link>
         </li>
         <li class="hover:text-gray-500">
-          <a href="#">works</a>
-        </li>
-        <li class="hover:text-gray-500">
-          <a href="#">contact</a>
+          <router-link to="/about">about</router-link>
         </li>
       </ul>
       <svg class="hidden md:block w-5 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -52,3 +54,10 @@ const showMenu = ref(false)
     </div>
   </nav>
 </template>
+
+<style>
+.router-link-active {
+  font-weight: bold;
+  color: red;
+}
+</style>
