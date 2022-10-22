@@ -6,7 +6,7 @@ const showMenu = ref(false)
 
 <template>
   <nav class="w-full bg-white bg-white">
-    <div class="container mx-auto py-5 flex justify-between items-center">
+    <div class="container mx-auto py-5 px-3 flex justify-between items-center">
       <router-link to="/">
         <div class="flex items-center gap-2">
           <img class="w-8" src="../assets/omo_pen.png" alt="logo">
@@ -32,23 +32,22 @@ const showMenu = ref(false)
       </svg>
       <!-- hamburger menu -->
       <div class="space-y-1 md:hidden cursor-pointer z-20" @click="showMenu = !showMenu">
-        <div class="w-6 h-0.5" :class="showMenu ? 'bg-white': 'bg-black'"></div>
-        <div class="w-6 h-0.5" :class="showMenu ? 'bg-white': 'bg-black'"></div>
-        <div class="w-6 h-0.5" :class="showMenu ? 'bg-white': 'bg-black'"></div>
+        <div class="w-6 h-0.5 bg-black"></div>
+        <div class="w-6 h-0.5 bg-black"></div>
+        <div class="w-6 h-0.5 bg-black"></div>
       </div>
       <ul :class="showMenu ? 'block': 'hidden'"
-          class="md:hidden bg-indigo-900 absolute left-0 top-0 w-full p-10 rounded-b-3xl space-y-10 text-white text-center">
-        <li>
-          <a href="#">home</a>
+          class="md:hidden bg-white absolute left-0 top-0 w-full pt-12 rounded-b-3xl space-y-1 text-center">
+        <li class="border-solid border-2 border-sky-500">
+          <router-link to="/">home</router-link>
         </li>
-        <li>
-          <a href="#">about</a>
+        <li class="border-solid border-2 border-sky-500">
+          <router-link to="/labo">
+            <font-awesome-icon icon="fa-solid fa-flask" />labo
+          </router-link>
         </li>
-        <li>
-          <a href="#">works</a>
-        </li>
-        <li>
-          <a href="#">contact</a>
+        <li class="border-solid border-2 border-sky-500">
+          <router-link to="/about">about</router-link>
         </li>
       </ul>
     </div>
