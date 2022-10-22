@@ -3,11 +3,36 @@ import { ref } from 'vue'
 
 defineProps<{ msg: string }>()
 
-const count = ref(0)
+let allCorrectCount = ref([])
+let count = ref(0)
+const emojiStack = ref([[]])
+const emojis = ['😀','😐','😘']
+function pickRandomEmoji():string {
+  return emojis[Math.floor(Math.random()*emojis.length)];
+}
+function addEmoji() :void {
+  // console.log(count.value)
+  if(emojiStack.value[count.value].length == 5){
+    allCorrectCount.value.push(emojiStack.value[count.value].every(value => value === emojiStack.value[count.value][0]));
+    count.value++;
+    emojiStack.value[count.value] = [];
+  }
+  emojiStack.value[count.value].push(pickRandomEmoji())
+}
 </script>
 
 <template>
-  <h1 class="text-3xl font-bold underline">{{ msg }}</h1>
+  <div class="container text-center">
+    <h1 class="text-xl font-bold mb-2">{{ msg }}</h1>
 
-  <button class="rounded-full bg-sky-500 px-5 py-3 text-white" type="button" @click="count++">count is: {{ count }}</button>
+    <button class="rounded-full bg-sky-500 px-5 py-3 text-white" type="button" @click="addEmoji()">絵文字を増やす</button>
+    <div>
+      <!-- <div>{{emojiStack[0].length}}</div> -->
+      <div v-for="(row,y) in emojiStack" :key="y">
+        <span>{{emojiStack.length - (y+1)}}</span>
+        <span>{{allCorrectCount[emojiStack.length - (y+1)] ? '⭕' : '❌'}}</span>
+        <span v-for="(emoji, index) in emojiStack[emojiStack.length - (y+1)]" :key="`${row}-${index}`" class="text-xl">{{emoji}}</span>
+      </div>
+    </div>
+  </div>
 </template>

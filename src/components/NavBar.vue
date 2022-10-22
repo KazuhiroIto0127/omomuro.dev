@@ -19,7 +19,7 @@ const showMenu = ref(false)
         </li>
         <li class="hover:text-gray-500">
           <router-link to="/labo">
-            <font-awesome-icon icon="fa-solid fa-flask" />
+            <font-awesome-icon icon="fa-solid fa-flask" class="hover:rotate-45 transition ease-in-out" />
             labo
           </router-link>
         </li>
@@ -30,6 +30,7 @@ const showMenu = ref(false)
       <svg class="hidden md:block w-5 cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
       </svg>
+
       <!-- hamburger menu -->
       <div class="space-y-1 md:hidden cursor-pointer z-20" @click="showMenu = !showMenu">
         <div class="w-6 h-0.5 bg-black"></div>
@@ -37,17 +38,17 @@ const showMenu = ref(false)
         <div class="w-6 h-0.5 bg-black"></div>
       </div>
       <ul :class="showMenu ? 'block': 'hidden'"
-          class="md:hidden bg-white absolute left-0 top-0 w-full pt-12 rounded-b-3xl space-y-1 text-center">
-        <li class="border-solid border-2 border-sky-500">
-          <router-link to="/">home</router-link>
+          class="list-none md:hidden bg-white absolute left-0 top-0 w-full pt-12 rounded-b-3xl text-center">
+        <li class="border-solid border border-gray-300">
+          <router-link to="/" class="block py-2" @click.native="showMenu = false">home</router-link>
         </li>
-        <li class="border-solid border-2 border-sky-500">
-          <router-link to="/labo">
+        <li class="border-solid border-gray-300">
+          <router-link to="/labo" class="block py-2" @click.native="showMenu = false">
             <font-awesome-icon icon="fa-solid fa-flask" />labo
           </router-link>
         </li>
-        <li class="border-solid border-2 border-sky-500">
-          <router-link to="/about">about</router-link>
+        <li class="border-solid border border-gray-300" @click.native="showMenu = false">
+          <router-link to="/about" class="block py-2">about</router-link>
         </li>
       </ul>
     </div>
