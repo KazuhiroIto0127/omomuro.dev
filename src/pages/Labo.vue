@@ -3,7 +3,7 @@
   import LaboLink from '../components/LaboLink.vue'
 
   const laboLinks = ref([
-    {title: 'カウントアップ', id: 1, emoji: '😀'},
+    {title: '絵文字一致チャレンジ！', id: 1, emoji: '😀'},
     {title: 'ほげ', id: 2, emoji: '🌴'},
     {title: 'ほげ', id: 2, emoji: '💼'},
     {title: 'ほげ', id: 2, emoji: '🦶'},
