@@ -3,9 +3,9 @@ import { ref } from 'vue'
 
 defineProps<{ msg: string }>()
 
-let allCorrectCount = ref([])
+let allCorrectCount = ref<boolean[]>([])
 let count = ref(0)
-const emojiStack = ref([[]])
+const emojiStack = ref<string[][]>([[]])
 const emojis = ['😀','😐','😘']
 function pickRandomEmoji():string {
   return emojis[Math.floor(Math.random()*emojis.length)];
@@ -30,7 +30,7 @@ function addEmoji() :void {
       <!-- <div>{{emojiStack[0].length}}</div> -->
       <div v-for="(row,y) in emojiStack" :key="y">
         <span>{{emojiStack.length - (y+1)}}</span>
-        <span>{{allCorrectCount[emojiStack.length - (y+1)] ? '⭕' : '❌'}}</span>
+        <span v-if="allCorrectCount[emojiStack.length - (y+1)]!==undefined">{{allCorrectCount[emojiStack.length - (y+1)]===true ? '⭕' : '❌'}}</span>
         <span v-for="(emoji, index) in emojiStack[emojiStack.length - (y+1)]" :key="`${row}-${index}`" class="text-xl">{{emoji}}</span>
       </div>
     </div>
