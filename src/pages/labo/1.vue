@@ -62,4 +62,3 @@ function reset() :void {
     </div>
   </div>
 </template>
-
