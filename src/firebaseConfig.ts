@@ -12,4 +12,4 @@ const config = {
 }
 export const app = initializeApp(config)
 export const db = getFirestore(app)
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);
