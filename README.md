@@ -1,13 +1,25 @@
 # omomuro.dev
 
 - https://omomuro.dev
-- https://KazuhiroIto0127.github.io/omomuro.dev/
 
-## 参考にさせていただいた記事
+## 主要技術
 
-- カスタムドメインの設定について
-- https://dev-moyashi.hatenablog.com/entry/2021/01/10/222249
+- typescript
+- vue3
+- vue-routerでspa的にしている
+- vite
+- tailwind
 
+## ホスティング
 
-- tailwind公式
-- https://tailwindcss.com/docs/guides/vite
+- firebase
+
+### deploy
+
+- 方法
+  - github action
+  - public配下をnpm run buildしてdeploy
+
+- タイミング
+  - mainにマージ
+  - PRをつくる
