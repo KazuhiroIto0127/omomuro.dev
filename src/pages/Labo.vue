@@ -5,7 +5,7 @@
   const laboLinks = ref([
     {title: '絵文字一致チャレンジ！', id: 1, emoji: '😀 '},
     {title: 'typescriptの勉強！', id: 2, emoji: 'typescript '},
-    {title: 'ほげ', id: 2, emoji: '💼'},
+    {title: 'ライクしよう！', id: 3, emoji: '❤️'},
     {title: 'ほげ', id: 2, emoji: '🦶'},
     {title: 'ほげ', id: 2, emoji: '🤖'},
     {title: 'ほげ', id: 2, emoji: '🐥'},

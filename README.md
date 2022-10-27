@@ -23,3 +23,9 @@
 - タイミング
   - mainにマージ
   - PRをつくる
+
+### firestoreのルール更新
+
+```
+firebase deploy --only firestore:rules
+```
