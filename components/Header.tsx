@@ -38,9 +38,9 @@ export default function Header({setIsOpenMobileSidebar}) {
                        md:block"
         />
         <Link href="/" className="flex justify-center items-center mr-5">
-            <Image priority src="/images/profile.png"
-                    className="rounded-sm" height={40} width={40} alt="logo"/>
-            <span className="text-xl font-bold">omomuro.dev</span>
+            <Image priority src="/images/omo_pen.png"
+                    className="rounded-sm mr-2" height={30} width={30} alt="logo"/>
+            <div className="text-xl font-bold">omomuro.dev</div>
         </Link>
         <ThemeChanger />
     </header>

@@ -47,8 +47,8 @@ export default function Sidebar({isOpenMobileSidebar, setIsOpenMobileSidebar}) {
                   onClick={toggleSidebar}
                 />
                 <Link href="/" className="flex items-center">
-                    <Image priority src="/images/profile.png"
-                            className="rounded-sm" height={40} width={40} alt="logo"/>
+                    <Image priority src="/images/omo_pen.png"
+                            className="rounded-sm mr-2" height={30} width={30} alt="logo"/>
                     <span className="font-bold text-sm">omomuro.dev</span>
                 </Link>
               </div>
