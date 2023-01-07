@@ -3,6 +3,7 @@ import { AppProps } from 'next/app';
 import { Zen_Maru_Gothic } from '@next/font/google';
 import { GlobalProvider } from '@/context/global-state-provider';
 import { ThemeProvider } from 'next-themes'
+import { Analytics } from '@vercel/analytics/react';
 
 const zenMaruGothic = Zen_Maru_Gothic({ weight: ["400","700","900"],
                                   subsets: ["japanese",'latin'],
@@ -16,6 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
         </GlobalProvider>
       </ThemeProvider>
+      <Analytics />
     </div>
   )
 }
