@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Alert from '@/components/Alert'
 import Script from 'next/script'
-import Layout from '@/components/layout'
+import Layout from '@/components/layouts/oneColumnLayout'
 
 export default function FirstPost() {
   return (

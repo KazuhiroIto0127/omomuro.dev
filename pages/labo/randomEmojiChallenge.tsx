@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useEffect, useState, useMemo } from 'react';
-import Layout from '@/components/layout'
+import Layout from '@/components/layouts/oneColumnLayout'
 import { useReward } from 'react-rewards';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowPointer } from "@fortawesome/free-solid-svg-icons";

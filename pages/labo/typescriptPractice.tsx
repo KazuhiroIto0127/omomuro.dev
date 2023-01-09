@@ -2,7 +2,7 @@ import Head from "next/head";
 import { User } from "@/models/User";
 import UserCard from "@/components/UserCard";
 import { useState } from "react";
-import Layout from "@/components/layout";
+import Layout from "@/components/layouts/oneColumnLayout";
 import { AnimatePresence, motion } from "framer-motion"
 
 export default function randomEmojiChallenge() {

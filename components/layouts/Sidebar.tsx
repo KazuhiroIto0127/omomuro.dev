@@ -36,7 +36,7 @@ export default function Sidebar({isOpenMobileSidebar, setIsOpenMobileSidebar}) {
         ))}
         aria-label="Sidebar"
       >
-          <div className="overflow-y-auto px-3 bg-gray-50 dark:bg-gray-800 h-screen md:h-[calc(100vh-50px)]">
+          <div className="overflow-y-auto px-3 h-screen md:h-[calc(100vh-50px)]">
               <div className={clsx("flex h-[50px] justify-center items-center md:hidden",
                                   { 'block': isOpenMobileSidebar }, { 'hidden': !isOpenMobileSidebar }
               )}>

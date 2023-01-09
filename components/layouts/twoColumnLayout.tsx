@@ -1,8 +1,8 @@
 import Head from '@/components/Head'
 import React, { useState } from 'react';
-import Footer from '@/components/Footer'
-import Header from '@/components/Header'
-import Sidebar from '@/components/Sidebar'
+import Footer from '@/components/layouts/Footer'
+import Header from '@/components/layouts/Header'
+import Sidebar from '@/components/layouts/Sidebar'
 import { twMerge } from 'tailwind-merge';
 import clsx from 'clsx';
 import { useContext } from 'react';

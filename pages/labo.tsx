@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import LaboLink from '../components/LaboLink'
-import Layout from '../components/layout'
+import Layout from '../components/layouts/oneColumnLayout'
 import Switch from '@/components/Switch'
 import { useState } from 'react';
 import { getSortedPostsData } from '@/lib/posts';
