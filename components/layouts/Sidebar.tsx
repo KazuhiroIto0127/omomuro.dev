@@ -1,13 +1,12 @@
 import SidebarLink from '@/components/SidebarLink';
 import { faFlask, faHome, faCat } from "@fortawesome/free-solid-svg-icons";
 import clsx from 'clsx';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Link from 'next/link';
 import Image from 'next/image';
 import { twMerge } from 'tailwind-merge';
 import React, { useContext } from 'react';
 import { GlobalContext } from '@/context/global-state-provider';
+import { Bars3Icon } from "@heroicons/react/24/solid";
 
 export default function Sidebar({isOpenMobileSidebar, setIsOpenMobileSidebar}) {
   const { isOpenPcSidebar } = useContext(GlobalContext)
@@ -40,7 +39,7 @@ export default function Sidebar({isOpenMobileSidebar, setIsOpenMobileSidebar}) {
               <div className={clsx("flex h-[50px] justify-center items-center md:hidden",
                                   { 'block': isOpenMobileSidebar }, { 'hidden': !isOpenMobileSidebar }
               )}>
-                <FontAwesomeIcon icon={faBars}
+                <Bars3Icon
                   className="flex-shrink-0 w-6 h-6 mr-2
                         text-gray-500 transition duration-75 dark:text-gray-400
                         hover:text-gray-900 dark:hover:text-white hover:cursor-pointer"

@@ -2,8 +2,7 @@ import Head from 'next/head'
 import { useEffect, useState, useMemo } from 'react';
 import Layout from '@/components/layouts/oneColumnLayout'
 import { useReward } from 'react-rewards';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowPointer } from "@fortawesome/free-solid-svg-icons";
+import { CursorArrowRaysIcon } from '@heroicons/react/24/solid'
 import { AnimatePresence, motion } from "framer-motion"
 import clsx from 'clsx';
 
@@ -89,7 +88,7 @@ export default function randomEmojiChallenge() {
                            px-5 py-3 mb-3 touch-manipulation select-none" type="button">
           {buttonText}
           { !gameClear &&
-            <FontAwesomeIcon icon={faArrowPointer} className="mt-1 w-3 ml-2 transition ease-in-out animate-bounce" />
+            <CursorArrowRaysIcon className="mt-1 w-6 ml-2 transition ease-in-out animate-bounce" />
           }
         </button>
 
@@ -98,7 +97,7 @@ export default function randomEmojiChallenge() {
                   className="flex mx-auto rounded-full
                            bg-red-300 px-5 py-3 mb-3 text-white touch-manipulation select-none" type="button">
             リセット
-            <FontAwesomeIcon icon={faArrowPointer} className="mt-1 w-3 ml-2 transition ease-in-out animate-bounce" />
+            <CursorArrowRaysIcon className="mt-1 w-6 ml-2 transition ease-in-out animate-bounce" />
           </button>
         }
         <div>

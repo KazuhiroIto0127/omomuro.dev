@@ -41,7 +41,9 @@ export default function Header({setIsOpenMobileSidebar}) {
               </ul>
             </nav>
             <div className="ml-6 pl-6 border-l border-slate-200 dark:border-slate-800">
-              <ThemeChanger />
+              <div className='w-5 h-5'>
+                <ThemeChanger />
+              </div>
             </div>
           </div>
           <div className='md:hidden'>

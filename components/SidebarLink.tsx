@@ -1,10 +1,8 @@
 import Link from 'next/link'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
 
-const SidebarLink = ({ path, title, icon }: { path: string, title: string, icon: IconDefinition }) => {
+const SidebarLink = ({ path, title }: { path: string, title: string }) => {
 
     const router = useRouter();
     const currentRoute = router.pathname;
@@ -15,7 +13,7 @@ const SidebarLink = ({ path, title, icon }: { path: string, title: string, icon:
             'dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700',
             {'text-sky-500 bg-gray-200 dark:bg-gray-700 dark:text-sky-400' : currentRoute === path}
         )}>
-            <FontAwesomeIcon icon={icon} className={clsx(
+            <div className={clsx(
                 "mr-1 group-hover:rotate-45 ease-in-out flex-shrink-0 w-6 h-6",
                 "transition duration-75",
                 "group-hover:text-sky-500 dark:group-hover:text-sky-400"

@@ -1,7 +1,7 @@
 import Head from '@/components/Head'
 import React, { useState } from 'react';
 import Footer from '@/components/layouts/Footer'
-import Header from '@/components/layouts/Header'
+import Header from '@/components/layouts/HomeHeader'
 import Sidebar from '@/components/layouts/Sidebar'
 import { twMerge } from 'tailwind-merge';
 import clsx from 'clsx';
