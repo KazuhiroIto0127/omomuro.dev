@@ -36,14 +36,14 @@ export default function Home({ allPostsData }: { allPostsData: {date: string, ti
           </p>
         </div>
         <div className='w-[50%] flex justify-center items-center'>
-          <Image priority src="/images/neko.png"
+          <Image priority src="/images/neko.png" alt="neko"
                       className="hover:scale-105 transition-transform" height={200} width={400} />
         </div>
       </section>
 
       <section className='w-[100%] h-[300px] md:h-[400px] flex justify-center items-center'>
         <div className='w-[50%] flex justify-center items-center'>
-          <Image priority src="/images/works.png"
+          <Image priority src="/images/works.png" alt="works"
                       className="hover:scale-105 transition-transform" height={200} width={400} />
         </div>
         <div className='w-[50%] p-4 flex justify-center items-center flex-col '>
