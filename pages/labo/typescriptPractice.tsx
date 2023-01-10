@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Layout from '@/components/layouts/oneColumnLayout';
 import { AnimatePresence, motion } from 'framer-motion';
 
-export default function randomEmojiChallenge() {
+export default function TypescriptPractice() {
   const [emojiArray, setEmojiArray] = useState<string[]>(['🌹', '🐶', '🐱']);
   const [selectedEmoji, setSelectedEmoji] = useState<string>('🌹');
   const [name, setName] = useState<string>('佐藤');
@@ -74,19 +74,14 @@ export default function randomEmojiChallenge() {
                 onChange={handleRadioChange}
                 checked={emoji === selectedEmoji}
               />
-              <label
-                htmlFor={`emoji-${index}`}
-                className="peer-checked/draft:text-sky-500"
-              >
+              <label htmlFor={`emoji-${index}`} className="peer-checked/draft:text-sky-500">
                 {emoji}
               </label>
             </span>
           ))}
         </fieldset>
         <label className="mb-2 block">
-          <span className="block text-sm font-medium after:ml-0.5 after:text-red-500 after:content-['*']">
-            名前
-          </span>
+          <span className="block text-sm font-medium after:ml-0.5 after:text-red-500 after:content-['*']">名前</span>
           <input
             type="text"
             onChange={handleNameChange}
@@ -98,9 +93,7 @@ export default function randomEmojiChallenge() {
           />
         </label>
         <label className="mb-2 block">
-          <span className="block text-sm font-medium after:ml-0.5 after:text-red-500 after:content-['*']">
-            年齢
-          </span>
+          <span className="block text-sm font-medium after:ml-0.5 after:text-red-500 after:content-['*']">年齢</span>
           <input
             type="number"
             value={old}

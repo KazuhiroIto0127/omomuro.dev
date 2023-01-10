@@ -6,11 +6,7 @@ import { useState } from 'react';
 import { getSortedPostsData } from '@/lib/posts';
 import { GetStaticProps } from 'next';
 
-export default function FirstPost({
-  allPostsData,
-}: {
-  allPostsData: { date: string; title: string; id: string }[];
-}) {
+export default function FirstPost({ allPostsData }: { allPostsData: { date: string; title: string; id: string }[] }) {
   const [bool, setBool] = useState(false);
 
   const clickFunc = () => {
@@ -20,12 +16,12 @@ export default function FirstPost({
   const laboLinks = [
     {
       title: '絵文字一致チャレンジ！',
-      id: 'randomEmojiChallenge',
+      id: 'RandomEmojiChallenge',
       emoji: '😀 ',
     },
     {
       title: 'typescriptの勉強！',
-      id: 'typescriptPractice',
+      id: 'TypescriptPractice',
       emoji: 'typescript ',
     },
     { title: 'ライクしよう！', id: '3', emoji: '❤️' },
@@ -42,12 +38,7 @@ export default function FirstPost({
 
         <div className="grid grid-cols-auto-fit gap-4">
           {laboLinks.map((link) => (
-            <LaboLink
-              title={link.title}
-              id={link.id}
-              emoji={link.emoji}
-              key={link.id}
-            />
+            <LaboLink title={link.title} id={link.id} emoji={link.emoji} key={link.id} />
           ))}
         </div>
         <Switch bool={bool} checkedFunc={setBool} />

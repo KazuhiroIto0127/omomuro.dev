@@ -6,7 +6,7 @@ import { CursorArrowRaysIcon } from '@heroicons/react/24/solid';
 import { AnimatePresence, motion } from 'framer-motion';
 import clsx from 'clsx';
 
-export default function randomEmojiChallenge() {
+export default function RandomEmojiChallenge() {
   const emojis = ['🌹', '🐶', '🐱'];
   const [bestScore, setBestScore] = useState(0);
   const [challengeTotalNum, setChallengeTotalNum] = useState(0);
@@ -19,9 +19,7 @@ export default function randomEmojiChallenge() {
   });
 
   const buttonText = useMemo(() => {
-    return gameClear === false
-      ? `${challengeTotalNum + 1}回目チャレンジ`
-      : '🎉一致おめでとう！！🎉';
+    return gameClear === false ? `${challengeTotalNum + 1}回目チャレンジ` : '🎉一致おめでとう！！🎉';
   }, [gameClear, challengeTotalNum]);
 
   const resultText = (result: boolean) => (result ? '◯' : 'X');
@@ -69,7 +67,7 @@ export default function randomEmojiChallenge() {
         setGameClear(true);
       }
     }
-  }, [emojiStack]);
+  }, [bestScore, challengeTotalNum, emojiStack, reward]);
 
   return (
     <Layout>
@@ -91,9 +89,7 @@ export default function randomEmojiChallenge() {
           type="button"
         >
           {buttonText}
-          {!gameClear && (
-            <CursorArrowRaysIcon className="mt-1 ml-2 w-6 animate-bounce transition ease-in-out" />
-          )}
+          {!gameClear && <CursorArrowRaysIcon className="mt-1 ml-2 w-6 animate-bounce transition ease-in-out" />}
         </button>
 
         {gameClear && (
@@ -129,9 +125,7 @@ export default function randomEmojiChallenge() {
                   </span>
                   <span>
                     ・・・
-                    {resultText(
-                      challengeResults[emojiStack.length - 1 - index],
-                    )}
+                    {resultText(challengeResults[emojiStack.length - 1 - index])}
                   </span>
                 </div>
               </motion.div>
