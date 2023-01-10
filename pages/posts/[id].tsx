@@ -1,10 +1,14 @@
 import Head from 'next/head';
-import DateFormat from '@/components/date'
-import Layout from '@/components/layouts/oneColumnLayout'
-import { getAllPostIds, getPostData } from '@/lib/posts'
+import DateFormat from '@/components/date';
+import Layout from '@/components/layouts/oneColumnLayout';
+import { getAllPostIds, getPostData } from '@/lib/posts';
 import { GetStaticProps, GetStaticPaths } from 'next';
 
-export default function Post({ postData }: { postData: { title: string, date: string, contentHtml: string }}) {
+export default function Post({
+  postData,
+}: {
+  postData: { title: string; date: string; contentHtml: string };
+}) {
   return (
     <Layout>
       <Head>
@@ -18,7 +22,7 @@ export default function Post({ postData }: { postData: { title: string, date: st
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </Layout>
-  )
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -26,14 +30,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths,
     fallback: false,
-  }
-}
+  };
+};
 
-export const getStaticProps: GetStaticProps = async ({params}) => {
-  const postData = await getPostData(params.id)
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const postData = await getPostData(params.id);
   return {
     props: {
       postData,
     },
   };
-}
+};

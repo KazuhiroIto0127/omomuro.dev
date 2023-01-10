@@ -7,8 +7,8 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
-      screens:{
-        "sm":"480px"
+      screens: {
+        sm: '480px',
       },
       gridTemplateColumns: {
         'auto-fit': 'repeat(auto-fit, minmax(200px, 1fr))',
@@ -20,7 +20,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("tailwindcss-radix")(),
-  ],
-}
+  plugins: [require('tailwindcss-radix')()],
+};

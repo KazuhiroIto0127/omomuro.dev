@@ -1,4 +1,4 @@
-import styles from './alert.module.css'
+import styles from './alert.module.css';
 import clsx from 'clsx';
 
 export default function Alert({ children, type }) {
@@ -11,5 +11,5 @@ export default function Alert({ children, type }) {
     >
       {children}
     </div>
-  )
+  );
 }
