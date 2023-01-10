@@ -13,8 +13,7 @@ const SidebarLink = ({ path, title }: { path: string; title: string }) => {
         'group flex items-center rounded-lg p-2 text-base font-normal text-gray-900',
         'hover:bg-gray-200 dark:text-white dark:hover:bg-gray-700',
         {
-          'bg-gray-200 text-sky-500 dark:bg-gray-700 dark:text-sky-400':
-            currentRoute === path,
+          'bg-gray-200 text-sky-500 dark:bg-gray-700 dark:text-sky-400': currentRoute === path,
         },
       )}
     >

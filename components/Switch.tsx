@@ -2,13 +2,7 @@ import * as SwitchPrimitive from '@radix-ui/react-switch';
 import cx from 'clsx';
 import { Dispatch, SetStateAction } from 'react';
 
-const Switch = ({
-  bool,
-  checkedFunc,
-}: {
-  bool: boolean;
-  checkedFunc: Dispatch<SetStateAction<boolean>>;
-}) => {
+const Switch = ({ bool, checkedFunc }: { bool: boolean; checkedFunc: Dispatch<SetStateAction<boolean>> }) => {
   return (
     <>
       <SwitchPrimitive.Root

@@ -5,11 +5,7 @@ import { getSortedPostsData } from '@/lib/posts';
 import { GetStaticProps } from 'next';
 import Image from 'next/image';
 
-export default function Home({
-  allPostsData,
-}: {
-  allPostsData: { date: string; title: string; id: string }[];
-}) {
+export default function Home({ allPostsData }: { allPostsData: { date: string; title: string; id: string }[] }) {
   return (
     <Layout>
       <section className="item-center ma-auto flex h-[300px] w-[100%] flex-col justify-center md:h-[500px]">

@@ -8,10 +8,7 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '@/context/global-state-provider';
 import { Bars3Icon } from '@heroicons/react/24/solid';
 
-export default function Sidebar({
-  isOpenMobileSidebar,
-  setIsOpenMobileSidebar,
-}) {
+export default function Sidebar({ isOpenMobileSidebar, setIsOpenMobileSidebar }) {
   const { isOpenPcSidebar } = useContext(GlobalContext);
 
   const toggleSidebar = () => {
@@ -39,8 +36,7 @@ export default function Sidebar({
               'md:fixed    md:top-[50px] md:translate-x-[0px]': isOpenPcSidebar,
             },
             {
-              'md:fixed md:top-[50px] md:translate-x-[-200px]':
-                !isOpenPcSidebar,
+              'md:fixed md:top-[50px] md:translate-x-[-200px]': !isOpenPcSidebar,
             },
             { 'fixed top-0 z-40 translate-x-[0px]': isOpenMobileSidebar },
             { 'fixed top-0 z-40 translate-x-[-200px]': !isOpenMobileSidebar },
@@ -63,14 +59,7 @@ export default function Sidebar({
               onClick={toggleSidebar}
             />
             <Link href="/" className="flex items-center">
-              <Image
-                priority
-                src="/images/omo_pen.png"
-                className="mr-2 rounded-sm"
-                height={30}
-                width={30}
-                alt="logo"
-              />
+              <Image priority src="/images/omo_pen.png" className="mr-2 rounded-sm" height={30} width={30} alt="logo" />
               <span className="text-sm font-bold">omomuro.dev</span>
             </Link>
           </div>
@@ -82,11 +71,7 @@ export default function Sidebar({
               <SidebarLink path="/labo" title="ラボ" icon={faFlask} />
             </li>
             <li>
-              <SidebarLink
-                path="/posts/first-post"
-                title="about"
-                icon={faCat}
-              />
+              <SidebarLink path="/posts/first-post" title="about" icon={faCat} />
             </li>
           </ul>
         </div>

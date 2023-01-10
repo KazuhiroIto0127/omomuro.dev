@@ -9,10 +9,7 @@ export default function HelloWorld() {
   return (
     <div className="m-4">
       <p className="text-xl">HelloWorld! {count}</p>
-      <button
-        className="m-2 rounded-md border-2 border-gray-500 p-2"
-        onClick={clickAction}
-      >
+      <button className="m-2 rounded-md border-2 border-gray-500 p-2" onClick={clickAction}>
         count++
       </button>
     </div>

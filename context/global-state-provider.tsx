@@ -10,9 +10,5 @@ export const GlobalContext = createContext(
 export function GlobalProvider({ children }) {
   const [isOpenPcSidebar, setIsOpenPcSidebar] = useState<boolean>(true);
 
-  return (
-    <GlobalContext.Provider value={{ isOpenPcSidebar, setIsOpenPcSidebar }}>
-      {children}
-    </GlobalContext.Provider>
-  );
+  return <GlobalContext.Provider value={{ isOpenPcSidebar, setIsOpenPcSidebar }}>{children}</GlobalContext.Provider>;
 }

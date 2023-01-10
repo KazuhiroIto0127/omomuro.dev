@@ -1,11 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
-import {
-  MoonIcon,
-  SunIcon,
-  ComputerDesktopIcon,
-  XMarkIcon,
-} from '@heroicons/react/24/solid';
+import { MoonIcon, SunIcon, ComputerDesktopIcon, XMarkIcon } from '@heroicons/react/24/solid';
 import * as Popover from '@radix-ui/react-popover';
 import clsx from 'clsx';
 
@@ -38,30 +33,27 @@ export const ThemeChanger = () => {
             <p className="px-2">Theme</p>
             <ul>
               <li
-                className={clsx(
-                  'flex gap-1 px-3 py-2 text-red-400 hover:cursor-pointer hover:bg-blue-100',
-                  { 'bg-blue-100': theme === 'light' },
-                )}
+                className={clsx('flex gap-1 px-3 py-2 text-red-400 hover:cursor-pointer hover:bg-blue-100', {
+                  'bg-blue-100': theme === 'light',
+                })}
                 onClick={() => setTheme('light')}
               >
                 <SunIcon className="mr-1 w-5" />
                 <span>Light</span>
               </li>
               <li
-                className={clsx(
-                  'flex gap-1 px-3 py-2 text-yellow-400 hover:cursor-pointer hover:bg-blue-100',
-                  { 'bg-blue-100': theme === 'dark' },
-                )}
+                className={clsx('flex gap-1 px-3 py-2 text-yellow-400 hover:cursor-pointer hover:bg-blue-100', {
+                  'bg-blue-100': theme === 'dark',
+                })}
                 onClick={() => setTheme('dark')}
               >
                 <MoonIcon className="w-5 text-yellow-400" />
                 <span>Dark</span>
               </li>
               <li
-                className={clsx(
-                  'flex gap-1 px-3 py-2 hover:cursor-pointer hover:bg-blue-100',
-                  { 'bg-blue-100': theme === 'system' },
-                )}
+                className={clsx('flex gap-1 px-3 py-2 hover:cursor-pointer hover:bg-blue-100', {
+                  'bg-blue-100': theme === 'system',
+                })}
                 onClick={() => setTheme('system')}
               >
                 <ComputerDesktopIcon className="w-5" />

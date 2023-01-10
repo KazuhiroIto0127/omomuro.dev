@@ -10,8 +10,7 @@ import { GlobalContext } from '@/context/global-state-provider';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const { isOpenPcSidebar } = useContext(GlobalContext);
-  const [isOpenMobileSidebar, setIsOpenMobileSidebar] =
-    useState<boolean>(false);
+  const [isOpenMobileSidebar, setIsOpenMobileSidebar] = useState<boolean>(false);
   return (
     <>
       <Head />
@@ -22,18 +21,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             'grid-areas-slim md:grid-areas-wide grid',
             'grid-cols-slim grid-rows-slim md:grid-cols-wide md:grid-rows-wide',
             {
-              'md:grid-areas-slim md:grid-cols-slim md:grid-rows-slim':
-                !isOpenPcSidebar,
+              'md:grid-areas-slim md:grid-cols-slim md:grid-rows-slim': !isOpenPcSidebar,
             },
             'dark:bg-gray-700 dark:text-white',
           ),
         )}
       >
         <Header setIsOpenMobileSidebar={setIsOpenMobileSidebar} />
-        <Sidebar
-          isOpenMobileSidebar={isOpenMobileSidebar}
-          setIsOpenMobileSidebar={setIsOpenMobileSidebar}
-        />
+        <Sidebar isOpenMobileSidebar={isOpenMobileSidebar} setIsOpenMobileSidebar={setIsOpenMobileSidebar} />
         <main className={`grid-in-main p-3`}>{children}</main>
         <Footer />
       </div>

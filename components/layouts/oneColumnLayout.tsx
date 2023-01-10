@@ -9,8 +9,7 @@ import { GlobalContext } from '@/context/global-state-provider';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const { isOpenPcSidebar } = useContext(GlobalContext);
-  const [isOpenMobileSidebar, setIsOpenMobileSidebar] =
-    useState<boolean>(false);
+  const [isOpenMobileSidebar, setIsOpenMobileSidebar] = useState<boolean>(false);
   return (
     <>
       <Head />

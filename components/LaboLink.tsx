@@ -1,14 +1,6 @@
 import Link from 'next/link';
 
-const LaboLink = ({
-  id,
-  emoji,
-  title,
-}: {
-  id: string;
-  emoji: string;
-  title: string;
-}) => {
+const LaboLink = ({ id, emoji, title }: { id: string; emoji: string; title: string }) => {
   return (
     <Link href={`/labo/${id}`}>
       <div
