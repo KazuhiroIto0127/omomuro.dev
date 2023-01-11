@@ -31,12 +31,12 @@ export default function Home({ allPostsData }: { allPostsData: { date: string; t
         <div className="flex w-[50%] flex-col items-center justify-center p-4 ">
           <h2 className="my-3 text-2xl">自分のこと</h2>
           <p className="">
-            <span className="m-1 block">名前：イトウ カズヒロ</span>
-            <span className="m-1 block">住まい： 東京都</span>
-            <span className="m-1 block">誕生日： 1990年1月27日</span>
-            <span className="m-1 block">職業： エンジニア</span>
-            <span className="m-1 block">趣味： イラスト、プログラミング</span>
-            <span className="m-1 block">SNS: twitter, github</span>
+            <span className="m-1 block">イトウ カズヒロ</span>
+            <span className="m-1 block">東京都 在住</span>
+            <span className="m-1 block">1990年1月27日に生まれる</span>
+            <span className="m-1 block">エンジニアに従事</span>
+            <span className="m-1 block">イラスト、プログラミングに興味</span>
+            <span className="m-1 block">twitter, github</span>
             <Link className="block p-2 text-sky-400" href="/about">
               ＞もっと知りたい
             </Link>
