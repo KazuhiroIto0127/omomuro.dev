@@ -1,5 +1,4 @@
 import SidebarLink from '@/components/SidebarLink';
-import { faFlask, faHome, faCat } from '@fortawesome/free-solid-svg-icons';
 import clsx from 'clsx';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -65,13 +64,13 @@ export default function Sidebar({ isOpenMobileSidebar, setIsOpenMobileSidebar })
           </div>
           <ul className="space-y-2 pt-2">
             <li>
-              <SidebarLink path="/" title="ホーム" icon={faHome} />
+              <SidebarLink path="/" title="ホーム" />
             </li>
             <li>
-              <SidebarLink path="/labo" title="ラボ" icon={faFlask} />
+              <SidebarLink path="/labo" title="ラボ" />
             </li>
             <li>
-              <SidebarLink path="/posts/first-post" title="about" icon={faCat} />
+              <SidebarLink path="/posts/first-post" title="about" />
             </li>
           </ul>
         </div>
