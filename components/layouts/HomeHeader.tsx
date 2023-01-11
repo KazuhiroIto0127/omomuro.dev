@@ -2,22 +2,32 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
-import React, { useContext } from 'react';
-import { GlobalContext } from '@/context/global-state-provider';
 import { ThemeChanger } from '@/components/ThemeChanger';
 import { HamburgerMenu } from '@/components/HamburgerMenu';
 
-export default function Header({ setIsOpenMobileSidebar }) {
-  const { setIsOpenPcSidebar } = useContext(GlobalContext);
+export default function Header() {
   const router = useRouter();
   const currentRoute = router.pathname;
 
-  const toggleSidebar = () => {
-    setIsOpenMobileSidebar((prev) => !prev);
-  };
-  const togglePcSidebar = () => {
-    setIsOpenPcSidebar((prev) => !prev);
-  };
+  const links = [
+    {
+      title: 'Home',
+      path: '/',
+    },
+    {
+      title: 'About Me',
+      path: '/about',
+    },
+    {
+      title: 'Works',
+      path: '/works',
+    },
+    {
+      title: 'Labo',
+      path: '/labo',
+    },
+  ];
+
   return (
     <header className="z-10 h-16">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 font-semibold md:px-6">
@@ -28,46 +38,18 @@ export default function Header({ setIsOpenMobileSidebar }) {
         <div className="hidden items-center md:flex">
           <nav className="">
             <ul className="flex items-center space-x-8">
-              <li>
-                <Link
-                  className={clsx('hover:text-sky-500', {
-                    'text-sky-500': currentRoute === '/',
-                  })}
-                  href="/"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={clsx('hover:text-sky-500', {
-                    'text-sky-500': currentRoute === '/about',
-                  })}
-                  href="/about"
-                >
-                  About Me
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={clsx('hover:text-sky-500', {
-                    'text-sky-500': currentRoute === '/works',
-                  })}
-                  href="/works"
-                >
-                  Works
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className={clsx('hover:text-sky-500', {
-                    'text-sky-500': currentRoute === '/labo',
-                  })}
-                  href="/labo"
-                >
-                  Labo
-                </Link>
-              </li>
+              {links.map((link) => (
+                <li key={link.path}>
+                  <Link
+                    className={clsx('hover:text-sky-500', {
+                      'text-sky-500': currentRoute === link.path,
+                    })}
+                    href={link.path}
+                  >
+                    {link.title}
+                  </Link>
+                </li>
+              ))}{' '}
             </ul>
           </nav>
           <div className="ml-6 border-l border-slate-200 pl-6 dark:border-slate-800">
