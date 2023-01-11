@@ -16,12 +16,12 @@ export default function FirstPost({ allPostsData }: { allPostsData: { date: stri
   const laboLinks = [
     {
       title: '絵文字一致チャレンジ！',
-      id: 'RandomEmojiChallenge',
+      id: 'randomEmojiChallenge',
       emoji: '😀 ',
     },
     {
       title: 'typescriptの勉強！',
-      id: 'TypescriptPractice',
+      id: 'typescriptPractice',
       emoji: 'typescript ',
     },
     { title: 'ライクしよう！', id: '3', emoji: '❤️' },
