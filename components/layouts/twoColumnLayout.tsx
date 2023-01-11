@@ -27,7 +27,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           ),
         )}
       >
-        <Header setIsOpenMobileSidebar={setIsOpenMobileSidebar} />
+        <Header />
         <Sidebar isOpenMobileSidebar={isOpenMobileSidebar} setIsOpenMobileSidebar={setIsOpenMobileSidebar} />
         <main className={`grid-in-main p-3`}>{children}</main>
         <Footer />
