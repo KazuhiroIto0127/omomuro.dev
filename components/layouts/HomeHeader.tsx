@@ -30,7 +30,7 @@ export default function Header() {
 
   return (
     <header className="z-10 h-16">
-      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 font-semibold md:px-6">
+      <div className="container mx-auto flex h-full items-center justify-between px-6 font-semibold">
         <Link href="/" className="flex items-center justify-center transition-transform hover:scale-105">
           <Image priority src="/images/omo_pen.png" className="mr-2" height={30} width={30} alt="logo" />
           <div className="text-lg font-bold md:text-2xl">omomuro.dev</div>
