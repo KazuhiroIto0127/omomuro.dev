@@ -1,70 +1,71 @@
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { Popover } from '@headlessui/react';
-import { Bars3Icon } from '@heroicons/react/24/solid';
+import { Dialog } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
+import { useState } from 'react';
+import { ThemeChangerRadioBtn } from '@/components/ThemeChangerRadioBtn';
 
 export const HamburgerMenu = () => {
   const router = useRouter();
   const currentRoute = router.pathname;
+  let [isOpen, setIsOpen] = useState(false);
+
+  const links = [
+    {
+      title: 'Home',
+      path: '/',
+    },
+    {
+      title: 'About Me',
+      path: '/about',
+    },
+    {
+      title: 'Works',
+      path: '/works',
+    },
+    {
+      title: 'Labo',
+      path: '/labo',
+    },
+  ];
 
   return (
-    <Popover className="relative">
-      <Popover.Button>
+    <>
+      <button type="button" onClick={() => setIsOpen(true)}>
+        <span className="sr-only">Navigation</span>
         <Bars3Icon className="w-6" />
-      </Popover.Button>
-      <Popover.Overlay className="fixed inset-0 bg-gray-800 bg-opacity-70 backdrop-blur-sm" />
+      </button>
 
-      <Popover.Panel className="absolute top-0 right-0">
-        <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-          <div className="relative grid gap-8 bg-white p-7 lg:grid-cols-2">
-            <nav className="">
-              <ul className="flex items-center space-x-8">
-                <li>
+      <Dialog as="div" className="fixed inset-0 z-50" open={isOpen} onClose={() => setIsOpen(false)}>
+        <Dialog.Overlay className="fixed inset-0 bg-gray-800 bg-opacity-70 backdrop-blur-sm" />
+
+        <Dialog.Panel className="dark:highlight-white/5 absolute top-4 right-4 w-full max-w-xs rounded-lg bg-white p-6 text-base font-semibold text-slate-900 shadow-lg dark:bg-slate-800 dark:text-slate-400">
+          <button type="button" className="absolute top-5 right-5 h-8 w-8" onClick={() => setIsOpen(false)}>
+            <XMarkIcon className="h-5 w-5" />
+          </button>
+
+          <nav className="">
+            <ul className="space-y-6">
+              {links.map((link) => (
+                <li key={link.path}>
                   <Link
                     className={clsx('hover:text-sky-500', {
-                      'text-sky-500': currentRoute === '/',
+                      'text-sky-500': currentRoute === link.path,
                     })}
-                    href="/"
+                    href={link.path}
                   >
-                    Home
+                    {link.title}
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    className={clsx('hover:text-sky-500', {
-                      'text-sky-500': currentRoute === '/about',
-                    })}
-                    href="/about"
-                  >
-                    About Me
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={clsx('hover:text-sky-500', {
-                      'text-sky-500': currentRoute === '/works',
-                    })}
-                    href="/works"
-                  >
-                    Works
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={clsx('hover:text-sky-500', {
-                      'text-sky-500': currentRoute === '/labo',
-                    })}
-                    href="/labo"
-                  >
-                    Labo
-                  </Link>
-                </li>
-              </ul>
-            </nav>
+              ))}
+            </ul>
+          </nav>
+          <div className="mt-6 border-t border-slate-200 pt-6 dark:border-slate-200/10">
+            <ThemeChangerRadioBtn />
           </div>
-        </div>
-      </Popover.Panel>
-    </Popover>
+        </Dialog.Panel>
+      </Dialog>
+    </>
   );
 };
