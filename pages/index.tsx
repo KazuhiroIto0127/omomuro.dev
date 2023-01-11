@@ -69,7 +69,7 @@ export default function Home({ allPostsData }: { allPostsData: { date: string; t
           </div>
         </div>
 
-        <div className="w-full md:w-1/2">
+        <div className="flex w-full justify-center md:w-1/2">
           <Image
             priority
             src="/images/neko.png"
@@ -82,7 +82,7 @@ export default function Home({ allPostsData }: { allPostsData: { date: string; t
       </section>
 
       <section className="mb-10 flex w-full flex-col-reverse items-center justify-center md:flex-row">
-        <div className="w-full md:w-1/2">
+        <div className="flex w-full justify-center md:w-1/2">
           <Image
             priority
             src="/images/works.png"
