@@ -8,6 +8,7 @@
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.4",
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",
     "@next/font": "^13.1.1",
@@ -19,6 +20,7 @@
     "clsx": "^1.2.1",
     "date-fns": "^2.29.3",
     "framer-motion": "^8.1.1",
+    "graphql": "^15.8.0",
     "gray-matter": "^4.0.3",
     "next": "latest",
     "next-themes": "^0.2.1",
