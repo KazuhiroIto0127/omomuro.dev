@@ -1,26 +1,39 @@
 import Layout from '@/components/layouts/oneColumnLayout';
-import getAllWorks from '@/lib/contentful';
+import getAllWorks from '@/lib/graphql/src/contentful';
+import { Works } from '@/lib/graphql/codegen/graphql';
+import Image from 'next/image';
 
-export default function Works({ works }) {
+export default function WorksPage({ works }: { works: Works[] }) {
   return (
     <Layout>
-      <h1>works</h1>
-      {works.map((work) => (
-        <div key={work.sys.id}>
-          <h1>{work.title}</h1>
-        </div>
-      ))}
+      <h1 className="mb-3">works</h1>
+
+      <div className="flex flex-wrap gap-4">
+        {works.map((work) => (
+          <div
+            key={work.sys.id}
+            className="h-full overflow-hidden rounded-lg border-2 border-gray-200 border-opacity-60"
+          >
+            <Image
+              priority
+              src={work.thumbnail.url}
+              className="h-[200px] w-[300px] object-cover object-center"
+              height={work.thumbnail.height}
+              width={work.thumbnail.width}
+              alt={work.thumbnail.fileName}
+            />
+            <h2 className="p-3 text-base font-bold">{work.title}</h2>
+          </div>
+        ))}
+      </div>
     </Layout>
   );
 }
 
 export async function getStaticProps() {
-  const works = await getAllWorks();
-  console.log('----------------');
-  console.log(works);
+  const data = await getAllWorks();
+  const works = data.worksCollection.items;
   return {
-    props: {
-      works,
-    },
+    props: { works },
   };
 }
