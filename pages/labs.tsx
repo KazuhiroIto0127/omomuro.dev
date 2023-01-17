@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import LaboLink from '../components/LaboLink';
+import LabsLink from '../components/LabsLink';
 import Layout from '../components/layouts/oneColumnLayout';
 import Switch from '@/components/Switch';
 import { useState } from 'react';
@@ -13,7 +13,7 @@ export default function FirstPost({ allPostsData }: { allPostsData: { date: stri
     setBool(!bool);
   };
 
-  const laboLinks = [
+  const labsLinks = [
     {
       title: '絵文字一致チャレンジ！',
       id: 'randomEmojiChallenge',
@@ -30,15 +30,15 @@ export default function FirstPost({ allPostsData }: { allPostsData: { date: stri
   return (
     <>
       <Head>
-        <title>Labo</title>
+        <title>Labs</title>
       </Head>
 
       <Layout>
         <h1 className="m-3 text-2xl">ラボ</h1>
 
         <div className="grid grid-cols-auto-fit gap-4">
-          {laboLinks.map((link) => (
-            <LaboLink title={link.title} id={link.id} emoji={link.emoji} key={link.id} />
+          {labsLinks.map((link) => (
+            <LabsLink title={link.title} id={link.id} emoji={link.emoji} key={link.id} />
           ))}
         </div>
         <Switch bool={bool} checkedFunc={setBool} />

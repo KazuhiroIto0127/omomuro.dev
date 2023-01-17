@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-const LaboLink = ({ id, emoji, title }: { id: string; emoji: string; title: string }) => {
+const LabsLink = ({ id, emoji, title }: { id: string; emoji: string; title: string }) => {
   return (
-    <Link href={`/labo/${id}`}>
+    <Link href={`/labs/${id}`}>
       <div
         className="rounded-md bg-white p-3 shadow-lg shadow-indigo-500/40 transition ease-in-out hover:scale-105
                             dark:bg-gray-500 dark:text-white"
@@ -16,4 +16,4 @@ const LaboLink = ({ id, emoji, title }: { id: string; emoji: string; title: stri
   );
 };
 
-export default LaboLink;
+export default LabsLink;

@@ -25,8 +25,8 @@ export const HamburgerMenu = () => {
       path: '/works',
     },
     {
-      title: 'Labo',
-      path: '/labo',
+      title: 'Labs',
+      path: '/labs',
     },
   ];
 

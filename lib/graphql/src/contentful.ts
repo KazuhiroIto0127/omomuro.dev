@@ -1,12 +1,16 @@
-import { request } from 'graphql-request';
-// import useSWR from "swr";
+import { GraphQLClient } from 'graphql-request';
 import { graphql } from '@/lib/graphql/codegen/gql';
 import { GetAllWorksQueryQuery } from '@/lib/graphql/codegen/graphql';
 
-// import apolloClient from '@/lib/apollo-client';
 const TOKEN = process.env.CONTENTFUL_DELIVERY_TOKEN;
 const SPACE = process.env.CONTENTFUL_SPACE_ID;
-const URL = `https://graphql.contentful.com/content/v1/spaces/${SPACE}`;
+const ENDPOINT = `https://graphql.contentful.com/content/v1/spaces/${SPACE}`;
+
+const graphQLClient = new GraphQLClient(ENDPOINT, {
+  headers: {
+    authorization: `Bearer ${TOKEN}`,
+  },
+});
 
 const query = graphql(`
   query GetAllWorksQuery {
@@ -18,7 +22,6 @@ const query = graphql(`
           firstPublishedAt
         }
         title
-        body
         slug
         thumbnail {
           fileName
@@ -32,11 +35,7 @@ const query = graphql(`
 `);
 
 export async function getAllWorks() {
-  const data = await request<GetAllWorksQueryQuery>({
-    url: URL,
-    document: query,
-    requestHeaders: { Authorization: `Bearer ${TOKEN}` },
-  });
+  const data = await graphQLClient.request<GetAllWorksQueryQuery>(query);
   return data;
 }
 
