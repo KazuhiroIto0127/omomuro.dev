@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Layout from '@/components/layouts/oneColumnLayout';
 import { client } from '@/lib/client';
 import Image from 'next/image';
+import ReactMarkdown from 'react-markdown';
 
 export default function Work({ work }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
@@ -22,8 +23,7 @@ export default function Work({ work }: InferGetStaticPropsType<typeof getStaticP
         />
         <h1 className="mb-4 text-2xl">{work.title}</h1>
         <p className="mb-8 text-base">{work.description}</p>
-
-        <div>{work.body}</div>
+        <ReactMarkdown>{work.body}</ReactMarkdown>
         {/* <DateFormat dateString={postData.date} /> */}
         {/* <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} /> */}
       </article>
@@ -48,7 +48,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  console.log(params.id);
   const data = await client.work({ slug: params.id });
   const work = data.workCollection.items.shift();
   return {
