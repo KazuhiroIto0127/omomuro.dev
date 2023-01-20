@@ -1,0 +1,27 @@
+query work($slug: String!) {
+  workCollection(where: { slug: $slug }, limit: 1) {
+    items {
+      sys {
+        id
+        publishedAt
+        firstPublishedAt
+      }
+      contentfulMetadata {
+        tags {
+          id
+          name
+        }
+      }
+      slug
+      title
+      description
+      body
+      thumbnail {
+        fileName
+        width
+        height
+        url
+      }
+    }
+  }
+}

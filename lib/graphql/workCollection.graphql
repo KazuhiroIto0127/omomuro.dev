@@ -1,0 +1,26 @@
+query workCollection {
+  workCollection(limit: 100) {
+    items {
+      sys {
+        id
+        publishedAt
+        firstPublishedAt
+      }
+      contentfulMetadata {
+        tags {
+          id
+          name
+        }
+      }
+      slug
+      title
+      description
+      thumbnail {
+        fileName
+        width
+        height
+        url
+      }
+    }
+  }
+}

@@ -1,12 +1,12 @@
+import { GetStaticProps, GetStaticPaths, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
-import DateFormat from '@/components/date';
 import Layout from '@/components/layouts/oneColumnLayout';
-import { GetAllSlugIds, GetWorkData } from '@/lib/graphql/src/contentful';
-import { GetStaticProps, GetStaticPaths } from 'next';
-import { Works } from '@/lib/graphql/codegen/graphql';
+// import { GetAllSlugIds, GetWorkData } from '@/lib/graphql/src/contentful';
+import { client } from '@/lib/client';
 import Image from 'next/image';
+import { workerData } from 'worker_threads';
 
-export default function Work({ work }: { work: Works }) {
+export default function Work({ work }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout>
       <Head>
@@ -34,17 +34,25 @@ export default function Work({ work }: { work: Works }) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = await GetAllSlugIds();
+  const workSlugData = await client.workSlugAll();
+  const items = workSlugData.workCollection.items;
+  const paths = items.map((item) => {
+    return {
+      params: {
+        id: item.slug,
+      },
+    };
+  });
   return {
     paths,
     fallback: false,
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }) => {
   console.log(params.id);
-  const data = await GetWorkData(params.id);
-  const work = data.worksCollection.items.shift();
+  const data = await client.work({ slug: params.id });
+  const work = data.workCollection.items.shift();
   return {
     props: { work },
   };

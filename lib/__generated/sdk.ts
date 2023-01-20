@@ -1,5 +1,6 @@
-/* eslint-disable */
-import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
+import { GraphQLClient } from 'graphql-request';
+import * as Dom from 'graphql-request/dist/types.dom';
+import gql from 'graphql-tag';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -12,18 +13,9 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /**
-   * A date-time string at UTC, such as 2007-12-03T10:15:30Z,
-   *     compliant with the 'date-time' format outlined in section 5.6 of
-   *     the RFC 3339 profile of the ISO 8601 standard for representation
-   *     of dates and times using the Gregorian calendar.
-   */
   DateTime: any;
-  /** The 'Dimension' type represents dimensions as whole numeric values between `1` and `4000`. */
   Dimension: any;
-  /** The 'HexColor' type represents color in `rgb:ffffff` string format. */
   HexColor: any;
-  /** The 'Quality' type represents quality as whole numeric values between `1` and `100`. */
   Quality: any;
 };
 
@@ -178,7 +170,7 @@ export type AssetFilter = {
 export type AssetLinkingCollections = {
   __typename?: 'AssetLinkingCollections';
   entryCollection?: Maybe<EntryCollection>;
-  worksCollection?: Maybe<WorksCollection>;
+  workCollection?: Maybe<WorkCollection>;
 };
 
 
@@ -190,7 +182,7 @@ export type AssetLinkingCollectionsEntryCollectionArgs = {
 };
 
 
-export type AssetLinkingCollectionsWorksCollectionArgs = {
+export type AssetLinkingCollectionsWorkCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
@@ -377,8 +369,8 @@ export type Query = {
   asset?: Maybe<Asset>;
   assetCollection?: Maybe<AssetCollection>;
   entryCollection?: Maybe<EntryCollection>;
-  works?: Maybe<Works>;
-  worksCollection?: Maybe<WorksCollection>;
+  work?: Maybe<Work>;
+  workCollection?: Maybe<WorkCollection>;
 };
 
 
@@ -409,20 +401,20 @@ export type QueryEntryCollectionArgs = {
 };
 
 
-export type QueryWorksArgs = {
+export type QueryWorkArgs = {
   id: Scalars['String'];
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
 };
 
 
-export type QueryWorksCollectionArgs = {
+export type QueryWorkCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
-  order?: InputMaybe<Array<InputMaybe<WorksOrder>>>;
+  order?: InputMaybe<Array<InputMaybe<WorkOrder>>>;
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
-  where?: InputMaybe<WorksFilter>;
+  where?: InputMaybe<WorkFilter>;
 };
 
 export type Sys = {
@@ -472,13 +464,13 @@ export type SysFilter = {
   publishedVersion_not_in?: InputMaybe<Array<InputMaybe<Scalars['Float']>>>;
 };
 
-/** my works [See type definition](https://app.contentful.com/spaces/9fw5srzwcs90/content_types/works) */
-export type Works = Entry & {
-  __typename?: 'Works';
+/** [See type definition](https://app.contentful.com/spaces/9fw5srzwcs90/content_types/work) */
+export type Work = Entry & {
+  __typename?: 'Work';
   body?: Maybe<Scalars['String']>;
   contentfulMetadata: ContentfulMetadata;
   description?: Maybe<Scalars['String']>;
-  linkedFrom?: Maybe<WorksLinkingCollections>;
+  linkedFrom?: Maybe<WorkLinkingCollections>;
   slug?: Maybe<Scalars['String']>;
   sys: Sys;
   thumbnail?: Maybe<Asset>;
@@ -486,53 +478,53 @@ export type Works = Entry & {
 };
 
 
-/** my works [See type definition](https://app.contentful.com/spaces/9fw5srzwcs90/content_types/works) */
-export type WorksBodyArgs = {
+/** [See type definition](https://app.contentful.com/spaces/9fw5srzwcs90/content_types/work) */
+export type WorkBodyArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
 
-/** my works [See type definition](https://app.contentful.com/spaces/9fw5srzwcs90/content_types/works) */
-export type WorksDescriptionArgs = {
+/** [See type definition](https://app.contentful.com/spaces/9fw5srzwcs90/content_types/work) */
+export type WorkDescriptionArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
 
-/** my works [See type definition](https://app.contentful.com/spaces/9fw5srzwcs90/content_types/works) */
-export type WorksLinkedFromArgs = {
+/** [See type definition](https://app.contentful.com/spaces/9fw5srzwcs90/content_types/work) */
+export type WorkLinkedFromArgs = {
   allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
 
 
-/** my works [See type definition](https://app.contentful.com/spaces/9fw5srzwcs90/content_types/works) */
-export type WorksSlugArgs = {
+/** [See type definition](https://app.contentful.com/spaces/9fw5srzwcs90/content_types/work) */
+export type WorkSlugArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
 
-/** my works [See type definition](https://app.contentful.com/spaces/9fw5srzwcs90/content_types/works) */
-export type WorksThumbnailArgs = {
+/** [See type definition](https://app.contentful.com/spaces/9fw5srzwcs90/content_types/work) */
+export type WorkThumbnailArgs = {
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
 };
 
 
-/** my works [See type definition](https://app.contentful.com/spaces/9fw5srzwcs90/content_types/works) */
-export type WorksTitleArgs = {
+/** [See type definition](https://app.contentful.com/spaces/9fw5srzwcs90/content_types/work) */
+export type WorkTitleArgs = {
   locale?: InputMaybe<Scalars['String']>;
 };
 
-export type WorksCollection = {
-  __typename?: 'WorksCollection';
-  items: Array<Maybe<Works>>;
+export type WorkCollection = {
+  __typename?: 'WorkCollection';
+  items: Array<Maybe<Work>>;
   limit: Scalars['Int'];
   skip: Scalars['Int'];
   total: Scalars['Int'];
 };
 
-export type WorksFilter = {
-  AND?: InputMaybe<Array<InputMaybe<WorksFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<WorksFilter>>>;
+export type WorkFilter = {
+  AND?: InputMaybe<Array<InputMaybe<WorkFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<WorkFilter>>>;
   body?: InputMaybe<Scalars['String']>;
   body_contains?: InputMaybe<Scalars['String']>;
   body_exists?: InputMaybe<Scalars['Boolean']>;
@@ -566,20 +558,20 @@ export type WorksFilter = {
   title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
 };
 
-export type WorksLinkingCollections = {
-  __typename?: 'WorksLinkingCollections';
+export type WorkLinkingCollections = {
+  __typename?: 'WorkLinkingCollections';
   entryCollection?: Maybe<EntryCollection>;
 };
 
 
-export type WorksLinkingCollectionsEntryCollectionArgs = {
+export type WorkLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']>;
   locale?: InputMaybe<Scalars['String']>;
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
 };
 
-export enum WorksOrder {
+export enum WorkOrder {
   DescriptionAsc = 'description_ASC',
   DescriptionDesc = 'description_DESC',
   SlugAsc = 'slug_ASC',
@@ -596,24 +588,107 @@ export enum WorksOrder {
   TitleDesc = 'title_DESC'
 }
 
-export type GetAllWorksQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetAllWorksQueryQuery = { __typename?: 'Query', worksCollection?: { __typename?: 'WorksCollection', items: Array<{ __typename?: 'Works', slug?: string | null, title?: string | null, description?: string | null, sys: { __typename?: 'Sys', id: string, publishedAt?: any | null, firstPublishedAt?: any | null }, contentfulMetadata: { __typename?: 'ContentfulMetadata', tags: Array<{ __typename?: 'ContentfulTag', id?: string | null, name?: string | null } | null> }, thumbnail?: { __typename?: 'Asset', fileName?: string | null, width?: number | null, height?: number | null, url?: string | null } | null } | null> } | null };
-
-export type GetWorksQueryVariables = Exact<{
+export type WorkQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
 
 
-export type GetWorksQuery = { __typename?: 'Query', worksCollection?: { __typename?: 'WorksCollection', items: Array<{ __typename?: 'Works', slug?: string | null, title?: string | null, description?: string | null, body?: string | null, sys: { __typename?: 'Sys', id: string, publishedAt?: any | null, firstPublishedAt?: any | null }, contentfulMetadata: { __typename?: 'ContentfulMetadata', tags: Array<{ __typename?: 'ContentfulTag', id?: string | null, name?: string | null } | null> }, thumbnail?: { __typename?: 'Asset', fileName?: string | null, width?: number | null, height?: number | null, url?: string | null } | null } | null> } | null };
+export type WorkQuery = { __typename?: 'Query', workCollection?: { __typename?: 'WorkCollection', items: Array<{ __typename?: 'Work', slug?: string | null, title?: string | null, description?: string | null, body?: string | null, sys: { __typename?: 'Sys', id: string, publishedAt?: any | null, firstPublishedAt?: any | null }, contentfulMetadata: { __typename?: 'ContentfulMetadata', tags: Array<{ __typename?: 'ContentfulTag', id?: string | null, name?: string | null } | null> }, thumbnail?: { __typename?: 'Asset', fileName?: string | null, width?: number | null, height?: number | null, url?: string | null } | null } | null> } | null };
 
-export type GetAllSlugQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetAllSlugQuery = { __typename?: 'Query', worksCollection?: { __typename?: 'WorksCollection', items: Array<{ __typename?: 'Works', slug?: string | null } | null> } | null };
+export type WorkCollectionQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export const GetAllWorksQueryDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAllWorksQuery"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"worksCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"limit"},"value":{"kind":"IntValue","value":"100"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"items"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"sys"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"publishedAt"}},{"kind":"Field","name":{"kind":"Name","value":"firstPublishedAt"}}]}},{"kind":"Field","name":{"kind":"Name","value":"contentfulMetadata"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"thumbnail"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"fileName"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetAllWorksQueryQuery, GetAllWorksQueryQueryVariables>;
-export const GetWorksDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetWorks"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"worksCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}},{"kind":"Argument","name":{"kind":"Name","value":"limit"},"value":{"kind":"IntValue","value":"1"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"items"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"sys"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"publishedAt"}},{"kind":"Field","name":{"kind":"Name","value":"firstPublishedAt"}}]}},{"kind":"Field","name":{"kind":"Name","value":"contentfulMetadata"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"body"}},{"kind":"Field","name":{"kind":"Name","value":"thumbnail"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"fileName"}},{"kind":"Field","name":{"kind":"Name","value":"width"}},{"kind":"Field","name":{"kind":"Name","value":"height"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetWorksQuery, GetWorksQueryVariables>;
-export const GetAllSlugDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAllSlug"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"worksCollection"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"limit"},"value":{"kind":"IntValue","value":"100"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"items"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}}]}}]}}]} as unknown as DocumentNode<GetAllSlugQuery, GetAllSlugQueryVariables>;
+export type WorkCollectionQuery = { __typename?: 'Query', workCollection?: { __typename?: 'WorkCollection', items: Array<{ __typename?: 'Work', slug?: string | null, title?: string | null, description?: string | null, sys: { __typename?: 'Sys', id: string, publishedAt?: any | null, firstPublishedAt?: any | null }, contentfulMetadata: { __typename?: 'ContentfulMetadata', tags: Array<{ __typename?: 'ContentfulTag', id?: string | null, name?: string | null } | null> }, thumbnail?: { __typename?: 'Asset', fileName?: string | null, width?: number | null, height?: number | null, url?: string | null } | null } | null> } | null };
+
+export type WorkSlugAllQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type WorkSlugAllQuery = { __typename?: 'Query', workCollection?: { __typename?: 'WorkCollection', items: Array<{ __typename?: 'Work', slug?: string | null } | null> } | null };
+
+
+export const WorkDocument = gql`
+    query work($slug: String!) {
+  workCollection(where: {slug: $slug}, limit: 1) {
+    items {
+      sys {
+        id
+        publishedAt
+        firstPublishedAt
+      }
+      contentfulMetadata {
+        tags {
+          id
+          name
+        }
+      }
+      slug
+      title
+      description
+      body
+      thumbnail {
+        fileName
+        width
+        height
+        url
+      }
+    }
+  }
+}
+    `;
+export const WorkCollectionDocument = gql`
+    query workCollection {
+  workCollection(limit: 100) {
+    items {
+      sys {
+        id
+        publishedAt
+        firstPublishedAt
+      }
+      contentfulMetadata {
+        tags {
+          id
+          name
+        }
+      }
+      slug
+      title
+      description
+      thumbnail {
+        fileName
+        width
+        height
+        url
+      }
+    }
+  }
+}
+    `;
+export const WorkSlugAllDocument = gql`
+    query workSlugAll {
+  workCollection(limit: 100) {
+    items {
+      slug
+    }
+  }
+}
+    `;
+
+export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string) => Promise<T>;
+
+
+const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationType) => action();
+
+export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
+  return {
+    work(variables: WorkQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<WorkQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<WorkQuery>(WorkDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'work', 'query');
+    },
+    workCollection(variables?: WorkCollectionQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<WorkCollectionQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<WorkCollectionQuery>(WorkCollectionDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'workCollection', 'query');
+    },
+    workSlugAll(variables?: WorkSlugAllQueryVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<WorkSlugAllQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<WorkSlugAllQuery>(WorkSlugAllDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'workSlugAll', 'query');
+    }
+  };
+}
+export type Sdk = ReturnType<typeof getSdk>;

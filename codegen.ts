@@ -6,6 +6,8 @@ const SPACE = process.env.CONTENTFUL_SPACE_ID;
 const URL = `https://graphql.contentful.com/content/v1/spaces/${SPACE}`;
 
 const config: CodegenConfig = {
+  overwrite: true,
+  ignoreNoDocuments: true,
   schema: {
     [URL]: {
       headers: {
@@ -13,12 +15,24 @@ const config: CodegenConfig = {
       },
     },
   },
-  documents: ['lib/graphql/src/**/*.ts'],
-  ignoreNoDocuments: true,
   generates: {
-    './lib/graphql/codegen/': {
-      preset: 'client',
-      plugins: [],
+    './lib/__generated/graphql.schema.json': {
+      plugins: ['introspection'],
+    },
+    './lib/__generated/graphql.schema.graphql': {
+      plugins: ['schema-ast'],
+    },
+    './lib/__generated/sdk.ts': {
+      documents: ['./lib/graphql/**/*.graphql'],
+      plugins: ['typescript', 'typescript-operations', 'typescript-graphql-request'],
+      config: {
+        rawRequest: false,
+        inlineFragmentTypes: 'combine',
+        skipTypename: false,
+        exportFragmentSpreadSubTypes: true,
+        dedupeFragments: true,
+        preResolveTypes: true,
+      },
     },
   },
 };

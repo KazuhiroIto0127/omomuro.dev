@@ -1,10 +1,10 @@
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Layout from '@/components/layouts/oneColumnLayout';
-import { getAllWorks } from '@/lib/graphql/src/contentful';
-import { Works } from '@/lib/graphql/codegen/graphql';
+import { client } from '@/lib/client';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function WorksPage({ works }: { works: Works[] }) {
+const WorksPage = ({ works }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Layout>
       <h1 className="mb-3">作ったもの</h1>
@@ -29,12 +29,14 @@ export default function WorksPage({ works }: { works: Works[] }) {
       </ul>
     </Layout>
   );
-}
+};
 
-export async function getStaticProps() {
-  const data = await getAllWorks();
-  const works = data.worksCollection.items;
+export const getStaticProps = async () => {
+  const workData = await client.workCollection();
+  const works = workData.workCollection.items;
   return {
     props: { works },
   };
-}
+};
+
+export default WorksPage;
