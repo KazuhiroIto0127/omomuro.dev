@@ -1,5 +1,7 @@
-// next.config.js
+const headers = require('./config/headers');
+
 module.exports = {
+  headers,
   images: {
     remotePatterns: [
       {
