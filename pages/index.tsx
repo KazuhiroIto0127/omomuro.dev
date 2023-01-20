@@ -1,9 +1,6 @@
 import Link from 'next/link';
-import DateFormat from '@/components/date';
 import Layout from '@/components/layouts/oneColumnLayout';
 import { TwitterLogoIcon, GitHubLogoIcon } from '@radix-ui/react-icons';
-import { getSortedPostsData } from '@/lib/posts';
-import { GetStaticProps } from 'next';
 import Image from 'next/image';
 
 export default function Home({ allPostsData }: { allPostsData: { date: string; title: string; id: string }[] }) {

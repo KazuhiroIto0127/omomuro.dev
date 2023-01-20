@@ -3,10 +3,8 @@ import LabsLink from '../components/LabsLink';
 import Layout from '../components/layouts/oneColumnLayout';
 import Switch from '@/components/Switch';
 import { useState } from 'react';
-import { getSortedPostsData } from '@/lib/posts';
-import { GetStaticProps } from 'next';
 
-export default function FirstPost({ allPostsData }: { allPostsData: { date: string; title: string; id: string }[] }) {
+export default function Labs() {
   const [bool, setBool] = useState(false);
 
   const clickFunc = () => {
@@ -48,12 +46,3 @@ export default function FirstPost({ allPostsData }: { allPostsData: { date: stri
     </>
   );
 }
-
-export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-};

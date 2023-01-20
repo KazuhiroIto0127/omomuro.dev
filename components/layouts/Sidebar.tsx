@@ -67,7 +67,7 @@ export default function Sidebar({ isOpenMobileSidebar, setIsOpenMobileSidebar })
               <SidebarLink path="/" title="ホーム" />
             </li>
             <li>
-              <SidebarLink path="/labo" title="ラボ" />
+              <SidebarLink path="/labs" title="ラボ" />
             </li>
             <li>
               <SidebarLink path="/posts/first-post" title="about" />

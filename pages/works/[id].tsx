@@ -6,7 +6,6 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import { Works } from '@/lib/graphql/codegen/graphql';
 import Image from 'next/image';
 
-// export default function Post({ postData }: { postData: { title: string; date: string; contentHtml: string } }) {
 export default function Work({ work }: { work: Works }) {
   return (
     <Layout>
