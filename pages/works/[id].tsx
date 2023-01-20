@@ -1,10 +1,8 @@
-import { GetStaticProps, GetStaticPaths, InferGetStaticPropsType } from 'next';
+import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import Layout from '@/components/layouts/oneColumnLayout';
-// import { GetAllSlugIds, GetWorkData } from '@/lib/graphql/src/contentful';
 import { client } from '@/lib/client';
 import Image from 'next/image';
-import { workerData } from 'worker_threads';
 
 export default function Work({ work }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
