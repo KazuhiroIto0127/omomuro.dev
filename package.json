@@ -6,7 +6,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
-    "codegen": "npx graphql-codegen"
+    "codegen": "npx graphql-codegen",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.7",
@@ -48,6 +49,7 @@
     "eslint": "^8.31.0",
     "eslint-config-next": "^13.1.1",
     "eslint-config-prettier": "^8.6.0",
+    "husky": "^8.0.3",
     "postcss": "^8.4.20",
     "prettier": "^2.8.2",
     "prettier-plugin-tailwindcss": "^0.2.1",
