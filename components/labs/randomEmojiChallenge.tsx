@@ -1,6 +1,4 @@
-import Head from 'next/head';
 import { useEffect, useState, useMemo } from 'react';
-import Layout from '@/components/layouts/oneColumnLayout';
 import { useReward } from 'react-rewards';
 import { CursorArrowRaysIcon } from '@heroicons/react/24/solid';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -70,69 +68,63 @@ export default function RandomEmojiChallenge() {
   }, [bestScore, challengeTotalNum, emojiStack, reward]);
 
   return (
-    <Layout>
-      <Head>
-        <title>絵文字一致チャレンジ！</title>
-      </Head>
+    <div className="text-center">
+      <h1 className="mb-2 text-2xl font-bold">絵文字一致チャレンジ！</h1>
+      <span id="rewardId" />
 
-      <div className="text-center">
-        <h1 className="mb-2 text-2xl font-bold">絵文字一致チャレンジ！</h1>
-        <span id="rewardId" />
-
-        {bestScore != 0 && <div>ベストスコア：{bestScore}回目で成功</div>}
-        <button
-          onClick={addEmoji}
-          disabled={gameClear}
-          className="mx-auto mb-3 flex w-10/12 max-w-md touch-manipulation select-none items-center
+      {bestScore != 0 && <div>ベストスコア：{bestScore}回目で成功</div>}
+      <button
+        onClick={addEmoji}
+        disabled={gameClear}
+        className="mx-auto mb-3 flex w-10/12 max-w-md touch-manipulation select-none items-center
                          justify-center rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-5 py-3 text-white shadow
                            hover:bg-gradient-to-bl focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:focus:ring-cyan-800"
+        type="button"
+      >
+        {buttonText}
+        {!gameClear && <CursorArrowRaysIcon className="mt-1 ml-2 w-6 animate-bounce transition ease-in-out" />}
+      </button>
+
+      {gameClear && (
+        <button
+          onClick={reset}
+          className="mx-auto mb-3 flex
+                           touch-manipulation select-none rounded-full bg-red-300 px-5 py-3 text-white"
           type="button"
         >
-          {buttonText}
-          {!gameClear && <CursorArrowRaysIcon className="mt-1 ml-2 w-6 animate-bounce transition ease-in-out" />}
+          リセット
+          <CursorArrowRaysIcon className="mt-1 ml-2 w-6 animate-bounce transition ease-in-out" />
         </button>
-
-        {gameClear && (
-          <button
-            onClick={reset}
-            className="mx-auto mb-3 flex
-                           touch-manipulation select-none rounded-full bg-red-300 px-5 py-3 text-white"
-            type="button"
-          >
-            リセット
-            <CursorArrowRaysIcon className="mt-1 ml-2 w-6 animate-bounce transition ease-in-out" />
-          </button>
-        )}
-        <div>
-          <AnimatePresence mode="popLayout">
-            {emojiStack.map((emoji, index) => (
-              <motion.div
-                key={emojiStack.length - index}
-                layout
-                initial={{ opacity: 0, scale: 0, translateY: -100 }}
-                animate={{ opacity: 1, scale: 1, translateY: 0 }}
-                transition={{ duration: 0.8, type: 'spring' }}
-              >
-                <div className="touch-manipulation select-none">
-                  <span>{emojiStack.length - index}回目</span>
-                  <span
-                    className={clsx({
-                      'mb-1 text-4xl': index === 0,
-                      'text-xl': index !== 0,
-                    })}
-                  >
-                    {emoji}
-                  </span>
-                  <span>
-                    ・・・
-                    {resultText(challengeResults[emojiStack.length - 1 - index])}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </div>
+      )}
+      <div>
+        <AnimatePresence mode="popLayout">
+          {emojiStack.map((emoji, index) => (
+            <motion.div
+              key={emojiStack.length - index}
+              layout
+              initial={{ opacity: 0, scale: 0, translateY: -100 }}
+              animate={{ opacity: 1, scale: 1, translateY: 0 }}
+              transition={{ duration: 0.8, type: 'spring' }}
+            >
+              <div className="touch-manipulation select-none">
+                <span>{emojiStack.length - index}回目</span>
+                <span
+                  className={clsx({
+                    'mb-1 text-4xl': index === 0,
+                    'text-xl': index !== 0,
+                  })}
+                >
+                  {emoji}
+                </span>
+                <span>
+                  ・・・
+                  {resultText(challengeResults[emojiStack.length - 1 - index])}
+                </span>
+              </div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
-    </Layout>
+    </div>
   );
 }

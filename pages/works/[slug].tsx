@@ -1,16 +1,14 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
-import Head from 'next/head';
 import Layout from '@/components/layouts/oneColumnLayout';
 import { client } from '@/lib/client';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
+import HeadMeta from '@/components/Head';
 
 export default function Work({ work }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Layout>
-      <Head>
-        <title>{work.title}</title>
-      </Head>
+      <HeadMeta type="article" title={work.title} />
 
       <article className="mx-auto max-w-2xl break-words">
         <Image
@@ -24,8 +22,6 @@ export default function Work({ work }: InferGetStaticPropsType<typeof getStaticP
         <h1 className="mb-4 text-2xl">{work.title}</h1>
         <p className="mb-8 text-base">{work.description}</p>
         <ReactMarkdown>{work.body}</ReactMarkdown>
-        {/* <DateFormat dateString={postData.date} /> */}
-        {/* <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} /> */}
       </article>
     </Layout>
   );
@@ -37,7 +33,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = items.map((item) => {
     return {
       params: {
-        id: item.slug,
+        slug: item.slug,
       },
     };
   });
@@ -48,7 +44,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  const data = await client.work({ slug: params.id });
+  const data = await client.work({ slug: params.slug });
   const work = data.workCollection.items.shift();
   return {
     props: { work },

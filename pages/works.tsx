@@ -3,19 +3,18 @@ import Layout from '@/components/layouts/oneColumnLayout';
 import { client } from '@/lib/client';
 import Image from 'next/image';
 import Link from 'next/link';
+import HeadMeta from '@/components/Head';
 
 const WorksPage = ({ works }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <Layout>
+      <HeadMeta type="website" title="作ったもの" />
+
       <h1 className="mb-3">作ったもの</h1>
 
       <ul className="grid grid-cols-auto-fit gap-4">
         {works.map((work) => (
-          <Link
-            href={`/works/${work.slug}`}
-            key={work.sys.id}
-            className="max-h-96 text-xl text-blue-500"
-          >
+          <Link href={`/works/${work.slug}`} key={work.sys.id} className="max-h-96 text-xl text-blue-500">
             <li
               className="h-full overflow-hidden rounded-lg
                          border-2 border-gray-200 border-opacity-60 shadow-lg

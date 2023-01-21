@@ -1,6 +1,6 @@
-import Head from 'next/head';
-import LabsLink from '../components/LabsLink';
-import Layout from '../components/layouts/oneColumnLayout';
+import HeadMeta from '@/components/Head';
+import LabsLink from '@/components/LabsLink';
+import Layout from '@/components/layouts/oneColumnLayout';
 import Switch from '@/components/Switch';
 import { useState } from 'react';
 
@@ -27,9 +27,7 @@ export default function Labs() {
 
   return (
     <>
-      <Head>
-        <title>Labs</title>
-      </Head>
+      <HeadMeta type="website" title="実験室" />
 
       <Layout>
         <h1 className="mb-3">実験室</h1>

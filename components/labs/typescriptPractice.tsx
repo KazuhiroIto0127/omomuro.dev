@@ -1,8 +1,6 @@
-import Head from 'next/head';
 import { User } from '@/models/User';
 import UserCard from '@/components/UserCard';
 import { useState } from 'react';
-import Layout from '@/components/layouts/oneColumnLayout';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export default function TypescriptPractice() {
@@ -41,11 +39,7 @@ export default function TypescriptPractice() {
     });
   }
   return (
-    <Layout>
-      <Head>
-        <title>typescriptの勉強！</title>
-      </Head>
-
+    <div>
       <h1 className="mb-2 text-xl font-bold">Typescriptについて勉強しよう！</h1>
 
       <button
@@ -126,6 +120,6 @@ export default function TypescriptPractice() {
           ))}
         </AnimatePresence>
       </div>
-    </Layout>
+    </div>
   );
 }

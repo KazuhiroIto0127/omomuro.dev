@@ -2,14 +2,13 @@ import Link from 'next/link';
 import Layout from '@/components/layouts/oneColumnLayout';
 import { TwitterLogoIcon, GitHubLogoIcon } from '@radix-ui/react-icons';
 import Image from 'next/image';
+import HeadMeta from '@/components/Head';
 
-export default function Home({
-  allPostsData,
-}: {
-  allPostsData: { date: string; title: string; id: string }[];
-}) {
+export default function Home() {
   return (
     <Layout>
+      <HeadMeta type="website" title="Home" />
+
       <section className="item-center ma-auto mt-16 mb-32 flex w-full flex-col justify-center text-center md:my-44 ">
         <div className="flex w-full justify-center">
           <h1

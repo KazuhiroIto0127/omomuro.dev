@@ -1,9 +1,12 @@
 import Layout from '@/components/layouts/oneColumnLayout';
 import Image from 'next/image';
+import HeadMeta from '@/components/Head';
 
 export default function About() {
   return (
     <Layout>
+      <HeadMeta type="website" title="自分のこと" />
+
       <div className="mx-auto max-w-2xl">
         <h1 className="mb-2">自分のこと</h1>
         <div
