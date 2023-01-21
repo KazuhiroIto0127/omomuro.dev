@@ -32,7 +32,7 @@ export default function Labs() {
       </Head>
 
       <Layout>
-        <h1 className="m-3 text-2xl">ラボ</h1>
+        <h1 className="mb-3">実験室</h1>
 
         <div className="grid grid-cols-auto-fit gap-4">
           {labsLinks.map((link) => (

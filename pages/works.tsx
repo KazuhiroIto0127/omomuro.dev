@@ -1,4 +1,4 @@
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { InferGetStaticPropsType } from 'next';
 import Layout from '@/components/layouts/oneColumnLayout';
 import { client } from '@/lib/client';
 import Image from 'next/image';
@@ -9,14 +9,23 @@ const WorksPage = ({ works }: InferGetStaticPropsType<typeof getStaticProps>) =>
     <Layout>
       <h1 className="mb-3">作ったもの</h1>
 
-      <ul className="flex flex-wrap gap-4">
+      <ul className="grid grid-cols-auto-fit gap-4">
         {works.map((work) => (
-          <Link href={`/works/${work.slug}`} key={work.sys.id} className="text-xl text-blue-500">
-            <li className="h-full overflow-hidden rounded-lg border-2 border-gray-200 border-opacity-60">
+          <Link
+            href={`/works/${work.slug}`}
+            key={work.sys.id}
+            className="max-h-96 text-xl text-blue-500"
+          >
+            <li
+              className="h-full overflow-hidden rounded-lg
+                         border-2 border-gray-200 border-opacity-60 shadow-lg
+                         shadow-indigo-300/40 transition ease-in-out hover:scale-105
+                         dark:bg-gray-600"
+            >
               <Image
                 priority
                 src={work.thumbnail.url}
-                className="h-[200px] w-[300px] object-cover object-center"
+                className="h-52 w-full bg-white object-cover object-center"
                 height={work.thumbnail.height}
                 width={work.thumbnail.width}
                 alt={work.thumbnail.fileName}
