@@ -13,8 +13,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [isOpenMobileSidebar, setIsOpenMobileSidebar] = useState<boolean>(false);
   return (
     <>
-      <Head />
-
       <div
         className={twMerge(
           clsx(
