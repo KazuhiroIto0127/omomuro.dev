@@ -1,4 +1,4 @@
 module.exports = {
-  siteUrl: 'omomuro.dev', // カスタムドメイン
+  siteUrl: 'https://omomuro.dev', // カスタムドメイン
   generateRobotsTxt: true,
 };
