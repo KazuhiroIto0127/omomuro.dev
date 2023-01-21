@@ -3,7 +3,11 @@ import Layout from '@/components/layouts/oneColumnLayout';
 import { TwitterLogoIcon, GitHubLogoIcon } from '@radix-ui/react-icons';
 import Image from 'next/image';
 
-export default function Home({ allPostsData }: { allPostsData: { date: string; title: string; id: string }[] }) {
+export default function Home({
+  allPostsData,
+}: {
+  allPostsData: { date: string; title: string; id: string }[];
+}) {
   return (
     <Layout>
       <section className="item-center ma-auto mt-16 mb-32 flex w-full flex-col justify-center text-center md:my-44 ">
@@ -107,6 +111,31 @@ export default function Home({ allPostsData }: { allPostsData: { date: string; t
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="mb-10 flex w-full flex-col items-center justify-center md:flex-row">
+        <div className="w-full md:w-1/2">
+          <div className="mx-auto w-fit">
+            <h2 className="mb-6 text-2xl font-bold md:text-2xl">実験室</h2>
+            <div>
+              <p className="mb-2 leading-7">なにか技術的なことを試したいときの場所だよ</p>
+              <Link className="block py-2 text-sky-400" href="/labs">
+                ＞もっと知りたい
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex w-full justify-center md:w-1/2">
+          <Image
+            priority
+            src="/images/jikken.png"
+            alt="neko"
+            className="transition-transform hover:scale-105"
+            height={400}
+            width={400}
+          />
         </div>
       </section>
     </Layout>
