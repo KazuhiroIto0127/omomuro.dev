@@ -68,12 +68,14 @@ export const usePageView = () => {
 export const GoogleAnalytics = () => {
   return (
     <>
-      <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
-      <Script
-        id="gtag-init"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
+      {existsGaId && (
+        <>
+          <Script strategy="afterInteractive" src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+          <Script
+            id="gtag-init"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
@@ -81,8 +83,10 @@ export const GoogleAnalytics = () => {
               page_path: window.location.pathname,
             });
           `,
-        }}
-      />
+            }}
+          />
+        </>
+      )}
     </>
   );
 };
