@@ -3,6 +3,7 @@ import Layout from '@/components/layouts/oneColumnLayout';
 import { TwitterLogoIcon, GitHubLogoIcon } from '@radix-ui/react-icons';
 import Image from 'next/image';
 import HeadMeta from '@/components/Head';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   return (
@@ -28,115 +29,133 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="mb-10 flex w-full flex-col items-center justify-center md:flex-row">
-        <div className="w-full md:w-1/2">
-          <div className="mx-auto w-fit">
-            <h2 className="mb-6 text-2xl font-bold md:text-2xl">自分のこと</h2>
-            <div>
-              <p className="mb-3 block font-bold">イトウ カズヒロ</p>
-              <p className="mb-2 leading-7">
-                1990年1月27日に生まれる
-                <br />
-                大分県出身、東京都在住
-                <br />
-                仕事はエンジニア
-                <br />
-                イラスト、プログラミングが趣味
-              </p>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, transition: { delay: 0.3 } }}
+        viewport={{ once: true }}
+      >
+        <section className="mb-10 flex w-full flex-col items-center justify-center md:flex-row">
+          <div className="w-full md:w-1/2">
+            <div className="mx-auto w-fit">
+              <h2 className="mb-6 text-2xl font-bold md:text-2xl">自分のこと</h2>
+              <div>
+                <p className="mb-3 block font-bold">イトウ カズヒロ</p>
+                <p className="mb-2 leading-7">
+                  1990年1月27日に生まれる
+                  <br />
+                  大分県出身、東京都在住
+                  <br />
+                  仕事はエンジニア
+                  <br />
+                  イラスト、プログラミングが趣味
+                </p>
 
-              <span className="flex py-2">
-                <a
-                  href="https://twitter.com/KazuhiroIto0127"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mr-3 h-6 w-6 hover:text-sky-400"
-                >
-                  <TwitterLogoIcon className="h-6 w-6" />
-                </a>
-                <a
-                  href="https://github.com/KazuhiroIto0127"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="h-6 w-6 hover:text-sky-400"
-                >
-                  <GitHubLogoIcon className="h-6 w-6" />
-                </a>
-              </span>
-              <Link className="block py-2 text-sky-400" href="/about">
-                ＞もっと知りたい
-              </Link>
+                <span className="flex py-2">
+                  <a
+                    href="https://twitter.com/KazuhiroIto0127"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mr-3 h-6 w-6 hover:text-sky-400"
+                  >
+                    <TwitterLogoIcon className="h-6 w-6" />
+                  </a>
+                  <a
+                    href="https://github.com/KazuhiroIto0127"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="h-6 w-6 hover:text-sky-400"
+                  >
+                    <GitHubLogoIcon className="h-6 w-6" />
+                  </a>
+                </span>
+                <Link className="block py-2 text-sky-400" href="/about">
+                  ＞もっと知りたい
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="flex w-full justify-center md:w-1/2">
-          <Image
-            priority
-            src="/images/neko.png"
-            alt="neko"
-            className="transition-transform hover:scale-105"
-            height={400}
-            width={400}
-          />
-        </div>
-      </section>
+          <div className="flex w-full justify-center md:w-1/2">
+            <Image
+              priority
+              src="/images/neko.png"
+              alt="neko"
+              className="transition-transform hover:scale-105"
+              height={400}
+              width={400}
+            />
+          </div>
+        </section>
+      </motion.div>
 
-      <section className="mb-10 flex w-full flex-col-reverse items-center justify-center md:flex-row">
-        <div className="flex w-full justify-center md:w-1/2">
-          <Image
-            priority
-            src="/images/works.png"
-            alt="works"
-            className="transition-transform hover:scale-105"
-            height={400}
-            width={400}
-          />
-        </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, transition: { delay: 0.3 } }}
+        viewport={{ once: true }}
+      >
+        <section className="mb-10 flex w-full flex-col-reverse items-center justify-center md:flex-row">
+          <div className="flex w-full justify-center md:w-1/2">
+            <Image
+              priority
+              src="/images/works.png"
+              alt="works"
+              className="transition-transform hover:scale-105"
+              height={400}
+              width={400}
+            />
+          </div>
 
-        <div className="w-full md:w-1/2">
-          <div className="mx-auto w-fit">
-            <h2 className="mb-6 text-2xl font-bold md:text-2xl">作ったもの</h2>
-            <div>
-              <p className="mb-2 leading-7">
-                iPhoneアプリ
-                <br />
-                ラインスタンプ
-                <br />
-                Webサービス
-                <br />
-              </p>
-              <Link className="block py-2 text-sky-400" href="/works">
-                ＞もっと知りたい
-              </Link>
+          <div className="w-full md:w-1/2">
+            <div className="mx-auto w-fit">
+              <h2 className="mb-6 text-2xl font-bold md:text-2xl">作ったもの</h2>
+              <div>
+                <p className="mb-2 leading-7">
+                  iPhoneアプリ
+                  <br />
+                  ラインスタンプ
+                  <br />
+                  Webサービス
+                  <br />
+                </p>
+                <Link className="block py-2 text-sky-400" href="/works">
+                  ＞もっと知りたい
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </motion.div>
 
-      <section className="mb-10 flex w-full flex-col items-center justify-center md:flex-row">
-        <div className="w-full md:w-1/2">
-          <div className="mx-auto w-fit">
-            <h2 className="mb-6 text-2xl font-bold md:text-2xl">実験室</h2>
-            <div>
-              <p className="mb-2 leading-7">なにか技術的なことを試したいときの場所だよ</p>
-              <Link className="block py-2 text-sky-400" href="/labs">
-                ＞もっと知りたい
-              </Link>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1, transition: { delay: 0.3 } }}
+        viewport={{ once: true }}
+      >
+        <section className="mb-10 flex w-full flex-col items-center justify-center md:flex-row">
+          <div className="w-full md:w-1/2">
+            <div className="mx-auto w-fit">
+              <h2 className="mb-6 text-2xl font-bold md:text-2xl">実験室</h2>
+              <div>
+                <p className="mb-2 leading-7">なにか技術的なことを試したいときの場所だよ</p>
+                <Link className="block py-2 text-sky-400" href="/labs">
+                  ＞もっと知りたい
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="flex w-full justify-center md:w-1/2">
-          <Image
-            priority
-            src="/images/jikken.png"
-            alt="neko"
-            className="transition-transform hover:scale-105"
-            height={400}
-            width={400}
-          />
-        </div>
-      </section>
+          <div className="flex w-full justify-center md:w-1/2">
+            <Image
+              priority
+              src="/images/jikken.png"
+              alt="neko"
+              className="transition-transform hover:scale-105"
+              height={400}
+              width={400}
+            />
+          </div>
+        </section>
+      </motion.div>
     </Layout>
   );
 }
