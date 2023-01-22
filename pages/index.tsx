@@ -78,7 +78,7 @@ export default function Home() {
           <div className="flex w-full justify-center md:w-1/2">
             <Image
               priority
-              src="/images/neko.png"
+              src="/images/programming.png"
               alt="neko"
               className="transition-transform hover:scale-105"
               height={400}
@@ -97,7 +97,7 @@ export default function Home() {
           <div className="flex w-full justify-center md:w-1/2">
             <Image
               priority
-              src="/images/works.png"
+              src="/images/mono.png"
               alt="works"
               className="transition-transform hover:scale-105"
               height={400}
@@ -147,8 +147,8 @@ export default function Home() {
           <div className="flex w-full justify-center md:w-1/2">
             <Image
               priority
-              src="/images/jikken.png"
-              alt="neko"
+              src="/images/labs.png"
+              alt="labs"
               className="transition-transform hover:scale-105"
               height={400}
               width={400}
