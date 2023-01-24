@@ -2,6 +2,40 @@ import Layout from '@/components/layouts/oneColumnLayout';
 import Image from 'next/image';
 import HeadMeta from '@/components/Head';
 import { AcademicCapIcon, CommandLineIcon } from '@heroicons/react/24/outline';
+import {
+  Ruby,
+  Rubyonrails,
+  Typescript,
+  Javascript,
+  Html5,
+  Vuedotjs,
+  Mysql,
+  Postgresql,
+  Nuxtdotjs,
+  CssThree,
+  ReactJs,
+  Tailwindcss,
+  Nextdotjs,
+  Figma,
+  Awslambda,
+  Amazonaws,
+  Firebase,
+  Vim,
+  Visualstudiocode,
+  Graphql,
+  Postman,
+  Redis,
+  Slack,
+  ItermTwo,
+  Swift,
+  Apple,
+  Chartdotjs,
+  Docker,
+  Gatsby,
+  Github,
+  Neovim,
+  Php,
+} from '@icons-pack/react-simple-icons';
 
 export default function About() {
   return (
@@ -117,12 +151,149 @@ export default function About() {
           </ol>
         </section>
 
-        <section className="mb-12">
+        <section className="mb-12 rounded-lg bg-gray-100 p-4 dark:bg-slate-800">
           <p className="mb-4 flex items-center">
             <CommandLineIcon className="mr-2 inline w-6" />
             <span>プログラミングについて</span>
           </p>
-          <p>HTML/CSS/Javascript</p>
+
+          <div className="mb-10">
+            <p className="mb-4 w-fit border-b-2 border-gray-300">業務で使ったことがある技術、言語</p>
+            <ul className="flex flex-wrap gap-8">
+              <li className="flex flex-col items-center justify-center">
+                <Ruby width={30} height={30} className="mb-2 text-red-500" />
+                <span className="text-sm text-gray-500">Ruby</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Rubyonrails width={30} height={30} className="mb-2 text-red-500" />
+                <span className="text-sm text-gray-500">Rails</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Nuxtdotjs width={30} height={30} className="mb-2 text-green-500" />
+                <span className="text-sm text-gray-500">Nuxt.js</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Vuedotjs width={30} height={30} className="mb-2 text-green-500" />
+                <span className="text-sm text-gray-500">Vue.js</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Typescript width={30} height={30} className="mb-2 text-blue-500" />
+                <span className="text-sm text-gray-500">Typescript</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Javascript width={30} height={30} className="mb-2 text-yellow-500" />
+                <span className="text-sm text-gray-500">Javascript</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Html5 width={30} height={30} className="mb-2 text-red-500" />
+                <span className="text-sm text-gray-500">Html5</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <CssThree width={30} height={30} className="mb-2 text-blue-500" />
+                <span className="text-sm text-gray-500">CSS3</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Mysql width={30} height={30} className="mb-2" />
+                <span className="text-sm text-gray-500">Mysql</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Postgresql width={30} height={30} className="mb-2" />
+                <span className="text-sm text-gray-500">Postgresql</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Redis width={30} height={30} className="mb-2 text-red-500" />
+                <span className="text-sm text-gray-500">Redis</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Amazonaws width={30} height={30} className="mb-2" />
+                <span className="text-sm text-gray-500">AWS</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Chartdotjs width={30} height={30} className="mb-2 text-pink-300" />
+                <span className="text-sm text-gray-500">Chart.js</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Docker width={30} height={30} className="mb-2 text-cyan-400" />
+                <span className="text-sm text-gray-500">Docker</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="mb-10">
+            <p className="mb-4 w-fit border-b-2 border-gray-300">趣味で使った技術、言語</p>
+            <ul className="flex flex-wrap gap-8">
+              <li className="flex flex-col items-center justify-center">
+                <ReactJs width={30} height={30} className="mb-2 text-blue-500" />
+                <span className="text-sm text-gray-500">React.js</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Tailwindcss width={30} height={30} className="mb-2 text-blue-200" />
+                <span className="text-sm text-gray-500">Tailwindcss</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Gatsby width={30} height={30} className="mb-2 text-purple-500" />
+                <span className="text-sm text-gray-500">Gatsby</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Nextdotjs width={30} height={30} className="mb-2" />
+                <span className="text-sm text-gray-500">Next.js</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Firebase width={30} height={30} className="mb-2 text-yellow-500" />
+                <span className="text-sm text-gray-500">Firebase</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Graphql width={30} height={30} className="mb-2 text-pink-500" />
+                <span className="text-sm text-gray-500">Graphql</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Swift width={30} height={30} className="mb-2 text-orange-500" />
+                <span className="text-sm text-gray-500">Swift</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Php width={30} height={30} className="mb-2 text-purple-300" />
+                <span className="text-sm text-gray-500">PHP</span>
+              </li>
+            </ul>
+          </div>
+
+          <div className="mb-10">
+            <p className="mb-4 w-fit border-b-2 border-gray-300">開発環境、ツールたち</p>
+            <ul className="flex flex-wrap gap-8">
+              <li className="flex flex-col items-center justify-center">
+                <Neovim width={30} height={30} className="mb-2 text-green-500" />
+                <span className="text-sm text-gray-500">Neovim</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Visualstudiocode width={30} height={30} className="mb-2 text-blue-500" />
+                <span className="text-sm text-gray-500">VS Code</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <ItermTwo width={30} height={30} className="mb-2" />
+                <span className="text-sm text-gray-500">Iterm2</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Figma width={30} height={30} className="mb-2 text-red-300" />
+                <span className="text-sm text-gray-500">Figma</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Postman width={30} height={30} className="mb-2 text-orange-500" />
+                <span className="text-sm text-gray-500">Postman</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Slack width={30} height={30} className="mb-2 text-purple-400" />
+                <span className="text-sm text-gray-500">Slack</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Github width={30} height={30} className="mb-2" />
+                <span className="text-sm text-gray-500">Github</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Apple width={30} height={30} className="mb-2" />
+                <span className="text-sm text-gray-500">Apple</span>
+              </li>
+            </ul>
+          </div>
         </section>
       </div>
     </Layout>
