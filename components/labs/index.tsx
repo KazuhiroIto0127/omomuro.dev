@@ -1,6 +1,7 @@
 import RandomEmojiChallenge from './randomEmojiChallenge';
 import TypescriptPractice from './typescriptPractice';
 import RadixUiPractice from './radixUiPractice';
+import GridCssPractice from './gridCssPractice';
 
 export const labsLinks = [
   {
@@ -16,6 +17,7 @@ export const labsLinks = [
     component: TypescriptPractice,
   },
   { title: 'RadixUIの練習', id: 'radixUiPractice', emoji: '🐶', component: RadixUiPractice },
+  { title: 'gridCSSの練習', id: 'gridCssPractice', emoji: '👔', component: GridCssPractice },
 ];
 
 export const labsLinkPattern = labsLinks.map((obj) => obj.id);
