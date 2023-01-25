@@ -1,12 +1,12 @@
 import { GetStaticPaths } from 'next';
 import Layout from '@/components/layouts/oneColumnLayout';
 import HeadMeta from '@/components/Head';
-import { LabsComponent, labsLinkPattern, labTitles } from '@/components/labs/index';
+import { LabsComponent, labsLinkPattern, labTitleById } from '@/components/labs/index';
 
 export default function Lab({ id }) {
   return (
     <Layout>
-      <HeadMeta type="article" title={labTitles[id]} />
+      <HeadMeta type="article" title={labTitleById(id)} />
 
       <LabsComponent id={id} />
     </Layout>
