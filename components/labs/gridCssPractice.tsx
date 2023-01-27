@@ -1,6 +1,8 @@
 const GridCssPractice = () => {
   return (
     <>
+      <h1 className="mb-2 text-lg font-bold">TailwindでGridを学ぶ！</h1>
+      <p className="mb-8">gridにおいての頻出ワード：列、行、ライン、セル、トラック</p>
       <section className="mb-8">
         <p className="font-bold">grid-col-3</p>
         <p className="mb-3 text-sm">3列。左から並べて折り返して表示</p>
@@ -54,6 +56,20 @@ const GridCssPractice = () => {
           <div className="flex h-10 w-full items-center justify-center rounded-md bg-yellow-500">4</div>
           <div className="flex h-10 w-full items-center justify-center rounded-md bg-gray-500">5</div>
           <div className="flex h-10 w-full items-center justify-center rounded-md bg-purple-500">6</div>
+        </div>
+      </section>
+
+      <section className="mb-8">
+        <p className="font-bold">rowとcolを指定して応用</p>
+        <p className="mb-3 text-sm">spanやstartを利用</p>
+        <div className="grid grid-flow-col grid-cols-3 grid-rows-3 gap-4">
+          <div className="flex h-full w-full items-center justify-center rounded-md bg-red-500">1</div>
+          <div className="row-span-2 flex h-full w-full items-center justify-center rounded-md bg-blue-500">2</div>
+          <div className="row-span-2 flex h-full w-full items-center justify-center rounded-md bg-green-500">3</div>
+          <div className="row-span-2 flex h-full w-full items-center justify-center rounded-md bg-yellow-500">4</div>
+          <div className="col-start-2 col-end-4 row-start-3 flex h-full w-full items-center justify-center rounded-md bg-gray-500">
+            5
+          </div>
         </div>
       </section>
     </>
