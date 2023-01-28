@@ -14,7 +14,7 @@ export default function Home() {
         <div className="flex w-full justify-center">
           <h1
             className="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text pb-11 text-5xl
-                         font-extrabold tracking-tight text-transparent transition-transform hover:scale-105 md:text-7xl"
+                         font-extrabold tracking-tight text-transparent transition-transform hover:scale-105 md:text-8xl"
           >
             Hello World.
             <br />
