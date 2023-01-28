@@ -11,7 +11,7 @@ export default function Labs() {
       <Layout>
         <h1 className="mb-3">実験室</h1>
 
-        <div className="grid grid-cols-auto-fit gap-4">
+        <div className="grid gap-4 md:grid-cols-4">
           {labsLinks.map((link) => (
             <LabsLink title={link.title} id={link.id} emoji={link.emoji} key={link.id} />
           ))}

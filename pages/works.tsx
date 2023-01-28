@@ -12,7 +12,7 @@ const WorksPage = ({ works }: InferGetStaticPropsType<typeof getStaticProps>) =>
 
       <h1 className="mb-3">作ったもの</h1>
 
-      <ul className="grid grid-cols-auto-fit gap-4">
+      <ul className="grid gap-4 md:grid-cols-4">
         {works.map((work) => (
           <Link href={`/works/${work.slug}`} key={work.sys.id} className="max-h-96 text-xl text-blue-500">
             <li
