@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Layout from '@/components/layouts/oneColumnLayout';
-import { TwitterLogoIcon, GitHubLogoIcon } from '@radix-ui/react-icons';
 import Image from 'next/image';
 import HeadMeta from '@/components/Head';
 import { motion } from 'framer-motion';
@@ -49,25 +48,6 @@ export default function Home() {
                   <br />
                   イラスト、プログラミングが趣味
                 </p>
-
-                <span className="flex py-2">
-                  <a
-                    href="https://twitter.com/KazuhiroIto0127"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mr-3 h-6 w-6 hover:text-sky-400"
-                  >
-                    <TwitterLogoIcon className="h-6 w-6" />
-                  </a>
-                  <a
-                    href="https://github.com/KazuhiroIto0127"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="h-6 w-6 hover:text-sky-400"
-                  >
-                    <GitHubLogoIcon className="h-6 w-6" />
-                  </a>
-                </span>
                 <Link className="block py-2 text-sky-400" href="/about">
                   ＞もっと知りたい
                 </Link>
