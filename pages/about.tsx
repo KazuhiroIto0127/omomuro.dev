@@ -42,8 +42,8 @@ export default function About() {
       <HeadMeta type="website" title="自分のこと" />
 
       <h1 className="mb-2">自分のこと</h1>
-      <div className="grid-col-1 md:grid-col-2 lg:grid-col-3 md:grid-row-5 grid gap-4 md:grid-flow-col">
-        <section className="row-span-2">
+      <div className="grid-col-1 md:grid-col-2 lg:grid-col-3 md:grid-row-5 grid gap-5 md:grid-flow-col">
+        <section className="row-span-2 rounded-md p-3 shadow-lg">
           <div
             className="grid grid-cols-2 place-items-center rounded-lg bg-slate-100 p-3 dark:bg-slate-600"
             style={{
@@ -67,7 +67,7 @@ export default function About() {
             </div>
           </div>
 
-          <p className="px-3 pt-3 leading-7">
+          <p className="pt-3 leading-7">
             はじめまして！こんにちは。
             <br /> こんなところまで見て頂きとても嬉しいです！
             <br /> このomomuro.devは、私のポートフォリオのようなサイトになります。
@@ -76,7 +76,7 @@ export default function About() {
         </section>
 
         <section
-          className="rounded-lg bg-slate-100 p-4 dark:bg-slate-600 md:row-span-2 md:row-start-3 md:row-end-5"
+          className="rounded-lg bg-slate-100 p-4 shadow-lg dark:bg-slate-600 md:row-span-2 md:row-start-3 md:row-end-5"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"
           )`,
@@ -158,7 +158,7 @@ export default function About() {
           </ol>
         </section>
 
-        <section className="rounded-lg bg-gray-100 p-4 dark:bg-slate-600 md:col-start-2 md:row-span-3">
+        <section className="rounded-lg bg-gray-100 p-4 shadow-lg dark:bg-slate-600 md:col-start-2 md:row-span-3">
           <p className="mb-4 flex items-center">
             <CommandLineIcon className="mr-2 inline w-6" />
             <span>プログラミングについて</span>
@@ -303,7 +303,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="rounded-lg bg-gray-100 p-4 dark:bg-slate-600 md:col-start-2 md:row-span-1 md:row-start-1 lg:col-start-3">
+        <section className="rounded-lg bg-gray-100 p-4 shadow-lg dark:bg-slate-600 md:col-start-2 md:row-span-1 md:row-start-1 lg:col-start-3">
           <p className="mb-4 flex items-center">
             <LinkIcon className="mr-2 inline w-6" />
             <span>SNSリンク</span>
