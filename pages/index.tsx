@@ -124,7 +124,7 @@ export default function Home() {
               priority
               src="/images/labs.png"
               alt="labs"
-              className="w-full transition-transform group-hover:scale-150"
+              className="w-full transition-transform group-hover:translate-y-5 group-hover:rotate-45 group-hover:scale-150"
               height={400}
               width={400}
             />
