@@ -12,7 +12,7 @@ export default function Home() {
       <section className="item-center ma-auto mt-16 mb-32 flex w-full flex-col justify-center text-center md:my-44 ">
         <div className="flex w-full justify-center">
           <h1
-            className="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text pb-11 text-5xl
+            className="bg-gradient-to-r from-cyan-500 to-blue-500 bg-clip-text pb-11 text-6xl
                          font-extrabold tracking-tight text-transparent transition-transform hover:scale-105 md:text-8xl"
           >
             Hello World.
@@ -28,15 +28,18 @@ export default function Home() {
         </p>
       </section>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1, transition: { delay: 0.3 } }}
-        viewport={{ once: true }}
-      >
-        <section className="mb-10 flex w-full flex-col items-center justify-center md:flex-row">
-          <div className="w-full md:w-1/2">
-            <div className="mx-auto w-fit">
-              <h2 className="mb-6 text-2xl font-bold md:text-2xl">自分のこと</h2>
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-10">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, transition: { delay: 0.3 } }}
+          viewport={{ once: true }}
+        >
+          <Link
+            href="/about"
+            className="group grid grid-cols-2 place-items-center overflow-hidden rounded-lg border bg-sky-100 p-8 dark:border-gray-500 dark:bg-gray-600"
+          >
+            <div>
+              <h2 className="mb-6 text-3xl font-bold md:text-4xl">自分のこと</h2>
               <div>
                 <p className="mb-3 block font-bold">イトウ カズヒロ</p>
                 <p className="mb-2 leading-7">
@@ -48,46 +51,41 @@ export default function Home() {
                   <br />
                   イラスト、プログラミングが趣味
                 </p>
-                <Link className="block py-2 text-sky-400" href="/about">
-                  ＞もっと知りたい
-                </Link>
+                <p className="py-2 text-sky-400">＞もっと知りたい</p>
               </div>
             </div>
-          </div>
 
-          <div className="flex w-full justify-center md:w-1/2">
             <Image
               priority
               src="/images/programming.png"
               alt="neko"
-              className="transition-transform hover:scale-105"
+              className="h-36 w-36 transition-transform group-hover:scale-150 md:h-48 md:w-48"
               height={400}
               width={400}
             />
-          </div>
-        </section>
-      </motion.div>
+          </Link>
+        </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1, transition: { delay: 0.3 } }}
-        viewport={{ once: true }}
-      >
-        <section className="mb-10 flex w-full flex-col-reverse items-center justify-center md:flex-row">
-          <div className="flex w-full justify-center md:w-1/2">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, transition: { delay: 0.3 } }}
+          viewport={{ once: true }}
+        >
+          <Link
+            href="/works"
+            className="group grid grid-cols-2 place-items-center overflow-hidden rounded-lg border bg-sky-100 p-8 dark:border-gray-500 dark:bg-gray-600"
+          >
             <Image
               priority
               src="/images/mono.png"
               alt="works"
-              className="transition-transform hover:scale-105"
+              className="h-36 w-36 transition-transform group-hover:scale-150 md:h-48 md:w-48"
               height={400}
               width={400}
             />
-          </div>
 
-          <div className="w-full md:w-1/2">
-            <div className="mx-auto w-fit">
-              <h2 className="mb-6 text-2xl font-bold md:text-2xl">作ったもの</h2>
+            <div>
+              <h2 className="mb-6 text-3xl font-bold md:text-4xl">作ったもの</h2>
               <div>
                 <p className="mb-2 leading-7">
                   iPhoneアプリ
@@ -97,45 +95,40 @@ export default function Home() {
                   Webサービス
                   <br />
                 </p>
-                <Link className="block py-2 text-sky-400" href="/works">
-                  ＞もっと知りたい
-                </Link>
+                <p className="block py-2 text-sky-400">＞もっと知りたい</p>
               </div>
             </div>
-          </div>
-        </section>
-      </motion.div>
+          </Link>
+        </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1, transition: { delay: 0.3 } }}
-        viewport={{ once: true }}
-      >
-        <section className="mb-10 flex w-full flex-col items-center justify-center md:flex-row">
-          <div className="w-full md:w-1/2">
-            <div className="mx-auto w-fit">
-              <h2 className="mb-6 text-2xl font-bold md:text-2xl">実験室</h2>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, transition: { delay: 0.3 } }}
+          viewport={{ once: true }}
+        >
+          <Link
+            href="/labs"
+            className="group grid grid-cols-2 place-items-center overflow-hidden rounded-lg border bg-sky-100 p-8 dark:border-gray-500 dark:bg-gray-600"
+          >
+            <div>
+              <h2 className="mb-6 text-3xl font-bold md:text-4xl">実験室</h2>
               <div>
                 <p className="mb-2 leading-7">なにか技術的なことを試したいときの場所だよ</p>
-                <Link className="block py-2 text-sky-400" href="/labs">
-                  ＞もっと知りたい
-                </Link>
+                <p className="block py-2 text-sky-400">＞もっと知りたい</p>
               </div>
             </div>
-          </div>
 
-          <div className="flex w-full justify-center md:w-1/2">
             <Image
               priority
               src="/images/labs.png"
               alt="labs"
-              className="transition-transform hover:scale-105"
+              className="h-36 w-36 transition-transform group-hover:scale-150 md:h-48 md:w-48"
               height={400}
               width={400}
             />
-          </div>
-        </section>
-      </motion.div>
+          </Link>
+        </motion.div>
+      </div>
     </Layout>
   );
 }
