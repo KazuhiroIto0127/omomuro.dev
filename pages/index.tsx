@@ -36,30 +36,30 @@ export default function Home() {
         >
           <Link
             href="/about"
-            className="group grid grid-cols-2 place-items-center overflow-hidden rounded-lg border bg-sky-100 p-8 dark:border-gray-500 dark:bg-gray-600"
+            className="group grid grid-cols-2 place-items-center gap-4 overflow-hidden rounded-lg border bg-sky-100 py-5 px-8 dark:border-gray-500 dark:bg-gray-600"
           >
+            <div className="col-span-2 mb-4">
+              <h2 className="text-3xl font-bold md:text-4xl">自分のこと</h2>
+            </div>
             <div>
-              <h2 className="mb-6 text-3xl font-bold md:text-4xl">自分のこと</h2>
-              <div>
-                <p className="mb-3 block font-bold">イトウ カズヒロ</p>
-                <p className="mb-2 leading-7">
-                  1990年1月27日に生まれる
-                  <br />
-                  大分県出身、東京都在住
-                  <br />
-                  仕事はエンジニア
-                  <br />
-                  イラスト、プログラミングが趣味
-                </p>
-                <p className="py-2 text-sky-400">＞もっと知りたい</p>
-              </div>
+              <p className="mb-3 block font-bold">イトウ カズヒロ</p>
+              <p className="mb-2 leading-7">
+                1990年1月27日に生まれる
+                <br />
+                大分県出身、東京都在住
+                <br />
+                仕事はエンジニア
+                <br />
+                イラスト、プログラミングが趣味
+              </p>
+              <p className="py-2 text-sky-400">＞もっと知りたい</p>
             </div>
 
             <Image
               priority
               src="/images/programming.png"
               alt="neko"
-              className="h-36 w-36 transition-transform group-hover:scale-150 md:h-48 md:w-48"
+              className="w-full transition-transform group-hover:scale-150"
               height={400}
               width={400}
             />
@@ -73,30 +73,30 @@ export default function Home() {
         >
           <Link
             href="/works"
-            className="group grid grid-cols-2 place-items-center overflow-hidden rounded-lg border bg-sky-100 p-8 dark:border-gray-500 dark:bg-gray-600"
+            className="group grid grid-cols-2 place-items-center gap-4 overflow-hidden rounded-lg border bg-sky-100 py-5 px-8 dark:border-gray-500 dark:bg-gray-600"
           >
+            <div className="col-span-2 mb-4">
+              <h2 className="text-3xl font-bold md:text-4xl">作ったもの</h2>
+            </div>
             <Image
               priority
               src="/images/mono.png"
               alt="works"
-              className="h-36 w-36 transition-transform group-hover:scale-150 md:h-48 md:w-48"
+              className="w-full transition-transform group-hover:scale-150"
               height={400}
               width={400}
             />
 
             <div>
-              <h2 className="mb-6 text-3xl font-bold md:text-4xl">作ったもの</h2>
-              <div>
-                <p className="mb-2 leading-7">
-                  iPhoneアプリ
-                  <br />
-                  ラインスタンプ
-                  <br />
-                  Webサービス
-                  <br />
-                </p>
-                <p className="block py-2 text-sky-400">＞もっと知りたい</p>
-              </div>
+              <p className="mb-2 leading-7">
+                iPhoneアプリ
+                <br />
+                ラインスタンプ
+                <br />
+                Webサービス
+                <br />
+              </p>
+              <p className="block py-2 text-sky-400">＞もっと知りたい</p>
             </div>
           </Link>
         </motion.div>
@@ -108,10 +108,12 @@ export default function Home() {
         >
           <Link
             href="/labs"
-            className="group grid grid-cols-2 place-items-center overflow-hidden rounded-lg border bg-sky-100 p-8 dark:border-gray-500 dark:bg-gray-600"
+            className="group grid grid-cols-2 place-items-center gap-4 overflow-hidden rounded-lg border bg-sky-100 py-5 px-8 dark:border-gray-500 dark:bg-gray-600"
           >
+            <div className="col-span-2 mb-4">
+              <h2 className="text-3xl font-bold md:text-4xl">実験室</h2>
+            </div>
             <div>
-              <h2 className="mb-6 text-3xl font-bold md:text-4xl">実験室</h2>
               <div>
                 <p className="mb-2 leading-7">なにか技術的なことを試したいときの場所だよ</p>
                 <p className="block py-2 text-sky-400">＞もっと知りたい</p>
@@ -122,7 +124,7 @@ export default function Home() {
               priority
               src="/images/labs.png"
               alt="labs"
-              className="h-36 w-36 transition-transform group-hover:scale-150 md:h-48 md:w-48"
+              className="w-full transition-transform group-hover:scale-150"
               height={400}
               width={400}
             />
