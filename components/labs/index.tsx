@@ -1,4 +1,4 @@
-import RandomEmojiChallenge from './randomEmojiChallenge';
+import RandomEmojiChallenge from './randomEmojiChallenge/randomEmojiChallenge';
 import TypescriptPractice from './typescriptPractice';
 import RadixUiPractice from './radixUiPractice';
 import GridCssPractice from './gridCssPractice';

@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/src/app # ローカルをコンテナ内にマウント
+    command: sh -c "yarn dev"
+    ports:
+      - "3000:3000"
+    stdin_open: true
