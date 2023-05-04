@@ -34,6 +34,7 @@ import {
   Github,
   Neovim,
   Php,
+  Go
 } from '@icons-pack/react-simple-icons';
 
 export default function About() {
@@ -236,6 +237,10 @@ export default function About() {
           <div className="mb-10">
             <p className="mb-4 w-fit border-b-2 border-gray-300">趣味で使った技術、言語</p>
             <ul className="grid grid-flow-row grid-cols-5 gap-8">
+              <li className="flex flex-col items-center justify-center">
+                <Go width={30} height={30} className="mb-2 text-blue-200" />
+                <span className="text-sm text-gray-400">Go</span>
+              </li>
               <li className="flex flex-col items-center justify-center">
                 <ReactJs width={30} height={30} className="mb-2 text-blue-500" />
                 <span className="text-sm text-gray-400">React.js</span>
