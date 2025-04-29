@@ -11,7 +11,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
-    "codegen": "npx graphql-codegen"
+    "codegen": "node -r dotenv/config ./node_modules/.bin/graphql-codegen"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.2",
