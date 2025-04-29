@@ -4,37 +4,35 @@ import HeadMeta from '@/components/Head';
 import { TwitterLogoIcon, GitHubLogoIcon } from '@radix-ui/react-icons';
 import { AcademicCapIcon, CommandLineIcon, LinkIcon } from '@heroicons/react/24/outline';
 import {
-  Ruby,
-  Rubyonrails,
-  Typescript,
-  Javascript,
-  Html5,
-  Vuedotjs,
-  Mysql,
-  Postgresql,
-  Nuxtdotjs,
-  CssThree,
-  ReactJs,
-  Tailwindcss,
-  Nextdotjs,
-  Figma,
-  Amazonaws,
-  Firebase,
-  Visualstudiocode,
-  Graphql,
-  Postman,
-  Redis,
-  Slack,
-  ItermTwo,
-  Swift,
-  Apple,
-  Chartdotjs,
-  Docker,
-  Gatsby,
-  Github,
-  Neovim,
-  Php,
-  Go
+  Siruby,
+  Sirubyonrails,
+  Sitypescript,
+  Sijavascript,
+  Sihtml5,
+  Sivuedotjs,
+  Simysql,
+  Sipostgresql,
+  Sinuxtdotjs,
+  Sireact,
+  Sitailwindcss,
+  Sinextdotjs,
+  Sifigma,
+  Siamazonaws,
+  Sifirebase,
+  Sivisualstudiocode,
+  Sigraphql,
+  Sipostman,
+  Siredis,
+  Sislack,
+  Siswift,
+  Siapple,
+  Sichartdotjs,
+  Sidocker,
+  Sigatsby,
+  Sigithub,
+  Sineovim,
+  Siphp,
+  Sigo
 } from '@icons-pack/react-simple-icons';
 
 export default function About() {
@@ -176,59 +174,58 @@ export default function About() {
             <p className="mb-4 w-fit border-b-2 border-gray-300">業務で使ったことがある技術、言語</p>
             <ul className="grid grid-flow-row grid-cols-5 gap-8">
               <li className="flex flex-col items-center justify-center">
-                <Ruby width={30} height={30} className="mb-2 text-red-500" />
+                <Siruby width={30} height={30} className="mb-2 text-red-500" />
                 <span className="text-sm text-gray-400">Ruby</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Rubyonrails width={30} height={30} className="mb-2 text-red-500" />
+                <Sirubyonrails width={30} height={30} className="mb-2 text-red-500" />
                 <span className="text-sm text-gray-400">Rails</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Nuxtdotjs width={30} height={30} className="mb-2 text-green-500" />
+                <Sinuxtdotjs width={30} height={30} className="mb-2 text-green-500" />
                 <span className="text-sm text-gray-400">Nuxt.js</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Vuedotjs width={30} height={30} className="mb-2 text-green-500" />
+                <Sivuedotjs width={30} height={30} className="mb-2 text-green-500" />
                 <span className="text-sm text-gray-400">Vue.js</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Typescript width={30} height={30} className="mb-2 text-blue-500" />
+                <Sitypescript width={30} height={30} className="mb-2 text-blue-500" />
                 <span className="text-sm text-gray-400">Typescript</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Javascript width={30} height={30} className="mb-2 text-yellow-500" />
+                <Sijavascript width={30} height={30} className="mb-2 text-yellow-500" />
                 <span className="text-sm text-gray-400">Javascript</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Html5 width={30} height={30} className="mb-2 text-red-500" />
+                <Sihtml5 width={30} height={30} className="mb-2 text-red-500" />
                 <span className="text-sm text-gray-400">Html5</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <CssThree width={30} height={30} className="mb-2 text-blue-500" />
                 <span className="text-sm text-gray-400">CSS3</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Mysql width={30} height={30} className="mb-2" />
+                <Simysql width={30} height={30} className="mb-2" />
                 <span className="text-sm text-gray-400">Mysql</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Postgresql width={30} height={30} className="mb-2" />
+                <Sipostgresql width={30} height={30} className="mb-2" />
                 <span className="text-sm text-gray-400">Postgresql</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Redis width={30} height={30} className="mb-2 text-red-500" />
+                <Siredis width={30} height={30} className="mb-2 text-red-500" />
                 <span className="text-sm text-gray-400">Redis</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Amazonaws width={30} height={30} className="mb-2" />
+                <Siamazonaws width={30} height={30} className="mb-2" />
                 <span className="text-sm text-gray-400">AWS</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Chartdotjs width={30} height={30} className="mb-2 text-pink-300" />
+                <Sichartdotjs width={30} height={30} className="mb-2 text-pink-300" />
                 <span className="text-sm text-gray-400">Chart.js</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Docker width={30} height={30} className="mb-2 text-cyan-400" />
+                <Sidocker width={30} height={30} className="mb-2 text-cyan-400" />
                 <span className="text-sm text-gray-400">Docker</span>
               </li>
             </ul>
@@ -238,39 +235,39 @@ export default function About() {
             <p className="mb-4 w-fit border-b-2 border-gray-300">趣味で使った技術、言語</p>
             <ul className="grid grid-flow-row grid-cols-5 gap-8">
               <li className="flex flex-col items-center justify-center">
-                <Go width={30} height={30} className="mb-2 text-blue-200" />
+                <Sigo width={30} height={30} className="mb-2 text-blue-200" />
                 <span className="text-sm text-gray-400">Go</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <ReactJs width={30} height={30} className="mb-2 text-blue-500" />
+                <Sireact width={30} height={30} className="mb-2 text-blue-500" />
                 <span className="text-sm text-gray-400">React.js</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Tailwindcss width={30} height={30} className="mb-2 text-blue-200" />
+                <Sitailwindcss width={30} height={30} className="mb-2 text-blue-200" />
                 <span className="text-sm text-gray-400">Tailwindcss</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Gatsby width={30} height={30} className="mb-2 text-purple-500" />
+                <Sigatsby width={30} height={30} className="mb-2 text-purple-500" />
                 <span className="text-sm text-gray-400">Gatsby</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Nextdotjs width={30} height={30} className="mb-2" />
+                <Sinextdotjs width={30} height={30} className="mb-2" />
                 <span className="text-sm text-gray-400">Next.js</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Firebase width={30} height={30} className="mb-2 text-yellow-500" />
+                <Sifirebase width={30} height={30} className="mb-2 text-yellow-500" />
                 <span className="text-sm text-gray-400">Firebase</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Graphql width={30} height={30} className="mb-2 text-pink-500" />
+                <Sigraphql width={30} height={30} className="mb-2 text-pink-500" />
                 <span className="text-sm text-gray-400">Graphql</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Swift width={30} height={30} className="mb-2 text-orange-500" />
+                <Siswift width={30} height={30} className="mb-2 text-orange-500" />
                 <span className="text-sm text-gray-400">Swift</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Php width={30} height={30} className="mb-2 text-purple-300" />
+                <Siphp width={30} height={30} className="mb-2 text-purple-300" />
                 <span className="text-sm text-gray-400">PHP</span>
               </li>
             </ul>
@@ -280,35 +277,34 @@ export default function About() {
             <p className="mb-4 w-fit border-b-2 border-gray-300">開発環境、ツールたち</p>
             <ul className="grid grid-flow-row grid-cols-5 gap-8">
               <li className="flex flex-col items-center justify-center">
-                <Neovim width={30} height={30} className="mb-2 text-green-500" />
+                <Sineovim width={30} height={30} className="mb-2 text-green-500" />
                 <span className="text-sm text-gray-400">Neovim</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Visualstudiocode width={30} height={30} className="mb-2 text-blue-500" />
+                <Sivisualstudiocode width={30} height={30} className="mb-2 text-blue-500" />
                 <span className="text-sm text-gray-400">VS Code</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <ItermTwo width={30} height={30} className="mb-2" />
                 <span className="text-sm text-gray-400">Iterm2</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Figma width={30} height={30} className="mb-2 text-red-300" />
+                <Sifigma width={30} height={30} className="mb-2 text-red-300" />
                 <span className="text-sm text-gray-400">Figma</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Postman width={30} height={30} className="mb-2 text-orange-500" />
+                <Sipostman width={30} height={30} className="mb-2 text-orange-500" />
                 <span className="text-sm text-gray-400">Postman</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Slack width={30} height={30} className="mb-2 text-purple-400" />
+                <Sislack width={30} height={30} className="mb-2 text-purple-400" />
                 <span className="text-sm text-gray-400">Slack</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Github width={30} height={30} className="mb-2" />
+                <Sigithub width={30} height={30} className="mb-2" />
                 <span className="text-sm text-gray-400">Github</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Apple width={30} height={30} className="mb-2" />
+                <Siapple width={30} height={30} className="mb-2" />
                 <span className="text-sm text-gray-400">Apple</span>
               </li>
             </ul>
