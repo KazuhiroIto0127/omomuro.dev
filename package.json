@@ -43,7 +43,6 @@
     "@graphql-codegen/introspection": "^4.0.3",
     "@graphql-codegen/schema-ast": "^4.1.0",
     "@graphql-codegen/typescript": "^4.1.6",
-    "@graphql-codegen/typescript-graphql-request": "^6.2.0",
     "@graphql-codegen/typescript-operations": "^4.6.0",
     "@types/gtag.js": "^0.0.20",
     "@types/node": "^22.15.3",
