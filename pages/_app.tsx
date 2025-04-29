@@ -1,6 +1,6 @@
 import '/styles/globals.css';
 import { AppProps } from 'next/app';
-import { Zen_Maru_Gothic } from '@next/font/google';
+import { Zen_Maru_Gothic } from 'next/font/google';
 import { GlobalProvider } from '@/context/global-state-provider';
 import { ThemeProvider } from 'next-themes';
 import { Analytics } from '@vercel/analytics/react';
@@ -8,7 +8,7 @@ import { usePageView, GoogleAnalytics } from '@/components/gtag';
 
 const zenMaruGothic = Zen_Maru_Gothic({
   weight: ['400', '700', '900'],
-  subsets: ['japanese', 'latin'],
+  subsets: ['latin'],
   display: 'swap',
 });
 
