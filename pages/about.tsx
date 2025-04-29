@@ -40,6 +40,7 @@ import {
   Si1password,
   SiWarp,
 } from '@icons-pack/react-simple-icons';
+import SkillIcon from '@/components/about/SkillIcon';
 
 export default function About() {
   return (
@@ -177,153 +178,53 @@ export default function About() {
           </p>
 
           <div className="mb-10">
-            <p className="mb-4 w-fit border-b-2 border-gray-300">業務で使ったことがある技術、言語</p>
-            <ul className="grid grid-flow-row grid-cols-5 gap-8">
-              <li className="flex flex-col items-center justify-center">
-                <SiRuby width={30} height={30} className="mb-2 text-red-500" />
-                <span className="text-sm text-gray-400">Ruby</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiRubyonrails width={30} height={30} className="mb-2 text-red-500" />
-                <span className="text-sm text-gray-400">Rails</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiNuxt width={30} height={30} className="mb-2 text-green-500" />
-                <span className="text-sm text-gray-400">Nuxt.js</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiVuedotjs width={30} height={30} className="mb-2 text-green-500" />
-                <span className="text-sm text-gray-400">Vue.js</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiTypescript width={30} height={30} className="mb-2 text-blue-500" />
-                <span className="text-sm text-gray-400">TypeScript</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiJavascript width={30} height={30} className="mb-2 text-yellow-500" />
-                <span className="text-sm text-gray-400">JavaScript</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiHtml5 width={30} height={30} className="mb-2 text-orange-500" />
-                <span className="text-sm text-gray-400">HTML5</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiCss width={30} height={30} className="mb-2 text-blue-500" />
-                <span className="text-sm text-gray-400">CSS</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiMysql width={30} height={30} className="mb-2 text-white-500" />
-                <span className="text-sm text-gray-400">MySQL</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiPostgresql width={30} height={30} className="mb-2 text-white-500" />
-                <span className="text-sm text-gray-400">PostgreSQL</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiTailwindcss width={30} height={30} className="mb-2 text-blue-500" />
-                <span className="text-sm text-gray-400">TailwindCSS</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiChartdotjs width={30} height={30} className="mb-2 text-red-500" />
-                <span className="text-sm text-gray-400">Chart.js</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiDocker width={30} height={30} className="mb-2 text-blue-500" />
-                <span className="text-sm text-gray-400">Docker</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiRedis width={30} height={30} className="mb-2 text-red-500" />
-                <span className="text-sm text-gray-400">Redis</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiPython width={30} height={30} className="mb-2 text-yellow-500" />
-                <span className="text-sm text-gray-400">Python</span>
-              </li>
+            <p className="mb-4 w-fit border-b-2 border-gray-300 dark:border-gray-500">業務で使ったことがある技術、言語</p>
+            <ul className="grid grid-flow-row grid-cols-4 gap-6 md:grid-cols-5">
+              <SkillIcon IconComponent={SiRuby} name="Ruby" colorClassName="text-red-500" />
+              <SkillIcon IconComponent={SiRubyonrails} name="Rails" colorClassName="text-red-500" />
+              <SkillIcon IconComponent={SiNuxt} name="Nuxt.js" colorClassName="text-green-500" />
+              <SkillIcon IconComponent={SiVuedotjs} name="Vue.js" colorClassName="text-green-500" />
+              <SkillIcon IconComponent={SiTypescript} name="TypeScript" colorClassName="text-blue-500" />
+              <SkillIcon IconComponent={SiJavascript} name="JavaScript" colorClassName="text-yellow-500" />
+              <SkillIcon IconComponent={SiHtml5} name="HTML5" colorClassName="text-orange-500" />
+              <SkillIcon IconComponent={SiCss} name="CSS" colorClassName="text-blue-500" />
+              <SkillIcon IconComponent={SiMysql} name="MySQL" colorClassName="dark:text-blue-300" />
+              <SkillIcon IconComponent={SiPostgresql} name="PostgreSQL" colorClassName="dark:text-blue-300" />
+              <SkillIcon IconComponent={SiTailwindcss} name="TailwindCSS" colorClassName="text-sky-500" />
+              <SkillIcon IconComponent={SiChartdotjs} name="Chart.js" colorClassName="text-red-500" />
+              <SkillIcon IconComponent={SiDocker} name="Docker" colorClassName="text-blue-600" />
+              <SkillIcon IconComponent={SiRedis} name="Redis" colorClassName="text-red-600" />
+              <SkillIcon IconComponent={SiPython} name="Python" colorClassName="text-yellow-500" />
             </ul>
           </div>
 
           <div className="mb-10">
-            <p className="mb-4 w-fit border-b-2 border-gray-300">趣味で使った技術、言語</p>
-            <ul className="grid grid-flow-row grid-cols-5 gap-8">
-
-              <li className="flex flex-col items-center justify-center">
-                <SiReact width={30} height={30} className="mb-2 text-blue-500" />
-                <span className="text-sm text-gray-400">React</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiNextdotjs width={30} height={30} className="mb-2" />
-                <span className="text-sm text-gray-400">Next.js</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiFirebase width={30} height={30} className="mb-2 text-yellow-500" />
-                <span className="text-sm text-gray-400">Firebase</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiGraphql width={30} height={30} className="mb-2 text-pink-500" />
-                <span className="text-sm text-gray-400">GraphQL</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiSwift width={30} height={30} className="mb-2 text-orange-500" />
-                <span className="text-sm text-gray-400">Swift</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiGatsby width={30} height={30} className="mb-2 text-purple-500" />
-                <span className="text-sm text-gray-400">Gatsby</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiPhp width={30} height={30} className="mb-2 text-purple-500" />
-                <span className="text-sm text-gray-400">PHP</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiGo width={30} height={30} className="mb-2 text-blue-500" />
-                <span className="text-sm text-gray-400">Go</span>
-              </li>
+            <p className="mb-4 w-fit border-b-2 border-gray-300 dark:border-gray-500">趣味で使った技術、言語</p>
+            <ul className="grid grid-flow-row grid-cols-4 gap-6 md:grid-cols-5">
+              <SkillIcon IconComponent={SiReact} name="React" colorClassName="text-sky-500" />
+              <SkillIcon IconComponent={SiNextdotjs} name="Next.js" />
+              <SkillIcon IconComponent={SiGraphql} name="GraphQL" colorClassName="text-pink-500" />
+              <SkillIcon IconComponent={SiFirebase} name="Firebase" colorClassName="text-yellow-500" />
+              <SkillIcon IconComponent={SiSwift} name="Swift" colorClassName="text-orange-500" />
+              <SkillIcon IconComponent={SiPhp} name="PHP" colorClassName="text-indigo-500" />
+              <SkillIcon IconComponent={SiGo} name="Go" colorClassName="text-cyan-500" />
+              <SkillIcon IconComponent={SiGatsby} name="Gatsby" colorClassName="text-purple-600" />
+              <SkillIcon IconComponent={SiOpenai} name="OpenAI" />
             </ul>
           </div>
 
           <div className="mb-10">
-            <p className="mb-4 w-fit border-b-2 border-gray-300">開発環境、ツールたち</p>
-            <ul className="grid grid-flow-row grid-cols-5 gap-8">
-              <li className="flex flex-col items-center justify-center">
-                <SiGithub width={30} height={30} className="mb-2" />
-                <span className="text-sm text-gray-400">Github</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiNeovim width={30} height={30} className="mb-2 text-green-500" />
-                <span className="text-sm text-gray-400">Neovim</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiIterm2 width={30} height={30} className="mb-2 text-white-500" />
-                <span className="text-sm text-gray-400">Iterm2</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiFigma width={30} height={30} className="mb-2 text-red-300" />
-                <span className="text-sm text-gray-400">Figma</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiPostman width={30} height={30} className="mb-2 text-orange-500" />
-                <span className="text-sm text-gray-400">Postman</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiSlack width={30} height={30} className="mb-2 text-purple-400" />
-                <span className="text-sm text-gray-400">Slack</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiApple width={30} height={30} className="mb-2" />
-                <span className="text-sm text-gray-400">Apple</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiOpenai width={30} height={30} className="mb-2 text-white-500" />
-                <span className="text-sm text-gray-400">ChatGPT</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <Si1password width={30} height={30} className="mb-2 text-white-500" />
-                <span className="text-sm text-gray-400">1Password</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <SiWarp width={30} height={30} className="mb-2 text-white-500" />
-                <span className="text-sm text-gray-400">Warp</span>
-              </li>
+            <p className="mb-4 w-fit border-b-2 border-gray-300 dark:border-gray-500">その他</p>
+            <ul className="grid grid-flow-row grid-cols-4 gap-6 md:grid-cols-5">
+              <SkillIcon IconComponent={SiFigma} name="Figma" />
+              <SkillIcon IconComponent={SiPostman} name="Postman" colorClassName="text-orange-500" />
+              <SkillIcon IconComponent={SiSlack} name="Slack" colorClassName="text-purple-500" />
+              <SkillIcon IconComponent={SiApple} name="Apple" />
+              <SkillIcon IconComponent={SiGithub} name="GitHub" />
+              <SkillIcon IconComponent={SiNeovim} name="Neovim" colorClassName="text-green-500" />
+              <SkillIcon IconComponent={SiIterm2} name="iTerm2" />
+              <SkillIcon IconComponent={Si1password} name="1Password" colorClassName="text-sky-600" />
+              <SkillIcon IconComponent={SiWarp} name="Warp" colorClassName="text-cyan-400" />
             </ul>
           </div>
         </section>
