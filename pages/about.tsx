@@ -1,38 +1,44 @@
 import Layout from '@/components/layouts/oneColumnLayout';
 import Image from 'next/image';
 import HeadMeta from '@/components/Head';
-import { TwitterLogoIcon, GitHubLogoIcon } from '@radix-ui/react-icons';
 import { AcademicCapIcon, CommandLineIcon, LinkIcon } from '@heroicons/react/24/outline';
 import {
-  Siruby,
-  Sirubyonrails,
-  Sitypescript,
-  Sijavascript,
-  Sihtml5,
-  Sivuedotjs,
-  Simysql,
-  Sipostgresql,
-  Sinuxtdotjs,
-  Sireact,
-  Sitailwindcss,
-  Sinextdotjs,
-  Sifigma,
-  Siamazonaws,
-  Sifirebase,
-  Sivisualstudiocode,
-  Sigraphql,
-  Sipostman,
-  Siredis,
-  Sislack,
-  Siswift,
-  Siapple,
-  Sichartdotjs,
-  Sidocker,
-  Sigatsby,
-  Sigithub,
-  Sineovim,
-  Siphp,
-  Sigo
+  SiRuby,
+  SiRubyonrails,
+  SiTypescript,
+  SiJavascript,
+  SiHtml5,
+  SiVuedotjs,
+  SiMysql,
+  SiPostgresql,
+  SiNextdotjs,
+  SiReact,
+  SiTailwindcss,
+  SiFigma,
+  SiFirebase,
+  SiGraphql,
+  SiPostman,
+  SiRedis,
+  SiSlack,
+  SiSwift,
+  SiApple,
+  SiChartdotjs,
+  SiDocker,
+  SiGatsby,
+  SiGithub,
+  SiNeovim,
+  SiPhp,
+  SiGo,
+  SiIterm2,
+  SiNuxt,
+  SiCss,
+  SiOpenai,
+  SiPython,
+  SiZenn,
+  SiQiita,
+  SiX,
+  Si1password,
+  SiWarp,
 } from '@icons-pack/react-simple-icons';
 
 export default function About() {
@@ -174,59 +180,64 @@ export default function About() {
             <p className="mb-4 w-fit border-b-2 border-gray-300">業務で使ったことがある技術、言語</p>
             <ul className="grid grid-flow-row grid-cols-5 gap-8">
               <li className="flex flex-col items-center justify-center">
-                <Siruby width={30} height={30} className="mb-2 text-red-500" />
+                <SiRuby width={30} height={30} className="mb-2 text-red-500" />
                 <span className="text-sm text-gray-400">Ruby</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Sirubyonrails width={30} height={30} className="mb-2 text-red-500" />
+                <SiRubyonrails width={30} height={30} className="mb-2 text-red-500" />
                 <span className="text-sm text-gray-400">Rails</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Sinuxtdotjs width={30} height={30} className="mb-2 text-green-500" />
+                <SiNuxt width={30} height={30} className="mb-2 text-green-500" />
                 <span className="text-sm text-gray-400">Nuxt.js</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Sivuedotjs width={30} height={30} className="mb-2 text-green-500" />
+                <SiVuedotjs width={30} height={30} className="mb-2 text-green-500" />
                 <span className="text-sm text-gray-400">Vue.js</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Sitypescript width={30} height={30} className="mb-2 text-blue-500" />
-                <span className="text-sm text-gray-400">Typescript</span>
+                <SiTypescript width={30} height={30} className="mb-2 text-blue-500" />
+                <span className="text-sm text-gray-400">TypeScript</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Sijavascript width={30} height={30} className="mb-2 text-yellow-500" />
-                <span className="text-sm text-gray-400">Javascript</span>
+                <SiJavascript width={30} height={30} className="mb-2 text-yellow-500" />
+                <span className="text-sm text-gray-400">JavaScript</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Sihtml5 width={30} height={30} className="mb-2 text-red-500" />
-                <span className="text-sm text-gray-400">Html5</span>
+                <SiHtml5 width={30} height={30} className="mb-2 text-orange-500" />
+                <span className="text-sm text-gray-400">HTML5</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <span className="text-sm text-gray-400">CSS3</span>
+                <SiCss width={30} height={30} className="mb-2 text-blue-500" />
+                <span className="text-sm text-gray-400">CSS</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Simysql width={30} height={30} className="mb-2" />
-                <span className="text-sm text-gray-400">Mysql</span>
+                <SiMysql width={30} height={30} className="mb-2 text-white-500" />
+                <span className="text-sm text-gray-400">MySQL</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Sipostgresql width={30} height={30} className="mb-2" />
-                <span className="text-sm text-gray-400">Postgresql</span>
+                <SiPostgresql width={30} height={30} className="mb-2 text-white-500" />
+                <span className="text-sm text-gray-400">PostgreSQL</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Siredis width={30} height={30} className="mb-2 text-red-500" />
-                <span className="text-sm text-gray-400">Redis</span>
+                <SiTailwindcss width={30} height={30} className="mb-2 text-blue-500" />
+                <span className="text-sm text-gray-400">TailwindCSS</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Siamazonaws width={30} height={30} className="mb-2" />
-                <span className="text-sm text-gray-400">AWS</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <Sichartdotjs width={30} height={30} className="mb-2 text-pink-300" />
+                <SiChartdotjs width={30} height={30} className="mb-2 text-red-500" />
                 <span className="text-sm text-gray-400">Chart.js</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Sidocker width={30} height={30} className="mb-2 text-cyan-400" />
+                <SiDocker width={30} height={30} className="mb-2 text-blue-500" />
                 <span className="text-sm text-gray-400">Docker</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <SiRedis width={30} height={30} className="mb-2 text-red-500" />
+                <span className="text-sm text-gray-400">Redis</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <SiPython width={30} height={30} className="mb-2 text-yellow-500" />
+                <span className="text-sm text-gray-400">Python</span>
               </li>
             </ul>
           </div>
@@ -234,41 +245,38 @@ export default function About() {
           <div className="mb-10">
             <p className="mb-4 w-fit border-b-2 border-gray-300">趣味で使った技術、言語</p>
             <ul className="grid grid-flow-row grid-cols-5 gap-8">
+
               <li className="flex flex-col items-center justify-center">
-                <Sigo width={30} height={30} className="mb-2 text-blue-200" />
-                <span className="text-sm text-gray-400">Go</span>
+                <SiReact width={30} height={30} className="mb-2 text-blue-500" />
+                <span className="text-sm text-gray-400">React</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Sireact width={30} height={30} className="mb-2 text-blue-500" />
-                <span className="text-sm text-gray-400">React.js</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <Sitailwindcss width={30} height={30} className="mb-2 text-blue-200" />
-                <span className="text-sm text-gray-400">Tailwindcss</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <Sigatsby width={30} height={30} className="mb-2 text-purple-500" />
-                <span className="text-sm text-gray-400">Gatsby</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <Sinextdotjs width={30} height={30} className="mb-2" />
+                <SiNextdotjs width={30} height={30} className="mb-2" />
                 <span className="text-sm text-gray-400">Next.js</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Sifirebase width={30} height={30} className="mb-2 text-yellow-500" />
+                <SiFirebase width={30} height={30} className="mb-2 text-yellow-500" />
                 <span className="text-sm text-gray-400">Firebase</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Sigraphql width={30} height={30} className="mb-2 text-pink-500" />
-                <span className="text-sm text-gray-400">Graphql</span>
+                <SiGraphql width={30} height={30} className="mb-2 text-pink-500" />
+                <span className="text-sm text-gray-400">GraphQL</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Siswift width={30} height={30} className="mb-2 text-orange-500" />
+                <SiSwift width={30} height={30} className="mb-2 text-orange-500" />
                 <span className="text-sm text-gray-400">Swift</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Siphp width={30} height={30} className="mb-2 text-purple-300" />
+                <SiGatsby width={30} height={30} className="mb-2 text-purple-500" />
+                <span className="text-sm text-gray-400">Gatsby</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <SiPhp width={30} height={30} className="mb-2 text-purple-500" />
                 <span className="text-sm text-gray-400">PHP</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <SiGo width={30} height={30} className="mb-2 text-blue-500" />
+                <span className="text-sm text-gray-400">Go</span>
               </li>
             </ul>
           </div>
@@ -277,35 +285,44 @@ export default function About() {
             <p className="mb-4 w-fit border-b-2 border-gray-300">開発環境、ツールたち</p>
             <ul className="grid grid-flow-row grid-cols-5 gap-8">
               <li className="flex flex-col items-center justify-center">
-                <Sineovim width={30} height={30} className="mb-2 text-green-500" />
-                <span className="text-sm text-gray-400">Neovim</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <Sivisualstudiocode width={30} height={30} className="mb-2 text-blue-500" />
-                <span className="text-sm text-gray-400">VS Code</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <span className="text-sm text-gray-400">Iterm2</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <Sifigma width={30} height={30} className="mb-2 text-red-300" />
-                <span className="text-sm text-gray-400">Figma</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <Sipostman width={30} height={30} className="mb-2 text-orange-500" />
-                <span className="text-sm text-gray-400">Postman</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <Sislack width={30} height={30} className="mb-2 text-purple-400" />
-                <span className="text-sm text-gray-400">Slack</span>
-              </li>
-              <li className="flex flex-col items-center justify-center">
-                <Sigithub width={30} height={30} className="mb-2" />
+                <SiGithub width={30} height={30} className="mb-2" />
                 <span className="text-sm text-gray-400">Github</span>
               </li>
               <li className="flex flex-col items-center justify-center">
-                <Siapple width={30} height={30} className="mb-2" />
+                <SiNeovim width={30} height={30} className="mb-2 text-green-500" />
+                <span className="text-sm text-gray-400">Neovim</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <SiIterm2 width={30} height={30} className="mb-2 text-white-500" />
+                <span className="text-sm text-gray-400">Iterm2</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <SiFigma width={30} height={30} className="mb-2 text-red-300" />
+                <span className="text-sm text-gray-400">Figma</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <SiPostman width={30} height={30} className="mb-2 text-orange-500" />
+                <span className="text-sm text-gray-400">Postman</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <SiSlack width={30} height={30} className="mb-2 text-purple-400" />
+                <span className="text-sm text-gray-400">Slack</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <SiApple width={30} height={30} className="mb-2" />
                 <span className="text-sm text-gray-400">Apple</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <SiOpenai width={30} height={30} className="mb-2 text-white-500" />
+                <span className="text-sm text-gray-400">ChatGPT</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <Si1password width={30} height={30} className="mb-2 text-white-500" />
+                <span className="text-sm text-gray-400">1Password</span>
+              </li>
+              <li className="flex flex-col items-center justify-center">
+                <SiWarp width={30} height={30} className="mb-2 text-white-500" />
+                <span className="text-sm text-gray-400">Warp</span>
               </li>
             </ul>
           </div>
@@ -325,25 +342,29 @@ export default function About() {
           </p>
           <div className="grid grid-cols-3 place-items-center gap-5">
             <a
-              href="https://twitter.com/KazuhiroIto0127"
+              href="https://x.com/KazuhiroIto0127"
               target="_blank"
               rel="noreferrer"
-              className="flex flex-col items-center justify-center text-sky-400"
+              className="flex flex-col items-center justify-center"
             >
-              <TwitterLogoIcon className="h-6 w-6" /> Twitter
+              <SiX width={30} height={30} className="mb-2 text-white-500" />
+              X
             </a>
             <a
               href="https://github.com/KazuhiroIto0127"
               target="_blank"
               rel="noreferrer"
-              className="flex flex-col items-center justify-center text-sky-400"
+              className="flex flex-col items-center justify-center"
             >
-              <GitHubLogoIcon className="h-6 w-6" /> Github
+              <SiGithub width={30} height={30} className="mb-2 text-white-500" />
+              Github
             </a>
-            <a href="https://zenn.dev/kazuhiroito0127" target="_blank" rel="noreferrer" className="block text-sky-400">
+            <a href="https://zenn.dev/kazuhiroito0127" target="_blank" rel="noreferrer" className="block">
+              <SiZenn width={30} height={30} className="mb-2 text-blue-500" />
               Zenn
             </a>
-            <a href="https://qiita.com/KazuhiroIto0127" target="_blank" rel="noreferrer" className="block text-sky-400">
+            <a href="https://qiita.com/KazuhiroIto0127" target="_blank" rel="noreferrer" className="block">
+              <SiQiita width={30} height={30} className="mb-2 text-green-500" />
               Qiita
             </a>
           </div>
