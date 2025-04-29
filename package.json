@@ -35,7 +35,7 @@
     "tailwindcss-radix": "^2.6.1"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^2.16.4",
+    "@graphql-codegen/cli": "^5.0.5",
     "@graphql-codegen/client-preset": "^1.2.6",
     "@graphql-codegen/introspection": "^2.2.3",
     "@graphql-codegen/schema-ast": "^2.6.1",
