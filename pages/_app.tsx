@@ -1,4 +1,4 @@
-import '/styles/globals.css';
+import '@/styles/globals.css';
 import { AppProps } from 'next/app';
 import { Zen_Maru_Gothic } from 'next/font/google';
 import { GlobalProvider } from '@/context/global-state-provider';

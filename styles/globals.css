@@ -1,3 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "tailwindcss-radix";
+
+@theme {
+  --breakpoint-sm: 480px;
+
+  --grid-cols-auto-fit: repeat(auto-fit, minmax(200px, 1fr));
+  --grid-cols-auto-fill: repeat(auto-fill, minmax(200px, 1fr));
+
+  --grid-rows-auto-fit: repeat(auto-fit, minmax(200px, 1fr));
+  --grid-rows-auto-fill: repeat(auto-fill, minmax(200px, 1fr));
+}
+@custom-variant dark (&:where(.dark, .dark *));
