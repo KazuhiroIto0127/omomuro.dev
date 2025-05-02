@@ -19,7 +19,7 @@ const SidebarLink = ({ path, title }: { path: string; title: string }) => {
     >
       <div
         className={clsx(
-          'mr-1 h-6 w-6 flex-shrink-0 ease-in-out group-hover:rotate-45',
+          'mr-1 h-6 w-6 shrink-0 ease-in-out group-hover:rotate-45',
           'transition duration-75',
           'group-hover:text-sky-500 dark:group-hover:text-sky-400',
         )}

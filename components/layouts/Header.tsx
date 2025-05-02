@@ -24,7 +24,7 @@ export default function Header({ setIsOpenMobileSidebar }) {
         {/* スマホ用 */}
         {/* <div
             onClick={toggleSidebar}
-            className="flex-shrink-0 w-6 h-6
+            className="shrink-0 w-6 h-6
                      text-gray-500 transition duration-75 dark:text-gray-400
                      hover:text-gray-900 dark:hover:text-white hover:cursor-pointer
                        md:hidden"
@@ -32,7 +32,7 @@ export default function Header({ setIsOpenMobileSidebar }) {
         {/* pc用 */}
         {/* <div
             onClick={togglePcSidebar}
-            className="hidden flex-shrink-0 w-6 h-6
+            className="hidden shrink-0 w-6 h-6
                      text-gray-500 transition duration-75 dark:text-gray-400
                      hover:text-gray-900 dark:hover:text-white hover:cursor-pointer
                        md:block"

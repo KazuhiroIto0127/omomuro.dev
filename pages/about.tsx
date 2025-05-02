@@ -57,7 +57,7 @@ export default function About() {
             )`,
           }}
         >
-          <div className="grid grid-cols-2 place-items-center rounded-lg bg-white bg-opacity-60 p-3 dark:bg-gray-700 dark:bg-opacity-40">
+          <div className="grid grid-cols-2 place-items-center rounded-lg bg-white/60 p-3 dark:bg-gray-700/40">
             <Image priority src="/images/omo_pen.png" height={100} width={100} alt="logo" />
             <div>
               <p className="mx-auto my-3 block text-xl font-bold">イトウ カズヒロ</p>

@@ -17,7 +17,7 @@ const WorksPage = ({ works }: InferGetStaticPropsType<typeof getStaticProps>) =>
           <Link href={`/works/${work.slug}`} key={work.sys.id} className="max-h-96 text-xl text-blue-500">
             <li
               className="h-full overflow-hidden rounded-lg
-                         border-2 border-gray-200 border-opacity-60 shadow-lg
+                         border-2 border-gray-200/60 shadow-lg
                          shadow-indigo-300/40 transition ease-in-out hover:scale-105
                          dark:bg-gray-600"
             >

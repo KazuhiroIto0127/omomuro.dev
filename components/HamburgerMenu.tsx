@@ -38,7 +38,7 @@ export const HamburgerMenu = () => {
       </button>
 
       <Dialog open={isOpen} onClose={() => setIsOpen(false)} className="fixed inset-0 z-50">
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-70 backdrop-blur-sm" />
+        <div className="fixed inset-0 bg-gray-800/70 backdrop-blur-sm" />
 
         <div className="fixed inset-0 flex items-center justify-center">
           <Dialog.Panel className="dark:highlight-white/5 w-full max-w-xs rounded-lg bg-white p-6 text-base font-semibold text-slate-900 shadow-lg dark:bg-slate-800 dark:text-slate-400">

@@ -9,8 +9,8 @@ export default function ChallengeBtn({ doChallenge, gameClear, challengeTotalNum
       onClick={doChallenge}
       disabled={judging || gameClear}
       className="mx-auto mb-3 flex w-10/12 max-w-md touch-manipulation select-none items-center
-                 justify-center rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 px-5 py-3 text-white shadow
-                 hover:bg-gradient-to-bl focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:focus:ring-cyan-800"
+                 justify-center rounded-full bg-linear-to-r from-cyan-500 to-blue-500 px-5 py-3 text-white shadow
+                 hover:bg-linear-to-bl focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:focus:ring-cyan-800"
       type="button"
     >
       {buttonText}
