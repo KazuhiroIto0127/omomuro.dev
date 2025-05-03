@@ -13,7 +13,7 @@ export default function WorkPage({ work }: { work: Work }) {
     <Layout>
       <HeadMeta type="article" title={work.title} />
 
-      <article className="mx-auto max-w-2xl break-words">
+      <article className="mx-auto max-w-2xl break-words prose-sm dark:prose-invert sm:prose-base lg:prose-lg">
         <Image
           priority
           src={work.thumbnail}
@@ -22,26 +22,24 @@ export default function WorkPage({ work }: { work: Work }) {
           width={work.thumbnailWidth}
           alt={work.thumbnailFileName}
         />
-        <h1 className="mb-4 text-2xl">{work.title}</h1>
-        <p className="mb-4 text-base">{work.description}</p>
-        <p className="mb-4 text-base">制作日：{work.createdAt}</p>
+        <h1>{work.title}</h1>
+        <p>{work.description}</p>
+        <p>制作日：{work.createdAt}</p>
         {work.url && (
           <a href={work.url} target="_blank" rel="noopener noreferrer">
             <p className="text-blue-500">詳しくはこちら</p>
           </a>
         )}
-        <div className="prose prose-sm dark:prose-invert sm:prose-base lg:prose-lg py-5">
-          <ReactMarkdown
-            components={{
-              p: ({ children }) => <p className="whitespace-pre-wrap">{children}</p>,
-              ul: ({ children }) => <ul className="list-disc pl-6">{children}</ul>,
-              ol: ({ children }) => <ol className="list-decimal pl-6">{children}</ol>,
-              li: ({ children }) => <li className="mb-1">{children}</li>,
-            }}
-          >
-            {work.body}
-          </ReactMarkdown>
-        </div>
+        <ReactMarkdown
+          components={{
+            p: ({ children }) => <p className="whitespace-pre-wrap">{children}</p>,
+            ul: ({ children }) => <ul className="list-disc pl-6">{children}</ul>,
+            ol: ({ children }) => <ol className="list-decimal pl-6">{children}</ol>,
+            li: ({ children }) => <li className="mb-1">{children}</li>,
+          }}
+        >
+          {work.body}
+        </ReactMarkdown>
       </article>
     </Layout>
   );
