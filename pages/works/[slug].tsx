@@ -33,7 +33,7 @@ export default function WorkPage({ work }: { work: Work }) {
         <div className="prose prose-sm dark:prose-invert sm:prose-base lg:prose-lg py-5">
           <ReactMarkdown
             components={{
-              p: ({ children }) => <p className="whitespace-pre-wrap pb-3">{children}</p>,
+              p: ({ children }) => <p className="whitespace-pre-wrap">{children}</p>,
               ul: ({ children }) => <ul className="list-disc pl-6">{children}</ul>,
               ol: ({ children }) => <ol className="list-decimal pl-6">{children}</ol>,
               li: ({ children }) => <li className="mb-1">{children}</li>,
