@@ -1,7 +1,0 @@
-query workSlugAll {
-  workCollection(limit: 100) {
-    items {
-      slug
-    }
-  }
-}
