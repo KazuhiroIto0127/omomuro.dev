@@ -2,6 +2,7 @@ import Layout from '@/components/layouts/oneColumnLayout';
 import HeadMeta from '@/components/Head';
 import { motion } from 'framer-motion';
 import LinkCard from '@/components/home/LinkCard';
+import ImageButton from '@/components/home/ImageButton';
 
 export default function Home() {
   return (
@@ -27,73 +28,74 @@ export default function Home() {
         </p>
       </section>
 
-      <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-10">
-        <LinkCard
-          href="/about"
-          title="自分のこと"
-          description={
-            <>
-              <p className="mb-3 block font-bold">イトウ カズヒロ</p>
-              <p className="mb-2 leading-7">
-                1990年1月27日に生まれる
-                <br />
-                大分県出身、東京都在住
-                <br />
-                仕事はエンジニア
-                <br />
-                イラスト、プログラミングが趣味
-              </p>
-            </>
-          }
-          imageSrc="/images/programming.png"
-          imageAlt="about me"
-        />
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-4 md:gap-10">
+        <div className="md:col-span-2">
+          <LinkCard
+            href="/about"
+            title="自分のこと"
+            description={
+              <>
+                <p className="mb-3 block font-bold">イトウ カズヒロ</p>
+                <p className="mb-2 leading-7">
+                  1990年1月27日に生まれる
+                  <br />
+                  大分県出身、東京都在住
+                  <br />
+                  仕事はエンジニア
+                  <br />
+                  イラスト、プログラミングが趣味
+                </p>
+              </>
+            }
+            imageSrc="/images/programming.png"
+            imageAlt="about me"
+          />
+        </div>
 
-        <LinkCard
-          href="/works"
-          title="作ったもの"
-          description={
-            <>
-              <p className="mb-2 leading-7">
-                iPhoneアプリ
-                <br />
-                ラインスタンプ
-                <br />
-                Webサービス
-                <br />
-              </p>
-            </>
-          }
-          imageSrc="/images/mono.png"
-          imageAlt="works"
-          reverseLayout={true}
-        />
+        <div className="md:col-span-2">
+          <LinkCard
+            href="/works"
+            title="作ったもの"
+            description={
+              <>
+                <p className="mb-2 leading-7">
+                  iPhoneアプリ
+                  <br />
+                  ラインスタンプ
+                  <br />
+                  Webサービス
+                  <br />
+                </p>
+              </>
+            }
+            imageSrc="/images/mono.png"
+            imageAlt="works"
+            reverseLayout={true}
+          />
+        </div>
 
-        <LinkCard
-          href="/labs"
-          title="実験室"
-          description={
-            <>
-              <p className="mb-2 leading-7">なにか技術的なことを試したいときの場所だよ</p>
-            </>
-          }
-          imageSrc="/images/labs.png"
-          imageAlt="labs"
-          imageClassName="w-full transition-transform group-hover:translate-y-5 group-hover:rotate-45 group-hover:scale-150"
-        />
+        <div className="md:col-span-2">
+          <LinkCard
+            href="/labs"
+            title="実験室"
+            description={
+              <>
+                <p className="mb-2 leading-7">なにか技術的なことを試したいときの場所だよ</p>
+              </>
+            }
+            imageSrc="/images/labs.png"
+            imageAlt="labs"
+            imageClassName="w-full transition-transform group-hover:translate-y-5 group-hover:rotate-45 group-hover:scale-150"
+          />
+        </div>
 
-        <LinkCard
-          href="/gallery"
-          title="ギャラリー"
-          description={
-            <>
-              <p className="mb-2 leading-7">作成したイラストや画像を展示しています</p>
-            </>
-          }
-          imageSrc="/images/gallery.jpg"
-          imageAlt="gallery"
-          reverseLayout={true}
-        />
+        <div className="md:col-span-1">
+          <ImageButton
+            href="/gallery"
+            imageSrc="/images/gallery.jpg"
+            imageAlt="gallery"
+          />
+        </div>
       </div>
     </Layout>
   );
