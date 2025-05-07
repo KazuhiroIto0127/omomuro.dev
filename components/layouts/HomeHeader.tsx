@@ -26,6 +26,10 @@ export default function Header() {
       title: 'Labs',
       path: '/labs',
     },
+    {
+      title: 'Gallery',
+      path: '/gallery',
+    },
   ];
 
   return (

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 type Prop = {
-  type: 'website' | 'article' | 'blog' | 'product';
+  type: 'website' | 'article' | 'blog' | 'product' | 'gallery';
   title: string;
   description?: string;
 };

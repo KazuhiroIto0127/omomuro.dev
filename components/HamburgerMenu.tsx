@@ -28,6 +28,10 @@ export const HamburgerMenu = () => {
       title: 'Labs',
       path: '/labs',
     },
+    {
+      title: 'Gallery',
+      path: '/gallery',
+    },
   ];
 
   return (

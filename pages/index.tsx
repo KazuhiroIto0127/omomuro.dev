@@ -81,6 +81,19 @@ export default function Home() {
           imageAlt="labs"
           imageClassName="w-full transition-transform group-hover:translate-y-5 group-hover:rotate-45 group-hover:scale-150"
         />
+
+        <LinkCard
+          href="/gallery"
+          title="ギャラリー"
+          description={
+            <>
+              <p className="mb-2 leading-7">作成したイラストや画像を展示しています</p>
+            </>
+          }
+          imageSrc="/images/gallery.jpg"
+          imageAlt="gallery"
+          reverseLayout={true}
+        />
       </div>
     </Layout>
   );
