@@ -11,6 +11,20 @@ const Hero = () => {
     gsap.registerPlugin(SplitText);
 
     const titleSplit = new SplitText(titleRef.current, { type: "chars,words" });
+    // Apply gradient classes to each character span created by SplitText
+    titleSplit.chars.forEach((char: HTMLElement) => {
+      char.classList.add(
+        'bg-gradient-to-b',
+        'from-blue-200',
+        'to-blue-500',
+        'bg-clip-text',
+        'text-transparent'
+      );
+      // Small bottom padding so descenders (e.g., "p", "g") aren’t clipped
+      char.style.paddingBottom = '0.2em';
+    });
+    // Reveal the title only after SplitText has done its work to avoid flash of unstyled text
+    gsap.set(titleRef.current, { autoAlpha: 1 });
     const descriptionSplit = new SplitText(descriptionRef.current, { type: "lines" });
 
     gsap.from(titleSplit.chars, {
@@ -36,7 +50,7 @@ const Hero = () => {
       <div className="flex w-full justify-center">
         <h1
           ref={titleRef}
-          className="pb-11 text-6xl font-extrabold tracking-tight transition-transform hover:scale-105 md:text-8xl"
+          className="opacity-0 pb-11 text-6xl font-extrabold tracking-tight transition-transform hover:scale-105 md:text-8xl"
         >
           Hello World.
           <br />
