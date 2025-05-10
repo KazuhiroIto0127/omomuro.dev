@@ -5,6 +5,7 @@ import { GlobalProvider } from '@/context/global-state-provider';
 import { ThemeProvider } from 'next-themes';
 import { Analytics } from '@vercel/analytics/react';
 import { usePageView, GoogleAnalytics } from '@/components/gtag';
+import GradientBackground from '@/components/GradientBackground';
 
 const zenMaruGothic = Zen_Maru_Gothic({
   weight: ['400', '700', '900'],
@@ -21,6 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <div className={`${zenMaruGothic.className}`}>
         <ThemeProvider attribute="class">
           <GlobalProvider>
+            <GradientBackground />
             <Component {...pageProps} />
           </GlobalProvider>
         </ThemeProvider>
