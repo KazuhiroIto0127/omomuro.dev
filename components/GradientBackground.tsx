@@ -2,10 +2,44 @@ import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { useTheme } from 'next-themes';
 
+interface Ellipse {
+  mesh: THREE.Mesh;
+  speed: {
+    x: number;
+    y: number;
+    rotation: number;
+  };
+  position: {
+    x: number;
+    y: number;
+  };
+  scale: number;
+}
+
 const GradientBackground = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
-  const materialRef = useRef<THREE.ShaderMaterial | null>(null);
+  const ellipsesRef = useRef<Ellipse[]>([]);
+
+  // ランダムな色を生成する関数
+  const generateRandomColor = (isDark: boolean) => {
+    const colors = isDark
+      ? [
+          [0.2, 0.4, 0.8], // 暗い青
+          [0.6, 0.2, 0.8], // 暗い紫
+          [0.2, 0.6, 0.4], // 暗い緑
+          [0.8, 0.3, 0.2], // 暗い赤
+        ]
+      : [
+          [0.5, 0.8, 1.0], // 水色
+          [0.8, 0.5, 1.0], // 紫色
+          [0.4, 0.8, 0.6], // 緑色
+          [1.0, 0.6, 0.4], // オレンジ
+        ];
+
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    return new THREE.Vector3(...color);
+  };
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -17,75 +51,104 @@ const GradientBackground = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     containerRef.current.appendChild(renderer.domElement);
 
-    // 楕円形のジオメトリを作成
-    const geometry = new THREE.SphereGeometry(1, 32, 32);
-    const material = new THREE.ShaderMaterial({
-      uniforms: {
-        time: { value: 0 },
-        isDark: { value: theme === 'dark' ? 1.0 : 0.0 },
-      },
-      vertexShader: `
-        varying vec2 vUv;
-        void main() {
-          vUv = uv;
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-        }
-      `,
-      fragmentShader: `
-        uniform float time;
-        uniform float isDark;
-        varying vec2 vUv;
+    // 楕円の数
+    const numEllipses = 5;
 
-        void main() {
-          vec2 uv = vUv;
-          float x = uv.x * 2.0 - 1.0;
-          float y = uv.y * 2.0 - 1.0;
+    // 楕円の生成
+    for (let i = 0; i < numEllipses; i++) {
+      const geometry = new THREE.SphereGeometry(1, 32, 32);
+      const material = new THREE.ShaderMaterial({
+        uniforms: {
+          time: { value: 0 },
+          color1: { value: generateRandomColor(theme === 'dark') },
+          color2: { value: generateRandomColor(theme === 'dark') },
+        },
+        vertexShader: `
+          varying vec2 vUv;
+          void main() {
+            vUv = uv;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+          }
+        `,
+        fragmentShader: `
+          uniform float time;
+          uniform vec3 color1;
+          uniform vec3 color2;
+          varying vec2 vUv;
 
-          // ライトテーマ用の色
-          vec3 lightColor1 = vec3(0.5, 0.8, 1.0); // 水色
-          vec3 lightColor2 = vec3(0.8, 0.5, 1.0); // 紫色
+          void main() {
+            vec2 uv = vUv;
+            float x = uv.x * 2.0 - 1.0;
+            float y = uv.y * 2.0 - 1.0;
 
-          // ダークテーマ用の色
-          vec3 darkColor1 = vec3(0.2, 0.4, 0.8); // 暗い青
-          vec3 darkColor2 = vec3(0.6, 0.2, 0.8); // 暗い紫
+            // 時間に基づいて色を変化
+            float t = sin(time * 0.5) * 0.5 + 0.5;
+            vec3 color = mix(color1, color2, t);
 
-          // テーマに応じて色を選択
-          vec3 color1 = mix(lightColor1, darkColor1, isDark);
-          vec3 color2 = mix(lightColor2, darkColor2, isDark);
+            // 楕円形の形状を作成
+            float ellipse = 1.0 - (x * x + y * y * 0.5);
+            float alpha = smoothstep(0.0, 0.1, ellipse);
 
-          // 時間に基づいて色を変化
-          float t = sin(time * 0.5) * 0.5 + 0.5;
-          vec3 color = mix(color1, color2, t);
+            gl_FragColor = vec4(color, alpha * 0.3);
+          }
+        `,
+        transparent: true,
+      });
 
-          // 楕円形の形状を作成
-          float ellipse = 1.0 - (x * x + y * y * 0.5);
-          float alpha = smoothstep(0.0, 0.1, ellipse);
+      const mesh = new THREE.Mesh(geometry, material);
 
-          // ダークテーマの場合は透明度を少し上げる
-          float finalAlpha = mix(alpha * 0.5, alpha * 0.7, isDark);
+      // ランダムな初期位置と速度を設定
+      const scale = 0.5 + Math.random() * 1.5;
+      mesh.scale.set(scale, scale * 0.5, scale);
 
-          gl_FragColor = vec4(color, finalAlpha);
-        }
-      `,
-      transparent: true,
-    });
+      const ellipse: Ellipse = {
+        mesh,
+        speed: {
+          x: (Math.random() - 0.5) * 0.002,
+          y: (Math.random() - 0.5) * 0.002,
+          rotation: (Math.random() - 0.5) * 0.002,
+        },
+        position: {
+          x: (Math.random() - 0.5) * 4,
+          y: (Math.random() - 0.5) * 4,
+        },
+        scale,
+      };
 
-    materialRef.current = material;
-    const mesh = new THREE.Mesh(geometry, material);
-    scene.add(mesh);
+      mesh.position.set(ellipse.position.x, ellipse.position.y, 0);
+      scene.add(mesh);
+      ellipsesRef.current.push(ellipse);
+    }
 
-    camera.position.z = 2;
+    camera.position.z = 5;
 
     // アニメーション
     const animate = () => {
       requestAnimationFrame(animate);
 
-      // メッシュを回転
-      mesh.rotation.x += 0.001;
-      mesh.rotation.y += 0.002;
+      // 各楕円の位置と回転を更新
+      ellipsesRef.current.forEach((ellipse) => {
+        // 位置の更新
+        ellipse.position.x += ellipse.speed.x;
+        ellipse.position.y += ellipse.speed.y;
 
-      // 時間を更新
-      material.uniforms.time.value += 0.01;
+        // 画面端での跳ね返り
+        if (Math.abs(ellipse.position.x) > 2) {
+          ellipse.speed.x *= -1;
+        }
+        if (Math.abs(ellipse.position.y) > 2) {
+          ellipse.speed.y *= -1;
+        }
+
+        // メッシュの更新
+        ellipse.mesh.position.set(ellipse.position.x, ellipse.position.y, 0);
+        ellipse.mesh.rotation.x += ellipse.speed.rotation;
+        ellipse.mesh.rotation.y += ellipse.speed.rotation;
+
+        // 時間の更新
+        const material = ellipse.mesh.material as THREE.ShaderMaterial;
+        material.uniforms.time.value += 0.01;
+      });
 
       renderer.render(scene, camera);
     };
@@ -105,8 +168,10 @@ const GradientBackground = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
       containerRef.current?.removeChild(renderer.domElement);
-      geometry.dispose();
-      material.dispose();
+      ellipsesRef.current.forEach((ellipse) => {
+        ellipse.mesh.geometry.dispose();
+        (ellipse.mesh.material as THREE.Material).dispose();
+      });
       renderer.dispose();
     };
   }, [theme]);
