@@ -6,9 +6,13 @@ import { SplitText } from 'gsap/SplitText';
 const Hero = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const descriptionRef = useRef<HTMLParagraphElement>(null);
+  const waveRef = useRef<HTMLSpanElement>(null);
 
   useGSAP(() => {
     gsap.registerPlugin(SplitText);
+
+    // デバッグ用のログ
+    console.log('waveRef:', waveRef.current);
 
     const titleSplit = new SplitText(titleRef.current, { type: "chars,words" });
     // Apply gradient classes to each character span created by SplitText
@@ -20,7 +24,7 @@ const Hero = () => {
         'bg-clip-text',
         'text-transparent'
       );
-      // Small bottom padding so descenders (e.g., "p", "g") aren’t clipped
+      // Small bottom padding so descenders (e.g., "p", "g") aren't clipped
       char.style.paddingBottom = '0.2em';
     });
     // Reveal the title only after SplitText has done its work to avoid flash of unstyled text
@@ -34,6 +38,19 @@ const Hero = () => {
       stagger: 0.05,
       ease: "power4.out"
     });
+
+    // 揺らすアニメーションを👋に適用
+    if (waveRef.current) {
+      gsap.to(waveRef.current, {
+        rotation: 20,
+        duration: 0.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "power1.inOut",
+        delay: 1.5,
+        transformOrigin: "center center"
+      });
+    }
 
     gsap.from(descriptionSplit.lines, {
       opacity: 0,
@@ -54,7 +71,7 @@ const Hero = () => {
         >
           Hello World.
           <br />
-          Omomuro development.
+          Omomuro development. <span ref={waveRef} className="inline-block">👋</span>
         </h1>
       </div>
       <p ref={descriptionRef} className="flex w-full justify-center dark:text-slate-300">
