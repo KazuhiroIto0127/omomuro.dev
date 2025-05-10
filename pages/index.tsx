@@ -3,30 +3,13 @@ import HeadMeta from '@/components/Head';
 import { motion } from 'framer-motion';
 import LinkCard from '@/components/home/LinkCard';
 import ImageButton from '@/components/home/ImageButton';
+import Hero from '@/components/home/Hero';
 
 export default function Home() {
   return (
     <Layout>
       <HeadMeta type="website" title="Home" />
-
-      <section className="item-center ma-auto mt-16 mb-32 flex w-full flex-col justify-center text-center md:my-44 ">
-        <div className="flex w-full justify-center">
-          <h1
-            className="bg-linear-to-r from-cyan-500 to-blue-500 bg-clip-text pb-11 text-6xl
-                         font-extrabold tracking-tight text-transparent transition-transform hover:scale-105 md:text-8xl"
-          >
-            Hello World.
-            <br />
-            Omomuro development.
-          </h1>
-        </div>
-        <p className="flex w-full justify-center dark:text-slate-300">
-          こんにちは！
-          <br />
-          おもむろに開発をします。
-          <br />
-        </p>
-      </section>
+      <Hero />
 
       <div className="grid grid-cols-1 gap-10 md:grid-cols-4 md:gap-10">
         <div className="md:col-span-2">
