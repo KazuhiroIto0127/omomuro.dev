@@ -13,6 +13,7 @@
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@headlessui/react": "^2.2.2",
     "@heroicons/react": "^2.2.0",
     "@icons-pack/react-simple-icons": "^12.7.0",
