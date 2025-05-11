@@ -56,7 +56,7 @@ const GradientBackground = () => {
 
     // 楕円の生成
     for (let i = 0; i < numEllipses; i++) {
-      const geometry = new THREE.SphereGeometry(1, 32, 32);
+      const geometry = new THREE.IcosahedronGeometry(1, 4);
       const material = new THREE.ShaderMaterial({
         uniforms: {
           time: { value: 0 },
@@ -64,32 +64,54 @@ const GradientBackground = () => {
           color2: { value: generateRandomColor(theme === 'dark') },
         },
         vertexShader: `
-          varying vec2 vUv;
-          void main() {
-            vUv = uv;
-            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-          }
-        `,
+            uniform float time;
+            varying vec2 vUv;
+            void main() {
+              vUv = uv;
+              vec3 pos = position;
+
+              // simple trig-based "noise" to create a fluid, blobby deformation
+              float noise = sin(pos.x * 3.0 + time) *
+                            sin(pos.y * 3.0 + time * 0.7) *
+                            sin(pos.z * 3.0 + time * 1.3);
+
+              pos += normal * noise * 0.3;  // push vertices along normals
+
+              gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+            }
+          `,
         fragmentShader: `
           uniform float time;
           uniform vec3 color1;
           uniform vec3 color2;
           varying vec2 vUv;
 
+          // simple hash‑based noise for grain
+          float random(vec2 st) {
+            return fract(sin(dot(st.xy ,vec2(12.9898,78.233))) * 43758.5453);
+          }
+
           void main() {
             vec2 uv = vUv;
+
+            // radial (center‑out) gradient factor
+            float g = length(uv - vec2(0.5)) * 2.0;
+            g = clamp(g, 0.0, 1.0);
+
+            // smooth colour gradient
+            vec3 baseColor = mix(color1, color2, g);
+
+            // animated grain
+            float grain = random(gl_FragCoord.xy + vec2(time)) - 0.5;
+            baseColor += grain * 0.15;  // adjust intensity for "ざらっと" feel
+
+            // soft elliptical alpha mask
             float x = uv.x * 2.0 - 1.0;
             float y = uv.y * 2.0 - 1.0;
-
-            // 時間に基づいて色を変化
-            float t = sin(time * 0.5) * 0.5 + 0.5;
-            vec3 color = mix(color1, color2, t);
-
-            // 楕円形の形状を作成
             float ellipse = 1.0 - (x * x + y * y * 0.5);
             float alpha = smoothstep(0.0, 0.1, ellipse);
 
-            gl_FragColor = vec4(color, alpha * 0.3);
+            gl_FragColor = vec4(baseColor, alpha * 0.4);
           }
         `,
         transparent: true,
@@ -99,14 +121,14 @@ const GradientBackground = () => {
 
       // ランダムな初期位置と速度を設定
       const scale = 0.5 + Math.random() * 1.5;
-      mesh.scale.set(scale, scale * 0.5, scale);
+      mesh.scale.set(scale, scale, scale);
 
       const ellipse: Ellipse = {
         mesh,
         speed: {
-          x: (Math.random() - 0.5) * 0.002,
-          y: (Math.random() - 0.5) * 0.002,
-          rotation: (Math.random() - 0.5) * 0.002,
+          x: (Math.random() - 0.5) * 0.001,
+          y: (Math.random() - 0.5) * 0.001,
+          rotation: (Math.random() - 0.5) * 0.001,
         },
         position: {
           x: (Math.random() - 0.5) * 4,
@@ -147,7 +169,7 @@ const GradientBackground = () => {
 
         // 時間の更新
         const material = ellipse.mesh.material as THREE.ShaderMaterial;
-        material.uniforms.time.value += 0.01;
+        material.uniforms.time.value += 0.004;
       });
 
       renderer.render(scene, camera);
