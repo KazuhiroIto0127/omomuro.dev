@@ -20,13 +20,11 @@ export default function Home() {
               <>
                 <p className="mb-3 block font-bold">イトウ カズヒロ</p>
                 <p className="mb-2 leading-7">
-                  1990年1月27日に生まれる
+                  1990年1月27日生まれ
                   <br />
-                  大分県出身、東京都在住
+                  東京都在住
                   <br />
-                  仕事はエンジニア
-                  <br />
-                  イラスト、プログラミングが趣味
+                  Webエンジニア
                 </p>
               </>
             }
@@ -44,7 +42,7 @@ export default function Home() {
                 <p className="mb-2 leading-7">
                   iPhoneアプリ
                   <br />
-                  ラインスタンプ
+                  ゲーム
                   <br />
                   Webサービス
                   <br />
@@ -63,7 +61,7 @@ export default function Home() {
             title="実験室"
             description={
               <>
-                <p className="mb-2 leading-7">なにか技術的なことを試したいときの場所だよ</p>
+                <p className="mb-2 leading-7">なにか技術的なことを試す場所</p>
               </>
             }
             imageSrc="/images/labs.png"

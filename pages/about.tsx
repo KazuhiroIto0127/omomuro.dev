@@ -1,7 +1,7 @@
 import Layout from '@/components/layouts/oneColumnLayout';
 import Image from 'next/image';
 import HeadMeta from '@/components/Head';
-import { AcademicCapIcon, CommandLineIcon, LinkIcon } from '@heroicons/react/24/outline';
+import { AcademicCapIcon, CommandLineIcon, LinkIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import {
   SiRuby,
   SiRubyonrails,
@@ -64,11 +64,11 @@ export default function About() {
               <p className="mb-2 leading-7">
                 1990年1月27日 生まれ
                 <br />
-                大分県出身、東京都在住
+                東京都在住
                 <br />
-                エンジニア
+                Webエンジニア
                 <br />
-                趣味はイラスト、プログラミング
+                趣味はプログラミング、デザイン、絵 etc
               </p>
             </div>
           </div>
@@ -76,8 +76,8 @@ export default function About() {
           <p className="pt-3 leading-7">
             はじめまして！こんにちは。
             <br /> こんなところまで見て頂きとても嬉しいです！
-            <br /> このomomuro.devは、私のポートフォリオのようなサイトになります。
-            <br /> 技術的な実験を試みたりもするので、たまに見るとサイトが変わってたりするかもです！
+            <br /> このomomuro.devは、私のポートフォリオのようなサイトです。
+            <br /> 技術的な実験を試みたりもするので、たまに見るとサイトが変わってたりするかも！
           </p>
         </section>
 
@@ -249,7 +249,10 @@ export default function About() {
               className="flex flex-col items-center justify-center"
             >
               <SiX width={30} height={30} className="mb-2 text-white-500" />
-              X
+              <div className="flex items-center text-blue-400">
+                X
+                <ArrowTopRightOnSquareIcon className="ml-1 inline w-4" />
+              </div>
             </a>
             <a
               href="https://github.com/KazuhiroIto0127"
@@ -258,15 +261,29 @@ export default function About() {
               className="flex flex-col items-center justify-center"
             >
               <SiGithub width={30} height={30} className="mb-2 text-white-500" />
-              Github
+              <div className="flex items-center text-blue-400">
+                Github
+                <ArrowTopRightOnSquareIcon className="ml-1 inline w-4" />
+              </div>
             </a>
             <a href="https://zenn.dev/kazuhiroito0127" target="_blank" rel="noreferrer" className="block">
               <SiZenn width={30} height={30} className="mb-2 text-blue-500" />
-              Zenn
+              <div className="flex items-center text-blue-400">
+                Zenn
+                <ArrowTopRightOnSquareIcon className="ml-1 inline w-4" />
+              </div>
             </a>
-            <a href="https://qiita.com/KazuhiroIto0127" target="_blank" rel="noreferrer" className="block">
+            <a
+              href="https://qiita.com/KazuhiroIto0127"
+              target="_blank"
+              rel="noreferrer"
+              className="flex flex-col items-center justify-center"
+            >
               <SiQiita width={30} height={30} className="mb-2 text-green-500" />
-              Qiita
+              <div className="flex items-center text-blue-400">
+                Qiita
+                <ArrowTopRightOnSquareIcon className="ml-1 inline w-4" />
+              </div>
             </a>
           </div>
         </section>
