@@ -17,10 +17,10 @@ const WorksPage = ({ works }: { works: Work[] }) => {
 
       <ul className="grid gap-4 md:grid-cols-4">
         {works.map((work) => (
-          <Link href={`/works/${work.slug}`} key={work.slug} className="max-h-96 text-xl text-blue-500 dark:text-blue-400">
+          <Link href={`/works/${work.slug}`} key={work.slug} className="max-h-96 text-xl text-blue-500 dark:text-blue-300">
             <li
               className="h-full overflow-hidden rounded-lg
-                         border-2 border-gray-200/60 shadow-lg
+                         border-2 border-gray-200/60
                          shadow-indigo-300/40 transition ease-in-out hover:scale-105
                          bg-white dark:bg-gray-600"
             >
