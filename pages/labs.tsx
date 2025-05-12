@@ -9,7 +9,7 @@ export default function Labs() {
       <HeadMeta type="website" title="実験室" />
 
       <Layout>
-        <h1 className="mb-3">実験室</h1>
+        <h1 className="mb-8 text-3xl font-bold">実験室</h1>
 
         <div className="grid gap-4 md:grid-cols-4">
           {labsLinks.map((link) => (

@@ -34,8 +34,8 @@ export default function Gallery({ images }: GalleryProps) {
     <Layout>
       <HeadMeta type="gallery" title="ギャラリー" />
 
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="mb-8 text-3xl font-bold">画像ギャラリー</h1>
+      <div className="container mx-auto pb-8">
+        <h1 className="mb-8 text-3xl font-bold">描いた絵</h1>
 
         <div className="columns-1 gap-4 sm:columns-2 md:columns-3 lg:columns-4">
           {images.map((image, index) => (

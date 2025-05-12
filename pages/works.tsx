@@ -13,7 +13,7 @@ const WorksPage = ({ works }: { works: Work[] }) => {
     <Layout>
       <HeadMeta type="website" title="作ったもの" />
 
-      <h1 className="mb-3">作ったもの</h1>
+      <h1 className="mb-8 text-3xl font-bold">作ったもの</h1>
 
       <ul className="grid gap-4 md:grid-cols-4">
         {works.map((work) => (

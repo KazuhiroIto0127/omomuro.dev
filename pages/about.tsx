@@ -47,7 +47,7 @@ export default function About() {
     <Layout>
       <HeadMeta type="website" title="自分のこと" />
 
-      <h1 className="mb-2">自分のこと</h1>
+      <h1 className="mb-8 text-3xl font-bold">自分のこと</h1>
       <div className="grid-col-1 md:grid-col-2 lg:grid-col-3 md:grid-row-5 grid gap-6 md:grid-flow-col">
         <section
           className="row-span-2 rounded-md bg-slate-100 p-3 shadow-lg dark:bg-slate-600 "
