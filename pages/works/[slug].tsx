@@ -13,7 +13,7 @@ export default function WorkPage({ work }: { work: Work }) {
     <Layout>
       <HeadMeta type="article" title={work.title} />
 
-      <article className="mx-auto max-w-2xl break-words prose-sm dark:prose-invert sm:prose-base lg:prose-lg">
+      <article className="mx-auto max-w-2xl break-words prose-sm dark:prose-invert sm:prose-base lg:prose-lg bg-white/80 dark:bg-gray-600/80 p-4 rounded-lg">
         <Image
           priority
           src={work.thumbnail}

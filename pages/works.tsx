@@ -17,12 +17,12 @@ const WorksPage = ({ works }: { works: Work[] }) => {
 
       <ul className="grid gap-4 md:grid-cols-4">
         {works.map((work) => (
-          <Link href={`/works/${work.slug}`} key={work.slug} className="max-h-96 text-xl text-blue-500">
+          <Link href={`/works/${work.slug}`} key={work.slug} className="max-h-96 text-xl text-blue-500 dark:text-blue-400">
             <li
               className="h-full overflow-hidden rounded-lg
                          border-2 border-gray-200/60 shadow-lg
                          shadow-indigo-300/40 transition ease-in-out hover:scale-105
-                         dark:bg-gray-600"
+                         bg-white dark:bg-gray-600"
             >
               <Image
                 priority
