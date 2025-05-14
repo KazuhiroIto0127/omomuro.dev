@@ -2,6 +2,7 @@ import Layout from '@/components/layouts/oneColumnLayout';
 import Image from 'next/image';
 import HeadMeta from '@/components/Head';
 import { AcademicCapIcon, CommandLineIcon, LinkIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import RiveAnimation from '@/components/RiveAnimation';
 import {
   SiRuby,
   SiRubyonrails,
@@ -53,12 +54,12 @@ export default function About() {
           className="row-span-2 rounded-md bg-slate-100 p-3 shadow-lg dark:bg-slate-600 "
           style={{
             backgroundImage: `url(
-              "data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%239C92AC' fill-opacity='0.16' fill-rule='evenodd'/%3E%3C/svg%3E"
+              "data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%239C92AC' fill-opacity='0.16' fill-rule='evenodd'/%3E%3C/svg%3E"
             )`,
           }}
         >
           <div className="grid grid-cols-2 place-items-center rounded-lg bg-white/60 p-3 dark:bg-gray-700/40">
-            <Image priority src="/images/omo_pen.png" height={100} width={100} alt="logo" />
+            <RiveAnimation src="/animations/penguin_anime.riv" width={100} height={100} />
             <div>
               <p className="mx-auto my-3 block text-xl font-bold">イトウ カズヒロ</p>
               <p className="mb-2 leading-7">
