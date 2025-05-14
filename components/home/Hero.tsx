@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
+import Image from 'next/image';
 
 const Hero = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -63,23 +64,19 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="item-center ma-auto mt-16 mb-32 flex w-full flex-col justify-center text-center md:my-44 ">
-      <div className="flex w-full justify-center">
-        <h1
-          ref={titleRef}
-          className="opacity-0 pb-11 text-6xl font-extrabold tracking-tight transition-transform hover:scale-105 md:text-8xl"
-        >
-          Hello World.
-          <br />
-          Omomuro development. <span ref={waveRef} className="inline-block">👋</span>
-        </h1>
+    <section className="item-center ma-auto mt-8 mb-16 flex w-full flex-col justify-center md:my-32">
+      <div className="flex w-full flex-col items-center justify-center gap-8">
+        <div className="flex flex-col items-center text-center">
+          <h1
+            ref={titleRef}
+            className="opacity-0 pb-11 text-6xl font-extrabold tracking-tight transition-transform hover:scale-105 md:text-8xl"
+          >
+            Hey!
+            <br />
+            I'm a web developer. <span ref={waveRef} className="inline-block">👋</span>
+          </h1>
+        </div>
       </div>
-      <p ref={descriptionRef} className="flex w-full justify-center dark:text-slate-300">
-        こんにちは！
-        <br />
-        おもむろに開発をします。
-        <br />
-      </p>
     </section>
   );
 };

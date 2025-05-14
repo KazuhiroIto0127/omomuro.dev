@@ -28,7 +28,7 @@ export default function Home() {
                 </p>
               </>
             }
-            imageSrc="/images/programming.png"
+            imageSrc="/images/penguin_with_pc.png"
             imageAlt="about me"
           />
         </div>
