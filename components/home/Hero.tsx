@@ -73,7 +73,7 @@ const Hero = () => {
           >
             Hey!
             <br />
-            I'm a web developer. <span ref={waveRef} className="inline-block">👋</span>
+            I&apos;m a web developer. <span ref={waveRef} className="inline-block">👋</span>
           </h1>
         </div>
       </div>
