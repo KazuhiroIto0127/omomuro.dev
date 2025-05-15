@@ -36,28 +36,30 @@ export default function MobileNav() {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-10 block border-t border-slate-200 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/80 md:hidden">
-      <div className="flex h-16 items-center justify-around">
-        {links.map((link) => {
-          const Icon = link.icon;
-          return (
-            <Link
-              key={link.path}
-              href={link.path}
-              className={clsx(
-                'flex flex-col items-center justify-center px-3 py-2 text-xs',
-                {
-                  'text-sky-500': currentRoute === link.path,
-                  'text-slate-600 dark:text-slate-400': currentRoute !== link.path,
-                }
-              )}
-            >
-              <Icon className="h-6 w-6" />
-              <span className="mt-1">{link.title}</span>
-            </Link>
-          );
-        })}
-      </div>
-    </nav>
+    <div className="fixed bottom-6 left-0 right-0 z-10 block px-4 md:hidden">
+      <nav className="mx-auto max-w-md rounded-full border border-slate-200 bg-white/80 p-2 shadow-lg backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/80">
+        <div className="flex items-center justify-around">
+          {links.map((link) => {
+            const Icon = link.icon;
+            return (
+              <Link
+                key={link.path}
+                href={link.path}
+                className={clsx(
+                  'flex flex-col items-center justify-center rounded-full px-3 py-2 text-xs transition-all duration-200',
+                  {
+                    'bg-sky-100 text-sky-500 dark:bg-sky-900/50': currentRoute === link.path,
+                    'text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50': currentRoute !== link.path,
+                  }
+                )}
+              >
+                <Icon className="h-6 w-6" />
+                <span className="mt-1">{link.title}</span>
+              </Link>
+            );
+          })}
+        </div>
+      </nav>
+    </div>
   );
 }
