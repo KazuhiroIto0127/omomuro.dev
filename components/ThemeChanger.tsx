@@ -28,41 +28,52 @@ export const ThemeChanger = () => {
           <Popover.Content
             collisionPadding={10}
             sideOffset={15}
-            className="rounded-lg bg-white py-1 shadow-lg ring-1 ring-slate-900/10 dark:bg-gray-500"
+            className="rounded-lg bg-white p-3 shadow-lg ring-1 ring-slate-900/10 dark:bg-gray-800 dark:ring-slate-100/10"
           >
-            <p className="px-2">Theme</p>
-            <ul>
+            <div className="flex items-center justify-between border-b border-gray-200 pb-2 dark:border-gray-700">
+              <p className="font-medium text-gray-900 dark:text-gray-100">テーマ設定</p>
+              <Popover.Close className="rounded-full p-1 hover:bg-gray-100 dark:hover:bg-gray-700">
+                <XMarkIcon className="h-4 w-4 text-gray-500 dark:text-gray-400" />
+              </Popover.Close>
+            </div>
+            <ul className="mt-2 space-y-1">
               <li
-                className={clsx('flex gap-1 px-3 py-2 text-red-400 hover:cursor-pointer hover:bg-blue-100', {
-                  'bg-blue-100': theme === 'light',
-                })}
+                className={clsx(
+                  'flex items-center gap-2 rounded-md px-3 py-2 text-sm hover:cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700',
+                  {
+                    'bg-gray-100 dark:bg-gray-700': theme === 'light',
+                  }
+                )}
                 onClick={() => setTheme('light')}
               >
-                <SunIcon className="mr-1 w-5" />
-                <span>Light</span>
+                <SunIcon className="h-5 w-5 text-red-400" />
+                <span className="text-gray-900 dark:text-gray-100">ライト</span>
               </li>
               <li
-                className={clsx('flex gap-1 px-3 py-2 text-yellow-400 hover:cursor-pointer hover:bg-blue-100', {
-                  'bg-blue-100': theme === 'dark',
-                })}
+                className={clsx(
+                  'flex items-center gap-2 rounded-md px-3 py-2 text-sm hover:cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700',
+                  {
+                    'bg-gray-100 dark:bg-gray-700': theme === 'dark',
+                  }
+                )}
                 onClick={() => setTheme('dark')}
               >
-                <MoonIcon className="w-5 text-yellow-400" />
-                <span>Dark</span>
+                <MoonIcon className="h-5 w-5 text-yellow-400" />
+                <span className="text-gray-900 dark:text-gray-100">ダーク</span>
               </li>
               <li
-                className={clsx('flex gap-1 px-3 py-2 hover:cursor-pointer hover:bg-blue-100', {
-                  'bg-blue-100': theme === 'system',
-                })}
+                className={clsx(
+                  'flex items-center gap-2 rounded-md px-3 py-2 text-sm hover:cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700',
+                  {
+                    'bg-gray-100 dark:bg-gray-700': theme === 'system',
+                  }
+                )}
                 onClick={() => setTheme('system')}
               >
-                <ComputerDesktopIcon className="w-5" />
-                <span>System</span>
+                <ComputerDesktopIcon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+                <span className="text-gray-900 dark:text-gray-100">システム</span>
               </li>
             </ul>
-            <Popover.Close className="absolute top-1 right-1 h-4 w-4 rounded-[100%] hover:bg-blue-100">
-              <XMarkIcon className="w-5" />
-            </Popover.Close>
           </Popover.Content>
         </Popover.Portal>
       </Popover.Root>
