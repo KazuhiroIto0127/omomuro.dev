@@ -13,7 +13,7 @@ export const labsLinks = [
   {
     title: 'typescriptの勉強！',
     id: 'typescriptPractice',
-    emoji: 'typescript ',
+    emoji: '🐔',
     component: TypescriptPractice,
   },
   { title: 'RadixUIの練習', id: 'radixUiPractice', emoji: '🐶', component: RadixUiPractice },
