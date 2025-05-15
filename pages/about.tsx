@@ -1,5 +1,4 @@
 import Layout from '@/components/layouts/oneColumnLayout';
-import Image from 'next/image';
 import HeadMeta from '@/components/Head';
 import { AcademicCapIcon, CommandLineIcon, LinkIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import RiveAnimation from '@/components/RiveAnimation';
