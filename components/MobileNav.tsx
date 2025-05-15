@@ -36,7 +36,7 @@ export default function MobileNav() {
   ];
 
   return (
-    <div className="fixed bottom-6 left-0 right-0 z-10 block px-4 md:hidden">
+    <div className="fixed bottom-3 left-0 right-0 z-10 block px-4 md:hidden">
       <nav className="mx-auto max-w-md rounded-full border border-slate-200 bg-white/80 p-2 shadow-lg backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/80">
         <div className="flex items-center justify-around">
           {links.map((link) => {
@@ -46,7 +46,7 @@ export default function MobileNav() {
                 key={link.path}
                 href={link.path}
                 className={clsx(
-                  'flex flex-col items-center justify-center rounded-full px-3 py-2 text-xs transition-all duration-200',
+                  'flex flex-col items-center justify-center rounded-full px-3 py-1 text-xs transition-all duration-200',
                   {
                     'bg-sky-100 text-sky-500 dark:bg-sky-900/50': currentRoute === link.path,
                     'text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800/50': currentRoute !== link.path,

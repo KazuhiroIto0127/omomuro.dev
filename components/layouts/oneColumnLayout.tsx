@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <div className="dark:bg-gray-700/0 dark:text-white">
         <HomeHeader />
-        <main className="container mx-auto px-4 py-4 pt-24">{children}</main>
+        <main className="container mx-auto px-4 py-4 md:pt-24">{children}</main>
         <Footer />
       </div>
     </>

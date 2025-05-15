@@ -34,7 +34,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-10 h-15 bg-white/0 backdrop-blur-md dark:bg-slate-900/0">
+      <header className="md:fixed relative top-0 left-0 right-0 z-10 h-15 bg-white/0 backdrop-blur-md dark:bg-slate-900/0">
         <div className="container mx-auto flex h-full items-center justify-between px-6 font-semibold">
           <Link href="/" className="flex items-center justify-center transition-transform hover:scale-105">
             <Image priority src="/images/omo_pen.png" className="mr-2" height={30} width={30} alt="logo" />
