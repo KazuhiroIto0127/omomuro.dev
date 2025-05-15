@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
 import { ThemeChanger } from '@/components/ThemeChanger';
-import { HamburgerMenu } from '@/components/HamburgerMenu';
 import MobileNav from '@/components/MobileNav';
 
 export default function Header() {
@@ -65,7 +64,9 @@ export default function Header() {
             </div>
           </div>
           <div className="md:hidden">
-            <HamburgerMenu />
+            <div className="h-5 w-5">
+              <ThemeChanger />
+            </div>
           </div>
         </div>
       </header>
