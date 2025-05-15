@@ -3,10 +3,14 @@ import HeadMeta from '@/components/Head';
 import { useState, useEffect } from 'react';
 import fs from 'fs';
 import path from 'path';
+import Image from 'next/image';
+import sharp from 'sharp';
 
 type ImageData = {
   src: string;
   alt: string;
+  width: number;
+  height: number;
 };
 
 type GalleryProps = {
@@ -44,9 +48,11 @@ export default function Gallery({ images }: GalleryProps) {
               className="mb-4 break-inside-avoid cursor-pointer overflow-hidden rounded-lg shadow-lg"
               onClick={() => setSelectedImage(image)}
             >
-              <img
+              <Image
                 src={image.src}
                 alt={image.alt}
+                width={image.width}
+                height={image.height}
                 className="w-full transition-transform hover:scale-105"
                 loading="lazy"
               />
@@ -61,9 +67,11 @@ export default function Gallery({ images }: GalleryProps) {
             onClick={() => setSelectedImage(null)}
           >
             <div className="relative max-h-[90vh] max-w-[90vw]">
-              <img
+              <Image
                 src={selectedImage.src}
                 alt={selectedImage.alt}
+                width={selectedImage.width}
+                height={selectedImage.height}
                 className="max-h-[90vh] max-w-[90vw] object-contain"
               />
               <button
@@ -103,10 +111,18 @@ export async function getStaticProps() {
   );
 
   // 画像データを設定
-  const images = imageFiles.map(file => ({
-    src: `/images/gallery/${file}`,
-    alt: path.parse(file).name, // ファイル名から拡張子を除いた部分をalt属性として使用
-  }));
+  const images = await Promise.all(
+    imageFiles.map(async file => {
+      const filePath = path.join(galleryPath, file);
+      const metadata = await sharp(filePath).metadata();
+      return {
+        src: `/images/gallery/${file}`,
+        alt: path.parse(file).name,
+        width: metadata.width || 0,
+        height: metadata.height || 0,
+      };
+    })
+  );
 
   return {
     props: {
