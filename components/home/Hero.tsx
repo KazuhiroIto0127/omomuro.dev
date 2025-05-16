@@ -3,6 +3,14 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { SplitText } from 'gsap/SplitText';
 import Image from 'next/image';
+import { Sigmar } from 'next/font/google';
+import styles from '@/styles/HeroOutline.module.css';
+
+const sigmar = Sigmar({
+  weight: ['400'],
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 const Hero = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -18,13 +26,6 @@ const Hero = () => {
     const titleSplit = new SplitText(titleRef.current, { type: "chars,words" });
     // Apply gradient classes to each character span created by SplitText
     titleSplit.chars.forEach((char: HTMLElement) => {
-      char.classList.add(
-        'bg-gradient-to-b',
-        'from-blue-200',
-        'to-blue-500',
-        'bg-clip-text',
-        'text-transparent'
-      );
       // Small bottom padding so descenders (e.g., "p", "g") aren't clipped
       char.style.paddingBottom = '0.2em';
     });
@@ -66,14 +67,16 @@ const Hero = () => {
   return (
     <section className="item-center ma-auto mt-8 mb-16 flex w-full flex-col justify-center md:my-32">
       <div className="flex w-full flex-col items-center justify-center gap-8">
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-center">
           <h1
             ref={titleRef}
-            className="opacity-0 pb-11 text-6xl font-extrabold tracking-tight transition-transform hover:scale-105 md:text-8xl"
+            className={`${sigmar.className} ${styles.outlineText} opacity-0 pb-11 text-4xl font-extrabold tracking-tight transition-transform hover:scale-105 md:text-7xl lg:text-8xl`}
           >
-            Hey!
+            Hi!<span ref={waveRef} className="inline-block">👋</span>
             <br />
-            I&apos;m a web developer. <span ref={waveRef} className="inline-block">👋</span>
+            <span>I&apos;m Kazuhiro Ito,</span>
+            <br />
+            <p>web developer.</p>
           </h1>
         </div>
       </div>

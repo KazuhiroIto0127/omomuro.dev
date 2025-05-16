@@ -1,0 +1,30 @@
+.outlineText {
+  color: #fff;
+  -webkit-text-stroke: 1px #000;
+  text-stroke: 1px #000;
+  /* fallback for browsers that don't support text-stroke */
+  text-shadow:
+    1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    1px 0px 0 #000,
+    0px 1px 0 #000,
+    -1px 0px 0 #000,
+    0px -1px 0 #000;
+}
+
+:global(.dark) .outlineText {
+  color: #3f3f3f;
+  -webkit-text-stroke: 1px #fff;
+  text-stroke: 1px #fff;
+  text-shadow:
+    1px 1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px -1px 0 #fff,
+    1px 0px 0 #fff,
+    0px 1px 0 #fff,
+    -1px 0px 0 #fff,
+    0px -1px 0 #fff;
+}
