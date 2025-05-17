@@ -42,7 +42,7 @@ export default function Header() {
           </Link>
           <div className="hidden items-center md:flex">
             <nav className="">
-              <ul className="flex items-center space-x-8">
+              <ul className="flex items-center space-x-8 text-lg">
                 {links.map((link) => (
                   <li key={link.path}>
                     <Link
