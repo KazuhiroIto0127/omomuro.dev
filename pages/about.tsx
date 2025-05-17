@@ -50,7 +50,7 @@ export default function About() {
       <h1 className="mb-8 text-3xl font-bold">自分のこと</h1>
       <div className="grid-col-1 md:grid-col-2 lg:grid-col-3 md:grid-row-5 grid gap-6 md:grid-flow-col">
         <section
-          className="row-span-2 rounded-md bg-slate-100 p-3 shadow-lg dark:bg-slate-600 "
+          className="row-span-2 rounded-md bg-slate-100 p-6 shadow-lg dark:bg-slate-600 "
           style={{
             backgroundImage: `url(
               "data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%239C92AC' fill-opacity='0.16' fill-rule='evenodd'/%3E%3C/svg%3E"
@@ -82,7 +82,7 @@ export default function About() {
         </section>
 
         <section
-          className="rounded-lg bg-slate-100 p-4 shadow-lg dark:bg-slate-600 md:row-span-2 md:row-start-3 md:row-end-5"
+          className="rounded-lg bg-slate-100 p-6 shadow-lg dark:bg-slate-600 md:row-span-2 md:row-start-3 md:row-end-5"
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"
           )`,
@@ -165,7 +165,7 @@ export default function About() {
         </section>
 
         <section
-          className="rounded-lg bg-gray-100 p-4 shadow-lg dark:bg-slate-600 md:col-start-2 md:row-span-3"
+          className="rounded-lg bg-gray-100 p-6 shadow-lg dark:bg-slate-600 md:col-start-2 md:row-span-3"
           style={{
             backgroundImage: `url(
               "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='32' viewBox='0 0 16 32'%3E%3Cg fill='%239C92AC' fill-opacity='0.16'%3E%3Cpath fill-rule='evenodd' d='M0 24h4v2H0v-2zm0 4h6v2H0v-2zm0-8h2v2H0v-2zM0 0h4v2H0V0zm0 4h2v2H0V4zm16 20h-6v2h6v-2zm0 4H8v2h8v-2zm0-8h-4v2h4v-2zm0-20h-6v2h6V0zm0 4h-4v2h4V4zm-2 12h2v2h-2v-2zm0-8h2v2h-2V8zM2 8h10v2H2V8zm0 8h10v2H2v-2zm-2-4h14v2H0v-2zm4-8h6v2H4V4zm0 16h6v2H4v-2zM6 0h2v2H6V0zm0 24h2v2H6v-2z'/%3E%3C/g%3E%3C/svg%3E"
@@ -230,7 +230,7 @@ export default function About() {
         </section>
 
         <section
-          className="rounded-lg bg-gray-100 p-4 shadow-lg dark:bg-slate-600 md:col-start-2 md:row-span-1 md:row-start-1 lg:col-start-3"
+          className="rounded-lg bg-gray-100 p-6 shadow-lg dark:bg-slate-600 md:col-start-2 md:row-span-1 md:row-start-1 lg:col-start-3"
           style={{
             backgroundImage: `url(
               "data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 13.278 60.562 12 50 12c-10.626 0-16.855 1.397-26.66 5.063l-1.767.662c-2.475.923-4.66 1.674-6.724 2.275h6.335zm0-20C13.258 2.892 8.077 4 0 4V2c5.744 0 9.951-.574 14.85-2h6.334zM77.38 0C85.239 2.966 90.502 4 100 4V2c-6.842 0-11.386-.542-16.396-2h-6.225zM0 14c8.44 0 13.718-1.21 22.272-4.402l1.768-.661C33.64 5.347 39.647 4 50 4c10.271 0 15.362 1.222 24.629 4.928C84.112 12.722 89.438 14 100 14v-2c-10.271 0-15.362-1.222-24.629-4.928C65.888 3.278 60.562 2 50 2 39.374 2 33.145 3.397 23.34 7.063l-1.767.662C13.223 10.84 8.163 12 0 12v2z' fill='%23d27489' fill-opacity='0.11' fill-rule='evenodd'/%3E%3C/svg%3E"
