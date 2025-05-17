@@ -53,7 +53,7 @@ export default function About() {
           className="row-span-2 rounded-md bg-slate-100 p-6 shadow-lg dark:bg-slate-600 "
           style={{
             backgroundImage: `url(
-              "data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%239C92AC' fill-opacity='0.16' fill-rule='evenodd'/%3E%3C/svg%3E"
+              "data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%239C92AC' fill-opacity='0.16' fill-rule='evenodd'/%3E%3C/svg%3E"
             )`,
           }}
         >
@@ -62,7 +62,7 @@ export default function About() {
             <div>
               <p className="mx-auto my-3 block text-xl font-bold">イトウ カズヒロ</p>
               <p className="mb-2 leading-7">
-                1990年1月27日 生まれ
+                1990年 生まれ
                 <br />
                 東京都在住
                 <br />
@@ -96,11 +96,45 @@ export default function About() {
             <li className="mb-8 ml-4">
               <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-300 dark:border-blue-200 dark:bg-gray-900"></div>
               <time className="mb-1 text-base font-normal leading-none text-gray-400 dark:text-gray-400">
-                1990年 1月
+                2021年 4月 〜
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">大分県で誕生</h3>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">保育Techベンチャーへ</h3>
               <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-                絵を書いたり図画工作が好きでした。
+                サーバーサイドエンジニアとして従事。引き続きRailsとVue.js等を使ってシステム開発、インフラはAWSを活用。ECS、Lambda等の使い方を学びました。
+              </p>
+            </li>
+            <li className="mb-8 ml-4">
+              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-300 dark:border-blue-200 dark:bg-gray-900"></div>
+              <time className="mb-1 text-base font-normal leading-none text-gray-400 dark:text-gray-400">
+                2018年 4月 〜 2021年 2月
+              </time>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                コミュニティ系ベンチャーでWebエンジニアになる
+              </h3>
+              <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+                サーバーサイドエンジニアとして従事。RailsとVue.jsやMySqlを使ってシステム開発をしました。Webサービスの開発のいろはを学びました。
+              </p>
+            </li>
+            <li className="mb-8 ml-4">
+              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-300 dark:border-blue-200 dark:bg-gray-900"></div>
+              <time className="mb-1 text-base font-normal leading-none text-gray-400 dark:text-gray-400">
+                2014年 3月 〜 2018年 4月
+              </time>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">システムエンジニアになる</h3>
+              <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+                基幹系の業務システムの開発・保守などをやってました。OracleのPL/SQL（データベース言語SQL）をたくさん読み書きしました。
+              </p>
+            </li>
+            <li className="mb-8 ml-4">
+              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-300 dark:border-blue-200 dark:bg-gray-900"></div>
+              <time className="mb-1 text-base font-normal leading-none text-gray-400 dark:text-gray-400">
+                2014年 3月
+              </time>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                大分大学大学院 工学研究科知能情報システム工学専攻 卒業
+              </h3>
+              <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+                セマンティックWebという技術を研究していました。RDFやLinked Open Dataを使ったりしていました。
               </p>
             </li>
             <li className="mb-8 ml-4">
@@ -120,45 +154,11 @@ export default function About() {
             <li className="mb-8 ml-4">
               <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-300 dark:border-blue-200 dark:bg-gray-900"></div>
               <time className="mb-1 text-base font-normal leading-none text-gray-400 dark:text-gray-400">
-                2014年 3月
+                1990年 1月
               </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                大分大学大学院 工学研究科知能情報システム工学専攻 卒業
-              </h3>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">大分県で誕生</h3>
               <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-                セマンティックWebという技術を研究していました。RDFやLinked Open Dataを使ったりしていました。
-              </p>
-            </li>
-            <li className="mb-8 ml-4">
-              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-300 dark:border-blue-200 dark:bg-gray-900"></div>
-              <time className="mb-1 text-base font-normal leading-none text-gray-400 dark:text-gray-400">
-                2014年 3月 〜 2018年 4月
-              </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">システムエンジニアになる</h3>
-              <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-                基幹系の業務システムの開発・保守などをやってました。OracleのPL/SQL（データベース言語SQL）をたくさん読み書きしました。
-              </p>
-            </li>
-            <li className="mb-8 ml-4">
-              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-300 dark:border-blue-200 dark:bg-gray-900"></div>
-              <time className="mb-1 text-base font-normal leading-none text-gray-400 dark:text-gray-400">
-                2018年 4月 〜 2021年 2月
-              </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                コミュニティ系ベンチャーでWebエンジニアになる
-              </h3>
-              <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-                サーバーサイドエンジニアとして従事。RailsとVue.jsやMySqlを使ってシステム開発をしました。Webサービスの開発のいろはを学びました。
-              </p>
-            </li>
-            <li className="mb-8 ml-4">
-              <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-300 dark:border-blue-200 dark:bg-gray-900"></div>
-              <time className="mb-1 text-base font-normal leading-none text-gray-400 dark:text-gray-400">
-                2021年 4月 〜
-              </time>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">保育Techベンチャーへ</h3>
-              <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
-                サーバーサイドエンジニアとして従事。引き続きRailsとVue.js等を使ってシステム開発、インフラはAWSを活用。ECS、Lambda等の使い方を学びました。
+                絵を書いたり図画工作が好きでした。
               </p>
             </li>
           </ol>

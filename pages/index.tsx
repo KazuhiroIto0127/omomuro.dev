@@ -20,7 +20,7 @@ export default function Home() {
               <>
                 <p className="mb-3 block font-bold">イトウ カズヒロ</p>
                 <p className="mb-2 leading-7">
-                  1990年1月27日生まれ
+                  1990年 生まれ
                   <br />
                   東京都在住
                   <br />
