@@ -39,7 +39,7 @@ const LinkCard: React.FC<LinkCardProps> = ({
     <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1, transition: { delay: 0.3 } }} viewport={{ once: true }}>
       <Link
         href={href}
-        className="group grid grid-cols-2 place-items-center gap-4 overflow-hidden rounded-2xl border border-gray-300 bg-sky-100/80 py-5 px-8 dark:border-gray-500 dark:bg-gray-600/80"
+        className="group grid grid-cols-2 place-items-center gap-4 overflow-hidden rounded-2xl border border-gray-300 bg-white/60 py-5 px-8 dark:border-gray-500 dark:bg-gray-600/80 hover:bg-sky-200/50"
       >
         <div className="col-span-2 mb-4">
           <h2 className="text-center text-3xl font-bold md:text-4xl">{title}</h2>
