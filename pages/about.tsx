@@ -57,8 +57,10 @@ export default function About() {
             )`,
           }}
         >
-          <div className="grid 2xl:grid-cols-2 grid-cols-1 place-items-center rounded-lg bg-white/60 p-3 dark:bg-gray-700/40">
-            <RiveAnimation src="/animations/penguin_anime.riv" width={200} height={200} />
+          <div className="grid 2xl:grid-cols-2 grid-cols-1 place-items-center rounded-lg bg-white/60 py-4 px-5 dark:bg-gray-700/40">
+            <div className="my-[-20px]">
+              <RiveAnimation src="/animations/penguin_anime.riv" width={200} height={200} />
+            </div>
             <div>
               <p className="mx-auto my-3 block text-xl font-bold">イトウ カズヒロ</p>
               <p className="mb-2 leading-7">
@@ -66,18 +68,17 @@ export default function About() {
                 <br />
                 東京都在住
                 <br />
-                Webエンジニア
+                Software Engineer
                 <br />
-                趣味はプログラミング、デザイン、絵 etc
+                #プログラミング、#デザイン、#イラスト
               </p>
             </div>
           </div>
 
           <p className="pt-3 leading-7">
-            はじめまして！こんにちは。
+            はじめまして！
             <br /> こんなところまで見て頂きとても嬉しいです！
             <br /> このomomuro.devは、私のポートフォリオのようなサイトです。
-            <br /> 技術的な実験を試みたりもするので、たまに見るとサイトが変わってたりするかも！
           </p>
         </section>
 

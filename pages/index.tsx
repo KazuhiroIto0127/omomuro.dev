@@ -24,7 +24,7 @@ export default function Home() {
                   <br />
                   東京都在住
                   <br />
-                  Webエンジニア
+                  Software Engineer
                 </p>
               </>
             }
