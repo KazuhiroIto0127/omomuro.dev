@@ -57,7 +57,7 @@ export default function About() {
             )`,
           }}
         >
-          <div className="grid grid-cols-2 place-items-center rounded-lg bg-white/60 p-3 dark:bg-gray-700/40">
+          <div className="grid 2xl:grid-cols-2 grid-cols-1 place-items-center rounded-lg bg-white/60 p-3 dark:bg-gray-700/40">
             <RiveAnimation src="/animations/penguin_anime.riv" width={200} height={200} />
             <div>
               <p className="mx-auto my-3 block text-xl font-bold">イトウ カズヒロ</p>
