@@ -76,7 +76,7 @@ const Hero = () => {
             <br />
             <span>I&apos;m Kazuhiro Ito,</span>
             <br />
-            <p>web developer.</p>
+            <p>software engineer.</p>
           </h1>
         </div>
       </div>
