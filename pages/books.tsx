@@ -26,15 +26,17 @@ export default function Books({ books }: { books: Book[] }) {
   return (
     <Layout>
       <h1 className="mb-8 text-3xl font-bold">読んだ本一覧</h1>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-8 md:gap-y-16 max-w-[1000px] mx-auto">
         {books.map((book) => (
-          <Link key={book.slug} href={`/books/${book.slug}`} className="focus:outline-none">
-            <img
-              src={book.cover}
-              alt={book.title}
-              className="rounded shadow-md w-full aspect-[3/4] object-cover hover:scale-105 transition-transform"
-            />
-          </Link>
+          <div key={book.slug}>
+            <Link href={`/books/${book.slug}`} className="focus:outline-none w-full max-w-[212px] block mx-auto">
+              <img
+                src={book.cover}
+                alt={book.title}
+                className="rounded shadow-md w-full aspect-[3/4] object-cover hover:scale-105 transition-transform"
+              />
+            </Link>
+          </div>
         ))}
       </div>
     </Layout>
