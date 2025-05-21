@@ -23,8 +23,8 @@ export default function Header() {
       path: '/works',
     },
     {
-      title: 'Labs',
-      path: '/labs',
+      title: 'Books',
+      path: '/books',
     },
     {
       title: 'Gallery',

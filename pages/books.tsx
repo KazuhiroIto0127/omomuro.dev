@@ -25,7 +25,7 @@ export async function getStaticProps() {
 export default function Books({ books }: { books: Book[] }) {
   return (
     <Layout>
-      <h1 className="mb-8 text-3xl font-bold">読んだ本一覧</h1>
+      <h1 className="mb-8 text-3xl font-bold">本棚</h1>
       <div className="relative bg-white/50 dark:bg-black/50 p-8 rounded-lg shadow-2xl">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-12 md:gap-y-20 max-w-[1000px] mx-auto relative">
           {books.map((book, index) => (

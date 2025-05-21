@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
-import { HomeIcon, UserIcon, BriefcaseIcon, BeakerIcon, PhotoIcon } from '@heroicons/react/24/outline';
+import { HomeIcon, UserIcon, BriefcaseIcon, BookOpenIcon, PhotoIcon } from '@heroicons/react/24/outline';
 
 export default function MobileNav() {
   const router = useRouter();
@@ -14,7 +14,7 @@ export default function MobileNav() {
       icon: HomeIcon,
     },
     {
-      title: 'About',
+      title: 'About Me',
       path: '/about',
       icon: UserIcon,
     },
@@ -24,9 +24,9 @@ export default function MobileNav() {
       icon: BriefcaseIcon,
     },
     {
-      title: 'Labs',
-      path: '/labs',
-      icon: BeakerIcon,
+      title: 'Books',
+      path: '/books',
+      icon: BookOpenIcon,
     },
     {
       title: 'Gallery',
