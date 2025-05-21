@@ -31,7 +31,7 @@ export default function Books({ books }: { books: Book[] }) {
           {books.map((book, index) => (
             <div
               key={book.slug}
-              className="relative after:content-[''] after:absolute after:-left-4 after:-right-4 after:bottom-0 after:h-4 after:bg-[#eaeaea] dark:after:bg-[#515151] after:rounded-b-lg after:shadow-inner"
+              className="relative after:content-[''] after:absolute after:-left-4 after:-right-4 after:bottom-[-1] after:h-4 after:bg-[#eaeaea] dark:after:bg-[#515151] after:rounded-b-lg after:shadow-inner"
             >
               <div className="transform hover:-translate-y-2 transition-all duration-300">
                 <Link href={`/books/${book.slug}`} className="focus:outline-none w-full max-w-[212px] block mx-auto">
@@ -39,9 +39,8 @@ export default function Books({ books }: { books: Book[] }) {
                     <img
                       src={book.cover}
                       alt={book.title}
-                      className="rounded shadow-[0_8px_16px_rgba(0,0,0,0.3)] w-full aspect-[3/4] object-cover hover:scale-105 transition-transform"
+                      className="shadow-[0_24px_12px_rgba(0,0,0,0.3)] w-full aspect-[3/4] object-cover hover:translate-y-[-10px] transition-transform"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 rounded"></div>
                   </div>
                 </Link>
               </div>
