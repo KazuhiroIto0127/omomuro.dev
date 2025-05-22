@@ -19,7 +19,7 @@ const LinkCard: React.FC<LinkCardProps> = ({
   description,
   imageSrc,
   imageAlt,
-  imageClassName = 'w-full transition-transform group-hover:scale-150',
+  imageClassName = 'w-[140%] transition-transform group-hover:scale-150',
   reverseLayout = false,
 }) => {
   const DescriptionContent = (

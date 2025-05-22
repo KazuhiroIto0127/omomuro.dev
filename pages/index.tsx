@@ -57,16 +57,16 @@ export default function Home() {
 
         <div className="md:col-span-2">
           <LinkCard
-            href="/labs"
-            title="実験室"
+            href="/books"
+            title="本棚"
             description={
               <>
-                <p className="mb-2 leading-7">なにか技術的なことを試す場所</p>
+                <p className="mb-2 leading-7">読んだ本を記録しています</p>
               </>
             }
-            imageSrc="/images/labs.png"
-            imageAlt="labs"
-            imageClassName="w-full transition-transform group-hover:translate-y-5 group-hover:rotate-45 group-hover:scale-150"
+            imageSrc="/images/book_shelf.svg"
+            imageAlt="books"
+            imageClassName="w-full transition-transform scale-150 group-hover:scale-200"
           />
         </div>
 
@@ -75,6 +75,15 @@ export default function Home() {
             href="/gallery"
             imageSrc="/images/gallery.jpg"
             imageAlt="gallery"
+          />
+        </div>
+
+        <div className="md:col-span-1">
+          <ImageButton
+            href="/labs"
+            imageSrc="/images/labs.png"
+            imageAlt="labs"
+            imageClassName="max-h-[150px] object-contain hover:scale-110 transition-transform hover:rotate-12"
           />
         </div>
       </div>
