@@ -121,14 +121,29 @@ export async function getStaticProps() {
         alt: path.parse(file).name,
         width: metadata.width || 0,
         height: metadata.height || 0,
-        createdAt: stats.birthtime, // 作成日時を追加
+        createdAt: stats.birthtime || stats.mtime, // 作成日時、取得できない場合は更新日時
       };
     })
   );
 
-  // 作成日順でソート（新しい順）
+  // ファイル名ベースでソート（降順）- Vercelでも確実に動作
   const images = imagesWithStats
-    .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
+    .sort((a, b) => {
+      const fileNameA = path.basename(a.src);
+      const fileNameB = path.basename(b.src);
+
+      // ファイル名に日付が含まれている場合の処理（YYYY-MM-DD形式）
+      const dateRegex = /(\d{4}-\d{2}-\d{2})/;
+      const dateA = fileNameA.match(dateRegex)?.[1];
+      const dateB = fileNameB.match(dateRegex)?.[1];
+
+      if (dateA && dateB) {
+        return dateB.localeCompare(dateA); // 日付で降順ソート
+      }
+
+      // 日付が含まれていない場合はファイル名で降順ソート
+      return fileNameB.localeCompare(fileNameA);
+    })
     .map(({ createdAt, ...image }) => image); // createdAtを除外してpropsに渡す
 
   return {
