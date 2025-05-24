@@ -41,7 +41,7 @@ export default function Gallery({ images }: GalleryProps) {
       <div className="container mx-auto pb-8">
         <h1 className="mb-8 text-3xl font-bold">描いた絵</h1>
 
-        <div className="columns-1 gap-4 sm:columns-2 md:columns-3 lg:columns-4">
+        <div className="columns-2 gap-4 sm:columns-2 md:columns-3 lg:columns-4">
           {images.map((image, index) => (
             <div
               key={index}
