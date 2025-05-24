@@ -110,19 +110,26 @@ export async function getStaticProps() {
     /\.(jpg|jpeg|png|gif|webp)$/i.test(file)
   );
 
-  // 画像データを設定
-  const images = await Promise.all(
+  // 画像データを設定（作成日時も取得）
+  const imagesWithStats = await Promise.all(
     imageFiles.map(async file => {
       const filePath = path.join(galleryPath, file);
+      const stats = fs.statSync(filePath);
       const metadata = await sharp(filePath).metadata();
       return {
         src: `/images/gallery/${file}`,
         alt: path.parse(file).name,
         width: metadata.width || 0,
         height: metadata.height || 0,
+        createdAt: stats.birthtime, // 作成日時を追加
       };
     })
   );
+
+  // 作成日順でソート（新しい順）
+  const images = imagesWithStats
+    .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
+    .map(({ createdAt, ...image }) => image); // createdAtを除外してpropsに渡す
 
   return {
     props: {
