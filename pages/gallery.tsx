@@ -96,9 +96,16 @@ export default function Gallery({ images }: GalleryProps) {
         {selectedImage && (
           <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"
-            onClick={() => setSelectedImage(null)}
+            onClick={(e) => {
+              if (e.target === e.currentTarget) {
+                setSelectedImage(null);
+              }
+            }}
           >
-            <div className="relative max-h-[90vh] max-w-[90vw]">
+            <div 
+              className="relative max-h-[90vh] max-w-[90vw]"
+              onClick={(e) => e.stopPropagation()}
+            >
               {selectedImage.type === 'image' ? (
                 <Image
                   src={selectedImage.src}
@@ -112,17 +119,25 @@ export default function Gallery({ images }: GalleryProps) {
                   src={selectedImage.src}
                   controls
                   autoPlay
+                  muted
+                  playsInline
                   className="max-h-[90vh] max-w-[90vw] object-contain"
                   style={{ aspectRatio: `${selectedImage.width} / ${selectedImage.height}` }}
+                  onClick={(e) => e.stopPropagation()}
+                  onTouchStart={(e) => e.stopPropagation()}
+                  onTouchEnd={(e) => e.stopPropagation()}
                 />
               )}
               <button
-                className="absolute -top-4 -right-4 rounded-full bg-white p-2 text-black hover:bg-gray-200"
-                onClick={() => setSelectedImage(null)}
+                className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 rounded-full bg-white p-3 sm:p-2 text-black hover:bg-gray-200 touch-manipulation shadow-lg"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedImage(null);
+                }}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
+                  className="h-8 w-8 sm:h-6 sm:w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
