@@ -12,6 +12,7 @@ type MediaData = {
   width: number;
   height: number;
   type: 'image' | 'video';
+  poster?: string; // 動画用サムネイル
 };
 
 type GalleryProps = {
@@ -38,10 +39,8 @@ export default function Gallery({ images }: GalleryProps) {
   return (
     <Layout>
       <HeadMeta type="gallery" title="ギャラリー" />
-
       <div className="container mx-auto pb-8">
         <h1 className="mb-8 text-3xl font-bold">描いた絵</h1>
-
         <div className="columns-2 gap-4 sm:columns-2 md:columns-3 lg:columns-4">
           {images.map((media, index) => (
             <div
@@ -59,15 +58,35 @@ export default function Gallery({ images }: GalleryProps) {
                   loading="lazy"
                 />
               ) : (
-                <video
-                  src={media.src}
-                  controls={false}
-                  className="w-full transition-transform hover:scale-105"
-                  style={{ aspectRatio: `${media.width} / ${media.height}` }}
-                  muted
-                  playsInline
-                  preload="metadata"
-                />
+                <div className="relative">
+                  <video
+                    src={media.src}
+                    poster={media.poster}
+                    controls={false}
+                    className="w-full transition-transform hover:scale-105"
+                    style={{ aspectRatio: `${media.width} / ${media.height}` }}
+                    muted
+                    playsInline
+                    preload="metadata"
+                    onMouseEnter={(e) => {
+                      const video = e.target as HTMLVideoElement;
+                      video.currentTime = 1; // 1秒の位置でプレビュー
+                    }}
+                  />
+                  {/* 動画アイコンオーバーレイ */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="bg-black bg-opacity-50 rounded-full p-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-8 w-8 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               )}
             </div>
           ))}
@@ -141,12 +160,39 @@ export async function getStaticProps() {
       const ext = path.extname(file).toLowerCase();
       if (ext === '.mp4') {
         // 動画の場合
+        // サムネイル画像（同名jpg/png/webp優先）を探す
+        const base = path.basename(file, ext);
+        const posterExts = ['.png', '.jpg', '.jpeg', '.webp'];
+        let poster = undefined;
+        
+        // 大文字小文字を考慮してサムネイルを検索
+        for (const pExt of posterExts) {
+          // 小文字で検索
+          let posterPath = path.join(galleryPath, base + pExt);
+          if (fs.existsSync(posterPath)) {
+            poster = `/images/gallery/${base + pExt}`;
+            break;
+          }
+          // 大文字で検索
+          posterPath = path.join(galleryPath, base + pExt.toUpperCase());
+          if (fs.existsSync(posterPath)) {
+            poster = `/images/gallery/${base + pExt.toUpperCase()}`;
+            break;
+          }
+        }
+        
+        // デバッグ用ログ（本番では削除可能）
+        if (file === '2025-05-25_obake.mp4') {
+          console.log(`Video: ${file}, Poster found: ${poster}`);
+        }
+        
         return {
           src: `/images/gallery/${file}`,
           alt: path.parse(file).name,
           width: 640,
           height: 360,
-          type: 'video',
+          type: 'video' as const,
+          poster,
           createdAt: stats.birthtime || stats.mtime,
         };
       } else {
@@ -157,7 +203,7 @@ export async function getStaticProps() {
           alt: path.parse(file).name,
           width: metadata.width || 0,
           height: metadata.height || 0,
-          type: 'image',
+          type: 'image' as const,
           createdAt: stats.birthtime || stats.mtime,
         };
       }
