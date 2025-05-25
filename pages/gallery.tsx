@@ -6,19 +6,20 @@ import path from 'path';
 import Image from 'next/image';
 import sharp from 'sharp';
 
-type ImageData = {
+type MediaData = {
   src: string;
   alt: string;
   width: number;
   height: number;
+  type: 'image' | 'video';
 };
 
 type GalleryProps = {
-  images: ImageData[];
+  images: MediaData[];
 };
 
 export default function Gallery({ images }: GalleryProps) {
-  const [selectedImage, setSelectedImage] = useState<ImageData | null>(null);
+  const [selectedImage, setSelectedImage] = useState<MediaData | null>(null);
 
   // キーボードイベントのハンドラー
   useEffect(() => {
@@ -42,20 +43,32 @@ export default function Gallery({ images }: GalleryProps) {
         <h1 className="mb-8 text-3xl font-bold">描いた絵</h1>
 
         <div className="columns-2 gap-4 sm:columns-2 md:columns-3 lg:columns-4">
-          {images.map((image, index) => (
+          {images.map((media, index) => (
             <div
               key={index}
               className="mb-4 break-inside-avoid cursor-pointer overflow-hidden rounded-lg shadow-lg"
-              onClick={() => setSelectedImage(image)}
+              onClick={() => setSelectedImage(media)}
             >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                width={image.width}
-                height={image.height}
-                className="w-full transition-transform hover:scale-105"
-                loading="lazy"
-              />
+              {media.type === 'image' ? (
+                <Image
+                  src={media.src}
+                  alt={media.alt}
+                  width={media.width}
+                  height={media.height}
+                  className="w-full transition-transform hover:scale-105"
+                  loading="lazy"
+                />
+              ) : (
+                <video
+                  src={media.src}
+                  controls={false}
+                  className="w-full transition-transform hover:scale-105"
+                  style={{ aspectRatio: `${media.width} / ${media.height}` }}
+                  muted
+                  playsInline
+                  preload="metadata"
+                />
+              )}
             </div>
           ))}
         </div>
@@ -67,13 +80,23 @@ export default function Gallery({ images }: GalleryProps) {
             onClick={() => setSelectedImage(null)}
           >
             <div className="relative max-h-[90vh] max-w-[90vw]">
-              <Image
-                src={selectedImage.src}
-                alt={selectedImage.alt}
-                width={selectedImage.width}
-                height={selectedImage.height}
-                className="max-h-[90vh] max-w-[90vw] object-contain"
-              />
+              {selectedImage.type === 'image' ? (
+                <Image
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  width={selectedImage.width}
+                  height={selectedImage.height}
+                  className="max-h-[90vh] max-w-[90vw] object-contain"
+                />
+              ) : (
+                <video
+                  src={selectedImage.src}
+                  controls
+                  autoPlay
+                  className="max-h-[90vh] max-w-[90vw] object-contain"
+                  style={{ aspectRatio: `${selectedImage.width} / ${selectedImage.height}` }}
+                />
+              )}
               <button
                 className="absolute -top-4 -right-4 rounded-full bg-white p-2 text-black hover:bg-gray-200"
                 onClick={() => setSelectedImage(null)}
@@ -105,24 +128,39 @@ export async function getStaticProps() {
   const galleryPath = path.join(process.cwd(), 'public/images/gallery');
   const files = fs.readdirSync(galleryPath);
 
-  // 画像ファイルのみをフィルタリング
-  const imageFiles = files.filter(file =>
-    /\.(jpg|jpeg|png|gif|webp)$/i.test(file)
+  // 画像・動画ファイルのみをフィルタリング
+  const mediaFiles = files.filter(file =>
+    /\.(jpg|jpeg|png|gif|webp|mp4)$/i.test(file)
   );
 
-  // 画像データを設定（作成日時も取得）
+  // メディアデータを設定
   const imagesWithStats = await Promise.all(
-    imageFiles.map(async file => {
+    mediaFiles.map(async file => {
       const filePath = path.join(galleryPath, file);
       const stats = fs.statSync(filePath);
-      const metadata = await sharp(filePath).metadata();
-      return {
-        src: `/images/gallery/${file}`,
-        alt: path.parse(file).name,
-        width: metadata.width || 0,
-        height: metadata.height || 0,
-        createdAt: stats.birthtime || stats.mtime, // 作成日時、取得できない場合は更新日時
-      };
+      const ext = path.extname(file).toLowerCase();
+      if (ext === '.mp4') {
+        // 動画の場合
+        return {
+          src: `/images/gallery/${file}`,
+          alt: path.parse(file).name,
+          width: 640,
+          height: 360,
+          type: 'video',
+          createdAt: stats.birthtime || stats.mtime,
+        };
+      } else {
+        // 画像の場合
+        const metadata = await sharp(filePath).metadata();
+        return {
+          src: `/images/gallery/${file}`,
+          alt: path.parse(file).name,
+          width: metadata.width || 0,
+          height: metadata.height || 0,
+          type: 'image',
+          createdAt: stats.birthtime || stats.mtime,
+        };
+      }
     })
   );
 
