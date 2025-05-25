@@ -95,7 +95,7 @@ export default function Gallery({ images }: GalleryProps) {
         {/* モーダル */}
         {selectedImage && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"
+            className="fixed inset-0 z-50 flex items-center justify-center"
             onClick={(e) => {
               if (e.target === e.currentTarget) {
                 setSelectedImage(null);
@@ -112,7 +112,7 @@ export default function Gallery({ images }: GalleryProps) {
                   alt={selectedImage.alt}
                   width={selectedImage.width}
                   height={selectedImage.height}
-                  className="max-h-[90vh] max-w-[90vw] object-contain"
+                  className="max-h-[90vh] max-w-[90vw] object-contain border-8 border-white rounded-lg shadow-lg bg-white"
                 />
               ) : (
                 <video
@@ -121,7 +121,7 @@ export default function Gallery({ images }: GalleryProps) {
                   autoPlay
                   muted
                   playsInline
-                  className="max-h-[90vh] max-w-[90vw] object-contain"
+                  className="max-h-[90vh] max-w-[90vw] object-contain border-8 border-white rounded-lg shadow-lg bg-white"
                   style={{ aspectRatio: `${selectedImage.width} / ${selectedImage.height}` }}
                   onClick={(e) => e.stopPropagation()}
                   onTouchStart={(e) => e.stopPropagation()}
