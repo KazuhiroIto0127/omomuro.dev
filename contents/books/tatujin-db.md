@@ -3,6 +3,7 @@ title: '達人に学ぶDB設計徹底指南書 第2版'
 cover: '/images/books/tatujin_db.png'
 date: '2025-04-27'
 slug: 'tatujin-db'
+status: '読了'
 ---
 大学の頃習った正規化について復習になった。パフォーマンスのあたりと、アンチパターンのあたり面白かった。全体通して知らないことも多かった。
 

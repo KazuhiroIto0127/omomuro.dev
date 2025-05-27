@@ -3,6 +3,7 @@ title: '小さなチーム、大きな仕事'
 cover: '/images/books/rework.jpeg'
 date: '2025-04-12'
 slug: 'rework'
+status: '読了'
 ---
 
 なかなかサクッと読めて面白かった。出版当時と今では、読者の感じ方が違いそう。🍀
