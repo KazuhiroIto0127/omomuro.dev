@@ -16,7 +16,7 @@ const WorksPage = ({ works }: { works: Work[] }) => {
       {/* ヒーローセクション */}
       <div className="relative mb-12 overflow-hidden rounded-2xl bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700 p-8 text-white">
         <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative z-10">
+        <div className="relative">
           <h1 className="mb-4 text-4xl font-bold md:text-5xl">
             作ったもの
             <span className="ml-2 text-2xl">🚀</span>

@@ -49,8 +49,8 @@ export default function About() {
 
       {/* ヒーローセクション */}
       <div className="relative mb-12 overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 p-8 text-white">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative z-10">
+        <div className="inset-0 bg-black/20"></div>
+        <div className="">
           <h1 className="mb-4 text-4xl font-bold md:text-5xl">
             自分のこと
             <span className="ml-2 text-2xl">👋</span>

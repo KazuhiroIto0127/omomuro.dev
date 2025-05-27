@@ -31,7 +31,7 @@ export default function Books({ books }: { books: Book[] }) {
       {/* ヒーローセクション */}
       <div className="relative mb-12 overflow-hidden rounded-3xl bg-gradient-to-br from-amber-600 via-orange-600 to-red-600 p-8 text-white">
         <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative z-10">
+        <div className="relative">
           <h1 className="mb-4 text-4xl font-bold md:text-5xl">
             本棚
             <span className="ml-2 text-2xl">📚</span>
@@ -56,7 +56,7 @@ export default function Books({ books }: { books: Book[] }) {
           <div className="absolute inset-y-0 right-0 w-2 bg-gradient-to-b from-amber-800 to-red-800"></div>
         </div>
 
-        <div className="relative z-10">
+        <div className="relative">
           {books.length > 0 ? (
             <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
               {books.map((book, index) => (
