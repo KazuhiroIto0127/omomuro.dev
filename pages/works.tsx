@@ -55,6 +55,9 @@ export const getStaticProps = async () => {
     } as Work;
   });
 
+  // createdAtの降順でソート（新しいものから古いものへ）
+  works.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+
   return {
     props: { works },
   };
