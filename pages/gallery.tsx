@@ -21,6 +21,13 @@ type GalleryProps = {
 
 export default function Gallery({ images }: GalleryProps) {
   const [selectedImage, setSelectedImage] = useState<MediaData | null>(null);
+  const [filter, setFilter] = useState<'all' | 'image' | 'video'>('all');
+
+  // フィルタリングされた画像
+  const filteredImages = images.filter(media => {
+    if (filter === 'all') return true;
+    return media.type === filter;
+  });
 
   // キーボードイベントのハンドラー
   useEffect(() => {
@@ -39,121 +46,262 @@ export default function Gallery({ images }: GalleryProps) {
   return (
     <Layout>
       <HeadMeta type="gallery" title="ギャラリー" />
-      <div className="container mx-auto pb-8">
-        <h1 className="mb-8 text-3xl font-bold">描いた絵</h1>
-        <div className="columns-2 gap-4 sm:columns-2 md:columns-3 lg:columns-4">
-          {images.map((media, index) => (
-            <div
-              key={index}
-              className="mb-4 break-inside-avoid cursor-pointer overflow-hidden rounded-lg shadow-lg"
-              onClick={() => setSelectedImage(media)}
-            >
-              {media.type === 'image' ? (
-                <Image
-                  src={media.src}
-                  alt={media.alt}
-                  width={media.width}
-                  height={media.height}
-                  className="w-full transition-transform hover:scale-105"
-                  loading="lazy"
-                />
-              ) : (
-                <div className="relative">
-                  <video
-                    src={media.src}
-                    poster={media.poster}
-                    controls={false}
-                    className="w-full transition-transform hover:scale-105"
-                    style={{ aspectRatio: `${media.width} / ${media.height}` }}
-                    muted
-                    playsInline
-                    preload="metadata"
-                    onMouseEnter={(e) => {
-                      const video = e.target as HTMLVideoElement;
-                      video.currentTime = 1; // 1秒の位置でプレビュー
-                    }}
-                  />
-                  {/* 動画アイコンオーバーレイ */}
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="bg-black bg-opacity-50 rounded-full p-2">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-8 w-8 text-white"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M8 5v14l11-7z"/>
+
+      {/* ヒーローセクション */}
+      <div className="relative mb-12 overflow-hidden rounded-3xl bg-gradient-to-br from-pink-600 via-purple-600 to-indigo-600 p-8 text-white">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative z-10">
+          <h1 className="mb-4 text-4xl font-bold md:text-5xl">
+            ギャラリー
+            <span className="ml-2 text-2xl">🎨</span>
+          </h1>
+          <p className="text-lg opacity-90 md:text-xl">
+            描いた絵やアニメーションを展示しています
+          </p>
+        </div>
+        {/* 装飾的な要素 */}
+        <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/10"></div>
+        <div className="absolute -bottom-12 -left-12 h-40 w-40 rounded-full bg-white/5"></div>
+        <div className="absolute right-20 top-20 h-16 w-16 rounded-full bg-white/10"></div>
+      </div>
+
+      {/* フィルターセクション */}
+      <div className="mb-8 flex flex-wrap justify-center gap-4">
+        <button
+          onClick={() => setFilter('all')}
+          className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${
+            filter === 'all'
+              ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-lg'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+          }`}
+        >
+          すべて ({images.length})
+        </button>
+        <button
+          onClick={() => setFilter('image')}
+          className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${
+            filter === 'image'
+              ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-lg'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+          }`}
+        >
+          イラスト ({images.filter(img => img.type === 'image').length})
+        </button>
+        <button
+          onClick={() => setFilter('video')}
+          className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${
+            filter === 'video'
+              ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-lg'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+          }`}
+        >
+          アニメーション ({images.filter(img => img.type === 'video').length})
+        </button>
+      </div>
+
+      {/* ギャラリーグリッド */}
+      <div className="relative">
+        {filteredImages.length > 0 ? (
+          <div className="columns-2 gap-4 sm:columns-2 md:columns-3 lg:columns-4 xl:columns-5">
+            {filteredImages.map((media, index) => (
+              <div
+                key={`${media.src}-${filter}`}
+                className="group relative mb-4 break-inside-avoid cursor-pointer overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25 hover:-translate-y-1"
+                onClick={() => setSelectedImage(media)}
+                style={{ animationDelay: `${index * 50}ms` }}
+              >
+                {media.type === 'image' ? (
+                  <div className="relative overflow-hidden">
+                    <Image
+                      src={media.src}
+                      alt={media.alt}
+                      width={media.width}
+                      height={media.height}
+                      className="w-full transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                    {/* オーバーレイ効果 */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+
+                    {/* ホバー時のアイコン */}
+                    <div className="absolute right-3 top-3 rounded-full bg-white/90 p-2 opacity-0 transition-all duration-300 group-hover:opacity-100 dark:bg-gray-800/90">
+                      <svg className="h-4 w-4 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                       </svg>
                     </div>
                   </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+                ) : (
+                  <div className="relative overflow-hidden">
+                    <video
+                      src={media.src}
+                      poster={media.poster}
+                      controls={false}
+                      className="w-full transition-transform duration-500 group-hover:scale-110"
+                      style={{ aspectRatio: `${media.width} / ${media.height}` }}
+                      muted
+                      playsInline
+                      preload="metadata"
+                      onMouseEnter={(e) => {
+                        const video = e.target as HTMLVideoElement;
+                        video.currentTime = 1; // 1秒の位置でプレビュー
+                      }}
+                    />
+                    {/* オーバーレイ効果 */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 
-        {/* モーダル */}
-        {selectedImage && (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center"
-            onClick={(e) => {
-              if (e.target === e.currentTarget) {
-                setSelectedImage(null);
-              }
-            }}
-          >
-            <div 
-              className="relative max-h-[90vh] max-w-[90vw]"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {selectedImage.type === 'image' ? (
-                <Image
-                  src={selectedImage.src}
-                  alt={selectedImage.alt}
-                  width={selectedImage.width}
-                  height={selectedImage.height}
-                  className="max-h-[90vh] max-w-[90vw] object-contain border-8 border-white rounded-lg shadow-lg bg-white"
-                />
-              ) : (
-                <video
-                  src={selectedImage.src}
-                  controls
-                  autoPlay
-                  muted
-                  playsInline
-                  className="max-h-[90vh] max-w-[90vw] object-contain border-8 border-white rounded-lg shadow-lg bg-white"
-                  style={{ aspectRatio: `${selectedImage.width} / ${selectedImage.height}` }}
-                  onClick={(e) => e.stopPropagation()}
-                  onTouchStart={(e) => e.stopPropagation()}
-                  onTouchEnd={(e) => e.stopPropagation()}
-                />
-              )}
-              <button
-                className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 rounded-full bg-white p-3 sm:p-2 text-black hover:bg-gray-200 touch-manipulation shadow-lg"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setSelectedImage(null);
-                }}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8 sm:h-6 sm:w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </button>
-            </div>
+                    {/* 動画アイコンオーバーレイ */}
+                    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                      <div className="rounded-full bg-black/60 p-3 transition-all duration-300 group-hover:bg-black/80 group-hover:scale-110">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-8 w-8 text-white"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M8 5v14l11-7z"/>
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* 動画バッジ */}
+                    <div className="absolute left-3 top-3 rounded-full bg-purple-500 px-2 py-1 text-xs font-medium text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      動画
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        ) : (
+          /* 空の状態 */
+          <div className="flex flex-col items-center justify-center py-16 text-center">
+            <div className="mb-4 text-6xl">🎭</div>
+            <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
+              該当する作品がありません
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400">
+              別のフィルターを試してみてください
+            </p>
           </div>
         )}
       </div>
+
+      {/* 統計情報 */}
+      {images.length > 0 && (
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3">
+          <div className="rounded-xl bg-white p-4 shadow-lg dark:bg-gray-800">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+                {images.length}
+              </div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">
+                総作品数
+              </div>
+            </div>
+          </div>
+          <div className="rounded-xl bg-white p-4 shadow-lg dark:bg-gray-800">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-pink-600 dark:text-pink-400">
+                {images.filter(img => img.type === 'image').length}
+              </div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">
+                イラスト
+              </div>
+            </div>
+          </div>
+          <div className="rounded-xl bg-white p-4 shadow-lg dark:bg-gray-800">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
+                {images.filter(img => img.type === 'video').length}
+              </div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">
+                アニメーション
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* モーダル */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setSelectedImage(null);
+            }
+          }}
+        >
+          <div
+            className="relative max-h-[90vh] max-w-[90vw] rounded-2xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {selectedImage.type === 'image' ? (
+              <Image
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                width={selectedImage.width}
+                height={selectedImage.height}
+                className="max-h-[90vh] max-w-[90vw] object-contain rounded-2xl shadow-2xl"
+              />
+            ) : (
+              <video
+                src={selectedImage.src}
+                controls
+                autoPlay
+                muted
+                playsInline
+                className="max-h-[90vh] max-w-[90vw] object-contain rounded-2xl shadow-2xl"
+                style={{ aspectRatio: `${selectedImage.width} / ${selectedImage.height}` }}
+                onClick={(e) => e.stopPropagation()}
+                onTouchStart={(e) => e.stopPropagation()}
+                onTouchEnd={(e) => e.stopPropagation()}
+              />
+            )}
+            <button
+              className="absolute -top-4 -right-4 rounded-full bg-white p-3 text-black shadow-xl transition-all hover:bg-gray-100 hover:scale-110 touch-manipulation"
+              onClick={(e) => {
+                e.stopPropagation();
+                setSelectedImage(null);
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      )}
+
+      <style jsx>{`
+        @keyframes fade-in-up {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fade-in-up {
+          animation: fade-in-up 0.6s ease-out forwards;
+          opacity: 0;
+        }
+      `}</style>
     </Layout>
   );
 }
@@ -179,7 +327,7 @@ export async function getStaticProps() {
         const base = path.basename(file, ext);
         const posterExts = ['.png', '.jpg', '.jpeg', '.webp'];
         let poster = undefined;
-        
+
         // 大文字小文字を考慮してサムネイルを検索
         for (const pExt of posterExts) {
           // 小文字で検索
@@ -195,12 +343,12 @@ export async function getStaticProps() {
             break;
           }
         }
-        
+
         // デバッグ用ログ（本番では削除可能）
         if (file === '2025-05-25_obake.mp4') {
           console.log(`Video: ${file}, Poster found: ${poster}`);
         }
-        
+
         return {
           src: `/images/gallery/${file}`,
           alt: path.parse(file).name,
