@@ -1,6 +1,6 @@
 ---
 title: "👻 おばけ3Dモデル"
-description: "Three.jsで作った3Dおばけモデルサイト"
+description: "Blenderで作成した3DおばけをThree.jsで表示したサイト"
 thumbnail: "/images/works/obake.png"
 thumbnailHeight: 600
 thumbnailWidth: 800
@@ -9,7 +9,7 @@ createdAt: "2025-05-25"
 url: "https://kazuhiroito0127.github.io/learn_threejs/"
 ---
 
-Three.jsを使って作った3Dおばけモデルのインタラクティブサイトです。
+Blenderで作成したおばけのモデルをThree.jsを使って表示したインタラクティブサイトです。
 
 ## ✨ 特徴
 
