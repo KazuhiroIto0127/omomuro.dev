@@ -5,4 +5,6 @@ export type Book = {
   date: string;
   slug: string;
   body: string;
+  author?: string;
+  status?: string;
 };
