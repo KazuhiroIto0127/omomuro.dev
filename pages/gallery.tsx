@@ -1,5 +1,6 @@
 import Layout from '@/components/layouts/oneColumnLayout';
 import HeadMeta from '@/components/Head';
+import HeroSection from '@/components/HeroSection';
 import { useState, useEffect } from 'react';
 import fs from 'fs';
 import path from 'path';
@@ -47,23 +48,12 @@ export default function Gallery({ images }: GalleryProps) {
     <Layout>
       <HeadMeta type="gallery" title="ギャラリー" />
 
-      {/* ヒーローセクション */}
-      <div className="relative mb-12 overflow-hidden rounded-3xl bg-gradient-to-br from-pink-600 via-purple-600 to-indigo-600 p-8 text-white">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative">
-          <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-            ギャラリー
-            <span className="ml-2 text-2xl">🎨</span>
-          </h1>
-          <p className="text-lg opacity-90 md:text-xl">
-            描いた絵やアニメーションを展示しています
-          </p>
-        </div>
-        {/* 装飾的な要素 */}
-        <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/10"></div>
-        <div className="absolute -bottom-12 -left-12 h-40 w-40 rounded-full bg-white/5"></div>
-        <div className="absolute right-20 top-20 h-16 w-16 rounded-full bg-white/10"></div>
-      </div>
+      <HeroSection
+        title="ギャラリー"
+        emoji="🎨"
+        description="描いた絵やアニメーションを展示しています"
+        backgroundGradient="from-pink-600 via-purple-600 to-indigo-600"
+      />
 
       {/* フィルターセクション */}
       <div className="mb-8 flex flex-wrap justify-center gap-4">

@@ -1,5 +1,6 @@
 import Layout from '@/components/layouts/oneColumnLayout';
 import HeadMeta from '@/components/Head';
+import HeroSection from '@/components/HeroSection';
 import { AcademicCapIcon, CommandLineIcon, LinkIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import RiveAnimation from '@/components/RiveAnimation';
 import {
@@ -47,23 +48,12 @@ export default function About() {
     <Layout>
       <HeadMeta type="website" title="自分のこと" />
 
-      {/* ヒーローセクション */}
-      <div className="relative mb-12 overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 p-8 text-white">
-        <div className="inset-0 bg-black/20"></div>
-        <div className="">
-          <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-            自分のこと
-            <span className="ml-2 text-2xl">👋</span>
-          </h1>
-          <p className="text-lg opacity-90 md:text-xl">
-            Software Engineer として日々学び続けています
-          </p>
-        </div>
-        {/* 装飾的な要素 */}
-        <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/10"></div>
-        <div className="absolute -bottom-12 -left-12 h-40 w-40 rounded-full bg-white/5"></div>
-        <div className="absolute right-20 top-20 h-16 w-16 rounded-full bg-white/10"></div>
-      </div>
+      <HeroSection
+        title="自分のこと"
+        emoji="👋"
+        description="Software Engineer として日々学び続けています"
+        backgroundGradient="from-sky-400 via-sky-600 to-sky-400"
+      />
 
       <div className="grid gap-8 lg:grid-cols-3">
         {/* プロフィールカード */}

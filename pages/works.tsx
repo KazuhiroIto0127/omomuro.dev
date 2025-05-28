@@ -3,6 +3,7 @@ import Layout from '@/components/layouts/oneColumnLayout';
 import Image from 'next/image';
 import Link from 'next/link';
 import HeadMeta from '@/components/Head';
+import HeroSection from '@/components/HeroSection';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -13,22 +14,12 @@ const WorksPage = ({ works }: { works: Work[] }) => {
     <Layout>
       <HeadMeta type="website" title="作ったもの" />
 
-      {/* ヒーローセクション */}
-      <div className="relative mb-12 overflow-hidden rounded-2xl bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700 p-8 text-white">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative">
-          <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-            作ったもの
-            <span className="ml-2 text-2xl">🚀</span>
-          </h1>
-          <p className="text-lg opacity-90 md:text-xl">
-            これまでに制作したプロジェクトやアプリケーションをご紹介します
-          </p>
-        </div>
-        {/* 装飾的な要素 */}
-        <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-white/10"></div>
-        <div className="absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-white/5"></div>
-      </div>
+      <HeroSection
+        title="作ったもの"
+        emoji="🚀"
+        description="これまでに制作したプロジェクトやアプリケーションをご紹介します"
+        backgroundGradient="from-purple-600 via-blue-600 to-indigo-700"
+      />
 
       {/* 作品グリッド */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

@@ -5,6 +5,7 @@ import fs from 'fs';
 import type { Book } from '@/types/book';
 import Layout from '@/components/layouts/oneColumnLayout';
 import HeadMeta from '@/components/Head';
+import HeroSection from '@/components/HeroSection';
 
 export async function getStaticProps() {
   const booksDirectory = path.join(process.cwd(), 'contents/books');
@@ -28,23 +29,12 @@ export default function Books({ books }: { books: Book[] }) {
     <Layout>
       <HeadMeta type="website" title="本棚" />
 
-      {/* ヒーローセクション */}
-      <div className="relative mb-12 overflow-hidden rounded-3xl bg-gradient-to-br from-amber-600 via-orange-600 to-red-600 p-8 text-white">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative">
-          <h1 className="mb-4 text-4xl font-bold md:text-5xl">
-            本棚
-            <span className="ml-2 text-2xl">📚</span>
-          </h1>
-          <p className="text-lg opacity-90 md:text-xl">
-            読んだ本や気になった本をコレクションしています
-          </p>
-        </div>
-        {/* 装飾的な要素 */}
-        <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-white/10"></div>
-        <div className="absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-white/5"></div>
-        <div className="absolute right-16 top-16 h-12 w-12 rounded-full bg-white/10"></div>
-      </div>
+      <HeroSection
+        title="本棚"
+        emoji="📚"
+        description="読んだ本や気になった本をコレクションしています"
+        backgroundGradient="from-amber-600 via-orange-600 to-red-600"
+      />
 
       {/* 本棚セクション */}
       <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 p-8 shadow-xl dark:from-gray-800 dark:via-gray-700 dark:to-gray-600">
