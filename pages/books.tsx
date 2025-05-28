@@ -56,9 +56,6 @@ export default function Books({ books }: { books: Book[] }) {
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <Link href={`/books/${book.slug}`} className="block">
-                    {/* 本の影 */}
-                    <div className="absolute -bottom-2 left-2 right-2 h-4 rounded-b-lg bg-black/20 blur-sm transition-all duration-300 group-hover:bg-black/30"></div>
-
                     {/* 本のカバー */}
                     <div className="relative overflow-hidden rounded-lg transition-all duration-300 group-hover:-translate-y-3 group-hover:rotate-1 group-hover:shadow-2xl">
                       <img
@@ -129,9 +126,6 @@ export default function Books({ books }: { books: Book[] }) {
             </div>
           )}
         </div>
-
-        {/* 本棚の棚板効果 */}
-        <div className="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-amber-200/50 to-transparent dark:from-gray-600/50"></div>
       </div>
 
       {/* 統計情報 */}
