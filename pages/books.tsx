@@ -7,7 +7,6 @@ import type { Book } from '@/types/book';
 import Layout from '@/components/layouts/oneColumnLayout';
 import HeadMeta from '@/components/Head';
 import HeroSection from '@/components/HeroSection';
-import React from 'react';
 
 export async function getStaticProps() {
   const booksDirectory = path.join(process.cwd(), 'contents/books');
@@ -29,59 +28,23 @@ export async function getStaticProps() {
 export default function Books({ books }: { books: Book[] }) {
   const router = useRouter();
 
-  // View Transition APIの対応状況をチェック
-  React.useEffect(() => {
-    console.log('View Transition API対応状況:', 'startViewTransition' in document);
-    console.log('ブラウザ:', navigator.userAgent);
-  }, []);
-
   const handleBookClick = async (e: React.MouseEvent, bookSlug: string) => {
-    console.log('クリックイベント発生:', bookSlug);
-
     // View Transition APIが利用可能かチェック
     if ('startViewTransition' in document) {
       e.preventDefault();
-      console.log('View Transition開始:', bookSlug);
-
       const url = `/books/${bookSlug}`;
 
       try {
-        // アニメーション開始前の状態をログ
-        const coverElement = document.querySelector(`[style*="view-transition-name: cover-${bookSlug}"]`);
-        console.log('カバー要素:', coverElement);
-        console.log('view-transition-nameスタイル:', coverElement?.getAttribute('style'));
-
         // @ts-ignore — startViewTransition is still experimental
-        const transition = document.startViewTransition(async () => {
-          console.log('ページ遷移開始');
-          console.log('現在のURL:', window.location.href);
+        document.startViewTransition(async () => {
           await router.push(url);
-          console.log('ページ遷移完了');
-          console.log('新しいURL:', window.location.href);
-        });
-
-        transition.ready.then(() => {
-          console.log('View Transition準備完了');
-          // アニメーション中の要素を確認
-          const transitionElements = document.querySelectorAll('::view-transition-old(cover-' + bookSlug + '), ::view-transition-new(cover-' + bookSlug + ')');
-          console.log('トランジション要素数:', transitionElements.length);
-        }).catch((error) => {
-          console.error('View Transition準備エラー:', error);
-        });
-
-        transition.finished.then(() => {
-          console.log('View Transition完了');
-        }).catch((error) => {
-          console.error('View Transitionエラー:', error);
         });
       } catch (error) {
-        console.error('View Transition実行エラー:', error);
         // エラーが発生した場合は通常のナビゲーション
         await router.push(url);
       }
-    } else {
-      console.log('View Transition APIが利用できません - 通常のナビゲーション');
     }
+    // View Transition APIが利用できない場合は通常のナビゲーション
   };
 
   return (
