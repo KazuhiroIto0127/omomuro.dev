@@ -15,9 +15,15 @@ export default function BookPage({ book }: { book: Book }) {
         <Image
           priority
           src={book.cover}
-          className="mb-4 h-52 w-full rounded-md object-contain md:h-96"
+          className="mb-4 mx-auto rounded-md object-cover transition-transform duration-300"
           height={384}
           width={256}
+          style={{
+            viewTransitionName: `cover-${book.slug}`,
+            aspectRatio: '3/4',
+            maxWidth: '256px',
+            width: '100%'
+          }}
           alt={book.title}
         />
         <h1 className="text-2xl font-bold mb-2">{book.title}</h1>
