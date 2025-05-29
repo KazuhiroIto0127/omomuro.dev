@@ -1,17 +1,57 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
+import { useRouter } from 'next/router';
 import Layout from '@/components/layouts/oneColumnLayout';
 import Image from 'next/image';
 import HeadMeta from '@/components/Head';
+import Link from 'next/link';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import type { Book } from '@/types/book';
 
 export default function BookPage({ book }: { book: Book }) {
+  const router = useRouter();
+
+  const handleBackClick = async (e: React.MouseEvent) => {
+    // View Transition APIが利用可能かチェック
+    if ('startViewTransition' in document) {
+      e.preventDefault();
+      const url = '/books';
+
+      try {
+        // @ts-ignore — startViewTransition is still experimental
+        document.startViewTransition(async () => {
+          await router.push(url);
+        });
+      } catch (error) {
+        // エラーが発生した場合は通常のナビゲーション
+        await router.push(url);
+      }
+    }
+    // View Transition APIが利用できない場合は通常のナビゲーション
+  };
+
   return (
     <Layout>
       <HeadMeta type="article" title={book.title} />
       <div className="mx-auto max-w-2xl bg-white/80 dark:bg-gray-600/80 p-4 rounded-lg">
+        <div className="mb-6">
+          <Link
+            href="/books"
+            className="inline-flex items-center gap-2 text-amber-600 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300 transition-colors duration-200 group"
+            onClick={handleBackClick}
+          >
+            <svg
+              className="w-4 h-4 transition-transform duration-200 group-hover:-translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            <span className="text-sm font-medium">本棚に戻る</span>
+          </Link>
+        </div>
         <Image
           priority
           src={book.cover}
