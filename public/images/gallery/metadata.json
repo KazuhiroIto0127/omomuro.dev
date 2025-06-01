@@ -1,0 +1,87 @@
+{
+  "2025-06-01_sanpo_book3.png": {
+    "type": "graphic",
+    "category": "デザイン",
+    "description": "散歩本のブックデザイン"
+  },
+  "2025-06-01_osaka.png": {
+    "type": "graphic",
+    "category": "デザイン",
+    "description": "大阪をテーマにしたグラフィック"
+  },
+  "2025-05-25_obake.png": {
+    "type": "image",
+    "category": "イラスト",
+    "description": "おばけのイラスト"
+  },
+  "2025-05-25_obake.mp4": {
+    "type": "video",
+    "category": "アニメーション",
+    "description": "おばけのアニメーション"
+  },
+  "2025-05-24_tako.png": {
+    "type": "image",
+    "category": "イラスト",
+    "description": "たこのイラスト"
+  },
+  "2025-05-24_obake.gif": {
+    "type": "image",
+    "category": "アニメーション",
+    "description": "おばけのGIFアニメーション"
+  },
+  "2025-04-01_chars2.JPG": {
+    "type": "image",
+    "category": "イラスト",
+    "description": "キャラクターイラスト2"
+  },
+  "2025-03-01_flower.jpg": {
+    "type": "image",
+    "category": "イラスト",
+    "description": "花のイラスト"
+  },
+  "2025-02-01_chars.JPG": {
+    "type": "image",
+    "category": "イラスト",
+    "description": "キャラクターイラスト"
+  },
+  "2025-01-01_eto.jpg": {
+    "type": "image",
+    "category": "イラスト",
+    "description": "2025年干支のイラスト"
+  },
+  "2024-01-01_eto.jpg": {
+    "type": "image",
+    "category": "イラスト",
+    "description": "2024年干支のイラスト"
+  },
+  "2023-01-01_mountain.jpg": {
+    "type": "image",
+    "category": "イラスト",
+    "description": "山の風景イラスト"
+  },
+  "2022-01-01_run_girl.jpeg": {
+    "type": "image",
+    "category": "イラスト",
+    "description": "走る女の子のイラスト"
+  },
+  "2022-01-01_run_boy.jpeg": {
+    "type": "image",
+    "category": "イラスト",
+    "description": "走る男の子のイラスト"
+  },
+  "2021-01-01_yukai_animal_stamp_screenshot.png": {
+    "type": "image",
+    "category": "イラスト",
+    "description": "愉快な動物スタンプのスクリーンショット"
+  },
+  "2021-01-01_nezumi.png": {
+    "type": "image",
+    "category": "イラスト",
+    "description": "ネズミのイラスト"
+  },
+  "2021-01-01_keii.jpg": {
+    "type": "image",
+    "category": "イラスト",
+    "description": "恵比寿様のイラスト"
+  }
+}

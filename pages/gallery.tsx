@@ -12,8 +12,10 @@ type MediaData = {
   alt: string;
   width: number;
   height: number;
-  type: 'image' | 'video';
+  type: 'image' | 'video' | 'graphic';
   poster?: string; // 動画用サムネイル
+  category?: string;
+  description?: string;
 };
 
 type GalleryProps = {
@@ -22,7 +24,7 @@ type GalleryProps = {
 
 export default function Gallery({ images }: GalleryProps) {
   const [selectedImage, setSelectedImage] = useState<MediaData | null>(null);
-  const [filter, setFilter] = useState<'all' | 'image' | 'video'>('all');
+  const [filter, setFilter] = useState<'all' | 'image' | 'video' | 'graphic'>('all');
 
   // フィルタリングされた画像
   const filteredImages = images.filter(media => {
@@ -78,6 +80,16 @@ export default function Gallery({ images }: GalleryProps) {
           イラスト ({images.filter(img => img.type === 'image').length})
         </button>
         <button
+          onClick={() => setFilter('graphic')}
+          className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${
+            filter === 'graphic'
+              ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-lg'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
+          }`}
+        >
+          グラフィック ({images.filter(img => img.type === 'graphic').length})
+        </button>
+        <button
           onClick={() => setFilter('video')}
           className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${
             filter === 'video'
@@ -100,7 +112,7 @@ export default function Gallery({ images }: GalleryProps) {
                 onClick={() => setSelectedImage(media)}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                {media.type === 'image' ? (
+                {media.type === 'image' || media.type === 'graphic' ? (
                   <div className="relative overflow-hidden">
                     <Image
                       src={media.src}
@@ -120,6 +132,13 @@ export default function Gallery({ images }: GalleryProps) {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                       </svg>
                     </div>
+
+                    {/* グラフィックバッジ */}
+                    {media.type === 'graphic' && (
+                      <div className="absolute left-3 top-3 rounded-full bg-green-500 px-2 py-1 text-xs font-medium text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        グラフィック
+                      </div>
+                    )}
                   </div>
                 ) : (
                   <div className="relative overflow-hidden">
@@ -179,7 +198,7 @@ export default function Gallery({ images }: GalleryProps) {
 
       {/* 統計情報 */}
       {images.length > 0 && (
-        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3">
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
           <div className="rounded-xl bg-white p-4 shadow-lg dark:bg-gray-800">
             <div className="text-center">
               <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
@@ -197,6 +216,16 @@ export default function Gallery({ images }: GalleryProps) {
               </div>
               <div className="text-sm text-gray-600 dark:text-gray-400">
                 イラスト
+              </div>
+            </div>
+          </div>
+          <div className="rounded-xl bg-white p-4 shadow-lg dark:bg-gray-800">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-green-600 dark:text-green-400">
+                {images.filter(img => img.type === 'graphic').length}
+              </div>
+              <div className="text-sm text-gray-600 dark:text-gray-400">
+                グラフィック
               </div>
             </div>
           </div>
@@ -227,7 +256,7 @@ export default function Gallery({ images }: GalleryProps) {
             className="relative max-h-[90vh] max-w-[90vw] rounded-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            {selectedImage.type === 'image' ? (
+            {selectedImage.type === 'image' || selectedImage.type === 'graphic' ? (
               <Image
                 src={selectedImage.src}
                 alt={selectedImage.alt}
@@ -298,11 +327,20 @@ export default function Gallery({ images }: GalleryProps) {
 
 export async function getStaticProps() {
   const galleryPath = path.join(process.cwd(), 'public/images/gallery');
+  const metadataPath = path.join(galleryPath, 'metadata.json');
+
+  // メタデータファイルを読み込み
+  let metadata = {};
+  if (fs.existsSync(metadataPath)) {
+    const metadataContent = fs.readFileSync(metadataPath, 'utf8');
+    metadata = JSON.parse(metadataContent);
+  }
+
   const files = fs.readdirSync(galleryPath);
 
-  // 画像・動画ファイルのみをフィルタリング
+  // 画像・動画ファイルのみをフィルタリング（metadata.jsonを除外）
   const mediaFiles = files.filter(file =>
-    /\.(jpg|jpeg|png|gif|webp|mp4)$/i.test(file)
+    /\.(jpg|jpeg|png|gif|webp|mp4)$/i.test(file) && file !== 'metadata.json'
   );
 
   // メディアデータを設定
@@ -311,6 +349,20 @@ export async function getStaticProps() {
       const filePath = path.join(galleryPath, file);
       const stats = fs.statSync(filePath);
       const ext = path.extname(file).toLowerCase();
+
+      // メタデータからタイプを取得、なければデフォルト
+      const fileMetadata = metadata[file] || {};
+      let type = fileMetadata.type;
+
+      if (!type) {
+        // メタデータがない場合は拡張子で判定
+        if (ext === '.mp4' || ext === '.gif') {
+          type = 'video';
+        } else {
+          type = 'image';
+        }
+      }
+
       if (ext === '.mp4') {
         // 動画の場合
         // サムネイル画像（同名jpg/png/webp優先）を探す
@@ -334,18 +386,15 @@ export async function getStaticProps() {
           }
         }
 
-        // デバッグ用ログ（本番では削除可能）
-        if (file === '2025-05-25_obake.mp4') {
-          console.log(`Video: ${file}, Poster found: ${poster}`);
-        }
-
         return {
           src: `/images/gallery/${file}`,
-          alt: path.parse(file).name,
+          alt: fileMetadata.description || path.parse(file).name,
           width: 640,
           height: 360,
-          type: 'video' as const,
+          type: type,
           poster,
+          ...(fileMetadata.category && { category: fileMetadata.category }),
+          ...(fileMetadata.description && { description: fileMetadata.description }),
           createdAt: stats.birthtime || stats.mtime,
         };
       } else {
@@ -353,10 +402,12 @@ export async function getStaticProps() {
         const metadata = await sharp(filePath).metadata();
         return {
           src: `/images/gallery/${file}`,
-          alt: path.parse(file).name,
+          alt: fileMetadata.description || path.parse(file).name,
           width: metadata.width || 0,
           height: metadata.height || 0,
-          type: 'image' as const,
+          type: type,
+          ...(fileMetadata.category && { category: fileMetadata.category }),
+          ...(fileMetadata.description && { description: fileMetadata.description }),
           createdAt: stats.birthtime || stats.mtime,
         };
       }
