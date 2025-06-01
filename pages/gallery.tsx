@@ -51,7 +51,7 @@ export default function Gallery({ images }: GalleryProps) {
       <HeroSection
         title="ギャラリー"
         emoji="🎨"
-        description="描いた絵やアニメーションを展示しています"
+        description="作成したイラスト、グラフィック、3Dなどを展示しています"
         backgroundGradient="from-pink-600 via-purple-600 to-indigo-600"
       />
 
