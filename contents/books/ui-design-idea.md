@@ -1,7 +1,8 @@
 ---
 title: 'UIデザインのアイデア帳'
 cover: '/images/books/ui_design_idea.jpeg'
-date: '2025-05-05'
+addedDate: '2025-05-05'
+completedDate: '2025-05-05'
 slug: 'ui-design-idea'
 status: '読了'
 ---

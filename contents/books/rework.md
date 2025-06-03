@@ -1,7 +1,8 @@
 ---
 title: '小さなチーム、大きな仕事'
 cover: '/images/books/rework.jpeg'
-date: '2025-04-12'
+addedDate: '2025-04-12'
+completedDate: '2025-04-12'
 slug: 'rework'
 status: '読了'
 ---

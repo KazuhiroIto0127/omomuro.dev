@@ -1,7 +1,8 @@
 ---
 title: '君に冷笑は似合わない'
 cover: '/images/books/kimi_ni_reisho.jpeg'
-date: '2025-03-21'
+addedDate: '2025-03-21'
+completedDate: '2025-03-21'
 slug: 'kimi_ni_reisho'
 status: '読了'
 ---

@@ -1,7 +1,8 @@
 ---
 title: 'AWSクラウド設計 完全ガイド'
 cover: '/images/books/aws_cloud_design.jpeg'
-date: '2025-03-22'
+addedDate: '2025-03-22'
+completedDate: '2025-03-22'
 slug: 'aws_cloud_design'
 status: '読了'
 ---

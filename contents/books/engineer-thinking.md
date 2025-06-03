@@ -1,7 +1,8 @@
 ---
 title: '世界一流のエンジニアの思考法'
 cover: '/images/books/engineer_thinking.jpeg'
-date: '2025-04-19'
+addedDate: '2025-04-19'
+completedDate: '2025-04-19'
 slug: 'engineer-thinking'
 status: '読了'
 ---

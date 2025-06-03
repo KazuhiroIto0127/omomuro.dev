@@ -67,7 +67,7 @@ export default function BookPage({ book }: { book: Book }) {
           alt={book.title}
         />
         <h1 className="text-2xl font-bold mb-2">{book.title}</h1>
-        <p>読了日：{book.date}</p>
+        {book.completedDate && <p>読了日：{book.completedDate}</p>}
         <article className="mt-6 break-words prose-sm dark:prose-invert sm:prose-base lg:prose-lg whitespace-pre-wrap">
           {book.body}
         </article>

@@ -21,7 +21,7 @@ export async function getStaticProps() {
     } as Book;
   });
   // 日付の降順でソート
-  books.sort((a, b) => (a.date < b.date ? 1 : -1));
+  books.sort((a, b) => (a.addedDate < b.addedDate ? 1 : -1));
   return { props: { books } };
 }
 

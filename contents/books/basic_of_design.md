@@ -1,7 +1,8 @@
 ---
 title: 'プロっぽいセンスが身につく デザインのきほん'
 cover: '/images/books/basic_of_design.jpg'
-date: '2025-05-31'
+addedDate: '2025-05-31'
+completedDate: '2025-05-31'
 slug: 'basic_of_design'
 status: '読了'
 ---

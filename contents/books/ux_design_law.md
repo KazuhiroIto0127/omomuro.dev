@@ -1,7 +1,8 @@
 ---
 title: 'UXデザインの法則 [第２版]'
 cover: '/images/books/ux_design_law.jpeg'
-date: '2025-05-11'
+addedDate: '2025-05-11'
+completedDate: '2025-05-11'
 slug: 'ux_design_law'
 status: '読了'
 ---

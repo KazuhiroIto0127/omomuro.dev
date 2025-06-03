@@ -1,7 +1,8 @@
 ---
 title: '達人に学ぶDB設計徹底指南書 第2版'
 cover: '/images/books/tatujin_db.png'
-date: '2025-04-27'
+addedDate: '2025-04-27'
+completedDate: '2025-04-27'
 slug: 'tatujin-db'
 status: '読了'
 ---

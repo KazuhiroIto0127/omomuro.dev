@@ -1,7 +1,8 @@
 ---
 title: 'ゲームフリーク 遊びの世界標準を塗り替えるクリエイティブ集団'
 cover: '/images/books/game_freak.jpeg'
-date: '2025-03-21'
+addedDate: '2025-03-21'
+completedDate: '2025-03-21'
 slug: 'game_freak'
 status: '読了'
 ---
