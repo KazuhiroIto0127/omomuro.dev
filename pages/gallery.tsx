@@ -69,41 +69,37 @@ export default function Gallery({ images }: GalleryProps) {
       <div className="mb-8 flex flex-wrap justify-center gap-4">
         <button
           onClick={() => setFilter('all')}
-          className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${
-            filter === 'all'
+          className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${filter === 'all'
               ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-lg'
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
-          }`}
+            }`}
         >
           すべて ({imageCounts.total})
         </button>
         <button
           onClick={() => setFilter('image')}
-          className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${
-            filter === 'image'
+          className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${filter === 'image'
               ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-lg'
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
-          }`}
+            }`}
         >
           イラスト ({imageCounts.image})
         </button>
         <button
           onClick={() => setFilter('graphic')}
-          className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${
-            filter === 'graphic'
+          className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${filter === 'graphic'
               ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-lg'
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
-          }`}
+            }`}
         >
           グラフィック ({imageCounts.graphic})
         </button>
         <button
           onClick={() => setFilter('video')}
-          className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${
-            filter === 'video'
+          className={`rounded-full px-6 py-2 font-medium transition-all duration-300 ${filter === 'video'
               ? 'bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-lg'
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
-          }`}
+            }`}
         >
           アニメーション ({imageCounts.video})
         </button>
@@ -176,7 +172,7 @@ export default function Gallery({ images }: GalleryProps) {
                           fill="currentColor"
                           viewBox="0 0 24 24"
                         >
-                          <path d="M8 5v14l11-7z"/>
+                          <path d="M8 5v14l11-7z" />
                         </svg>
                       </div>
                     </div>
