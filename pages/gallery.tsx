@@ -1,7 +1,7 @@
 import Layout from '@/components/layouts/oneColumnLayout';
 import HeadMeta from '@/components/Head';
 import HeroSection from '@/components/HeroSection';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import fs from 'fs';
 import path from 'path';
 import Image from 'next/image';
@@ -25,6 +25,14 @@ type GalleryProps = {
 export default function Gallery({ images }: GalleryProps) {
   const [selectedImage, setSelectedImage] = useState<MediaData | null>(null);
   const [filter, setFilter] = useState<'all' | 'image' | 'video' | 'graphic'>('all');
+
+  // 各タイプの画像数をメモ化
+  const imageCounts = useMemo(() => ({
+    total: images.length,
+    image: images.filter(img => img.type === 'image').length,
+    graphic: images.filter(img => img.type === 'graphic').length,
+    video: images.filter(img => img.type === 'video').length,
+  }), [images]);
 
   // フィルタリングされた画像
   const filteredImages = images.filter(media => {
@@ -67,7 +75,7 @@ export default function Gallery({ images }: GalleryProps) {
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
           }`}
         >
-          すべて ({images.length})
+          すべて ({imageCounts.total})
         </button>
         <button
           onClick={() => setFilter('image')}
@@ -77,7 +85,7 @@ export default function Gallery({ images }: GalleryProps) {
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
           }`}
         >
-          イラスト ({images.filter(img => img.type === 'image').length})
+          イラスト ({imageCounts.image})
         </button>
         <button
           onClick={() => setFilter('graphic')}
@@ -87,7 +95,7 @@ export default function Gallery({ images }: GalleryProps) {
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
           }`}
         >
-          グラフィック ({images.filter(img => img.type === 'graphic').length})
+          グラフィック ({imageCounts.graphic})
         </button>
         <button
           onClick={() => setFilter('video')}
@@ -97,7 +105,7 @@ export default function Gallery({ images }: GalleryProps) {
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
           }`}
         >
-          アニメーション ({images.filter(img => img.type === 'video').length})
+          アニメーション ({imageCounts.video})
         </button>
       </div>
 
@@ -197,12 +205,12 @@ export default function Gallery({ images }: GalleryProps) {
       </div>
 
       {/* 統計情報 */}
-      {images.length > 0 && (
+      {imageCounts.total > 0 && (
         <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
           <div className="rounded-xl bg-white p-4 shadow-lg dark:bg-gray-800">
             <div className="text-center">
               <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
-                {images.length}
+                {imageCounts.total}
               </div>
               <div className="text-sm text-gray-600 dark:text-gray-400">
                 総作品数
@@ -212,7 +220,7 @@ export default function Gallery({ images }: GalleryProps) {
           <div className="rounded-xl bg-white p-4 shadow-lg dark:bg-gray-800">
             <div className="text-center">
               <div className="text-2xl font-bold text-pink-600 dark:text-pink-400">
-                {images.filter(img => img.type === 'image').length}
+                {imageCounts.image}
               </div>
               <div className="text-sm text-gray-600 dark:text-gray-400">
                 イラスト
@@ -222,7 +230,7 @@ export default function Gallery({ images }: GalleryProps) {
           <div className="rounded-xl bg-white p-4 shadow-lg dark:bg-gray-800">
             <div className="text-center">
               <div className="text-2xl font-bold text-green-600 dark:text-green-400">
-                {images.filter(img => img.type === 'graphic').length}
+                {imageCounts.graphic}
               </div>
               <div className="text-sm text-gray-600 dark:text-gray-400">
                 グラフィック
@@ -232,7 +240,7 @@ export default function Gallery({ images }: GalleryProps) {
           <div className="rounded-xl bg-white p-4 shadow-lg dark:bg-gray-800">
             <div className="text-center">
               <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-                {images.filter(img => img.type === 'video').length}
+                {imageCounts.video}
               </div>
               <div className="text-sm text-gray-600 dark:text-gray-400">
                 アニメーション
