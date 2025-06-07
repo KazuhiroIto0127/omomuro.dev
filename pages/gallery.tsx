@@ -125,6 +125,7 @@ export default function Gallery({ images }: GalleryProps) {
                       height={media.height}
                       className="w-full transition-transform duration-500 group-hover:scale-110"
                       loading="lazy"
+                      unoptimized={media.src.toLowerCase().endsWith('.gif')}
                     />
                     {/* オーバーレイ効果 */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
@@ -267,6 +268,7 @@ export default function Gallery({ images }: GalleryProps) {
                 width={selectedImage.width}
                 height={selectedImage.height}
                 className="max-h-[90vh] max-w-[90vw] object-contain rounded-2xl shadow-2xl"
+                unoptimized={selectedImage.src.toLowerCase().endsWith('.gif')}
               />
             ) : (
               <video
