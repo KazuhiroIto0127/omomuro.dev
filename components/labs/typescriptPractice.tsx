@@ -35,7 +35,6 @@ export default function TypescriptPractice() {
       const newArray = [...pre];
       newArray.unshift(new User(userTotal, selectedEmoji, name, old));
       return newArray;
-      // return [...pre, new User(userTotal, selectedEmoji, name, old)]
     });
   }
   return (

@@ -4,7 +4,6 @@ import Layout from '@/components/layouts/oneColumnLayout';
 import HeroSection from '@/components/HeroSection';
 import { labsLinks } from '@/components/labs';
 import { motion } from 'framer-motion';
-import { BeakerIcon, SparklesIcon, CodeBracketIcon } from '@heroicons/react/24/outline';
 
 export default function Labs() {
   const cardVariants = {
