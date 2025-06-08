@@ -2,6 +2,8 @@ import { InferGetStaticPropsType } from 'next';
 import Layout from '@/components/layouts/oneColumnLayout';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 import HeadMeta from '@/components/Head';
 import HeroSection from '@/components/HeroSection';
 import fs from 'fs';
@@ -10,6 +12,46 @@ import matter from 'gray-matter';
 import type { Work } from '@/types/work';
 
 const WorksPage = ({ works }: { works: Work[] }) => {
+  const router = useRouter();
+
+  // ブラウザバック/進むでのview transition対応
+  useEffect(() => {
+    if ('startViewTransition' in document) {
+      router.beforePopState(({ url, as, options }) => {
+        // View transitionを開始して、その中でナビゲーションを実行
+        // @ts-ignore — startViewTransition is still experimental
+        document.startViewTransition(async () => {
+          await router.push(url, as, options);
+        });
+        return false; // デフォルトのナビゲーションを防ぐ
+      });
+    }
+
+    return () => {
+      // クリーンアップ: デフォルトの動作に戻す
+      router.beforePopState(() => true);
+    };
+  }, [router]);
+
+  const handleWorkClick = async (e: React.MouseEvent, workSlug: string) => {
+    // View Transition APIが利用可能かチェック
+    if ('startViewTransition' in document) {
+      e.preventDefault();
+      const url = `/works/${workSlug}`;
+
+      try {
+        // @ts-ignore — startViewTransition is still experimental
+        document.startViewTransition(async () => {
+          await router.push(url);
+        });
+      } catch (error) {
+        // エラーが発生した場合は通常のナビゲーション
+        await router.push(url);
+      }
+    }
+    // View Transition APIが利用できない場合は通常のナビゲーション
+  };
+
   return (
     <Layout>
       <HeadMeta type="website" title="作ったもの" />
@@ -29,6 +71,8 @@ const WorksPage = ({ works }: { works: Work[] }) => {
             key={work.slug}
             className="group block"
             style={{ animationDelay: `${index * 100}ms` }}
+            scroll={false}
+            onClick={(e) => handleWorkClick(e, work.slug)}
           >
             <div className="animate-fade-in-up h-full overflow-hidden rounded-xl border border-gray-200/60 bg-white shadow-lg transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/25 hover:-translate-y-2 dark:border-gray-700 dark:bg-gray-800">
               {/* 画像コンテナ */}
@@ -40,6 +84,7 @@ const WorksPage = ({ works }: { works: Work[] }) => {
                   height={work.thumbnailHeight}
                   width={work.thumbnailWidth}
                   alt={work.thumbnailFileName}
+                  style={{ viewTransitionName: `thumbnail-${work.slug}` }}
                 />
                 {/* オーバーレイ効果 */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>

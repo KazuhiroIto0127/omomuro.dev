@@ -3,24 +3,85 @@ import Layout from '@/components/layouts/oneColumnLayout';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import HeadMeta from '@/components/Head';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import type { Work } from '@/types/work';
 
 export default function WorkPage({ work }: { work: Work }) {
+  const router = useRouter();
+
+  // ブラウザバック/進むでのview transition対応
+  useEffect(() => {
+    if ('startViewTransition' in document) {
+      router.beforePopState(({ url, as, options }) => {
+        // View transitionを開始して、その中でナビゲーションを実行
+        // @ts-ignore — startViewTransition is still experimental
+        document.startViewTransition(async () => {
+          await router.push(url, as, options);
+        });
+        return false; // デフォルトのナビゲーションを防ぐ
+      });
+    }
+
+    return () => {
+      // クリーンアップ: デフォルトの動作に戻す
+      router.beforePopState(() => true);
+    };
+  }, [router]);
+
+  const handleBackClick = async (e: React.MouseEvent) => {
+    // View Transition APIが利用可能かチェック
+    if ('startViewTransition' in document) {
+      e.preventDefault();
+      const url = '/works';
+
+      try {
+        // @ts-ignore — startViewTransition is still experimental
+        document.startViewTransition(async () => {
+          await router.push(url);
+        });
+      } catch (error) {
+        // エラーが発生した場合は通常のナビゲーション
+        await router.push(url);
+      }
+    }
+    // View Transition APIが利用できない場合は通常のナビゲーション
+  };
+
   return (
     <Layout>
       <HeadMeta type="article" title={work.title} />
 
       <article className="mx-auto max-w-2xl break-words prose-sm dark:prose-invert sm:prose-base lg:prose-lg bg-white/80 dark:bg-gray-600/80 p-4 rounded-lg">
+        <div className="mb-6">
+          <Link
+            href="/works"
+            className="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 transition-colors duration-200 group"
+            onClick={handleBackClick}
+          >
+            <svg
+              className="w-4 h-4 transition-transform duration-200 group-hover:-translate-x-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            <span className="text-sm font-medium">作品一覧に戻る</span>
+          </Link>
+        </div>
         <Image
           priority
           src={work.thumbnail}
-          className="mb-4 h-52 w-full rounded-md bg-white object-cover md:h-96"
+          className="mb-4 h-52 w-full rounded-md bg-white object-cover md:h-96 transition-transform duration-300"
           height={work.thumbnailHeight}
           width={work.thumbnailWidth}
           alt={work.thumbnailFileName}
+          style={{ viewTransitionName: `thumbnail-${work.slug}` }}
         />
         <h1>{work.title}</h1>
         <p>{work.description}</p>

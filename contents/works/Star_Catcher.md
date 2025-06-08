@@ -1,6 +1,5 @@
 ---
-title: "Star Catcher
-"
+title: "Star Catcher"
 description: "Unityで作ったアクションゲームです。"
 thumbnail: "/images/works/star_catcher.png"
 thumbnailHeight: 600
