@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 import matter from 'gray-matter';
 import path from 'path';
 import fs from 'fs';
@@ -27,6 +28,25 @@ export async function getStaticProps() {
 
 export default function Books({ books }: { books: Book[] }) {
   const router = useRouter();
+
+  // ブラウザバック/進むでのview transition対応
+  useEffect(() => {
+    if ('startViewTransition' in document) {
+      router.beforePopState(({ url, as, options }) => {
+        // View transitionを開始して、その中でナビゲーションを実行
+        // @ts-ignore — startViewTransition is still experimental
+        document.startViewTransition(async () => {
+          await router.push(url, as, options);
+        });
+        return false; // デフォルトのナビゲーションを防ぐ
+      });
+    }
+
+    return () => {
+      // クリーンアップ: デフォルトの動作に戻す
+      router.beforePopState(() => true);
+    };
+  }, [router]);
 
   const handleBookClick = async (e: React.MouseEvent, bookSlug: string) => {
     // View Transition APIが利用可能かチェック
@@ -110,13 +130,12 @@ export default function Books({ books }: { books: Book[] }) {
                       {/* 読書ステータスバッジ */}
                       {book.status && (
                         <div className="absolute right-2 top-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                          <span className={`rounded-full px-2 py-1 text-xs font-medium ${
-                            book.status === '読了'
+                          <span className={`rounded-full px-2 py-1 text-xs font-medium ${book.status === '読了'
                               ? 'bg-green-500 text-white'
                               : book.status === '読書中'
-                              ? 'bg-blue-500 text-white'
-                              : 'bg-gray-500 text-white'
-                          }`}>
+                                ? 'bg-blue-500 text-white'
+                                : 'bg-gray-500 text-white'
+                            }`}>
                             {book.status}
                           </span>
                         </div>
