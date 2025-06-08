@@ -2,6 +2,7 @@ import Layout from '@/components/layouts/oneColumnLayout';
 import HeadMeta from '@/components/Head';
 import HeroSection from '@/components/HeroSection';
 import { useState, useEffect, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import fs from 'fs';
 import path from 'path';
 import Image from 'next/image';
@@ -118,15 +119,17 @@ export default function Gallery({ images }: GalleryProps) {
               >
                 {media.type === 'image' || media.type === 'graphic' ? (
                   <div className="relative overflow-hidden">
-                    <Image
-                      src={media.src}
-                      alt={media.alt}
-                      width={media.width}
-                      height={media.height}
-                      className="w-full transition-transform duration-500 group-hover:scale-110"
-                      loading="lazy"
-                      unoptimized={media.src.toLowerCase().endsWith('.gif')}
-                    />
+                    <motion.div layoutId={`image-${media.src}`}>
+                      <Image
+                        src={media.src}
+                        alt={media.alt}
+                        width={media.width}
+                        height={media.height}
+                        className="w-full transition-transform duration-500 group-hover:scale-110"
+                        loading="lazy"
+                        unoptimized={media.src.toLowerCase().endsWith('.gif')}
+                      />
+                    </motion.div>
                     {/* オーバーレイ効果 */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 
@@ -147,20 +150,22 @@ export default function Gallery({ images }: GalleryProps) {
                   </div>
                 ) : (
                   <div className="relative overflow-hidden">
-                    <video
-                      src={media.src}
-                      poster={media.poster}
-                      controls={false}
-                      className="w-full transition-transform duration-500 group-hover:scale-110"
-                      style={{ aspectRatio: `${media.width} / ${media.height}` }}
-                      muted
-                      playsInline
-                      preload="metadata"
-                      onMouseEnter={(e) => {
-                        const video = e.target as HTMLVideoElement;
-                        video.currentTime = 1; // 1秒の位置でプレビュー
-                      }}
-                    />
+                    <motion.div layoutId={`video-${media.src}`}>
+                      <video
+                        src={media.src}
+                        poster={media.poster}
+                        controls={false}
+                        className="w-full transition-transform duration-500 group-hover:scale-110"
+                        style={{ aspectRatio: `${media.width} / ${media.height}` }}
+                        muted
+                        playsInline
+                        preload="metadata"
+                        onMouseEnter={(e) => {
+                          const video = e.target as HTMLVideoElement;
+                          video.currentTime = 1; // 1秒の位置でプレビュー
+                        }}
+                      />
+                    </motion.div>
                     {/* オーバーレイ効果 */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 
@@ -248,77 +253,97 @@ export default function Gallery({ images }: GalleryProps) {
       )}
 
       {/* モーダル */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
-          onClick={() => setSelectedImage(null)}
-        >
-          <div className="relative">
-            <div
-              className="relative rounded-2xl overflow-hidden"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {selectedImage.type === 'image' || selectedImage.type === 'graphic' ? (
-                <Image
-                  src={selectedImage.src}
-                  alt={selectedImage.alt}
-                  width={selectedImage.width}
-                  height={selectedImage.height}
-                  className="rounded-2xl shadow-2xl"
-                  style={{
-                    maxHeight: '50vh',
-                    maxWidth: '90vw',
-                    width: 'auto',
-                    height: 'auto',
-                  }}
-                  unoptimized={selectedImage.src.toLowerCase().endsWith('.gif')}
-                />
-              ) : (
-                <video
-                  src={selectedImage.src}
-                  controls
-                  autoPlay
-                  muted
-                  playsInline
-                  className="rounded-2xl shadow-2xl"
-                  style={{ 
-                    maxHeight: '50vh',
-                    maxWidth: '90vw',
-                    width: 'auto',
-                    height: 'auto',
-                    aspectRatio: `${selectedImage.width} / ${selectedImage.height}` 
-                  }}
-                  onClick={(e) => e.stopPropagation()}
-                  onTouchStart={(e) => e.stopPropagation()}
-                  onTouchEnd={(e) => e.stopPropagation()}
-                />
-              )}
-            </div>
-            <button
-              className="absolute -top-2 -right-2 z-10 rounded-full bg-white p-2 text-black shadow-xl transition-all hover:bg-gray-100 hover:scale-110 touch-manipulation"
-              onClick={(e) => {
-                e.stopPropagation();
-                setSelectedImage(null);
-              }}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            onClick={() => setSelectedImage(null)}
+          >
+            <div className="relative">
+              <div
+                className="relative"
+                onClick={(e) => e.stopPropagation()}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      )}
+                {selectedImage.type === 'image' || selectedImage.type === 'graphic' ? (
+                  <motion.div
+                    layoutId={`image-${selectedImage.src}`}
+                    className="rounded-2xl overflow-hidden shadow-2xl"
+                    style={{
+                      maxHeight: '90vh',
+                      maxWidth: '90vw',
+                    }}
+                  >
+                    <Image
+                      src={selectedImage.src}
+                      alt={selectedImage.alt}
+                      width={selectedImage.width}
+                      height={selectedImage.height}
+                      className="max-w-full max-h-full w-auto h-auto object-contain"
+                      unoptimized={selectedImage.src.toLowerCase().endsWith('.gif')}
+                    />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    layoutId={`video-${selectedImage.src}`}
+                    className="rounded-2xl overflow-hidden shadow-2xl"
+                    style={{ 
+                      maxHeight: '90vh',
+                      maxWidth: '90vw',
+                    }}
+                  >
+                    <video
+                      src={selectedImage.src}
+                      controls
+                      autoPlay
+                      muted
+                      playsInline
+                      className="max-w-full max-h-full w-auto h-auto"
+                      style={{ 
+                        aspectRatio: `${selectedImage.width} / ${selectedImage.height}` 
+                      }}
+                      onClick={(e) => e.stopPropagation()}
+                      onTouchStart={(e) => e.stopPropagation()}
+                      onTouchEnd={(e) => e.stopPropagation()}
+                    />
+                  </motion.div>
+                )}
+              </div>
+              <motion.button
+                className="absolute -top-2 -right-2 z-10 rounded-full bg-white p-2 text-black shadow-xl hover:bg-gray-100 touch-manipulation"
+                initial={{ scale: 0, rotate: -90 }}
+                animate={{ scale: 1, rotate: 0 }}
+                exit={{ scale: 0, rotate: 90 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedImage(null);
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </motion.button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <style jsx>{`
         @keyframes fade-in-up {
