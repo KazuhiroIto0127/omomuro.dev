@@ -251,41 +251,51 @@ export default function Gallery({ images }: GalleryProps) {
       {selectedImage && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
-          onClick={(e) => {
-            if (e.target === e.currentTarget) {
-              setSelectedImage(null);
-            }
-          }}
+          onClick={() => setSelectedImage(null)}
         >
-          <div
-            className="relative max-h-[90vh] max-w-[90vw] rounded-2xl overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {selectedImage.type === 'image' || selectedImage.type === 'graphic' ? (
-              <Image
-                src={selectedImage.src}
-                alt={selectedImage.alt}
-                width={selectedImage.width}
-                height={selectedImage.height}
-                className="max-h-[90vh] max-w-[90vw] object-contain rounded-2xl shadow-2xl"
-                unoptimized={selectedImage.src.toLowerCase().endsWith('.gif')}
-              />
-            ) : (
-              <video
-                src={selectedImage.src}
-                controls
-                autoPlay
-                muted
-                playsInline
-                className="max-h-[90vh] max-w-[90vw] object-contain rounded-2xl shadow-2xl"
-                style={{ aspectRatio: `${selectedImage.width} / ${selectedImage.height}` }}
-                onClick={(e) => e.stopPropagation()}
-                onTouchStart={(e) => e.stopPropagation()}
-                onTouchEnd={(e) => e.stopPropagation()}
-              />
-            )}
+          <div className="relative">
+            <div
+              className="relative rounded-2xl overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {selectedImage.type === 'image' || selectedImage.type === 'graphic' ? (
+                <Image
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  width={selectedImage.width}
+                  height={selectedImage.height}
+                  className="rounded-2xl shadow-2xl"
+                  style={{
+                    maxHeight: '50vh',
+                    maxWidth: '90vw',
+                    width: 'auto',
+                    height: 'auto',
+                  }}
+                  unoptimized={selectedImage.src.toLowerCase().endsWith('.gif')}
+                />
+              ) : (
+                <video
+                  src={selectedImage.src}
+                  controls
+                  autoPlay
+                  muted
+                  playsInline
+                  className="rounded-2xl shadow-2xl"
+                  style={{ 
+                    maxHeight: '50vh',
+                    maxWidth: '90vw',
+                    width: 'auto',
+                    height: 'auto',
+                    aspectRatio: `${selectedImage.width} / ${selectedImage.height}` 
+                  }}
+                  onClick={(e) => e.stopPropagation()}
+                  onTouchStart={(e) => e.stopPropagation()}
+                  onTouchEnd={(e) => e.stopPropagation()}
+                />
+              )}
+            </div>
             <button
-              className="absolute -top-4 -right-4 rounded-full bg-white p-3 text-black shadow-xl transition-all hover:bg-gray-100 hover:scale-110 touch-manipulation"
+              className="absolute -top-2 -right-2 z-10 rounded-full bg-white p-2 text-black shadow-xl transition-all hover:bg-gray-100 hover:scale-110 touch-manipulation"
               onClick={(e) => {
                 e.stopPropagation();
                 setSelectedImage(null);
@@ -293,7 +303,7 @@ export default function Gallery({ images }: GalleryProps) {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="h-5 w-5"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
