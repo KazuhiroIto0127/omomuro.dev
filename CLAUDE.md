@@ -33,7 +33,6 @@ This is a Next.js 15 portfolio website for Kazuhiro Ito built with TypeScript an
 - Static generation via `getStaticProps` and `getStaticPaths`
 
 ### Layout System
-- **Two-column layout** (`twoColumnLayout.tsx`) for main pages with sidebar navigation
 - **One-column layout** (`oneColumnLayout.tsx`) for content pages like individual books/works
 - **Global state management** via React Context for sidebar visibility (`GlobalContext`)
 - **Theme support** using `next-themes` for dark/light mode switching
