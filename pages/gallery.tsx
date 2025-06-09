@@ -263,55 +263,58 @@ export default function Gallery({ images }: GalleryProps) {
             transition={{ duration: 0.3 }}
             onClick={() => setSelectedImage(null)}
           >
-            <div className="relative">
-              <div
-                className="relative"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {selectedImage.type === 'image' || selectedImage.type === 'graphic' ? (
-                  <motion.div
-                    layoutId={`image-${selectedImage.src}`}
-                    className="rounded-2xl overflow-hidden shadow-2xl"
+            <div className="relative flex items-center justify-center p-4 max-h-screen max-w-screen">
+              {selectedImage.type === 'image' || selectedImage.type === 'graphic' ? (
+                <motion.div
+                  layoutId={`image-${selectedImage.src}`}
+                  className="rounded-2xl overflow-hidden shadow-2xl max-w-[90vw] max-h-[90vh] flex items-center justify-center"
+                  onClick={(e) => e.stopPropagation()}
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.8, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                >
+                  <Image
+                    src={selectedImage.src}
+                    alt={selectedImage.alt}
+                    width={selectedImage.width}
+                    height={selectedImage.height}
+                    className="object-contain w-auto h-auto"
                     style={{
-                      maxHeight: '90vh',
                       maxWidth: '90vw',
+                      maxHeight: '90vh',
                     }}
-                  >
-                    <Image
-                      src={selectedImage.src}
-                      alt={selectedImage.alt}
-                      width={selectedImage.width}
-                      height={selectedImage.height}
-                      className="max-w-full max-h-full w-auto h-auto object-contain"
-                      unoptimized={selectedImage.src.toLowerCase().endsWith('.gif')}
-                    />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    layoutId={`video-${selectedImage.src}`}
-                    className="rounded-2xl overflow-hidden shadow-2xl"
+                    unoptimized={selectedImage.src.toLowerCase().endsWith('.gif')}
+                  />
+                </motion.div>
+              ) : (
+                <motion.div
+                  layoutId={`video-${selectedImage.src}`}
+                  className="rounded-2xl overflow-hidden shadow-2xl max-w-[90vw] max-h-[90vh] flex items-center justify-center"
+                  onClick={(e) => e.stopPropagation()}
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.8, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                >
+                  <video
+                    src={selectedImage.src}
+                    controls
+                    autoPlay
+                    muted
+                    playsInline
+                    className="object-contain w-auto h-auto"
                     style={{ 
-                      maxHeight: '90vh',
                       maxWidth: '90vw',
+                      maxHeight: '90vh',
+                      aspectRatio: `${selectedImage.width} / ${selectedImage.height}` 
                     }}
-                  >
-                    <video
-                      src={selectedImage.src}
-                      controls
-                      autoPlay
-                      muted
-                      playsInline
-                      className="max-w-full max-h-full w-auto h-auto"
-                      style={{ 
-                        aspectRatio: `${selectedImage.width} / ${selectedImage.height}` 
-                      }}
-                      onClick={(e) => e.stopPropagation()}
-                      onTouchStart={(e) => e.stopPropagation()}
-                      onTouchEnd={(e) => e.stopPropagation()}
-                    />
-                  </motion.div>
-                )}
-              </div>
+                    onClick={(e) => e.stopPropagation()}
+                    onTouchStart={(e) => e.stopPropagation()}
+                    onTouchEnd={(e) => e.stopPropagation()}
+                  />
+                </motion.div>
+              )}
               <motion.button
                 className="absolute -top-2 -right-2 z-10 rounded-full bg-white p-2 text-black shadow-xl hover:bg-gray-100 touch-manipulation"
                 initial={{ scale: 0, rotate: -90 }}
