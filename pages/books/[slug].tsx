@@ -1,6 +1,4 @@
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 import Layout from '@/components/layouts/oneColumnLayout';
 import Image from 'next/image';
 import HeadMeta from '@/components/Head';
@@ -9,46 +7,13 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import type { Book } from '@/types/book';
+import { useViewTransition } from '@/hooks/useViewTransition';
 
 export default function BookPage({ book }: { book: Book }) {
-  const router = useRouter();
-
-  // ブラウザバック/進むでのview transition対応
-  useEffect(() => {
-    if ('startViewTransition' in document) {
-      router.beforePopState(({ url, as, options }) => {
-        // View transitionを開始して、その中でナビゲーションを実行
-        // @ts-ignore — startViewTransition is still experimental
-        document.startViewTransition(async () => {
-          await router.push(url, as, options);
-        });
-        return false; // デフォルトのナビゲーションを防ぐ
-      });
-    }
-
-    return () => {
-      // クリーンアップ: デフォルトの動作に戻す
-      router.beforePopState(() => true);
-    };
-  }, [router]);
+  const { navigateWithTransition } = useViewTransition();
 
   const handleBackClick = async (e: React.MouseEvent) => {
-    // View Transition APIが利用可能かチェック
-    if ('startViewTransition' in document) {
-      e.preventDefault();
-      const url = '/books';
-
-      try {
-        // @ts-ignore — startViewTransition is still experimental
-        document.startViewTransition(async () => {
-          await router.push(url);
-        });
-      } catch (error) {
-        // エラーが発生した場合は通常のナビゲーション
-        await router.push(url);
-      }
-    }
-    // View Transition APIが利用できない場合は通常のナビゲーション
+    await navigateWithTransition('/books', e);
   };
 
   return (
