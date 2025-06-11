@@ -37,8 +37,8 @@ export default function MobileNav() {
 
   return (
     <div className="fixed bottom-3 left-0 right-0 z-10 block px-4 md:hidden">
-      <nav className="mx-auto max-w-md rounded-full border border-white/20 bg-white/10 p-2 shadow-2xl backdrop-blur-xl before:absolute before:inset-0 before:rounded-full before:border before:border-white/40 before:bg-gradient-to-br before:from-white/25 before:to-transparent before:backdrop-blur-xl relative overflow-hidden dark:border-white/10 dark:bg-white/5 dark:before:border-white/20 dark:before:from-white/10">
-        <div className="flex items-center justify-around relative z-10">
+      <nav className="mx-auto max-w-md rounded-full border border-slate-200 bg-white/80 p-2 shadow-lg backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/80">
+        <div className="flex items-center justify-around">
           {links.map((link) => {
             const Icon = link.icon;
             return (
