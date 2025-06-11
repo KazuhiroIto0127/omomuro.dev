@@ -66,7 +66,7 @@ export default function MobileNav() {
                 className={clsx(
                   'flex flex-col items-center justify-center rounded-xl px-3 py-1 text-xs transition-all duration-200',
                   {
-                    'bg-blue-100 text-blue-400 backdrop-blur-sm dark:bg-white/30 dark:text-blue-300': currentRoute === link.path,
+                    'bg-white/60 text-blue-500 backdrop-blur-sm dark:bg-white/30 dark:text-blue-300': currentRoute === link.path,
                     'text-slate-700 hover:bg-white/20 hover:backdrop-blur-sm dark:text-slate-300 dark:hover:bg-white/10': currentRoute !== link.path,
                   }
                 )}
