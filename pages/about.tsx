@@ -58,8 +58,8 @@ export default function About() {
       <div className="grid gap-8 lg:grid-cols-3">
         {/* プロフィールカード */}
         <section className="group lg:col-span-1">
-          <div className="h-full overflow-hidden rounded-2xl border border-gray-200/60 bg-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/25 hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800">
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 dark:from-gray-700 dark:to-gray-600">
+          <div className="h-full overflow-hidden rounded-2xl border border-gray-200/60 bg-white/80 shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/25 hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800/80">
+            <div className="bg-gradient-to-br from-blue-50/60 to-indigo-100/60 p-6 dark:from-gray-700/60 dark:to-gray-600/60">
               <div className="flex flex-col items-center text-center">
                 <div className="mb-4 rounded-full bg-white/80 p-4 shadow-lg dark:bg-gray-400/80">
                   <RiveAnimation src="/animations/penguin_anime.riv" width={120} height={120} />
@@ -89,7 +89,7 @@ export default function About() {
 
         {/* 来歴セクション */}
         <section className="group lg:col-span-2">
-          <div className="h-full overflow-hidden rounded-2xl border border-gray-200/60 bg-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25 hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800">
+          <div className="h-full overflow-hidden rounded-2xl border border-gray-200/60 bg-white/80 shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25 hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800/80">
             <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 dark:from-gray-700 dark:to-gray-600">
               <h3 className="flex items-center text-2xl font-bold text-gray-900 dark:text-white">
                 <AcademicCapIcon className="mr-3 h-8 w-8 text-purple-600" />
@@ -171,7 +171,7 @@ export default function About() {
 
         {/* スキルセクション */}
         <section className="group lg:col-span-2">
-          <div className="h-full overflow-hidden rounded-2xl border border-gray-200/60 bg-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800">
+          <div className="h-full overflow-hidden rounded-2xl border border-gray-200/60 bg-white/80 shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800/80">
             <div className="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 dark:from-gray-700 dark:to-gray-600">
               <h3 className="flex items-center text-2xl font-bold text-gray-900 dark:text-white">
                 <CommandLineIcon className="mr-3 h-8 w-8 text-blue-600" />
@@ -241,7 +241,7 @@ export default function About() {
 
         {/* SNSリンクセクション */}
         <section className="group lg:col-span-1">
-          <div className="h-full overflow-hidden rounded-2xl border border-gray-200/60 bg-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/25 hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800">
+          <div className="h-full overflow-hidden rounded-2xl border border-gray-200/60 bg-white/80 shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/25 hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800/80">
             <div className="bg-gradient-to-r from-pink-50 to-rose-50 p-6 dark:from-gray-700 dark:to-gray-600">
               <h3 className="flex items-center text-2xl font-bold text-gray-900 dark:text-white">
                 <LinkIcon className="mr-3 h-8 w-8 text-pink-600" />
