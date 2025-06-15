@@ -25,8 +25,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   decorativeElements = true,
 }) => {
   return (
-    <div className={`relative mb-12 overflow-hidden rounded-3xl bg-gradient-to-br ${backgroundGradient} p-8 text-white`}>
-      <div className="absolute inset-0 bg-black/20"></div>
+    <div className={`relative mb-12 overflow-hidden rounded-3xl bg-gradient-to-br ${backgroundGradient} p-8 text-white opacity-80`}>
+      <div className="absolute inset-0 bg-black/10"></div>
       <div className="relative">
         <h1 className="mb-4 text-4xl font-bold md:text-5xl">
           {title}
