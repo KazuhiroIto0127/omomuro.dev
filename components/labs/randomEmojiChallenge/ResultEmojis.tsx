@@ -12,8 +12,8 @@ export default function ResultEmojis({ emojiStack, challengeResults }) {
           <motion.div
             key={emojiStack.length - index}
             layout
-            initial={{ opacity: 0, scale: 0, translateY: -100 }}
-            animate={{ opacity: 1, scale: 1, translateY: 0 }}
+            initial={{ opacity: 0, scale: 0, y: -100 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, type: 'spring' }}
           >
             <div className="touch-manipulation select-none">

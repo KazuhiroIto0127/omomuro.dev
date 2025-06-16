@@ -110,8 +110,8 @@ export default function TypescriptPractice() {
             <motion.div
               key={user.id}
               layout
-              initial={{ opacity: 0, translateX: -50, translateY: -50 }}
-              animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+              initial={{ opacity: 0, x: -50, y: -50 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 0.3, type: 'spring' }}
             >
               <UserCard user={user} />

@@ -6,18 +6,6 @@ import { labsLinks } from '@/components/labs';
 import { motion } from 'framer-motion';
 
 export default function Labs() {
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    })
-  };
 
   return (
     <>
@@ -56,8 +44,13 @@ export default function Labs() {
             {labsLinks.map((link, index) => (
               <motion.div
                 key={link.id}
-                custom={index}
-                variants={cardVariants}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: index * 0.1,
+                  duration: 0.6,
+                  ease: "easeOut"
+                }}
                 className="group"
               >
                 <LabsLink
