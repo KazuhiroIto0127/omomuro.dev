@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import matter from 'gray-matter';
 import path from 'path';
@@ -70,9 +71,11 @@ export default function Books({ books }: { books: Book[] }) {
                   >
                     {/* 本のカバー */}
                     <div className="relative overflow-hidden rounded-lg transition-all duration-300 group-hover:-translate-y-3 group-hover:rotate-1 group-hover:shadow-2xl">
-                      <img
+                      <Image
                         src={book.cover}
                         alt={book.title}
+                        width={300}
+                        height={400}
                         className="aspect-[3/4] w-full object-cover transition-transform duration-500 group-hover:scale-105"
                         style={{ viewTransitionName: `cover-${book.slug}` }}
                       />
