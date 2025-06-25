@@ -186,11 +186,14 @@ const GradientBackground = () => {
 
     window.addEventListener('resize', handleResize);
 
+    const container = containerRef.current;
+    const ellipses = ellipsesRef.current;
+
     // クリーンアップ
     return () => {
       window.removeEventListener('resize', handleResize);
-      containerRef.current?.removeChild(renderer.domElement);
-      ellipsesRef.current.forEach((ellipse) => {
+      container?.removeChild(renderer.domElement);
+      ellipses.forEach((ellipse) => {
         ellipse.mesh.geometry.dispose();
         (ellipse.mesh.material as THREE.Material).dispose();
       });
