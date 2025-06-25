@@ -4,33 +4,11 @@ import { useRouter } from 'next/router';
 import clsx from 'clsx';
 import { ThemeChanger } from '@/components/ThemeChanger';
 import MobileNav from '@/components/MobileNav';
+import { navigationLinks } from '@/config/navigation';
 
 export default function Header() {
   const router = useRouter();
   const currentRoute = router.pathname;
-
-  const links = [
-    {
-      title: 'Home',
-      path: '/',
-    },
-    {
-      title: 'About Me',
-      path: '/about',
-    },
-    {
-      title: 'Works',
-      path: '/works',
-    },
-    {
-      title: 'Books',
-      path: '/books',
-    },
-    {
-      title: 'Gallery',
-      path: '/gallery',
-    },
-  ];
 
   return (
     <>
@@ -43,7 +21,7 @@ export default function Header() {
           <div className="hidden items-center md:flex">
             <nav className="">
               <ul className="flex items-center space-x-8 text-lg">
-                {links.map((link) => (
+                {navigationLinks.map((link) => (
                   <li key={link.path}>
                     <Link
                       className={clsx('hover:text-sky-500', {
