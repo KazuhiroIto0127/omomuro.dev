@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import matter from 'gray-matter';
 import path from 'path';
 import fs from 'fs';

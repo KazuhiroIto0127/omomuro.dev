@@ -35,7 +35,6 @@
     "react-markdown": "^10.1.0",
     "react-rewards": "^2.1.0",
     "sharp": "^0.34.2",
-    "tailwind-merge": "^3.3.1",
     "tailwindcss-radix": "^4.0.2",
     "three": "^0.177.0"
   },

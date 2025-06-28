@@ -6,7 +6,7 @@ import clsx from 'clsx';
 
 export const ThemeChangerRadioBtn = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme, resolvedTheme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => setMounted(true), []);
 

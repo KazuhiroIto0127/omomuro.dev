@@ -1,5 +1,4 @@
 import React, { useRef } from 'react';
-import Image from 'next/image';
 import { Sigmar } from 'next/font/google';
 import styles from '@/styles/HeroOutline.module.css';
 import { useHeroAnimation } from '@/hooks/useHeroAnimation';

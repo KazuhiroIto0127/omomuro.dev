@@ -1,4 +1,3 @@
-import Head from '@/components/Head';
 import Footer from '@/components/layouts/Footer';
 import HomeHeader from '@/components/layouts/HomeHeader';
 

@@ -1,6 +1,5 @@
 import Layout from '@/components/layouts/oneColumnLayout';
 import HeadMeta from '@/components/Head';
-import { motion } from 'framer-motion';
 import LinkCard from '@/components/home/LinkCard';
 import ImageButton from '@/components/home/ImageButton';
 import Hero from '@/components/home/Hero';
