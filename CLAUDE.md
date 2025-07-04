@@ -67,3 +67,28 @@ When working on this codebase:
 - Follow the existing TypeScript patterns and component structure
 - Test responsive behavior and dark mode compatibility
 - Run lint and format commands before committing changes
+
+## Testing and Verification
+
+### Local Development Verification
+When asked to verify that recent commits are reflected properly, follow this workflow:
+
+1. **Start local development server**:
+   ```bash
+   npm run dev
+   ```
+
+2. **Use Playwright to verify changes**:
+   - Navigate to `http://localhost:3000`
+   - Check the Books page (`/books`) to verify book listings
+   - Navigate to specific book pages (e.g., `/books/blanding_design_textbook`) to verify content
+   - Verify that recent changes to book metadata, reading status, and content are properly displayed
+
+3. **Key verification points**:
+   - Book titles and covers are displayed correctly
+   - Reading status (読書中/読了/積読) is updated
+   - Reading completion dates are accurate
+   - Book review content is showing the latest updates
+   - Navigation and site functionality work properly
+
+This workflow ensures that content changes are properly reflected in the local development environment before deployment.
