@@ -4,7 +4,7 @@ cover: '/images/books/blanding_design_textbook.jpg'
 addedDate: '2025-07-1'
 completedDate: '2025-07-1'
 slug: 'blanding_design'
-status: '読書中'
+status: '読了'
 ---
 
 nana's green teaとかのリブランディングをしてるエイトブランディングデザイン社の方の本。
@@ -15,3 +15,5 @@ nana's green teaとかのリブランディングをしてるエイトブラン�
 
 1点にフォーカスすることがブランディングを強めて差異化を強めるのはうなづける。
 マーケティングなど売ることを主軸におきすぎるとブレるのもわかる。
+
+山形緞通のブランディング事例は解りやすい成功で良かった。
