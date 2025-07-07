@@ -2,6 +2,7 @@
 title: 'SOFT SKILLS ソフトウェア開発者の人生マニュアル 第2版'
 cover: '/images/books/soft_skills.jpg'
 addedDate: '2025-06-03'
+completedDate: '2025-06-30'
 slug: 'soft_skills'
 status: '読了'
 ---

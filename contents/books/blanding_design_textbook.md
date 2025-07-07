@@ -1,8 +1,8 @@
 ---
 title: 'ブランディングデザインの教科書'
 cover: '/images/books/blanding_design_textbook.jpg'
-addedDate: '2025-07-1'
-completedDate: '2025-07-1'
+addedDate: '2025-07-01'
+completedDate: '2025-07-01'
 slug: 'blanding_design'
 status: '読了'
 ---
