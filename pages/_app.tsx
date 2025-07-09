@@ -4,7 +4,7 @@ import { Zen_Maru_Gothic } from 'next/font/google';
 import { GlobalProvider } from '@/context/global-state-provider';
 import { ThemeProvider } from 'next-themes';
 import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { usePageView, GoogleAnalytics } from '@/components/gtag';
 import GradientBackground from '@/components/GradientBackground';
 
