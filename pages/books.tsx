@@ -1,27 +1,13 @@
-import matter from 'gray-matter';
-import path from 'path';
-import fs from 'fs';
 import type { Book } from '@/types/book';
 import Layout from '@/components/layouts/oneColumnLayout';
 import HeadMeta from '@/components/Head';
 import HeroSection from '@/components/HeroSection';
 import { useViewTransition } from '@/hooks/useViewTransition';
 import BookCard from '@/components/books/BookCard';
+import { loadBooks } from '@/lib/contentLoader';
 
 export async function getStaticProps() {
-  const booksDirectory = path.join(process.cwd(), 'contents/books');
-  const filenames = fs.readdirSync(booksDirectory);
-  const books = filenames.map((filename) => {
-    const filePath = path.join(booksDirectory, filename);
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const { data } = matter(fileContents);
-    return {
-      ...data,
-      slug: filename.replace(/\.md$/, ''),
-    } as Book;
-  });
-  // 日付の降順でソート
-  books.sort((a, b) => (a.addedDate < b.addedDate ? 1 : -1));
+  const books = loadBooks();
   return { props: { books } };
 }
 

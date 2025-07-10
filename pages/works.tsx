@@ -4,11 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import HeadMeta from '@/components/Head';
 import HeroSection from '@/components/HeroSection';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import type { Work } from '@/types/work';
 import { useViewTransition } from '@/hooks/useViewTransition';
+import { loadWorks } from '@/lib/contentLoader';
 
 const WorksPage = ({ works }: { works: Work[] }) => {
   const { navigateWithTransition } = useViewTransition();
@@ -119,21 +117,7 @@ const WorksPage = ({ works }: { works: Work[] }) => {
 };
 
 export const getStaticProps = async () => {
-  const worksDirectory = path.join(process.cwd(), 'contents/works');
-  const filenames = fs.readdirSync(worksDirectory);
-  const works = filenames.map((filename) => {
-    const fullPath = path.join(worksDirectory, filename);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
-    const { data } = matter(fileContents);
-    return {
-      ...data,
-      slug: filename.replace(/\.md$/, ''),
-    } as Work;
-  });
-
-  // createdAtの降順でソート（新しいものから古いものへ）
-  works.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
-
+  const works = loadWorks();
   return {
     props: { works },
   };

@@ -3,11 +3,9 @@ import Layout from '@/components/layouts/oneColumnLayout';
 import Image from 'next/image';
 import HeadMeta from '@/components/Head';
 import Link from 'next/link';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import type { Book } from '@/types/book';
 import { useViewTransition } from '@/hooks/useViewTransition';
+import { getAllContentPaths, loadBook } from '@/lib/contentLoader';
 
 export default function BookPage({ book }: { book: Book }) {
   const { navigateWithTransition } = useViewTransition();
@@ -62,27 +60,13 @@ export default function BookPage({ book }: { book: Book }) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const booksDirectory = path.join(process.cwd(), 'contents/books');
-  const filenames = fs.readdirSync(booksDirectory);
-  const paths = filenames.map((filename) => ({
-    params: { slug: filename.replace(/\.md$/, '') },
-  }));
+  const paths = getAllContentPaths('books');
   return { paths, fallback: false };
 };
 
 export const getStaticProps = async ({ params }: { params: { slug: string } }) => {
-  const booksDirectory = path.join(process.cwd(), 'contents/books');
-  const fullPath = path.join(booksDirectory, `${params.slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
-
+  const book = loadBook(params.slug);
   return {
-    props: {
-      book: {
-        ...data,
-        body: content,
-        slug: params.slug,
-      } as Book,
-    },
+    props: { book },
   };
 };

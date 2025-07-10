@@ -4,11 +4,9 @@ import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import HeadMeta from '@/components/Head';
 import Link from 'next/link';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import type { Work } from '@/types/work';
 import { useViewTransition } from '@/hooks/useViewTransition';
+import { getAllContentPaths, loadWork } from '@/lib/contentLoader';
 
 export default function WorkPage({ work }: { work: Work }) {
   const { navigateWithTransition } = useViewTransition();
@@ -72,27 +70,13 @@ export default function WorkPage({ work }: { work: Work }) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const worksDirectory = path.join(process.cwd(), 'contents/works');
-  const filenames = fs.readdirSync(worksDirectory);
-  const paths = filenames.map((filename) => ({
-    params: { slug: filename.replace(/\.md$/, '') },
-  }));
+  const paths = getAllContentPaths('works');
   return { paths, fallback: false };
 };
 
 export const getStaticProps = async ({ params }: { params: { slug: string } }) => {
-  const worksDirectory = path.join(process.cwd(), 'contents/works');
-  const fullPath = path.join(worksDirectory, `${params.slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const { data, content } = matter(fileContents);
-
+  const work = loadWork(params.slug);
   return {
-    props: {
-      work: {
-        ...data,
-        body: content,
-        slug: params.slug,
-      } as Work,
-    },
+    props: { work },
   };
 };
