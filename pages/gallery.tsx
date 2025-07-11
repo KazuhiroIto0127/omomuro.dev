@@ -7,6 +7,7 @@ import fs from 'fs';
 import path from 'path';
 import Image from 'next/image';
 import sharp from 'sharp';
+import StatisticsGrid from '@/components/common/StatisticsGrid';
 
 type MediaData = {
   src: string;
@@ -34,6 +35,30 @@ export default function Gallery({ images }: GalleryProps) {
     graphic: images.filter(img => img.type === 'graphic').length,
     video: images.filter(img => img.type === 'video').length,
   }), [images]);
+
+  // 統計情報アイテム
+  const statisticsItems = [
+    {
+      value: imageCounts.total,
+      label: '総作品数',
+      color: 'text-purple-600 dark:text-purple-400'
+    },
+    {
+      value: imageCounts.image,
+      label: 'イラスト',
+      color: 'text-pink-600 dark:text-pink-400'
+    },
+    {
+      value: imageCounts.graphic,
+      label: 'グラフィック',
+      color: 'text-green-600 dark:text-green-400'
+    },
+    {
+      value: imageCounts.video,
+      label: 'アニメーション',
+      color: 'text-indigo-600 dark:text-indigo-400'
+    }
+  ];
 
   // フィルタリングされた画像
   const filteredImages = images.filter(media => {
@@ -208,48 +233,7 @@ export default function Gallery({ images }: GalleryProps) {
 
       {/* 統計情報 */}
       {imageCounts.total > 0 && (
-        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
-          <div className="rounded-xl bg-white p-4 shadow-lg dark:bg-gray-800">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
-                {imageCounts.total}
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">
-                総作品数
-              </div>
-            </div>
-          </div>
-          <div className="rounded-xl bg-white p-4 shadow-lg dark:bg-gray-800">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-pink-600 dark:text-pink-400">
-                {imageCounts.image}
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">
-                イラスト
-              </div>
-            </div>
-          </div>
-          <div className="rounded-xl bg-white p-4 shadow-lg dark:bg-gray-800">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-green-600 dark:text-green-400">
-                {imageCounts.graphic}
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">
-                グラフィック
-              </div>
-            </div>
-          </div>
-          <div className="rounded-xl bg-white p-4 shadow-lg dark:bg-gray-800">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-                {imageCounts.video}
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">
-                アニメーション
-              </div>
-            </div>
-          </div>
-        </div>
+        <StatisticsGrid items={statisticsItems} className="mt-12" />
       )}
 
       {/* モーダル */}

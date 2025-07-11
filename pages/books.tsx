@@ -5,6 +5,7 @@ import HeroSection from '@/components/HeroSection';
 import { useViewTransition } from '@/hooks/useViewTransition';
 import BookCard from '@/components/books/BookCard';
 import { loadBooks } from '@/lib/contentLoader';
+import StatisticsGrid from '@/components/common/StatisticsGrid';
 
 export async function getStaticProps() {
   const books = loadBooks();
@@ -17,6 +18,29 @@ export default function Books({ books }: { books: Book[] }) {
   const handleBookClick = async (e: React.MouseEvent, bookSlug: string) => {
     await navigateWithTransition(`/books/${bookSlug}`, e);
   };
+
+  const statisticsItems = [
+    {
+      value: books.length,
+      label: '総冊数',
+      color: 'text-amber-600 dark:text-amber-400'
+    },
+    {
+      value: books.filter(book => book.status === '読了').length,
+      label: '読了',
+      color: 'text-green-600 dark:text-green-400'
+    },
+    {
+      value: books.filter(book => book.status === '読書中').length,
+      label: '読書中',
+      color: 'text-blue-600 dark:text-blue-400'
+    },
+    {
+      value: books.filter(book => book.status === '積読' || !book.status).length,
+      label: '積読',
+      color: 'text-gray-600 dark:text-gray-400'
+    }
+  ];
 
   return (
     <Layout>
@@ -68,48 +92,7 @@ export default function Books({ books }: { books: Book[] }) {
 
       {/* 統計情報 */}
       {books.length > 0 && (
-        <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
-          <div className="rounded-xl bg-white p-4 shadow-lg dark:bg-gray-800">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-amber-600 dark:text-amber-400">
-                {books.length}
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">
-                総冊数
-              </div>
-            </div>
-          </div>
-          <div className="rounded-xl bg-white p-4 shadow-lg dark:bg-gray-800">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-green-600 dark:text-green-400">
-                {books.filter(book => book.status === '読了').length}
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">
-                読了
-              </div>
-            </div>
-          </div>
-          <div className="rounded-xl bg-white p-4 shadow-lg dark:bg-gray-800">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                {books.filter(book => book.status === '読書中').length}
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">
-                読書中
-              </div>
-            </div>
-          </div>
-          <div className="rounded-xl bg-white p-4 shadow-lg dark:bg-gray-800">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-gray-600 dark:text-gray-400">
-                {books.filter(book => book.status === '積読' || !book.status).length}
-              </div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">
-                積読
-              </div>
-            </div>
-          </div>
-        </div>
+        <StatisticsGrid items={statisticsItems} className="mt-8" />
       )}
 
       <style jsx>{`
