@@ -6,6 +6,7 @@ import { useViewTransition } from '@/hooks/useViewTransition';
 import BookCard from '@/components/books/BookCard';
 import { loadBooks } from '@/lib/contentLoader';
 import StatisticsGrid from '@/components/common/StatisticsGrid';
+import EmptyState from '@/components/common/EmptyState';
 
 export async function getStaticProps() {
   const books = loadBooks();
@@ -76,16 +77,11 @@ export default function Books({ books }: { books: Book[] }) {
               ))}
             </div>
           ) : (
-            /* 空の状態 */
-            <div className="flex flex-col items-center justify-center py-16 text-center">
-              <div className="mb-4 text-6xl">📖</div>
-              <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
-                まだ本がありません
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                新しい本を追加してください
-              </p>
-            </div>
+            <EmptyState 
+              emoji="📖"
+              title="まだ本がありません"
+              description="新しい本を追加してください"
+            />
           )}
         </div>
       </div>

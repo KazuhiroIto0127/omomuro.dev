@@ -7,6 +7,7 @@ import HeroSection from '@/components/HeroSection';
 import type { Work } from '@/types/work';
 import { useViewTransition } from '@/hooks/useViewTransition';
 import { loadWorks } from '@/lib/contentLoader';
+import EmptyState from '@/components/common/EmptyState';
 
 const WorksPage = ({ works }: { works: Work[] }) => {
   const { navigateWithTransition } = useViewTransition();
@@ -84,15 +85,11 @@ const WorksPage = ({ works }: { works: Work[] }) => {
 
       {/* 空の状態 */}
       {works.length === 0 && (
-        <div className="flex flex-col items-center justify-center py-16 text-center">
-          <div className="mb-4 text-6xl">📝</div>
-          <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
-            まだ作品がありません
-          </h3>
-          <p className="text-gray-600 dark:text-gray-400">
-            新しいプロジェクトを追加してください
-          </p>
-        </div>
+        <EmptyState 
+          emoji="📝"
+          title="まだ作品がありません"
+          description="新しいプロジェクトを追加してください"
+        />
       )}
 
       <style jsx>{`

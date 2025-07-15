@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import EmptyState from '@/components/common/EmptyState';
 
 type MediaData = {
   src: string;
@@ -26,15 +27,11 @@ export default function MediaGrid({ images, filter, onImageClick }: MediaGridPro
 
   if (filteredImages.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center py-16 text-center">
-        <div className="mb-4 text-6xl">🎨</div>
-        <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
-          該当する作品がありません
-        </h3>
-        <p className="text-gray-600 dark:text-gray-400">
-          別のフィルターを試してみてください
-        </p>
-      </div>
+      <EmptyState 
+        emoji="🎨"
+        title="該当する作品がありません"
+        description="別のフィルターを試してみてください"
+      />
     );
   }
 
