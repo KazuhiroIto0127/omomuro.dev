@@ -10,7 +10,10 @@
     "postbuild": "next-sitemap --config next-sitemap.config.js",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'"
+    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
+    "biome:check": "biome ci .",
+    "biome:fix": "biome check --apply .",
+    "biome:format": "biome format --write ."
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -40,6 +43,7 @@
     "three": "^0.177.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@tailwindcss/postcss": "^4.1.10",
     "@tailwindcss/typography": "^0.5.16",
     "@types/gtag.js": "^0.0.20",
