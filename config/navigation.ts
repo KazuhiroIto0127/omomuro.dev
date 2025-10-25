@@ -1,4 +1,4 @@
-import { HomeIcon, UserIcon, BriefcaseIcon, BookOpenIcon, PhotoIcon } from '@heroicons/react/24/outline';
+import { HomeIcon, UserIcon, BriefcaseIcon, PhotoIcon } from '@heroicons/react/24/outline';
 
 export const navigationLinks = [
   {
@@ -15,11 +15,6 @@ export const navigationLinks = [
     title: 'Works',
     path: '/works',
     icon: BriefcaseIcon,
-  },
-  {
-    title: 'Books',
-    path: '/books',
-    icon: BookOpenIcon,
   },
   {
     title: 'Gallery',

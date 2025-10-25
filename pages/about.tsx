@@ -298,6 +298,18 @@ export default function About() {
                     <ArrowTopRightOnSquareIcon className="ml-1 h-3 w-3 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
                   </div>
                 </a>
+                <a
+                  href="https://booklog.jp/users/kazuhiroito0127"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group/link flex flex-col items-center rounded-xl border border-gray-200 p-4 transition-all hover:border-orange-300 hover:bg-orange-50 hover:shadow-md dark:border-gray-600 dark:hover:border-orange-500 dark:hover:bg-orange-900/20"
+                >
+                  <div className="mb-2 text-2xl">📚</div>
+                  <div className="flex items-center text-sm font-medium text-blue-600 dark:text-blue-400">
+                    Booklog
+                    <ArrowTopRightOnSquareIcon className="ml-1 h-3 w-3 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                  </div>
+                </a>
               </div>
             </div>
           </div>
