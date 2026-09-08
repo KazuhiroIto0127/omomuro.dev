@@ -31,7 +31,7 @@ export default function KakusuSupport() {
         </details>
       ))}
       <h2>お問い合わせ</h2>
-      <p>お問い合わせ窓口は、アプリの公開時にこのページでご案内します。</p>
+      <p>ご質問や不具合のご連絡は、<a href="mailto:kazuhiroito0127@gmail.com?subject=%E3%81%8B%E3%81%8F%E3%81%99%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">kazuhiroito0127@gmail.com</a> へお送りください。</p>
       <p>不具合の確認には、iPhoneの機種、iOSとアプリのバージョン、操作手順、動画の長さ、エラーメッセージが役立ちます。個人情報を含む動画や、Apple Accountのパスワード・支払い情報は送らないでください。</p>
     </KakusuDocument>
   );
