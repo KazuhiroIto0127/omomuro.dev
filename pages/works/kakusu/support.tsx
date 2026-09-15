@@ -15,7 +15,7 @@ const questions = [
 export default function KakusuSupport() {
   return (
     <KakusuDocument title="使い方・サポート" description="動画の加工手順と、困ったときの確認方法をご案内します。">
-      <p className="rounded-xl bg-emerald-50 p-4 text-sm text-emerald-950 dark:bg-emerald-950 dark:text-emerald-100">アプリはApp Store公開準備中です。</p>
+      <p className="rounded-xl bg-emerald-50 p-4 text-sm text-emerald-950 dark:bg-emerald-950 dark:text-emerald-100"><a href="https://apps.apple.com/app/id6809350160">App Storeで「かくす」をダウンロード</a></p>
       <h2>動画を加工する手順</h2>
       <ol>
         <li><strong>動画を選ぶ。</strong> 顔の解析と加工が始まります。</li>
