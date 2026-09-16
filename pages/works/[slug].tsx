@@ -7,6 +7,7 @@ import type { Work } from '@/types/work';
 import { useViewTransition } from '@/hooks/useViewTransition';
 import { getAllContentPaths, loadWork } from '@/lib/contentLoader';
 import BackButton from '@/components/common/BackButton';
+import KakusuScreenshots from '@/components/kakusu/Screenshots';
 
 export default function WorkPage({ work }: { work: Work }) {
   const { navigateWithTransition } = useViewTransition();
@@ -29,13 +30,13 @@ export default function WorkPage({ work }: { work: Work }) {
         <Image
           priority
           src={work.thumbnail}
-          className="mb-4 h-52 w-full rounded-md bg-white object-cover md:h-96 transition-transform duration-300"
+          className={work.slug === 'kakusu' ? 'mb-6 h-32 w-32 rounded-3xl object-contain md:h-40 md:w-40' : 'mb-4 h-52 w-full rounded-md bg-white object-cover md:h-96 transition-transform duration-300'}
           height={work.thumbnailHeight}
           width={work.thumbnailWidth}
           alt={work.thumbnailFileName}
           style={{ viewTransitionName: `thumbnail-${work.slug}` }}
         />
-        <h1>{work.title}</h1>
+        <h1 className={work.slug === 'kakusu' ? 'text-balance text-3xl leading-snug sm:text-4xl' : undefined}>{work.title}</h1>
         <p>{work.description}</p>
         <p>制作日：{work.createdAt}</p>
         {work.url && (
@@ -43,6 +44,10 @@ export default function WorkPage({ work }: { work: Work }) {
             <p className="text-blue-500">詳しくはこちら</p>
           </a>
         )}
+        {work.slug === 'kakusu' && <>
+          <a href="https://apps.apple.com/app/id6809350160" className="my-4 inline-flex rounded-full bg-emerald-900 px-6 py-3 font-semibold text-white no-underline">App Storeでダウンロード</a>
+          <KakusuScreenshots />
+        </>}
         <ReactMarkdown
           components={{
             p: ({ children }) => <p className="whitespace-pre-wrap">{children}</p>,
