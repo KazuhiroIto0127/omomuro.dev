@@ -49,6 +49,6 @@ createdAt: "2026-09-16"
 
 [App Storeでダウンロード](https://apps.apple.com/jp/app/id6812550189)
 
-[使い方・サポート](https://littleplayground-support.pages.dev/)
+[使い方・サポート](/works/little-playground/support)
 
-[プライバシーポリシー](https://littleplayground-support.pages.dev/privacy/)
+[プライバシーポリシー](/works/little-playground/privacy)

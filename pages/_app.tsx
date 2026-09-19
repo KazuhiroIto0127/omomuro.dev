@@ -1,5 +1,6 @@
 import '@/styles/globals.css';
 import { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
 import { Zen_Maru_Gothic } from 'next/font/google';
 import { GlobalProvider } from '@/context/global-state-provider';
 import { ThemeProvider } from 'next-themes';
@@ -16,10 +17,12 @@ const zenMaruGothic = Zen_Maru_Gothic({
 
 export default function App({ Component, pageProps }: AppProps) {
   usePageView();
+  const { pathname } = useRouter();
+  const privatePage = pathname.startsWith('/works/little-playground/');
 
   return (
     <>
-      <GoogleAnalytics />
+      {!privatePage && <GoogleAnalytics />}
       <div className={`${zenMaruGothic.className}`}>
         <ThemeProvider attribute="class">
           <GlobalProvider>
@@ -27,8 +30,8 @@ export default function App({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
           </GlobalProvider>
         </ThemeProvider>
-        <Analytics />
-        <SpeedInsights />
+        {!privatePage && <Analytics beforeSend={(event) => new URL(event.url).pathname.startsWith('/works/little-playground/') ? null : event} />}
+        {!privatePage && <SpeedInsights beforeSend={(event) => new URL(event.url).pathname.startsWith('/works/little-playground/') ? null : event} />}
       </div>
     </>
   );

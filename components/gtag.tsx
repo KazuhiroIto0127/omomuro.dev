@@ -25,6 +25,7 @@ export const existsGaId = GA_ID !== '';
 // PVを測定する
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: string) => {
+  if (url.split('?')[0].startsWith('/works/little-playground/') || typeof window.gtag !== 'function') return;
   window.gtag('config', GA_ID, {
     page_path: url,
   });
