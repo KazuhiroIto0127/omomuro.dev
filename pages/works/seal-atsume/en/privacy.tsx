@@ -1,7 +1,7 @@
 import SealDocument from '@/components/seal-atsume/Document';
 export default function Page() {
   return (
-    <SealDocument language="en" title="Privacy policy" description="Information about Seal Atsume">
+    <SealDocument language="en" title="Privacy policy" description="Information about Sticky Club">
       <p>Last updated: September 20, 2026. Provided by Kazuhiro Ito (omomuro.dev).</p>
       <h2>Photo processing</h2>
       <p>
@@ -50,7 +50,7 @@ export default function Page() {
       </p>
       <h2>Contact</h2>
       <p>
-        <a href="mailto:kazuhiroito0127@gmail.com?subject=Seal%20Atsume%20Support">kazuhiroito0127@gmail.com</a>
+        <a href="mailto:kazuhiroito0127@gmail.com?subject=Sticky%20Club%20Support">kazuhiroito0127@gmail.com</a>
       </p>
       <p>
         For bugs, include your iPhone model, iOS and app versions, and steps to reproduce. Do not send private photos,

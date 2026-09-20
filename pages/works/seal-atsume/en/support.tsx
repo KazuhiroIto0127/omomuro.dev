@@ -1,7 +1,7 @@
 import SealDocument from '@/components/seal-atsume/Document';
 export default function Page() {
   return (
-    <SealDocument language="en" title="Help & support" description="Information about Seal Atsume">
+    <SealDocument language="en" title="Help & support" description="Information about Sticky Club">
       <h2>Getting started</h2>
       <p>
         Tap + in Stickers to take or choose a photo. Select the subjects to cut out, refine the mask if needed, choose
@@ -37,7 +37,7 @@ export default function Page() {
       <p>Creations are stored on your device. Export important creations as images or files before deleting the app.</p>
       <h2>Contact</h2>
       <p>
-        <a href="mailto:kazuhiroito0127@gmail.com?subject=Seal%20Atsume%20Support">kazuhiroito0127@gmail.com</a>
+        <a href="mailto:kazuhiroito0127@gmail.com?subject=Sticky%20Club%20Support">kazuhiroito0127@gmail.com</a>
       </p>
       <p>
         For bugs, include your iPhone model, iOS and app versions, and steps to reproduce. Do not send private photos,
