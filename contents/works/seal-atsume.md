@@ -8,7 +8,11 @@ thumbnailFileName: "シール集めのアプリアイコン"
 createdAt: "2026-09-20"
 ---
 
-**App Storeでの公開準備中です。** [English](/works/seal-atsume/en)
+**App Storeで公開中です。**
+
+[App Storeで無料ダウンロード](https://apps.apple.com/jp/app/id6814130810)
+
+[English](/works/seal-atsume/en)
 
 ## つくって、集めて、ぺたっと。
 

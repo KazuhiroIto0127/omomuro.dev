@@ -6,7 +6,10 @@ export default function Page() {
       title="Your photos, your stickers"
       description="Cut out, collect and arrange your favorite moments."
     >
-      <p>Preparing for release on the App Store.</p>
+      <p>Now available on the App Store.</p>
+      <p>
+        <a href="https://apps.apple.com/us/app/id6814130810">Download free on the App Store</a>
+      </p>
       <p>
         Take or choose a photo, select its subjects, refine the cutout and add colorful outlines or shadows. Collect
         your stickers and arrange them on boards with intuitive move, resize and rotate controls.
