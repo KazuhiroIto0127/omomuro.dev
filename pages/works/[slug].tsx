@@ -30,13 +30,13 @@ export default function WorkPage({ work }: { work: Work }) {
         <Image
           priority
           src={work.thumbnail}
-          className={['kakusu', 'seal-atsume'].includes(work.slug) ? 'mb-6 h-32 w-32 rounded-3xl object-contain md:h-40 md:w-40' : 'mb-4 h-52 w-full rounded-md bg-white object-cover md:h-96 transition-transform duration-300'}
+          className={['kakusu', 'seal-atsume', 'pikaniji'].includes(work.slug) ? 'mb-6 h-32 w-32 rounded-3xl object-contain md:h-40 md:w-40' : 'mb-4 h-52 w-full rounded-md bg-white object-cover md:h-96 transition-transform duration-300'}
           height={work.thumbnailHeight}
           width={work.thumbnailWidth}
           alt={work.thumbnailFileName}
           style={{ viewTransitionName: `thumbnail-${work.slug}` }}
         />
-        <h1 className={['kakusu', 'seal-atsume'].includes(work.slug) ? 'text-balance text-3xl leading-snug sm:text-4xl' : undefined}>{work.title}</h1>
+        <h1 className={['kakusu', 'seal-atsume', 'pikaniji'].includes(work.slug) ? 'text-balance text-3xl leading-snug sm:text-4xl' : undefined}>{work.title}</h1>
         <p>{work.description}</p>
         <p>制作日：{work.createdAt}</p>
         {work.url && (
