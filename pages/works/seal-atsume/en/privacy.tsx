@@ -2,7 +2,7 @@ import SealDocument from '@/components/seal-atsume/Document';
 export default function Page() {
   return (
     <SealDocument language="en" title="Privacy policy" description="Information about Sticky Club">
-      <p>Last updated: September 20, 2026. Provided by Kazuhiro Ito (omomuro.dev).</p>
+      <p>Last updated: September 24, 2026. Provided by Kazuhiro Ito (omomuro.dev).</p>
       <h2>Photo processing</h2>
       <p>
         Subject detection, cutouts, outlines and shadows are processed on your device. Photos and analysis results are
@@ -11,9 +11,20 @@ export default function Page() {
       <h2>Storage and deletion</h2>
       <p>
         Sticker images, board layouts and appearance settings are stored in the app. You can delete your creations in
-        the app. Images used on a board remain while that board needs them. Deleting the app deletes its local
-        creations. Original photos and exported images are not changed or deleted. Depending on device settings, app
-        data may be included in Apple device backups.
+        the app. Images used on a board remain while that board needs them. Original photos and exported images are not
+        changed or deleted. Depending on device settings, app data may be included in Apple device backups.
+      </p>
+      <h2>iCloud sync</h2>
+      <p>
+        If you are signed in to iCloud on your device, sticker images and board contents are also stored in your own
+        private area of Apple’s iCloud (CloudKit) and synced across iPhone and iPad signed in with the same Apple ID.
+        This data uses your iCloud storage. The developer cannot view it, and it is not sent to the developer’s
+        servers. Deleting a creation in the app also deletes it from iCloud and your other devices.
+      </p>
+      <p>
+        Creations already synced to iCloud remain after you delete the app and return when you reinstall it. If you do
+        not use iCloud, deleting the app deletes its creations. You can delete the data stored in iCloud from Settings
+        &gt; your name &gt; iCloud storage management on your iPhone. Apple’s privacy policy applies to iCloud.
       </p>
       <h2>Photos and camera access</h2>
       <p>

@@ -34,8 +34,8 @@ export default function Page() {
       </p>
       <h2>Private by design</h2>
       <p>
-        Photos are processed on your iPhone. No account or ads. Creations are stored locally, so export important images
-        before deleting the app.
+        Photos are processed on your iPhone. No account or ads. Creations sync across your iPhone and iPad through your
+        own iCloud.
       </p>
     </SealDocument>
   );

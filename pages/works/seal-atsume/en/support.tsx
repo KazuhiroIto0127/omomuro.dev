@@ -34,7 +34,17 @@ export default function Page() {
         paper availability varies by provider.
       </p>
       <h2>Keeping your creations</h2>
-      <p>Creations are stored on your device. Export important creations as images or files before deleting the app.</p>
+      <p>
+        When you are signed in to iCloud, creations sync automatically across iPhone and iPad with the same Apple ID and
+        return when you reinstall the app. If you do not use iCloud, export important creations as images or files
+        before deleting the app.
+      </p>
+      <h2>Creations are not syncing</h2>
+      <p>
+        Make sure each device is signed in to iCloud with the same Apple ID and that you have enough iCloud storage. You
+        can check the iCloud sync status in the app’s Settings. Changes may take a moment to appear depending on your
+        connection.
+      </p>
       <h2>Contact</h2>
       <p>
         <a href="mailto:kazuhiroito0127@gmail.com?subject=Sticky%20Club%20Support">kazuhiroito0127@gmail.com</a>
