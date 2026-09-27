@@ -1,0 +1,57 @@
+import DotBiyoriDocument from '@/components/dot-biyori/Document';
+
+export default function Page() {
+  return (
+    <DotBiyoriDocument language="en" title="Privacy policy" description="How Sky in Pixels handles your information">
+      <p>Last updated: September 27, 2026. Provided by Kazuhiro Ito (omomuro.dev).</p>
+      <h2>Location and weather</h2>
+      <p>
+        If you choose Current Location and grant permission, the app obtains your device&apos;s location. It uses the
+        location with Apple WeatherKit to retrieve the weather and with Apple location services to turn coordinates into
+        a place name. If you do not grant permission, you can view weather for a selected place or the default location
+        in Tokyo.
+      </p>
+      <p>
+        Place search uses Apple MapKit. Search text and suggestions are processed by Apple&apos;s services. The selected
+        place name and coordinates are stored on your device; its coordinates are used for WeatherKit requests. You can
+        change location permission at any time in your device&apos;s Settings.
+      </p>
+      <h2>Storage on your device</h2>
+      <p>
+        Your selected place, scenery, display and music preferences are stored on your device. The developer does not
+        operate a server that stores your location, searches, settings or weather history. Deleting the app removes its
+        local data. Depending on your device settings, app data may be included in Apple backups.
+      </p>
+      <h2>In-app purchases</h2>
+      <p>
+        Monthly and yearly subscriptions and the one-time purchase are handled through Apple StoreKit. The app checks
+        verified purchase status to enable PRO features. It does not send purchase history to the developer&apos;s
+        servers or receive payment details such as credit card numbers.
+      </p>
+      <h2>Advertising and analytics</h2>
+      <p>
+        The app has no advertising or developer-operated analytics SDK. Information handled by Apple services is subject
+        to Apple&apos;s privacy policy.
+      </p>
+      <h2>This website</h2>
+      <p>
+        This website is separate from the app and uses Vercel Web Analytics and Speed Insights. If Google Analytics is
+        configured, browsing information may be sent to Google. Hosting providers may process access information to
+        deliver the site. App location and preferences are not passed to this website&apos;s analytics.
+      </p>
+      <h2>Contact and changes</h2>
+      <p>
+        Email addresses and messages sent to support are used to respond to inquiries. If these practices change, this
+        page and its update date will be revised.
+      </p>
+      <p>
+        <a href="mailto:kazuhiroito0127@gmail.com?subject=Sky%20in%20Pixels%20Support">kazuhiroito0127@gmail.com</a>
+      </p>
+      <p>
+        <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a> /{' '}
+        <a href="https://vercel.com/docs/analytics/privacy-policy">Vercel Privacy</a> /{' '}
+        <a href="https://policies.google.com/privacy">Google Privacy Policy</a>
+      </p>
+    </DotBiyoriDocument>
+  );
+}
