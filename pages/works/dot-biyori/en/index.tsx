@@ -8,7 +8,10 @@ export default function Page() {
       description="A weather app for iPhone and iPad with changing scenes from Japan"
     >
       <p>
-        <strong>Coming to the App Store.</strong>
+        <strong>Now available on the App Store.</strong>
+      </p>
+      <p>
+        <a href="https://apps.apple.com/us/app/id6815891206">Download free on the App Store</a>
       </p>
       <h2>Weather you can look at</h2>
       <p>

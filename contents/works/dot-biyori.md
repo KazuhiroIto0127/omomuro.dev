@@ -8,7 +8,9 @@ thumbnailFileName: "ドット日和のアプリアイコン"
 createdAt: "2026-09-27"
 ---
 
-**App Storeでの公開準備中です。**
+**App Storeで公開中です。**
+
+[App Storeで無料ダウンロード](https://apps.apple.com/jp/app/id6815891206)
 
 [English](/works/dot-biyori/en)
 
