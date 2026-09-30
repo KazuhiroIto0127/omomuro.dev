@@ -6,7 +6,10 @@ export default function Page() {
       title="Glow drawing for little artists"
       description="Sparkly pens, rainbow crayons and coloring pages, with no ads."
     >
-      <p>Preparing for release on the App Store.</p>
+      <p>Now available on the App Store.</p>
+      <p>
+        <a href="https://apps.apple.com/us/app/id6815297304">Download free on the App Store</a>
+      </p>
       <p>
         Pikaniji is a drawing app for children aged about 2 to 5. Big, text-free buttons make it easy to play even
         before kids can read. It works on both iPhone and iPad, including Apple Pencil.
