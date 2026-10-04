@@ -3,7 +3,7 @@ import DotBiyoriDocument from '@/components/dot-biyori/Document';
 export default function Page() {
   return (
     <DotBiyoriDocument language="en" title="Privacy policy" description="How Sky in Pixels handles your information">
-      <p>Last updated: September 27, 2026. Provided by Kazuhiro Ito (omomuro.dev).</p>
+      <p>Last updated: October 4, 2026. Provided by Kazuhiro Ito (omomuro.dev).</p>
       <h2>Location and weather</h2>
       <p>
         If you choose Current Location and grant permission, the app obtains your device&apos;s location. It uses the
@@ -30,8 +30,25 @@ export default function Page() {
       </p>
       <h2>Advertising and analytics</h2>
       <p>
-        The app has no advertising or developer-operated analytics SDK. Information handled by Apple services is subject
-        to Apple&apos;s privacy policy.
+        The free version displays Google AdMob banner ads. PRO does not display ads, and ads are not loaded until
+        purchase status has been checked. For ad delivery, measurement, fraud prevention and diagnostics, Google may
+        process IP addresses (which may be used to estimate a general location), device or app-related identifiers, ad
+        impressions and interactions, and crash and performance data. Location obtained for weather and place search
+        information are not passed to the advertising SDK.
+      </p>
+      <p>
+        The app requests non-personalized ads and does not request Apple App Tracking Transparency (ATT) permission.
+        Non-personalized ads may still process information needed for ad delivery. Where required, Google&apos;s User
+        Messaging Platform displays privacy choices. Ads are requested only when permitted. You can change available
+        choices under Settings → Privacy → Ad privacy settings, where this option is required for your region and
+        settings.
+      </p>
+      <p>
+        Google&apos;s privacy policy applies to advertising data. The app has no developer-operated analytics SDK.
+        Information handled by Apple services is subject to Apple&apos;s privacy policy.
+      </p>
+      <p>
+        <a href="https://policies.google.com/technologies/ads">Google advertising and data use</a>
       </p>
       <h2>This website</h2>
       <p>
