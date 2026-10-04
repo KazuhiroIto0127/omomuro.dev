@@ -2,7 +2,7 @@ import SealDocument from '@/components/seal-atsume/Document';
 export default function Page() {
   return (
     <SealDocument language="en" title="Privacy policy" description="Information about Sticky Club">
-      <p>Last updated: September 24, 2026. Provided by Kazuhiro Ito (omomuro.dev).</p>
+      <p>Last updated: October 4, 2026. Provided by Kazuhiro Ito (omomuro.dev).</p>
       <h2>Photo processing</h2>
       <p>
         Subject detection, cutouts, outlines and shadows are processed on your device. Photos and analysis results are
@@ -18,8 +18,8 @@ export default function Page() {
       <p>
         If you are signed in to iCloud on your device, sticker images and board contents are also stored in your own
         private area of Apple’s iCloud (CloudKit) and synced across iPhone and iPad signed in with the same Apple ID.
-        This data uses your iCloud storage. The developer cannot view it, and it is not sent to the developer’s
-        servers. Deleting a creation in the app also deletes it from iCloud and your other devices.
+        This data uses your iCloud storage. The developer cannot view it, and it is not sent to the developer’s servers.
+        Deleting a creation in the app also deletes it from iCloud and your other devices.
       </p>
       <p>
         Creations already synced to iCloud remain after you delete the app and return when you reinstall it. If you do
@@ -38,10 +38,26 @@ export default function Page() {
         limits. Purchase history is not sent to the developer’s servers, and the app does not receive payment details
         such as credit card numbers. Apple services are subject to Apple’s privacy policy.
       </p>
-      <h2>Advertising, analytics and sharing</h2>
+      <h2>Advertising and privacy choices</h2>
       <p>
-        The app has no advertising or third-party analytics SDKs and requires no account. When you choose a destination
-        in the share sheet, the image is passed to that destination. Its own privacy policy applies.
+        The free version displays Google AdMob banner ads. A verified one-time purchase removes ads. Photos, stickers
+        and board contents are not sent to the advertising service.
+      </p>
+      <p>
+        Google’s advertising SDK may process approximate location inferred from IP addresses, device identifiers, app
+        and ad interactions, and crash and performance diagnostics for ad delivery, measurement, fraud prevention and
+        service improvement. Google’s privacy policy applies.
+      </p>
+      <p>
+        Before the first ad loads in the free version, the app requests iOS tracking permission. Only with authorization
+        may the advertising identifier (IDFA) be used for personalized ads and measurement across other companies’ apps
+        and websites. If tracking is denied or restricted, the app requests non-personalized ads. You can use the app
+        either way and change your choice in iPhone Settings &gt; Privacy &amp; Security &gt; Tracking.
+      </p>
+      <p>
+        A Google consent form may appear depending on your region. When required, Ad privacy settings in the app lets
+        you review your choice. No account is required. Images shared using the share sheet are passed to your selected
+        destination and its privacy policy applies.
       </p>
       <h2>This website</h2>
       <p>
