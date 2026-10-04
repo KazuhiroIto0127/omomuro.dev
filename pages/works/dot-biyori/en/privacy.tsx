@@ -37,7 +37,10 @@ export default function Page() {
         information are not passed to the advertising SDK.
       </p>
       <p>
-        The app requests non-personalized ads and does not request Apple App Tracking Transparency (ATT) permission.
+        Before loading ads in the free version, the app requests Apple App Tracking Transparency (ATT) permission. If
+        allowed, device advertising identifiers (IDFA) may be used for relevant ads and advertising measurement together
+        with data from other companies’ apps and websites. If permission is denied, the app requests non-personalized
+        ads and remains usable. Permission can be changed in device Settings → Privacy &amp; Security → Tracking.
         Non-personalized ads may still process information needed for ad delivery. Where required, Google&apos;s User
         Messaging Platform displays privacy choices. Ads are requested only when permitted. You can change available
         choices under Settings → Privacy → Ad privacy settings, where this option is required for your region and
