@@ -34,7 +34,7 @@ export default function MieruDocument({
           </Link>
         </div>
         <p className="mb-2 text-sm font-bold text-blue-700 dark:text-blue-300">
-          {english ? 'Mieru for iPhone' : 'iPhoneアプリ「Mieru」'}
+          {english ? 'Mieru — video player' : '動画プレイヤー「Mieru」'}
         </p>
         <h1>{title}</h1>
         <p className="lead">{description}</p>
