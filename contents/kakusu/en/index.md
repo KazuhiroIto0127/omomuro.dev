@@ -23,15 +23,16 @@ Your videos are not uploaded to our analysis servers. No account is required. Yo
 - Export up to 1080p
 - Keep or mute audio
 - Resume your saved project
-- No ads or watermarks
+- No watermarks
+- Version 1.6 and later: free with ads, or ad-free with Pro
 - Light and dark appearance
 - Japanese and English (English support is included in version 1.2.0)
 
 ## Free and pro
 
-Save videos up to 15 seconds for free. Import, edit, and review longer videos before purchasing.
+In version 1.6 and later, save videos without an app-imposed duration limit for free with ads.
 
-Saving videos longer than 15 seconds requires Kakusu Pro, a one-time purchase with no subscription. Pro has no app-imposed duration limit for saving. Use Restore purchases to recover an existing purchase.
+Kakusu Pro removes ads with a one-time purchase and no subscription. Existing purchases remain valid. Use Restore purchases to recover an existing purchase. Version 1.5 and earlier limit free saving to 15 seconds, with Pro removing the duration limit.
 
 ## Before you share
 

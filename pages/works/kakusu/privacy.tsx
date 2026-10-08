@@ -4,7 +4,7 @@ import KakusuDocument from '@/components/kakusu/Document';
 export default function KakusuPrivacy() {
   return (
     <KakusuDocument title="プライバシーポリシー" description="iPhoneアプリ「かくす」における情報の取り扱いについて。">
-      <p>最終更新日：2026年9月7日</p>
+      <p>最終更新日：2026年10月7日</p>
       <p>提供者：Kazuhiro Ito（omomuro.dev）</p>
       <h2>動画と顔の解析</h2>
       <p>選択した動画の顔の検出、追従、モザイクなどの加工は端末内で行います。提供者の解析サーバーへ動画・音声・顔の解析結果を送信しません。顔の位置情報は加工のために使用し、個人を識別するための顔認証は行いません。</p>
@@ -17,7 +17,10 @@ export default function KakusuPrivacy() {
       <p>Proの購入・復元にはAppleのStoreKitを利用します。アプリは検証済みの購入情報を使ってProの利用可否を確認します。提供者のサーバーに購入履歴を送信する仕組みはありません。クレジットカード番号などの支払い情報をアプリが取得することはありません。Appleのサービスで取り扱われる情報には、Appleのプライバシーポリシーが適用されます。</p>
       <p><a href="https://www.apple.com/legal/privacy/jp/">Appleのプライバシーポリシー</a></p>
       <h2>広告・アクセス解析</h2>
-      <p>アプリには広告や独自のアクセス解析SDKを組み込んでいません。アカウント登録もありません。</p>
+      <p>広告対応版の無料プランではGoogle AdMobを利用します。広告の配信・効果測定・不正防止のため、Googleおよび広告パートナーがIPアドレス（おおよその位置の推定を含む）、端末識別子、広告の表示・操作情報、アプリの操作情報、クラッシュ・性能情報を収集・処理する場合があります。動画・音声・顔の解析結果を広告サービスへ渡すことはありません。</p>
+      <p>必要な地域ではGoogleのUser Messaging Platform（UMP）を使って同意を確認します。対象地域ではアプリの設定・ヘルプにある「広告のプライバシー設定」から選択を変更できます。iOSのトラッキング許可（ATT）は任意です。拒否しても無料機能は利用でき、広告が表示される場合があります。許可はiPhoneの「設定」から変更できます。</p>
+      <p>Proでは広告を表示しません。起動時にProの購入を確認できた場合、広告SDKを初期化せず、広告に関する同意画面やATTの許可画面も表示しません。アプリに独自のアクセス解析SDKやアカウント登録はありません。</p>
+      <p><a href="https://policies.google.com/privacy?hl=ja">Googleのプライバシーポリシー</a> / <a href="https://policies.google.com/technologies/ads?hl=ja">Googleの広告に関する説明</a></p>
       <p>このWebサイトはアプリとは別です。サイトではVercel Web AnalyticsとSpeed Insightsを使用し、閲覧状況や表示性能を計測します。また、Google Analyticsが設定されている場合は閲覧情報などがGoogleへ送信されます。ページの配信に伴いホスティング事業者がアクセス情報を処理する場合があります。これらにアプリで加工する動画や顔の解析結果を渡すことはありません。</p>
       <p><a href="https://vercel.com/docs/analytics/privacy-policy">Vercelのデータ取り扱い</a> / <a href="https://policies.google.com/privacy?hl=ja">Googleのプライバシーポリシー</a></p>
       <h2>外部への共有</h2>

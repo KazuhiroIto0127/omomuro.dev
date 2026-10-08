@@ -9,7 +9,7 @@
 
 ### What is the difference between Free and Pro?
 
-Free lets you save videos up to 15 seconds. Pro is a one-time purchase that removes the duration limit for saving. You can import, edit, review, and adjust longer videos before purchasing.
+In version 1.6 and later, free saving has no app-imposed duration limit and includes ads. Pro removes ads with a one-time purchase. In version 1.5 and earlier, free saving is limited to 15 seconds and Pro removes that limit.
 
 ### Can I use long videos?
 

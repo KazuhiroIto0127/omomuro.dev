@@ -1,6 +1,6 @@
 Provider: Kazuhiro Ito (omomuro.dev)
 
-English translation prepared September 15, 2026, based on the Japanese policy dated September 7, 2026. 
+Last updated: October 7, 2026.
 
 ## Videos and face analysis
 
@@ -22,7 +22,13 @@ Pro purchases and restoration use Apple’s StoreKit. The app checks verified pu
 
 ## Advertising and analytics
 
-The app contains no ads or third-party analytics SDKs and requires no account registration.
+The free plan in ad-supported versions uses Google AdMob. Google and advertising partners may process IP addresses (including approximate location), device identifiers, ad impressions and interactions, app interactions, and crash and performance information for advertising, measurement, and fraud prevention. Videos, audio, and face analysis results are not provided to advertising services.
+
+Where required, Google’s User Messaging Platform (UMP) presents consent choices. In applicable regions, you can change them under **Settings & help > Ad privacy settings**. iOS App Tracking Transparency (ATT) permission is optional. Declining it does not block free features; ads may still appear. You can change tracking permission in iPhone Settings.
+
+Pro does not display ads. When Pro ownership is verified at startup, the app does not initialize the advertising SDK or show advertising consent or ATT prompts. The app has no separate analytics SDK or account registration.
+
+See [Google’s privacy policy](https://policies.google.com/privacy?hl=en) and [Google’s advertising information](https://policies.google.com/technologies/ads?hl=en).
 
 This website is separate from the app. The website uses Vercel Web Analytics and Speed Insights to measure visits and performance. If Google Analytics is configured, browsing information may be sent to Google. Hosting providers may process access information when serving pages. Videos edited in the app and face analysis results are not provided to these services.
 
