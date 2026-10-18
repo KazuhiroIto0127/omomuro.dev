@@ -38,7 +38,7 @@ export default function DotBiyoriDocument({
         className="prose prose-slate dark:prose-invert mx-auto max-w-3xl rounded-2xl border border-gray-200 bg-white p-6 break-words shadow-sm md:p-10 dark:border-gray-700 dark:bg-gray-800"
       >
         <div className="flex flex-wrap justify-between gap-4">
-          <Link href="/works">{english ? '← All works' : '← 作品一覧へ'}</Link>
+          <Link href="/">{english ? '← All apps' : '← アプリ一覧へ'}</Link>
           <Link href={alternate} hrefLang={english ? 'ja' : 'en'}>
             {english ? '日本語' : 'English'}
           </Link>

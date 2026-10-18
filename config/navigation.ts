@@ -1,24 +1,14 @@
-import { HomeIcon, UserIcon, BriefcaseIcon, PhotoIcon } from '@heroicons/react/24/outline';
+import { Squares2X2Icon, UserIcon } from '@heroicons/react/24/outline';
 
 export const navigationLinks = [
   {
-    title: 'Home',
+    title: 'アプリ',
     path: '/',
-    icon: HomeIcon,
+    icon: Squares2X2Icon,
   },
   {
-    title: 'About Me',
+    title: '自分のこと',
     path: '/about',
     icon: UserIcon,
-  },
-  {
-    title: 'Works',
-    path: '/works',
-    icon: BriefcaseIcon,
-  },
-  {
-    title: 'Gallery',
-    path: '/gallery',
-    icon: PhotoIcon,
   },
 ];

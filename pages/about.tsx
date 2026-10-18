@@ -1,319 +1,155 @@
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import clsx from 'clsx';
+import { SiGithub, SiQiita, SiX, SiZenn } from '@icons-pack/react-simple-icons';
+import { BookOpenIcon } from '@heroicons/react/24/outline';
 import Layout from '@/components/layouts/oneColumnLayout';
 import HeadMeta from '@/components/Head';
-import HeroSection from '@/components/HeroSection';
-import { AcademicCapIcon, CommandLineIcon, LinkIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import RiveAnimation from '@/components/RiveAnimation';
-import {
-  SiRuby,
-  SiRubyonrails,
-  SiTypescript,
-  SiJavascript,
-  SiHtml5,
-  SiVuedotjs,
-  SiMysql,
-  SiPostgresql,
-  SiNextdotjs,
-  SiReact,
-  SiTailwindcss,
-  SiFigma,
-  SiFirebase,
-  SiGraphql,
-  SiPostman,
-  SiRedis,
-  SiSwift,
-  SiApple,
-  SiChartdotjs,
-  SiDocker,
-  SiGatsby,
-  SiGithub,
-  SiNeovim,
-  SiPhp,
-  SiGo,
-  SiIterm2,
-  SiNuxt,
-  SiCss,
-  SiPython,
-  SiZenn,
-  SiQiita,
-  SiX,
-  Si1password,
-  SiWarp,
-} from '@icons-pack/react-simple-icons';
-import SkillIcon from '@/components/about/SkillIcon';
-import { ChatBubbleLeftRightIcon, SparklesIcon } from '@heroicons/react/24/solid';
+import MediaGrid from '@/components/gallery/MediaGrid';
+import MediaModal from '@/components/gallery/MediaModal';
+import { getGalleryImages } from '@/lib/galleryUtils';
 
-export default function About() {
+type MediaData = Awaited<ReturnType<typeof getGalleryImages>>[number];
+
+const card =
+  'rounded-3xl border border-stone-200/80 bg-white/85 backdrop-blur-sm dark:border-slate-600/70 dark:bg-slate-800/80';
+
+const links = [
+  { href: 'https://x.com/KazuhiroIto0127', label: 'X', Icon: SiX },
+  { href: 'https://github.com/KazuhiroIto0127', label: 'GitHub', Icon: SiGithub },
+  { href: 'https://zenn.dev/kazuhiroito0127', label: 'Zenn', Icon: SiZenn },
+  { href: 'https://qiita.com/KazuhiroIto0127', label: 'Qiita', Icon: SiQiita },
+  { href: 'https://booklog.jp/users/kazuhiroito0127', label: 'ブクログ', Icon: BookOpenIcon },
+];
+
+const career = [
+  { period: '2021年〜', text: '保育Techベンチャーでサーバーサイドエンジニア（Rails・Vue.js・AWS）' },
+  { period: '2018〜2021年', text: 'コミュニティ系ベンチャーでWebエンジニア（Rails・Vue.js・MySQL）' },
+  { period: '2014〜2018年', text: 'システムエンジニアとして基幹系業務システムの開発・保守' },
+  { period: '2014年', text: '大分大学大学院 工学研究科 修了（セマンティックWebを研究）' },
+];
+
+export default function About({ images }: { images: MediaData[] }) {
+  const [selected, setSelected] = useState<MediaData | null>(null);
+
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelected(null);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
+
   return (
     <Layout>
-      <HeadMeta type="website" title="自分のこと" />
-
-      <HeroSection
+      <HeadMeta
+        type="website"
         title="自分のこと"
-        emoji="👋"
-        description="Software Engineer として日々学び続けています"
-        backgroundGradient="from-sky-400 via-sky-600 to-sky-400"
+        description="omomuro.dev でiPhone・iPadアプリをつくっている、ソフトウェアエンジニアのイトウカズヒロのプロフィールです。"
       />
 
-      <div className="grid gap-8 lg:grid-cols-3">
-        {/* プロフィールカード */}
-        <section className="group lg:col-span-1">
-          <div className="h-full overflow-hidden rounded-2xl border border-gray-200/60 bg-white/80 shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/25 hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800/80">
-            <div className="bg-gradient-to-br from-blue-50/60 to-indigo-100/60 p-6 dark:from-gray-700/60 dark:to-gray-600/60">
-              <div className="flex flex-col items-center text-center">
-                <div className="mb-4 rounded-full bg-white/80 p-4 shadow-lg dark:bg-gray-400/80">
-                  <RiveAnimation src="/animations/penguin_anime.riv" width={120} height={120} />
-                </div>
-                <h2 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">イトウ カズヒロ</h2>
-                <div className="mb-4 space-y-1 text-gray-600 dark:text-gray-300">
-                  <p>1990年生まれ</p>
-                  <p>東京都在住</p>
-                  <p className="font-semibold text-indigo-600 dark:text-indigo-400">Software Engineer</p>
-                </div>
-                <div className="flex flex-wrap justify-center gap-2">
-                  <span className="rounded-full bg-indigo-100 px-3 py-1 text-sm text-indigo-700 dark:bg-indigo-900 dark:text-indigo-300">#プログラミング</span>
-                  <span className="rounded-full bg-purple-100 px-3 py-1 text-sm text-purple-700 dark:bg-purple-900 dark:text-purple-300">#デザイン</span>
-                  <span className="rounded-full bg-pink-100 px-3 py-1 text-sm text-pink-700 dark:bg-pink-900 dark:text-pink-300">#イラスト</span>
-                </div>
-              </div>
-            </div>
-            <div className="p-6">
-              <p className="leading-relaxed text-gray-600 dark:text-gray-300">
-                はじめまして！こんなところまで見て頂きとても嬉しいです！
-                <br />
-                このomomuro.devは、私のポートフォリオのようなサイトです。
+      <div className="mx-auto flex max-w-5xl flex-col gap-12 pt-6 pb-8 md:pt-10">
+        <section
+          className={clsx(
+            card,
+            'flex flex-col items-center gap-6 p-8 text-center md:flex-row md:items-start md:text-left',
+          )}
+        >
+          <div className="shrink-0 rounded-full bg-white/90 p-3 dark:bg-slate-300/90">
+            <RiveAnimation src="/animations/penguin_anime.riv" width={112} height={112} />
+          </div>
+          <div className="flex flex-col gap-4">
+            <div>
+              <h1 className="text-3xl font-bold">イトウ カズヒロ</h1>
+              <p className="mt-1 flex flex-wrap justify-center gap-x-3 text-stone-600 md:justify-start dark:text-slate-300">
+                <span>ソフトウェアエンジニア</span>
+                <span>東京都在住</span>
+                <span>大分県出身</span>
               </p>
             </div>
+            <p className="leading-8 text-stone-700 dark:text-slate-200">
+              Webのサーバーサイドを仕事にしながら、個人で iPhone・iPad
+              アプリをつくっています。企画からデザイン、開発、サポートまで一人で行っています。絵を描くのも好きです。
+            </p>
+            <ul className="flex flex-wrap justify-center gap-2 md:justify-start">
+              {links.map(({ href, label, Icon }) => (
+                <li key={href}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-2 rounded-full border border-stone-300 px-4 py-2 text-sm font-bold hover:border-orange-400 dark:border-slate-500 dark:hover:border-orange-300"
+                  >
+                    <Icon width={16} height={16} className="h-4 w-4" aria-hidden="true" />
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
-        {/* 来歴セクション */}
-        <section className="group lg:col-span-2">
-          <div className="h-full overflow-hidden rounded-2xl border border-gray-200/60 bg-white/80 shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25 hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800/80">
-            <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 dark:from-gray-700 dark:to-gray-600">
-              <h3 className="flex items-center text-2xl font-bold text-gray-900 dark:text-white">
-                <AcademicCapIcon className="mr-3 h-8 w-8 text-purple-600" />
-                来歴
-              </h3>
-            </div>
-            <div className="p-6">
-              <ol className="relative border-l-2 border-purple-200 dark:border-purple-700">
-                <li className="mb-8 ml-6">
-                  <div className="absolute -left-3 mt-1.5 h-6 w-6 rounded-full border-4 border-white bg-purple-600 dark:border-gray-800"></div>
-                  <time className="mb-2 block text-sm font-semibold text-purple-600 dark:text-purple-400">
-                    2021年 4月 〜 現在
-                  </time>
-                  <h4 className="mb-2 text-lg font-bold text-gray-900 dark:text-white">保育Techベンチャーへ</h4>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    サーバーサイドエンジニアとして従事。引き続きRailsとVue.js等を使ってシステム開発、インフラはAWSを活用。ECS、Lambda等の使い方を学びました。
-                  </p>
-                </li>
-                <li className="mb-8 ml-6">
-                  <div className="absolute -left-3 mt-1.5 h-6 w-6 rounded-full border-4 border-white bg-indigo-600 dark:border-gray-800"></div>
-                  <time className="mb-2 block text-sm font-semibold text-indigo-600 dark:text-indigo-400">
-                    2018年 4月 〜 2021年 2月
-                  </time>
-                  <h4 className="mb-2 text-lg font-bold text-gray-900 dark:text-white">
-                    コミュニティ系ベンチャーでWebエンジニアになる
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    サーバーサイドエンジニアとして従事。RailsとVue.jsやMySqlを使ってシステム開発をしました。Webサービスの開発のいろはを学びました。
-                  </p>
-                </li>
-                <li className="mb-8 ml-6">
-                  <div className="absolute -left-3 mt-1.5 h-6 w-6 rounded-full border-4 border-white bg-blue-600 dark:border-gray-800"></div>
-                  <time className="mb-2 block text-sm font-semibold text-blue-600 dark:text-blue-400">
-                    2014年 3月 〜 2018年 4月
-                  </time>
-                  <h4 className="mb-2 text-lg font-bold text-gray-900 dark:text-white">システムエンジニアになる</h4>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    基幹系の業務システムの開発・保守などをやってました。OracleのPL/SQL（データベース言語SQL）をたくさん読み書きしました。
-                  </p>
-                </li>
-                <li className="mb-8 ml-6">
-                  <div className="absolute -left-3 mt-1.5 h-6 w-6 rounded-full border-4 border-white bg-green-600 dark:border-gray-800"></div>
-                  <time className="mb-2 block text-sm font-semibold text-green-600 dark:text-green-400">
-                    2014年 3月
-                  </time>
-                  <h4 className="mb-2 text-lg font-bold text-gray-900 dark:text-white">
-                    大分大学大学院 工学研究科知能情報システム工学専攻 卒業
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    セマンティックWebという技術を研究していました。RDFやLinked Open Dataを使ったりしていました。
-                  </p>
-                </li>
-                <li className="mb-8 ml-6">
-                  <div className="absolute -left-3 mt-1.5 h-6 w-6 rounded-full border-4 border-white bg-yellow-600 dark:border-gray-800"></div>
-                  <time className="mb-2 block text-sm font-semibold text-yellow-600 dark:text-yellow-400">
-                    2012年 3月
-                  </time>
-                  <h4 className="mb-2 text-lg font-bold text-gray-900 dark:text-white">
-                    大分大学 工学部 知能情報システム工学科 卒業
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    プログラミングを覚えました。趣味でHSP（ホットスーププロセッサー）というゲームが作れるツールを利用してタイピングゲームを作ったりしました。Flashゲームを作ったりもしました。
-                  </p>
-                </li>
-                <li className="ml-6">
-                  <div className="absolute -left-3 mt-1.5 h-6 w-6 rounded-full border-4 border-white bg-pink-600 dark:border-gray-800"></div>
-                  <time className="mb-2 block text-sm font-semibold text-pink-600 dark:text-pink-400">
-                    1990年 1月
-                  </time>
-                  <h4 className="mb-2 text-lg font-bold text-gray-900 dark:text-white">大分県で誕生</h4>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    絵を書いたり図画工作が好きでした。
-                  </p>
-                </li>
-              </ol>
-            </div>
-          </div>
-        </section>
-
-        {/* スキルセクション */}
-        <section className="group lg:col-span-2">
-          <div className="h-full overflow-hidden rounded-2xl border border-gray-200/60 bg-white/80 shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/25 hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800/80">
-            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 dark:from-gray-700 dark:to-gray-600">
-              <h3 className="flex items-center text-2xl font-bold text-gray-900 dark:text-white">
-                <CommandLineIcon className="mr-3 h-8 w-8 text-blue-600" />
-                プログラミングについて
-              </h3>
-            </div>
-            <div className="p-6 space-y-8">
-              <div>
-                <h4 className="mb-4 text-lg font-semibold text-gray-900 dark:text-white border-l-4 border-blue-500 pl-3">
-                  業務で使ったことがある技術、言語
-                </h4>
-                <div className="grid grid-cols-4 gap-4 sm:grid-cols-6 lg:grid-cols-8">
-                  <SkillIcon IconComponent={SiRuby} name="Ruby" colorClassName="text-red-500" />
-                  <SkillIcon IconComponent={SiRubyonrails} name="Rails" colorClassName="text-red-500" />
-                  <SkillIcon IconComponent={SiNuxt} name="Nuxt.js" colorClassName="text-green-500" />
-                  <SkillIcon IconComponent={SiVuedotjs} name="Vue.js" colorClassName="text-green-500" />
-                  <SkillIcon IconComponent={SiTypescript} name="TypeScript" colorClassName="text-blue-500" />
-                  <SkillIcon IconComponent={SiJavascript} name="JavaScript" colorClassName="text-yellow-500" />
-                  <SkillIcon IconComponent={SiHtml5} name="HTML5" colorClassName="text-orange-500" />
-                  <SkillIcon IconComponent={SiCss} name="CSS" colorClassName="text-blue-500" />
-                  <SkillIcon IconComponent={SiMysql} name="MySQL" colorClassName="dark:text-blue-300" />
-                  <SkillIcon IconComponent={SiPostgresql} name="PostgreSQL" colorClassName="dark:text-blue-300" />
-                  <SkillIcon IconComponent={SiTailwindcss} name="TailwindCSS" colorClassName="text-sky-500" />
-                  <SkillIcon IconComponent={SiChartdotjs} name="Chart.js" colorClassName="text-red-500" />
-                  <SkillIcon IconComponent={SiDocker} name="Docker" colorClassName="text-blue-600" />
-                  <SkillIcon IconComponent={SiRedis} name="Redis" colorClassName="text-red-600" />
-                  <SkillIcon IconComponent={SiPython} name="Python" colorClassName="text-yellow-500" />
+        <section className="grid gap-6 md:grid-cols-2">
+          <div className={clsx(card, 'flex flex-col gap-4 p-8')}>
+            <h2 className="text-xl font-bold">経歴</h2>
+            <dl className="flex flex-col gap-3">
+              {career.map((c) => (
+                <div key={c.period} className="flex flex-col gap-0.5 sm:flex-row sm:gap-4">
+                  <dt className="shrink-0 text-sm font-bold text-orange-700 sm:w-28 dark:text-orange-300">
+                    {c.period}
+                  </dt>
+                  <dd className="text-[15px] leading-7 text-stone-700 dark:text-slate-200">{c.text}</dd>
                 </div>
-              </div>
-
+              ))}
+            </dl>
+          </div>
+          <div className={clsx(card, 'flex flex-col gap-4 p-8')}>
+            <h2 className="text-xl font-bold">使っている技術</h2>
+            <dl className="flex flex-col gap-3 text-[15px] leading-7">
               <div>
-                <h4 className="mb-4 text-lg font-semibold text-gray-900 dark:text-white border-l-4 border-purple-500 pl-3">
-                  趣味で使った技術、言語
-                </h4>
-                <div className="grid grid-cols-4 gap-4 sm:grid-cols-6 lg:grid-cols-8">
-                  <SkillIcon IconComponent={SiReact} name="React" colorClassName="text-sky-500" />
-                  <SkillIcon IconComponent={SiNextdotjs} name="Next.js" />
-                  <SkillIcon IconComponent={SiGraphql} name="GraphQL" colorClassName="text-pink-500" />
-                  <SkillIcon IconComponent={SiFirebase} name="Firebase" colorClassName="text-yellow-500" />
-                  <SkillIcon IconComponent={SiSwift} name="Swift" colorClassName="text-orange-500" />
-                  <SkillIcon IconComponent={SiPhp} name="PHP" colorClassName="text-indigo-500" />
-                  <SkillIcon IconComponent={SiGo} name="Go" colorClassName="text-cyan-500" />
-                  <SkillIcon IconComponent={SiGatsby} name="Gatsby" colorClassName="text-purple-600" />
-                  <SkillIcon IconComponent={SparklesIcon} name="OpenAI" />
-                </div>
+                <dt className="text-sm font-bold text-orange-700 dark:text-orange-300">アプリ開発</dt>
+                <dd className="text-stone-700 dark:text-slate-200">Swift</dd>
               </div>
-
               <div>
-                <h4 className="mb-4 text-lg font-semibold text-gray-900 dark:text-white border-l-4 border-green-500 pl-3">
-                  その他
-                </h4>
-                <div className="grid grid-cols-4 gap-4 sm:grid-cols-6 lg:grid-cols-8">
-                  <SkillIcon IconComponent={SiFigma} name="Figma" />
-                  <SkillIcon IconComponent={SiPostman} name="Postman" colorClassName="text-orange-500" />
-                  <SkillIcon IconComponent={ChatBubbleLeftRightIcon} name="Slack" colorClassName="text-purple-500" />
-                  <SkillIcon IconComponent={SiApple} name="Apple" />
-                  <SkillIcon IconComponent={SiGithub} name="GitHub" />
-                  <SkillIcon IconComponent={SiNeovim} name="Neovim" colorClassName="text-green-500" />
-                  <SkillIcon IconComponent={SiIterm2} name="iTerm2" />
-                  <SkillIcon IconComponent={Si1password} name="1Password" colorClassName="text-sky-600" />
-                  <SkillIcon IconComponent={SiWarp} name="Warp" colorClassName="text-cyan-400" />
-                </div>
+                <dt className="text-sm font-bold text-orange-700 dark:text-orange-300">仕事</dt>
+                <dd className="text-stone-700 dark:text-slate-200">
+                  Ruby on Rails、Vue.js / Nuxt、TypeScript、MySQL、PostgreSQL、AWS
+                </dd>
               </div>
-            </div>
+              <div>
+                <dt className="text-sm font-bold text-orange-700 dark:text-orange-300">このサイト</dt>
+                <dd className="text-stone-700 dark:text-slate-200">Next.js、React、Tailwind CSS、Vercel</dd>
+              </div>
+            </dl>
+            <Link
+              href="/"
+              className="mt-auto text-[15px] font-bold text-orange-700 hover:underline dark:text-orange-300"
+            >
+              公開中のアプリを見る
+            </Link>
           </div>
         </section>
 
-        {/* SNSリンクセクション */}
-        <section className="group lg:col-span-1">
-          <div className="h-full overflow-hidden rounded-2xl border border-gray-200/60 bg-white/80 shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-pink-500/25 hover:-translate-y-1 dark:border-gray-700 dark:bg-gray-800/80">
-            <div className="bg-gradient-to-r from-pink-50 to-rose-50 p-6 dark:from-gray-700 dark:to-gray-600">
-              <h3 className="flex items-center text-2xl font-bold text-gray-900 dark:text-white">
-                <LinkIcon className="mr-3 h-8 w-8 text-pink-600" />
-                SNSリンク
-              </h3>
+        {images.length > 0 && (
+          <section id="gallery" className="flex scroll-mt-24 flex-col gap-5">
+            <div>
+              <h2 className="text-2xl font-bold">ギャラリー</h2>
+              <p className="mt-1 text-stone-600 dark:text-slate-300">
+                描いたイラストやグラフィック、アニメーションです。
+              </p>
             </div>
-            <div className="p-6">
-              <div className="grid grid-cols-2 gap-4">
-                <a
-                  href="https://x.com/KazuhiroIto0127"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group/link flex flex-col items-center rounded-xl border border-gray-200 p-4 transition-all hover:border-blue-300 hover:bg-blue-50 hover:shadow-md dark:border-gray-600 dark:hover:border-blue-500 dark:hover:bg-blue-900/20"
-                >
-                  <SiX width={32} height={32} className="mb-2 text-gray-700 dark:text-gray-300" />
-                  <div className="flex items-center text-sm font-medium text-blue-600 dark:text-blue-400">
-                    X
-                    <ArrowTopRightOnSquareIcon className="ml-1 h-3 w-3 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-                  </div>
-                </a>
-                <a
-                  href="https://github.com/KazuhiroIto0127"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group/link flex flex-col items-center rounded-xl border border-gray-200 p-4 transition-all hover:border-gray-400 hover:bg-gray-50 hover:shadow-md dark:border-gray-600 dark:hover:border-gray-400 dark:hover:bg-gray-700/50"
-                >
-                  <SiGithub width={32} height={32} className="mb-2 text-gray-700 dark:text-gray-300" />
-                  <div className="flex items-center text-sm font-medium text-blue-600 dark:text-blue-400">
-                    Github
-                    <ArrowTopRightOnSquareIcon className="ml-1 h-3 w-3 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-                  </div>
-                </a>
-                <a
-                  href="https://zenn.dev/kazuhiroito0127"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group/link flex flex-col items-center rounded-xl border border-gray-200 p-4 transition-all hover:border-blue-300 hover:bg-blue-50 hover:shadow-md dark:border-gray-600 dark:hover:border-blue-500 dark:hover:bg-blue-900/20"
-                >
-                  <SiZenn width={32} height={32} className="mb-2 text-blue-500" />
-                  <div className="flex items-center text-sm font-medium text-blue-600 dark:text-blue-400">
-                    Zenn
-                    <ArrowTopRightOnSquareIcon className="ml-1 h-3 w-3 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-                  </div>
-                </a>
-                <a
-                  href="https://qiita.com/KazuhiroIto0127"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group/link flex flex-col items-center rounded-xl border border-gray-200 p-4 transition-all hover:border-green-300 hover:bg-green-50 hover:shadow-md dark:border-gray-600 dark:hover:border-green-500 dark:hover:bg-green-900/20"
-                >
-                  <SiQiita width={32} height={32} className="mb-2 text-green-500" />
-                  <div className="flex items-center text-sm font-medium text-blue-600 dark:text-blue-400">
-                    Qiita
-                    <ArrowTopRightOnSquareIcon className="ml-1 h-3 w-3 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-                  </div>
-                </a>
-                <a
-                  href="https://booklog.jp/users/kazuhiroito0127"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group/link flex flex-col items-center rounded-xl border border-gray-200 p-4 transition-all hover:border-orange-300 hover:bg-orange-50 hover:shadow-md dark:border-gray-600 dark:hover:border-orange-500 dark:hover:bg-orange-900/20"
-                >
-                  <div className="mb-2 text-2xl">📚</div>
-                  <div className="flex items-center text-sm font-medium text-blue-600 dark:text-blue-400">
-                    Booklog
-                    <ArrowTopRightOnSquareIcon className="ml-1 h-3 w-3 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
+            <MediaGrid images={images} filter="all" onImageClick={setSelected} />
+          </section>
+        )}
       </div>
+
+      <MediaModal selectedImage={selected} onClose={() => setSelected(null)} />
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const images = await getGalleryImages();
+  return { props: { images } };
 }

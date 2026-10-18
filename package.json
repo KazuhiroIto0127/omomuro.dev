@@ -16,8 +16,6 @@
     "biome:format": "biome format --write ."
   },
   "dependencies": {
-    "@gsap/react": "^2.1.2",
-    "@headlessui/react": "^2.2.4",
     "@heroicons/react": "^2.2.0",
     "@icons-pack/react-simple-icons": "^13.1.0",
     "@radix-ui/react-popover": "^1.1.14",
@@ -35,7 +33,6 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-markdown": "^10.1.0",
-    "react-rewards": "^2.1.0",
     "sharp": "^0.35.5",
     "tailwindcss-radix": "^4.0.2",
     "three": "^0.186.1"

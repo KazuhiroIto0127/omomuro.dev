@@ -88,19 +88,13 @@ export default function Home() {
           <div className="flex flex-col gap-3">
             <h2 className="text-xl font-bold md:text-2xl">つくっている人</h2>
             <p className="text-[15px] leading-8 text-stone-700 dark:text-slate-200">
-              東京在住のソフトウェアエンジニア、イトウカズヒロです。企画からデザイン、開発、サポートまで一人で行っています。ゲームやWebの試作は実験室や作品一覧にまとめています。
+              東京在住のソフトウェアエンジニア、イトウカズヒロです。企画からデザイン、開発、サポートまで一人で行っています。
             </p>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-[15px] font-bold text-orange-700 dark:text-orange-300">
               <Link href="/about" className="hover:underline">
                 プロフィール
               </Link>
-              <Link href="/works" className="hover:underline">
-                これまでの作品
-              </Link>
-              <Link href="/labs" className="hover:underline">
-                実験室
-              </Link>
-              <Link href="/gallery" className="hover:underline">
+              <Link href="/about#gallery" className="hover:underline">
                 ギャラリー
               </Link>
             </div>

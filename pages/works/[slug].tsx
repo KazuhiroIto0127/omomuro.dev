@@ -15,7 +15,7 @@ export default function WorkPage({ work, hasEnglish }: { work: Work; hasEnglish:
   const { navigateWithTransition } = useViewTransition();
 
   const handleBackClick = async (e: React.MouseEvent) => {
-    await navigateWithTransition('/works', e);
+    await navigateWithTransition('/', e);
   };
 
   return (
@@ -24,9 +24,9 @@ export default function WorkPage({ work, hasEnglish }: { work: Work; hasEnglish:
 
       <article className="mx-auto max-w-2xl break-words prose-sm dark:prose-invert sm:prose-base lg:prose-lg bg-white/80 dark:bg-gray-600/80 p-4 rounded-lg">
         <BackButton
-          href="/works"
+          href="/"
           onClick={handleBackClick}
-          label="作品一覧に戻る"
+          label="アプリ一覧に戻る"
           colorClass="text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
         />
         <Image
