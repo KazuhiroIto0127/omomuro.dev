@@ -16,9 +16,6 @@ export default function Page() {
         Mieru is available for iPhone, iPad and Mac on the App Store. On iPad in landscape, a collapsible sidebar keeps
         your library and player side by side.
       </p>
-      <p>
-        <a href="https://apps.apple.com/app/id6818041206">Download free on the App Store</a>
-      </p>
       <h2>Made for your Mac, too</h2>
       <p>
         Use keyboard shortcuts for playback, 5-second seeking and speed changes. Open videos directly from Finder in

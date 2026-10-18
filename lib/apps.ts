@@ -20,13 +20,13 @@ export type PublishedApp = {
   /** schema.org の applicationCategory */
   schemaCategory: string;
   operatingSystem: string;
-  en?: { name: string; description: string };
+  en: { name: string; description: string; catch: string; pricing: string };
 };
 
-export const appCategories: { id: AppCategory; title: string }[] = [
-  { id: 'family', title: '家族・暮らし' },
-  { id: 'kids', title: 'こども' },
-  { id: 'media', title: '写真・動画' },
+export const appCategories: { id: AppCategory; title: string; titleEn: string }[] = [
+  { id: 'family', title: '家族・暮らし', titleEn: 'Family & home' },
+  { id: 'kids', title: 'こども', titleEn: 'Kids' },
+  { id: 'media', title: '写真・動画', titleEn: 'Photos & video' },
 ];
 
 export const publishedApps: PublishedApp[] = [
@@ -47,6 +47,8 @@ export const publishedApps: PublishedApp[] = [
       name: 'Kakei Pocket',
       description:
         'Track spending on your own or share a household budget with your partner via iCloud. One-tap fixed costs, no bank linking. Sharing is free; Pro is a one-time purchase.',
+      catch: 'A budget you can share with your partner',
+      pricing: 'Free · Pro one-time purchase',
     },
     appStoreUrl: 'https://apps.apple.com/jp/app/id6819167469',
   },
@@ -67,6 +69,8 @@ export const publishedApps: PublishedApp[] = [
       name: 'Kazoku Board',
       description:
         'Share your family calendar, to-dos, school handouts, pick-ups and things to bring via iCloud. Snap a handout to turn it into events. Sharing is free; one Pro purchase covers the whole family.',
+      catch: 'Share family plans and school handouts',
+      pricing: 'Free · Pro one-time purchase',
     },
     appStoreUrl: 'https://apps.apple.com/jp/app/id6816839974',
   },
@@ -87,6 +91,8 @@ export const publishedApps: PublishedApp[] = [
       name: 'Sky in Pixels',
       description:
         'Your forecast as pixel-art landscapes of Japan that change with rain, sun and time of day. Free to start on iPhone and iPad.',
+      catch: 'Weather as pixel-art landscapes',
+      pricing: 'Free · PRO',
     },
     appStoreUrl: 'https://apps.apple.com/jp/app/id6815891206',
     pixelated: true,
@@ -108,6 +114,8 @@ export const publishedApps: PublishedApp[] = [
       name: 'Pikaniji',
       description:
         'Glowing pens, rainbow crayons and coloring pages for kids aged 2–5. No ads, no accounts, and big buttons that work before kids can read. Apple Pencil supported on iPad.',
+      catch: 'Ad-free drawing and coloring for kids',
+      pricing: 'No ads · one-time purchase',
     },
     appStoreUrl: 'https://apps.apple.com/jp/app/id6815297304',
   },
@@ -123,6 +131,13 @@ export const publishedApps: PublishedApp[] = [
     tint: '#E3EED9',
     schemaCategory: 'GameApplication',
     operatingSystem: 'iOS, iPadOS',
+    en: {
+      name: 'Little Playground',
+      description:
+        'Touch to make flowers bloom and animals peek out. Seven gentle games for kids aged 0–5 to play with a parent on iPhone and iPad. No ads, no accounts. The flower game is free; the rest unlock with a one-time purchase.',
+      catch: 'Touch-and-play games for ages 0–5',
+      pricing: 'No ads · one-time purchase',
+    },
     appStoreUrl: 'https://apps.apple.com/jp/app/id6812550189',
   },
   {
@@ -142,6 +157,8 @@ export const publishedApps: PublishedApp[] = [
       name: 'Kakusu',
       description:
         'Automatically detect and blur or cover faces in your videos, then fix misses frame by frame. Everything runs on your iPhone — no uploads, ads or watermarks. Save clips up to 15 seconds free.',
+      catch: 'Blur faces in videos automatically',
+      pricing: 'No ads · Pro one-time purchase',
     },
     appStoreUrl: 'https://apps.apple.com/jp/app/id6809350160',
     screenshots: [
@@ -166,6 +183,8 @@ export const publishedApps: PublishedApp[] = [
       name: 'Mieru',
       description:
         'Browse videos from Photos and Files by month, in playlists or a vertical feed, on iPhone, iPad and Mac. Free to use; Mieru Plus is a one-time purchase that adds background play and Picture in Picture.',
+      catch: 'A calm player for your own videos',
+      pricing: 'Free · Plus one-time purchase',
     },
     appStoreUrl: 'https://apps.apple.com/jp/app/id6818041206',
   },
@@ -186,6 +205,8 @@ export const publishedApps: PublishedApp[] = [
       name: 'Sticky Club',
       description:
         'Automatically cut out subjects from your photos and turn them into stickers. Add outlines and shadows, collect them, and arrange them on boards. Free to start, no subscription.',
+      catch: 'Turn your photos into stickers',
+      pricing: 'Free · one-time purchase',
     },
     appStoreUrl: 'https://apps.apple.com/jp/app/id6814130810',
   },

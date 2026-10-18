@@ -9,10 +9,7 @@ export default function Page() {
       description="Simple bookkeeping, on your own or together."
     >
       <p>Updated October 7, 2026. Provider: Kazuhiro Ito (omomuro.dev).</p>
-      <p>
-        <a href="https://apps.apple.com/app/id6819167469">Download free on the App Store</a>
-      </p>
-      <h2>Available on the App Store</h2>
+      <h2>Record and share</h2>
       <p>
         Manually record income and expenses, optionally add item details, and review receipt recognition before saving.
         Share a ledger with one partner using iCloud. No bank or card connection is required.

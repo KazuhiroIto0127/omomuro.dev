@@ -9,9 +9,6 @@ export default function Page() {
       description="A shared calendar and school-handout board for parents."
     >
       <p>
-        <a href="https://apps.apple.com/app/id6816839974">Download free on the App Store</a>
-      </p>
-      <p>
         Keep family events, tasks, school handouts, links, pickups, and packing lists together. Scan handouts with
         on-device text recognition, review the results, and save suggested events or tasks.
       </p>

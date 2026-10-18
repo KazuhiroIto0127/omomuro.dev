@@ -1,37 +1,32 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { SITE_URL } from '@/lib/site';
+import { alternatePaths, pathLanguage } from '@/lib/i18n';
 
 type Prop = {
   type: 'website' | 'article' | 'blog' | 'product' | 'gallery';
   title: string;
   description?: string;
-  /** /works/<app>/... と /works/<app>/en/... の日英ペアがあるページで true にすると hreflang を出力する */
-  localized?: boolean;
 };
 
 const siteName = 'omomuro.dev';
-const siteDescription = 'おもむろに開発しよう。created by Kazuhiro Ito';
+const siteDescription = {
+  ja: '個人開発者イトウカズヒロがつくっている、暮らしと家族のための iPhone・iPad アプリ。',
+  en: 'iPhone and iPad apps for everyday family life, made by indie developer Kazuhiro Ito.',
+};
 const twitterID = '@KazuhiroIto0127';
 
-/** 日英ページのパスを返す。対象外なら null */
-const localizedPaths = (path: string) => {
-  const en = path.match(/^(\/works\/[^/]+)\/en(\/.*)?$/);
-  if (en) return { ja: `${en[1]}${en[2] ?? ''}`, en: path, current: 'en' as const };
-  const ja = path.match(/^(\/works\/[^/]+)(\/.*)?$/);
-  if (ja) return { ja: path, en: `${ja[1]}/en${ja[2] ?? ''}`, current: 'ja' as const };
-  return null;
-};
-
-export default function HeadMeta({ type, title, description, localized = false }: Prop) {
+export default function HeadMeta({ type, title, description }: Prop) {
   const router = useRouter();
   const path = router.asPath.split(/[?#]/)[0].replace(/\/$/, '') || '/';
+  const lang = pathLanguage(path);
   const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : SITE_URL;
   const url = `${SITE_URL}${path === '/' ? '' : path}`;
   const imageUrl = `${baseUrl}/api/og${title ? `?title=${encodeURIComponent(title)}` : ''}`;
   const pageTitle = title ? `${title} | ${siteName}` : siteName;
-  const pageDescription = description || siteDescription;
-  const langs = localized ? localizedPaths(path) : null;
+  const pageDescription = description || siteDescription[lang];
+  const langs = alternatePaths(path);
+  const absolute = (p: string) => `${SITE_URL}${p === '/' ? '' : p}`;
 
   return (
     <Head>
@@ -40,9 +35,9 @@ export default function HeadMeta({ type, title, description, localized = false }
       <link rel="canonical" href={url} />
       {langs && (
         <>
-          <link rel="alternate" hrefLang="ja" href={`${SITE_URL}${langs.ja}`} />
-          <link rel="alternate" hrefLang="en" href={`${SITE_URL}${langs.en}`} />
-          <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}${langs.ja}`} />
+          <link rel="alternate" hrefLang="ja" href={absolute(langs.ja)} />
+          <link rel="alternate" hrefLang="en" href={absolute(langs.en)} />
+          <link rel="alternate" hrefLang="x-default" href={absolute(langs.en)} />
         </>
       )}
 
@@ -52,7 +47,8 @@ export default function HeadMeta({ type, title, description, localized = false }
       <meta property="og:type" content={type} />
       <meta property="og:url" content={url} />
       <meta property="og:site_name" content={siteName} />
-      <meta property="og:locale" content={langs?.current === 'en' ? 'en_US' : 'ja_JP'} />
+      <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'ja_JP'} />
+      {langs && <meta property="og:locale:alternate" content={lang === 'en' ? 'ja_JP' : 'en_US'} />}
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content={twitterID} />

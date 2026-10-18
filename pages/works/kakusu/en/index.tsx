@@ -2,7 +2,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import ReactMarkdown from 'react-markdown';
 import KakusuDocument from '@/components/kakusu/Document';
-import KakusuScreenshots from '@/components/kakusu/Screenshots';
 
 export default function KakusuEnglishPage({ content }: { content: string }) {
   return (
@@ -13,13 +12,6 @@ export default function KakusuEnglishPage({ content }: { content: string }) {
       title="Hide faces in video"
       description="Mask faces, review the result, and share a new copy. Processing stays on your iPhone."
     >
-      <a
-        href="https://apps.apple.com/app/id6809350160"
-        className="inline-flex rounded-full bg-emerald-900 px-6 py-3 font-semibold text-white no-underline"
-      >
-        Download on the App Store
-      </a>
-      <KakusuScreenshots language="en" />
       <ReactMarkdown>{content}</ReactMarkdown>
     </KakusuDocument>
   );

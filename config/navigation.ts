@@ -1,14 +1,4 @@
-import { Squares2X2Icon, UserIcon } from '@heroicons/react/24/outline';
-
 export const navigationLinks = [
-  {
-    title: 'アプリ',
-    path: '/',
-    icon: Squares2X2Icon,
-  },
-  {
-    title: 'つくった人',
-    path: '/about',
-    icon: UserIcon,
-  },
-];
+  { id: 'apps', title: 'アプリ', titleEn: 'Apps', path: '/', pathEn: '/en' },
+  { id: 'about', title: 'つくった人', titleEn: 'About', path: '/about', pathEn: '/about/en' },
+] as const;
