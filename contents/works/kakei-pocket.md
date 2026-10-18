@@ -10,7 +10,7 @@ thumbnailFileName: "家計ポケットのポケットとコインのアイコン
 createdAt: "2026-10-07"
 ---
 
-**App Store公開準備中です。**
+**App Storeで公開中です。** [App Storeで無料ダウンロード](https://apps.apple.com/jp/app/id6819167469)
 
 [English](/works/kakei-pocket/en)
 
