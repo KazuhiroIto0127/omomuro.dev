@@ -2,6 +2,8 @@ import KazokuBoardDocument from '@/components/kazoku-board/Document';
 export default function Page() {
   return (
     <KazokuBoardDocument
+      seoTitle="Kazoku Board — Shared family calendar & school handouts"
+      seoDescription="Share your family calendar, to-dos, school handouts, pick-ups and things to bring via iCloud. Snap a handout to turn it into events. Sharing is free; one Pro purchase covers the whole family."
       language="en"
       title="Family plans, in one place"
       description="A shared calendar and school-handout board for parents."

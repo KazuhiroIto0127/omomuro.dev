@@ -2,6 +2,8 @@ import SealDocument from '@/components/seal-atsume/Document';
 export default function Page() {
   return (
     <SealDocument
+      seoTitle="Sticky Club — Turn your photos into stickers"
+      seoDescription="Automatically cut out subjects from your photos and turn them into stickers. Add outlines and shadows, collect them, and arrange them on boards. Free to start, no subscription."
       language="en"
       title="Your photos, your stickers"
       description="Cut out, collect and arrange your favorite moments."

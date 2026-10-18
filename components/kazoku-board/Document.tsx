@@ -7,12 +7,16 @@ import type { ReactNode } from 'react';
 export default function KazokuBoardDocument({
   title,
   description,
+  seoTitle,
+  seoDescription,
   children,
   language = 'ja',
 }: {
   language?: 'ja' | 'en';
   title: string;
   description: string;
+  seoTitle?: string;
+  seoDescription?: string;
   children: ReactNode;
 }) {
   const english = language === 'en';
@@ -23,14 +27,15 @@ export default function KazokuBoardDocument({
 
   return (
     <Layout>
-      <HeadMeta localized
+      <HeadMeta
+        localized
         type="article"
-        title={`${english ? 'Kazoku Board' : 'かぞくボード'} | ${title}`}
-        description={description}
+        title={seoTitle ?? `${english ? 'Kazoku Board' : 'かぞくボード'} | ${title}`}
+        description={seoDescription ?? description}
       />
       <article
         lang={language}
-        className="prose prose-slate mx-auto max-w-3xl break-words rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:prose-invert md:p-10 dark:border-gray-700 dark:bg-gray-800"
+        className="prose prose-slate dark:prose-invert mx-auto max-w-3xl rounded-2xl border border-gray-200 bg-white p-6 break-words shadow-sm md:p-10 dark:border-gray-700 dark:bg-gray-800"
       >
         <div className="flex flex-wrap justify-between gap-4">
           <Link href="/works">{english ? '← All works' : '← 作品一覧へ'}</Link>

@@ -7,12 +7,16 @@ import Layout from '@/components/layouts/oneColumnLayout';
 export default function SealDocument({
   title,
   description,
+  seoTitle,
+  seoDescription,
   children,
   language = 'ja',
 }: {
   language?: 'ja' | 'en';
   title: string;
   description: string;
+  seoTitle?: string;
+  seoDescription?: string;
   children: ReactNode;
 }) {
   const english = language === 'en';
@@ -22,14 +26,15 @@ export default function SealDocument({
   const alternate = english ? router.pathname.replace('/en', '') : router.pathname.replace(base, `${base}/en`);
   return (
     <Layout>
-      <HeadMeta localized
+      <HeadMeta
+        localized
         type="article"
-        title={`${english ? 'Sticky Club' : 'シール集め'} | ${title}`}
-        description={description}
+        title={seoTitle ?? `${english ? 'Sticky Club' : 'シール集め'} | ${title}`}
+        description={seoDescription ?? description}
       />
       <article
         lang={language}
-        className="prose prose-slate mx-auto max-w-3xl break-words rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:prose-invert md:p-10 dark:border-gray-700 dark:bg-gray-800"
+        className="prose prose-slate dark:prose-invert mx-auto max-w-3xl rounded-2xl border border-gray-200 bg-white p-6 break-words shadow-sm md:p-10 dark:border-gray-700 dark:bg-gray-800"
       >
         <div className="flex flex-wrap justify-between gap-4">
           <Link href={localizedBase}>{english ? '← About Sticky Club' : '← シール集めの紹介へ'}</Link>

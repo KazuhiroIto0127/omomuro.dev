@@ -9,4 +9,8 @@ export interface Work extends ContentWithBody {
   thumbnailFileName: string;
   createdAt: string;
   url?: string;
+  /** 検索結果用（未指定なら title） */
+  seoTitle?: string;
+  /** 検索結果用（未指定なら description） */
+  seoDescription?: string;
 }

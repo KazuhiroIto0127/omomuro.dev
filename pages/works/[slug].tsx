@@ -20,7 +20,7 @@ export default function WorkPage({ work, hasEnglish }: { work: Work; hasEnglish:
 
   return (
     <Layout>
-      <HeadMeta type="article" title={work.title} description={work.description} localized={hasEnglish} />
+      <HeadMeta type="article" title={work.seoTitle ?? work.title} description={work.seoDescription ?? work.description} localized={hasEnglish} />
 
       <article className="mx-auto max-w-2xl break-words prose-sm dark:prose-invert sm:prose-base lg:prose-lg bg-white/80 dark:bg-gray-600/80 p-4 rounded-lg">
         <BackButton

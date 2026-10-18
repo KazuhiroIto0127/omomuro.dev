@@ -2,6 +2,8 @@ import PikanijiDocument from '@/components/pikaniji/Document';
 export default function Page() {
   return (
     <PikanijiDocument
+      seoTitle="Pikaniji — Ad-free drawing & coloring app for kids"
+      seoDescription="Glowing pens, rainbow crayons and coloring pages for kids aged 2–5. No ads, no accounts, and big buttons that work before kids can read. Apple Pencil supported on iPad."
       language="en"
       title="Glow drawing for little artists"
       description="Sparkly pens, rainbow crayons and coloring pages, with no ads."

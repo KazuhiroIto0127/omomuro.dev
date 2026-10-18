@@ -1,6 +1,8 @@
 ---
 title: "Mieru — 動画を、もっと心地よく。"
-description: "写真やファイルの動画を、月ごとの一覧・プレイリスト・縦フィードで。お気に入りの動画を気軽に楽しめるiPhone・iPadアプリ。Mac版も審査中です。"
+description: "写真やファイルの動画を、月ごとの一覧・プレイリスト・縦フィードで。お気に入りの動画を気軽に楽しめるiPhone・iPad・Macアプリ。"
+seoTitle: "Mieru — 写真アプリの動画を心地よく見られる動画プレイヤー"
+seoDescription: "写真やファイルの動画を、月ごとの一覧・プレイリスト・縦スクロールのフィードで楽しめる動画プレイヤー。iPhone・iPad・Mac対応。無料で使え、買い切りのPlusで広告非表示・バックグラウンド再生・ピクチャ・イン・ピクチャに対応。"
 thumbnail: "/images/works/mieru.png"
 thumbnailHeight: 1024
 thumbnailWidth: 1024
@@ -8,7 +10,7 @@ thumbnailFileName: "Mieruのアプリアイコン"
 createdAt: "2026-10-02"
 ---
 
-**iPhone・iPad版はApp Storeで公開中です。Mac版は審査中です。**
+**iPhone・iPad・Mac版をApp Storeで公開中です。**
 
 [App Storeで無料ダウンロード](https://apps.apple.com/jp/app/id6818041206)
 
@@ -20,9 +22,9 @@ createdAt: "2026-10-02"
 
 ## 大きな画面でも、使いやすく
 
-iPadの横向き表示に合わせた開閉できるサイドメニューや、ホーム・フィードの表示改善を含むバージョン1.1を審査に提出しました。
+iPadの横向き表示では、開閉できるサイドメニューで一覧と再生を行き来できます。
 
-Mac版も同時に審査中です。キーボードで再生・一時停止、5秒送り・戻し、速度変更ができ、Finderから開いた動画は取り込まずに別ウインドウで再生できます。
+Mac版では、キーボードで再生・一時停止、5秒送り・戻し、速度変更ができ、Finderから開いた動画は取り込まずに別ウインドウで再生できます。
 
 ## 無料で使えて、Plusは買い切り
 

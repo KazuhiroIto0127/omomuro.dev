@@ -1,6 +1,8 @@
 ---
 title: "家計ポケット — ひとりでも、ふたりでも使える家計簿"
 description: "手入力もレシートも、毎日の家計をかんたんに。iCloudでパートナーと共有できるiPhone・iPadアプリ。"
+seoTitle: "家計ポケット — 夫婦・パートナーと共有できる家計簿アプリ"
+seoDescription: "iCloudで夫婦・パートナーと共有できる家計簿アプリ。レシート読み取り、固定費の1タップ記録、「共通・自分・パートナー」の分類に対応。銀行連携は不要です。共有は無料、Proは買い切り。"
 thumbnail: "/images/works/kakei-pocket.png"
 thumbnailHeight: 1024
 thumbnailWidth: 1024

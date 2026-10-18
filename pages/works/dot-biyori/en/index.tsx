@@ -3,6 +3,8 @@ import DotBiyoriDocument from '@/components/dot-biyori/Document';
 export default function Page() {
   return (
     <DotBiyoriDocument
+      seoTitle="Sky in Pixels — Pixel art weather app for iPhone & iPad"
+      seoDescription="Your forecast as pixel-art landscapes of Japan that change with rain, sun and time of day. Free to start on iPhone and iPad."
       language="en"
       title="Weather in pixel landscapes"
       description="A weather app for iPhone and iPad with changing scenes from Japan"
