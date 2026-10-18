@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Document from '@/components/little-playground/Document';
 
 export default function Page() {
@@ -6,13 +5,6 @@ export default function Page() {
     <Document language="en" title="Privacy policy" description="How Little Playground handles information.">
       <p>Last updated: September 19, 2026</p>
       <p>Provider: Kazuhiro Ito (omomuro.dev)</p>
-      <p>
-        This is an English translation of the Japanese privacy policy. If there is any difference, the{' '}
-        <Link href="/works/little-playground/privacy" hrefLang="ja">
-          Japanese version
-        </Link>{' '}
-        takes precedence.
-      </p>
       <section>
         <h2>Information the app collects</h2>
         <p>

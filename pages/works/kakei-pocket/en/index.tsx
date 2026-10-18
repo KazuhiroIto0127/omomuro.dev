@@ -8,7 +8,6 @@ export default function Page() {
       title="Kakei Pocket"
       description="Simple bookkeeping, on your own or together."
     >
-      <p>Updated October 7, 2026. Provider: Kazuhiro Ito (omomuro.dev).</p>
       <h2>Record and share</h2>
       <p>
         Manually record income and expenses, optionally add item details, and review receipt recognition before saving.
