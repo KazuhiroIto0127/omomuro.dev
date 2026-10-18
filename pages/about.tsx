@@ -20,7 +20,6 @@ import {
   SiGraphql,
   SiPostman,
   SiRedis,
-  SiSlack,
   SiSwift,
   SiApple,
   SiChartdotjs,
@@ -33,7 +32,6 @@ import {
   SiIterm2,
   SiNuxt,
   SiCss,
-  SiOpenai,
   SiPython,
   SiZenn,
   SiQiita,
@@ -42,6 +40,7 @@ import {
   SiWarp,
 } from '@icons-pack/react-simple-icons';
 import SkillIcon from '@/components/about/SkillIcon';
+import { ChatBubbleLeftRightIcon, SparklesIcon } from '@heroicons/react/24/solid';
 
 export default function About() {
   return (
@@ -215,7 +214,7 @@ export default function About() {
                   <SkillIcon IconComponent={SiPhp} name="PHP" colorClassName="text-indigo-500" />
                   <SkillIcon IconComponent={SiGo} name="Go" colorClassName="text-cyan-500" />
                   <SkillIcon IconComponent={SiGatsby} name="Gatsby" colorClassName="text-purple-600" />
-                  <SkillIcon IconComponent={SiOpenai} name="OpenAI" />
+                  <SkillIcon IconComponent={SparklesIcon} name="OpenAI" />
                 </div>
               </div>
 
@@ -226,7 +225,7 @@ export default function About() {
                 <div className="grid grid-cols-4 gap-4 sm:grid-cols-6 lg:grid-cols-8">
                   <SkillIcon IconComponent={SiFigma} name="Figma" />
                   <SkillIcon IconComponent={SiPostman} name="Postman" colorClassName="text-orange-500" />
-                  <SkillIcon IconComponent={SiSlack} name="Slack" colorClassName="text-purple-500" />
+                  <SkillIcon IconComponent={ChatBubbleLeftRightIcon} name="Slack" colorClassName="text-purple-500" />
                   <SkillIcon IconComponent={SiApple} name="Apple" />
                   <SkillIcon IconComponent={SiGithub} name="GitHub" />
                   <SkillIcon IconComponent={SiNeovim} name="Neovim" colorClassName="text-green-500" />
