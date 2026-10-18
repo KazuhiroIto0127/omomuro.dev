@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import clsx from 'clsx';
@@ -12,9 +11,8 @@ export default function SiteHeader() {
 
   return (
     <header className="mx-auto flex w-full max-w-[1080px] items-center justify-between gap-4 px-5 py-5 md:px-6">
-      <Link href="/" className="flex items-center gap-2.5">
-        <Image priority src="/images/omo_pen.png" height={30} width={30} alt="" />
-        <span className="font-maru text-lg font-bold whitespace-nowrap max-[400px]:sr-only">omomuro.dev</span>
+      <Link href="/" className="py-2">
+        <span className="font-maru text-lg font-bold whitespace-nowrap">omomuro.dev</span>
       </Link>
       <div className="flex items-center gap-0.5 sm:gap-1">
         <nav aria-label="メイン">
