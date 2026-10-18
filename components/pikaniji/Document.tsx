@@ -22,7 +22,7 @@ export default function PikanijiDocument({
   const alternate = english ? router.pathname.replace('/en', '') : router.pathname.replace(base, `${base}/en`);
   return (
     <Layout>
-      <HeadMeta type="article" title={`${english ? 'Pikaniji' : 'ぴかにじ'} | ${title}`} description={description} />
+      <HeadMeta localized type="article" title={`${english ? 'Pikaniji' : 'ぴかにじ'} | ${title}`} description={description} />
       <article
         lang={language}
         className="prose prose-slate mx-auto max-w-3xl break-words rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:prose-invert md:p-10 dark:border-gray-700 dark:bg-gray-800"

@@ -23,7 +23,7 @@ export default function DotBiyoriDocument({
 
   return (
     <Layout>
-      <HeadMeta
+      <HeadMeta localized
         type="article"
         title={`${english ? 'Sky in Pixels' : 'ドット日和'} | ${title}`}
         description={description}

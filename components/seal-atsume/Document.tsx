@@ -22,7 +22,7 @@ export default function SealDocument({
   const alternate = english ? router.pathname.replace('/en', '') : router.pathname.replace(base, `${base}/en`);
   return (
     <Layout>
-      <HeadMeta
+      <HeadMeta localized
         type="article"
         title={`${english ? 'Sticky Club' : 'シール集め'} | ${title}`}
         description={description}

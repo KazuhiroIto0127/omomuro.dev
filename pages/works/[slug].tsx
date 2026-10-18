@@ -1,3 +1,5 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import Layout from '@/components/layouts/oneColumnLayout';
 import Image from 'next/image';
@@ -9,7 +11,7 @@ import { getAllContentPaths, loadWork } from '@/lib/contentLoader';
 import BackButton from '@/components/common/BackButton';
 import KakusuScreenshots from '@/components/kakusu/Screenshots';
 
-export default function WorkPage({ work }: { work: Work }) {
+export default function WorkPage({ work, hasEnglish }: { work: Work; hasEnglish: boolean }) {
   const { navigateWithTransition } = useViewTransition();
 
   const handleBackClick = async (e: React.MouseEvent) => {
@@ -18,7 +20,7 @@ export default function WorkPage({ work }: { work: Work }) {
 
   return (
     <Layout>
-      <HeadMeta type="article" title={work.title} />
+      <HeadMeta type="article" title={work.title} description={work.description} localized={hasEnglish} />
 
       <article className="mx-auto max-w-2xl break-words prose-sm dark:prose-invert sm:prose-base lg:prose-lg bg-white/80 dark:bg-gray-600/80 p-4 rounded-lg">
         <BackButton
@@ -70,7 +72,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }: { params: { slug: string } }) => {
   const work = loadWork(params.slug);
+  const hasEnglish = fs.existsSync(path.join(process.cwd(), 'pages/works', params.slug, 'en/index.tsx'));
   return {
-    props: { work },
+    props: { work, hasEnglish },
   };
 };

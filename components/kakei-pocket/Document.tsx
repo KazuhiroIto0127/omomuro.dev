@@ -23,7 +23,7 @@ export default function KakeiPocketDocument({
 
   return (
     <Layout>
-      <HeadMeta
+      <HeadMeta localized
         type="article"
         title={`${english ? 'Kakei Pocket' : '家計ポケット'} | ${title}`}
         description={description}

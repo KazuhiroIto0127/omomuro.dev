@@ -17,7 +17,7 @@ export default function KakusuDocument({ title, description, children, language 
   const alternate = english ? router.pathname.replace('/en', '') : router.pathname.replace(base, `${base}/en`);
   return (
     <Layout>
-      <HeadMeta type="article" title={`${english ? 'Kakusu' : 'かくす'} | ${title}`} description={description} />
+      <HeadMeta localized type="article" title={`${english ? 'Kakusu' : 'かくす'} | ${title}`} description={description} />
       <article lang={language} className="prose prose-slate mx-auto max-w-3xl break-words rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:prose-invert md:p-10 dark:border-gray-700 dark:bg-gray-800">
         <div className="flex flex-wrap justify-between gap-4"><Link href={localizedBase}>{english ? '← About Kakusu' : '← かくすの紹介へ'}</Link><Link href={alternate} hrefLang={english ? 'ja' : 'en'}>{english ? '日本語' : 'English'}</Link></div>
         <p className="mb-2 text-sm font-bold text-emerald-700 dark:text-emerald-300">{english ? 'Kakusu for iPhone' : 'iPhoneアプリ「かくす」'}</p>

@@ -23,7 +23,7 @@ export default function KazokuBoardDocument({
 
   return (
     <Layout>
-      <HeadMeta
+      <HeadMeta localized
         type="article"
         title={`${english ? 'Kazoku Board' : 'かぞくボード'} | ${title}`}
         description={description}
