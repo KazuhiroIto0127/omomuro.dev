@@ -20,7 +20,7 @@ export default function Home() {
       <div className="mx-auto flex max-w-5xl flex-col gap-16 pb-8">
         <section className="flex flex-col gap-5 pt-6 md:pt-10">
           <p className="text-sm font-bold tracking-widest text-orange-700 dark:text-orange-300">iPhone・iPad アプリ</p>
-          <h1 className="text-4xl leading-tight font-bold md:text-6xl md:leading-tight">
+          <h1 className="text-[32px] leading-tight font-bold sm:text-5xl md:text-6xl md:leading-tight">
             暮らしと家族の、
             <br />
             ちいさな困りごとに。
