@@ -47,6 +47,7 @@ export default function MediaGrid({ images, filter, onImageClick }: MediaGridPro
                     alt={media.alt}
                     width={media.width}
                     height={media.height}
+                    sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
                     className="w-full transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                     unoptimized={media.src.toLowerCase().endsWith('.gif')}

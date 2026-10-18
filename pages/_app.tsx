@@ -2,7 +2,6 @@ import '@/styles/globals.css';
 import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import { Zen_Kaku_Gothic_New, Zen_Maru_Gothic } from 'next/font/google';
-import { GlobalProvider } from '@/context/global-state-provider';
 import { ThemeProvider } from 'next-themes';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -12,6 +11,7 @@ const heading = Zen_Maru_Gothic({
   weight: ['500', '700'],
   subsets: ['latin'],
   display: 'swap',
+  preload: false,
   variable: '--font-heading',
 });
 
@@ -19,6 +19,7 @@ const body = Zen_Kaku_Gothic_New({
   weight: ['400', '500', '700'],
   subsets: ['latin'],
   display: 'swap',
+  preload: false,
   variable: '--font-body',
 });
 
@@ -32,9 +33,7 @@ export default function App({ Component, pageProps }: AppProps) {
       {!privatePage && <GoogleAnalytics />}
       <div className={`${heading.variable} ${body.variable} font-sans`}>
         <ThemeProvider attribute="class">
-          <GlobalProvider>
-            <Component {...pageProps} />
-          </GlobalProvider>
+          <Component {...pageProps} />
         </ThemeProvider>
         {!privatePage && (
           <Analytics

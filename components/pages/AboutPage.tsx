@@ -4,7 +4,7 @@ import { SiGithub, SiQiita, SiX, SiZenn } from '@icons-pack/react-simple-icons';
 import { BookOpenIcon } from '@heroicons/react/24/outline';
 import Layout from '@/components/layouts/oneColumnLayout';
 import HeadMeta from '@/components/Head';
-import RiveAnimation from '@/components/RiveAnimation';
+import Image from 'next/image';
 import MediaGrid from '@/components/gallery/MediaGrid';
 import MediaModal from '@/components/gallery/MediaModal';
 import type { getGalleryImages } from '@/lib/galleryUtils';
@@ -89,7 +89,14 @@ export default function AboutPage({ lang, images }: { lang: Lang; images: MediaD
           )}
         >
           <div className="bg-paper shrink-0 rounded-full p-3">
-            <RiveAnimation src="/animations/penguin_anime.riv" width={112} height={112} />
+            <Image
+              src="/images/penguin_with_pc.png"
+              alt=""
+              width={112}
+              height={112}
+              priority
+              className="h-28 w-28 object-contain"
+            />
           </div>
           <div className="flex flex-col gap-4">
             <div>

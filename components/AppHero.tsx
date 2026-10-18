@@ -72,10 +72,11 @@ export default function AppHero({
         </div>
       </div>
       {shots.length > 0 && (
-        <div className="flex flex-1 justify-center gap-3.5">
+        <div className="flex flex-1 items-start justify-center gap-3.5">
           {shots.map((shot, i) => (
             <Image
               key={shot.src}
+              priority={i === 0}
               src={shot.src}
               alt={shot.alt}
               width={600}
