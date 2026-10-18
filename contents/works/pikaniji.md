@@ -10,12 +10,6 @@ thumbnailFileName: "ぴかにじのアプリアイコン"
 createdAt: "2026-09-24"
 ---
 
-**App Storeで公開中です。**
-
-[App Storeで無料ダウンロード](https://apps.apple.com/jp/app/id6815297304)
-
-[English](/works/pikaniji/en)
-
 ## ぴかぴか光る、にじ色のお絵かき
 
 2〜5歳くらいのお子さま向けのお絵かきアプリです。文字が読めなくても、大きなボタンだけで遊べます。iPhoneとiPadの両方に対応し、iPadではApple Pencilでも描けます。

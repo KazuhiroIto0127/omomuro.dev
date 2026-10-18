@@ -15,9 +15,7 @@ export interface ContentWithBody extends ContentItem {
 /**
  * コンテンツディレクトリからMarkdownファイルを読み込みメタデータを取得
  */
-export function loadContentItems<T extends ContentItem>(
-  contentType: 'works'
-): T[] {
+export function loadContentItems<T extends ContentItem>(contentType: 'works'): T[] {
   const contentDirectory = path.join(process.cwd(), `contents/${contentType}`);
   const filenames = fs.readdirSync(contentDirectory);
 
@@ -38,10 +36,7 @@ export function loadContentItems<T extends ContentItem>(
 /**
  * 特定のコンテンツアイテムを読み込み（本文も含む）
  */
-export function loadContentItem<T extends ContentWithBody>(
-  contentType: 'works',
-  slug: string
-): T {
+export function loadContentItem<T extends ContentWithBody>(contentType: 'works', slug: string): T {
   const contentDirectory = path.join(process.cwd(), `contents/${contentType}`);
   const fullPath = path.join(contentDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');

@@ -1,14 +1,87 @@
-@import "tailwindcss";
-@plugin "@tailwindcss/typography";
-@plugin "tailwindcss-radix";
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
-@theme {
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* やわらか：生成り地・白いタイル・丸ゴシックの見出し */
+:root {
+  --paper: #f5f3ef;
+  --card: #ffffff;
+  --ink: #1e1c19;
+  --sub: #615b53;
+  --line: #e6e1d8;
+  --accent: #b4481a;
+  --accent-strong: #8c3714;
+}
+
+.dark {
+  --paper: #191816;
+  --card: #24221f;
+  --ink: #eeebe6;
+  --sub: #b3ada4;
+  --line: #36332e;
+  --accent: #f0a27a;
+  --accent-strong: #f7c3a6;
+}
+
+@theme inline {
   --breakpoint-sm: 480px;
 
-  --grid-cols-auto-fit: repeat(auto-fit, minmax(200px, 1fr));
-  --grid-cols-auto-fill: repeat(auto-fill, minmax(200px, 1fr));
+  --color-paper: var(--paper);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-sub: var(--sub);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
 
-  --grid-rows-auto-fit: repeat(auto-fit, minmax(200px, 1fr));
-  --grid-rows-auto-fill: repeat(auto-fill, minmax(200px, 1fr));
+  --font-sans: var(--font-body), 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+  --font-maru: var(--font-heading), 'Hiragino Maru Gothic ProN', sans-serif;
 }
-@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* アプリページ本文 */
+.app-prose {
+  --tw-prose-body: var(--ink);
+  --tw-prose-headings: var(--ink);
+  --tw-prose-links: var(--accent);
+  --tw-prose-bold: var(--ink);
+  --tw-prose-bullets: var(--sub);
+  --tw-prose-counters: var(--sub);
+  --tw-prose-hr: var(--line);
+  --tw-prose-quotes: var(--ink);
+  --tw-prose-quote-borders: var(--line);
+  --tw-prose-captions: var(--sub);
+  --tw-prose-code: var(--ink);
+  --tw-prose-th-borders: var(--line);
+  --tw-prose-td-borders: var(--line);
+  --tw-prose-lead: var(--sub);
+}
+
+.app-prose :where(h1, h2, h3) {
+  font-family: var(--font-maru);
+}
+
+.app-prose :where(img) {
+  border-radius: 1.25rem;
+}
+
+.app-prose > :first-child,
+.app-prose > div > :first-child {
+  margin-top: 0;
+}
+
+/* 白地のアイコンがカードに溶けないように */
+.app-icon {
+  box-shadow: 0 0 0 1px rgb(30 28 25 / 0.08);
+}

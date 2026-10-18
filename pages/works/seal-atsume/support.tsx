@@ -1,11 +1,7 @@
 import SealDocument from '@/components/seal-atsume/Document';
 export default function Page() {
   return (
-    <SealDocument
-      language="ja"
-      title="使い方・サポート"
-      description="シール集めのご案内"
-    >
+    <SealDocument language="ja" title="使い方・サポート" description="シール集めのご案内">
       <h2>使い方</h2>
       <p>
         ステッカー画面の＋から撮影または写真を選びます。切り抜く対象を選び、必要なら手動で修正します。ふちと影を調整して保存したら、ボード画面の＋からボードを作成し、ステッカーを追加します。ドラッグで移動、右上のハンドルで回転、右下でサイズを調整して書き出せます。
@@ -31,11 +27,13 @@ export default function Page() {
       </p>
       <h2>作品の保存</h2>
       <p>
-        iCloudにサインインしていると、作品は同じApple IDのiPhone・iPadと自動で同期され、アプリを削除しても再インストール時に戻ります。iCloudを使っていない場合は、アプリを削除する前に大切な作品を画像やファイルとして書き出してください。
+        iCloudにサインインしていると、作品は同じApple
+        IDのiPhone・iPadと自動で同期され、アプリを削除しても再インストール時に戻ります。iCloudを使っていない場合は、アプリを削除する前に大切な作品を画像やファイルとして書き出してください。
       </p>
       <h2>同期されない</h2>
       <p>
-        各端末で同じApple IDのiCloudにサインインしているか、iCloudの空き容量が足りているかをご確認ください。アプリの「設定」でiCloud同期の状態を確認できます。通信状況によって反映まで時間がかかる場合があります。
+        各端末で同じApple
+        IDのiCloudにサインインしているか、iCloudの空き容量が足りているかをご確認ください。アプリの「設定」でiCloud同期の状態を確認できます。通信状況によって反映まで時間がかかる場合があります。
       </p>
       <h2>お問い合わせ</h2>
       <p>

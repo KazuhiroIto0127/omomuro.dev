@@ -10,12 +10,6 @@ thumbnailFileName: "Mieruのアプリアイコン"
 createdAt: "2026-10-02"
 ---
 
-**iPhone・iPad・Mac版をApp Storeで公開中です。**
-
-[App Storeで無料ダウンロード](https://apps.apple.com/jp/app/id6818041206)
-
-[English](/works/mieru/en)
-
 ## 見たい動画に、すぐ戻れる
 
 写真ライブラリやファイルにある動画を、月ごとの一覧で探せる動画プレイヤーです。前回の続きから再生したり、縦フィードで次々に眺めたり。お気に入りやプレイリストにまとめて、自分の動画を心地よく楽しめます。

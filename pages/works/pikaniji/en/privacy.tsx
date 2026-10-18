@@ -21,7 +21,11 @@ export default function Page() {
       </p>
       <h2>Camera, photos and microphone</h2>
       <p>
-        The app does not request access to the camera, photo library reading, microphone or location. Only when a parent selects Save to Photos after the parental gate does the app request permission to add the drawing to Photos. This permission can be changed in device Settings. When a parent chooses a destination using Share, the image is passed to the selected service. Exported images are managed separately and remain even if the drawing or this app is deleted. Drawing sounds are generated on the device.
+        The app does not request access to the camera, photo library reading, microphone or location. Only when a parent
+        selects Save to Photos after the parental gate does the app request permission to add the drawing to Photos.
+        This permission can be changed in device Settings. When a parent chooses a destination using Share, the image is
+        passed to the selected service. Exported images are managed separately and remain even if the drawing or this
+        app is deleted. Drawing sounds are generated on the device.
       </p>
       <h2>In-app purchases</h2>
       <p>
@@ -32,7 +36,8 @@ export default function Page() {
       </p>
       <h2>Advertising, analytics and external links</h2>
       <p>
-        The app has no advertising or third-party analytics SDKs. Screens intended for parents, such as purchase, settings and exporting drawings, are shown only after the parental gate.
+        The app has no advertising or third-party analytics SDKs. Screens intended for parents, such as purchase,
+        settings and exporting drawings, are shown only after the parental gate.
       </p>
       <h2>This website</h2>
       <p>

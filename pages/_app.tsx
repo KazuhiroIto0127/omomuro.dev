@@ -1,18 +1,25 @@
 import '@/styles/globals.css';
 import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import { Zen_Maru_Gothic } from 'next/font/google';
+import { Zen_Kaku_Gothic_New, Zen_Maru_Gothic } from 'next/font/google';
 import { GlobalProvider } from '@/context/global-state-provider';
 import { ThemeProvider } from 'next-themes';
 import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { usePageView, GoogleAnalytics } from '@/components/gtag';
-import GradientBackground from '@/components/GradientBackground';
 
-const zenMaruGothic = Zen_Maru_Gothic({
-  weight: ['400', '700', '900'],
+const heading = Zen_Maru_Gothic({
+  weight: ['500', '700'],
   subsets: ['latin'],
   display: 'swap',
+  variable: '--font-heading',
+});
+
+const body = Zen_Kaku_Gothic_New({
+  weight: ['400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-body',
 });
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -23,15 +30,22 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       {!privatePage && <GoogleAnalytics />}
-      <div className={`${zenMaruGothic.className}`}>
+      <div className={`${heading.variable} ${body.variable} font-sans`}>
         <ThemeProvider attribute="class">
           <GlobalProvider>
-            <GradientBackground />
             <Component {...pageProps} />
           </GlobalProvider>
         </ThemeProvider>
-        {!privatePage && <Analytics beforeSend={(event) => new URL(event.url).pathname.startsWith('/works/little-playground/') ? null : event} />}
-        {!privatePage && <SpeedInsights beforeSend={(event) => new URL(event.url).pathname.startsWith('/works/little-playground/') ? null : event} />}
+        {!privatePage && (
+          <Analytics
+            beforeSend={(event) => (new URL(event.url).pathname.startsWith('/works/little-playground/') ? null : event)}
+          />
+        )}
+        {!privatePage && (
+          <SpeedInsights
+            beforeSend={(event) => (new URL(event.url).pathname.startsWith('/works/little-playground/') ? null : event)}
+          />
+        )}
       </div>
     </>
   );

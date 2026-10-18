@@ -27,13 +27,11 @@ export async function getGalleryImages(): Promise<MediaData[]> {
   const files = fs.readdirSync(galleryPath);
 
   // 画像・動画ファイルのみをフィルタリング（metadata.jsonを除外）
-  const mediaFiles = files.filter(file =>
-    /\.(jpg|jpeg|png|gif|webp|mp4)$/i.test(file) && file !== 'metadata.json'
-  );
+  const mediaFiles = files.filter((file) => /\.(jpg|jpeg|png|gif|webp|mp4)$/i.test(file) && file !== 'metadata.json');
 
   // メディアデータを設定
   const imagesWithStats = await Promise.all(
-    mediaFiles.map(async file => {
+    mediaFiles.map(async (file) => {
       const filePath = path.join(galleryPath, file);
       const stats = fs.statSync(filePath);
       const ext = path.extname(file).toLowerCase();
@@ -99,7 +97,7 @@ export async function getGalleryImages(): Promise<MediaData[]> {
           createdAt: stats.birthtime || stats.mtime,
         };
       }
-    })
+    }),
   );
 
   // ファイル名ベースでソート（降順）- Vercelでも確実に動作

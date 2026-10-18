@@ -1,66 +1,98 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { GetStaticPaths, InferGetStaticPropsType } from 'next';
-import Layout from '@/components/layouts/oneColumnLayout';
+import type { CSSProperties } from 'react';
+import type { GetStaticPaths } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
+import clsx from 'clsx';
 import ReactMarkdown from 'react-markdown';
+import Layout from '@/components/layouts/oneColumnLayout';
 import HeadMeta from '@/components/Head';
 import type { Work } from '@/types/work';
-import { useViewTransition } from '@/hooks/useViewTransition';
 import { getAllContentPaths, loadWork } from '@/lib/contentLoader';
-import BackButton from '@/components/common/BackButton';
-import KakusuScreenshots from '@/components/kakusu/Screenshots';
+import { findApp } from '@/lib/apps';
 
 export default function WorkPage({ work, hasEnglish }: { work: Work; hasEnglish: boolean }) {
-  const { navigateWithTransition } = useViewTransition();
-
-  const handleBackClick = async (e: React.MouseEvent) => {
-    await navigateWithTransition('/', e);
-  };
+  const app = findApp(work.slug);
+  const tint = { '--tint': app?.tint ?? '#ECE8E1' } as CSSProperties;
+  const shots = app?.screenshots ?? [];
 
   return (
     <Layout>
-      <HeadMeta type="article" title={work.seoTitle ?? work.title} description={work.seoDescription ?? work.description} localized={hasEnglish} />
+      <HeadMeta
+        type="article"
+        title={work.seoTitle ?? work.title}
+        description={work.seoDescription ?? work.description}
+        localized={hasEnglish}
+      />
 
-      <article className="mx-auto max-w-2xl break-words prose-sm dark:prose-invert sm:prose-base lg:prose-lg bg-white/80 dark:bg-gray-600/80 p-4 rounded-lg">
-        <BackButton
-          href="/"
-          onClick={handleBackClick}
-          label="アプリ一覧に戻る"
-          colorClass="text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
-        />
-        <Image
-          priority
-          src={work.thumbnail}
-          className={['kakusu', 'seal-atsume', 'pikaniji', 'dot-biyori', 'mieru'].includes(work.slug) ? 'mb-6 h-32 w-32 rounded-3xl object-contain md:h-40 md:w-40' : 'mb-4 h-52 w-full rounded-md bg-white object-cover md:h-96 transition-transform duration-300'}
-          height={work.thumbnailHeight}
-          width={work.thumbnailWidth}
-          alt={work.thumbnailFileName}
-          style={{ viewTransitionName: `thumbnail-${work.slug}` }}
-        />
-        <h1 className={['kakusu', 'seal-atsume', 'pikaniji', 'dot-biyori', 'mieru'].includes(work.slug) ? 'text-balance text-3xl leading-snug sm:text-4xl' : undefined}>{work.title}</h1>
-        <p>{work.description}</p>
-        <p>制作日：{work.createdAt}</p>
-        {work.url && (
-          <a href={work.url} target="_blank" rel="noopener noreferrer">
-            <p className="text-blue-500">詳しくはこちら</p>
-          </a>
-        )}
-        {work.slug === 'kakusu' && <>
-          <a href="https://apps.apple.com/app/id6809350160" className="my-4 inline-flex rounded-full bg-emerald-900 px-6 py-3 font-semibold text-white no-underline">App Storeでダウンロード</a>
-          <KakusuScreenshots />
-        </>}
-        <ReactMarkdown
-          components={{
-            p: ({ children }) => <p className="whitespace-pre-wrap">{children}</p>,
-            ul: ({ children }) => <ul className="list-disc pl-6">{children}</ul>,
-            ol: ({ children }) => <ol className="list-decimal pl-6">{children}</ol>,
-            li: ({ children }) => <li className="mb-1">{children}</li>,
-          }}
+      <div className="flex flex-col gap-5">
+        <section
+          style={tint}
+          className={clsx(
+            'flex flex-col gap-10 rounded-[32px] bg-[var(--tint)] p-7 md:p-10 lg:flex-row lg:items-center',
+            'dark:bg-[color-mix(in_oklab,var(--tint)_16%,var(--card))]',
+          )}
         >
-          {work.body}
-        </ReactMarkdown>
-      </article>
+          <div className="flex flex-1 flex-col gap-3.5">
+            <Image
+              priority
+              src={work.thumbnail}
+              alt={`${app?.name ?? work.title}のアイコン`}
+              width={96}
+              height={96}
+              className={clsx('app-icon h-24 w-24 rounded-[22px]', app?.pixelated && '[image-rendering:pixelated]')}
+            />
+            <h1 className="font-maru text-[34px] leading-tight font-bold md:text-[40px]">{app?.name ?? work.title}</h1>
+            <p className="max-w-xl text-[17px] leading-8 md:text-lg">{work.description}</p>
+            {app && (
+              <p className="text-ink/70 text-sm">
+                {app.devices} ・ {app.pricing}
+              </p>
+            )}
+            <div className="mt-1.5 flex flex-wrap items-center gap-x-5 gap-y-3">
+              {app?.appStoreUrl && (
+                <a
+                  href={app.appStoreUrl}
+                  className="bg-ink text-paper rounded-full px-6 py-3.5 text-[15px] font-bold transition-opacity hover:opacity-85"
+                >
+                  App Store で見る
+                </a>
+              )}
+              {hasEnglish && (
+                <Link
+                  href={`/works/${work.slug}/en`}
+                  hrefLang="en"
+                  className="py-3 text-[15px] underline-offset-4 hover:underline"
+                >
+                  English
+                </Link>
+              )}
+            </div>
+          </div>
+          {shots.length > 0 && (
+            <div className="flex flex-1 justify-center gap-3.5">
+              {shots.map((shot, i) => (
+                <Image
+                  key={shot.src}
+                  src={shot.src}
+                  alt={shot.alt}
+                  width={440}
+                  height={956}
+                  sizes="(min-width: 1024px) 220px, 45vw"
+                  className={clsx('h-auto w-[46%] max-w-[220px] rounded-[26px]', i % 2 === 1 && 'mt-10')}
+                />
+              ))}
+            </div>
+          )}
+        </section>
+
+        <article className="app-prose prose md:prose-lg bg-card mx-auto w-full max-w-none rounded-3xl p-7 break-words md:p-10">
+          <div className="mx-auto max-w-[680px]">
+            <ReactMarkdown>{work.body}</ReactMarkdown>
+          </div>
+        </article>
+      </div>
     </Layout>
   );
 }

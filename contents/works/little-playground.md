@@ -10,8 +10,6 @@ thumbnailFileName: "ちいさなあそびばのお花のアイコン"
 createdAt: "2026-09-16"
 ---
 
-**App Storeで公開中です。** [App Storeで見る](https://apps.apple.com/jp/app/id6812550189)
-
 ## さわって、見つけて、もういっかい。
 
 画面をタッチすると、お花が咲いたり、どうぶつが顔を出したり。小さな指でさわる楽しさを詰め込んだ、iPhone・iPad向けのあそびアプリです。

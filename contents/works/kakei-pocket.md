@@ -10,10 +10,6 @@ thumbnailFileName: "家計ポケットのポケットとコインのアイコン
 createdAt: "2026-10-07"
 ---
 
-**App Storeで公開中です。** [App Storeで無料ダウンロード](https://apps.apple.com/jp/app/id6819167469)
-
-[English](/works/kakei-pocket/en)
-
 ## 毎日の記録を、かんたんに
 
 金額とカテゴリを選んで、支出や収入を記録。メモと明細は必要なときだけ。レシートは端末内で文字を読み取り、内容を確認して保存できます。銀行口座やクレジットカードの連携は不要です。

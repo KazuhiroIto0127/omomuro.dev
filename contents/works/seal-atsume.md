@@ -10,12 +10,6 @@ thumbnailFileName: "シール集めのアプリアイコン"
 createdAt: "2026-09-20"
 ---
 
-**App Storeで公開中です。**
-
-[App Storeで無料ダウンロード](https://apps.apple.com/jp/app/id6814130810)
-
-[English](/works/seal-atsume/en)
-
 ## つくって、集めて、ぺたっと。
 
 写真を撮るか、写真アプリから選んで、好きなものをステッカーに。切り抜きはiPhoneの中で行います。対象を選び、ふちの色や影を調整して、自分だけのコレクションをつくれます。

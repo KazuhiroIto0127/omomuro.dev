@@ -34,7 +34,7 @@ export default function MieruDocument({
       />
       <article
         lang={language}
-        className="prose prose-slate dark:prose-invert mx-auto max-w-3xl rounded-2xl border border-gray-200 bg-white p-6 break-words shadow-sm md:p-10 dark:border-gray-700 dark:bg-gray-800"
+        className="app-prose prose bg-card mx-auto max-w-3xl rounded-3xl p-7 break-words md:p-10"
       >
         <div className="flex flex-wrap justify-between gap-4">
           <Link href={localizedBase}>{english ? '← About Mieru' : '← Mieruの紹介へ'}</Link>
@@ -42,7 +42,7 @@ export default function MieruDocument({
             {english ? '日本語' : 'English'}
           </Link>
         </div>
-        <p className="mb-2 text-sm font-bold text-blue-700 dark:text-blue-300">
+        <p className="text-accent mb-2 text-sm font-bold">
           {english ? 'Mieru — video player' : '動画プレイヤー「Mieru」'}
         </p>
         <h1>{title}</h1>

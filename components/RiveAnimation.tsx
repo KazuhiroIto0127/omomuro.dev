@@ -30,11 +30,7 @@ export default function RiveAnimation({ src, width = 300, height = 300 }: RiveAn
   };
 
   return (
-    <div
-      style={{ width, height }}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+    <div style={{ width, height }} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <RiveComponent />
     </div>
   );

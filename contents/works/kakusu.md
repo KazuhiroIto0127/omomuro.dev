@@ -10,10 +10,6 @@ thumbnailFileName: "かくすのアプリアイコン"
 createdAt: "2026-09-07"
 ---
 
-**App Storeで公開中です。** 無料でダウンロードして、15秒以内の動画を保存できます。
-
-[App Storeで「かくす」をダウンロード](https://apps.apple.com/app/id6809350160) ・ [English](/works/kakusu/en)
-
 ## 残したい景色。隠したい顔。
 
 動画を選ぶと、写り込んだ顔を自動で検出して加工します。仕上がりを見ながら、隠し漏れを補って保存するためのiPhoneアプリです。

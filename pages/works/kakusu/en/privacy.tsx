@@ -5,7 +5,11 @@ import KakusuDocument from '@/components/kakusu/Document';
 
 export default function KakusuEnglishPage({ content }: { content: string }) {
   return (
-    <KakusuDocument language="en" title="Privacy policy" description="How Kakusu handles photos, videos, face data, advertising, and purchases.">
+    <KakusuDocument
+      language="en"
+      title="Privacy policy"
+      description="How Kakusu handles photos, videos, face data, advertising, and purchases."
+    >
       <ReactMarkdown>{content}</ReactMarkdown>
     </KakusuDocument>
   );

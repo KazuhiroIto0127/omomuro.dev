@@ -1,14 +1,12 @@
 import Footer from '@/components/layouts/Footer';
-import HomeHeader from '@/components/layouts/HomeHeader';
+import SiteHeader from '@/components/layouts/SiteHeader';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <>
-      <div className="dark:bg-gray-700/0 dark:text-white">
-        <HomeHeader />
-        <main className="container mx-auto px-4 py-4 md:pt-24">{children}</main>
-        <Footer />
-      </div>
-    </>
+    <div className="flex min-h-screen flex-col">
+      <SiteHeader />
+      <main className="mx-auto w-full max-w-[1080px] flex-1 px-5 pt-4 pb-16 md:px-6 md:pt-8">{children}</main>
+      <Footer />
+    </div>
   );
 }

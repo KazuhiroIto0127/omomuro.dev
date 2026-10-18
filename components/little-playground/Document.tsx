@@ -11,14 +11,9 @@ export default function PlaygroundDocument({ title, children }: { title: string;
         title={`ちいさなあそびば | ${title}`}
         description={`ちいさなあそびばの${title}をご案内します。`}
       />
-      <article
-        lang="ja"
-        className="prose prose-slate dark:prose-invert mx-auto max-w-3xl rounded-2xl border border-gray-200 bg-white p-6 break-words shadow-sm md:p-10 dark:border-gray-700 dark:bg-gray-800"
-      >
+      <article lang="ja" className="app-prose prose bg-card mx-auto max-w-3xl rounded-3xl p-7 break-words md:p-10">
         <Link href="/works/little-playground">← ちいさなあそびばの紹介へ</Link>
-        <p className="mb-2 text-sm font-bold text-emerald-700 dark:text-emerald-300">
-          iPhone・iPadアプリ「ちいさなあそびば」
-        </p>
+        <p className="text-accent mb-2 text-sm font-bold">iPhone・iPadアプリ「ちいさなあそびば」</p>
         <h1>{title}</h1>
         {children}
         <hr />
