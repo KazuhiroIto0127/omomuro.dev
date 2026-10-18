@@ -1,11 +1,11 @@
 ---
 title: "ちいさなあそびば"
-description: "さわって、見つけて、もういっかい。0〜5歳ごろの親子で楽しむiPhone・iPad向けのあそびアプリ。App Storeで公開中。"
+description: "さわって、見つけて、もういっかい。0〜5歳ごろの親子で楽しむiPhone・iPad向けのあそびアプリ。"
 seoTitle: "ちいさなあそびば — 0〜5歳の幼児向けタッチあそびアプリ"
 seoDescription: "さわると花が咲き、どうぶつが顔を出す。0〜5歳ごろの親子で楽しむiPhone・iPad向けのあそびアプリ。広告・アカウント登録なし。お花のあそびは無料、追加のあそびは買い切り480円です。"
-thumbnail: "/images/works/little-playground-icon.png"
-thumbnailHeight: 1024
-thumbnailWidth: 1024
+thumbnail: "/images/apps/little-playground.png"
+thumbnailHeight: 512
+thumbnailWidth: 512
 thumbnailFileName: "ちいさなあそびばのお花のアイコン"
 createdAt: "2026-09-16"
 ---

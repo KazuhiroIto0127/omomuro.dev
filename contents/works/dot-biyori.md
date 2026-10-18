@@ -3,9 +3,9 @@ title: "ドット日和 — 景色が変わる天気予報"
 description: "いまの空がドット絵の景色になる。日本各地の風景とともに天気を眺めるiPhone・iPadアプリ。"
 seoTitle: "ドット日和 — ドット絵の景色で見る天気予報アプリ"
 seoDescription: "いまの天気がドット絵の景色になる天気予報アプリ。東京タワーなど日本各地の風景とBGMで、晴れや雨、時間帯の移り変わりを眺められます。iPhone・iPad向け、無料で始められます。"
-thumbnail: "/images/works/dot-biyori.png"
-thumbnailHeight: 1024
-thumbnailWidth: 1024
+thumbnail: "/images/apps/dot-biyori.png"
+thumbnailHeight: 512
+thumbnailWidth: 512
 thumbnailFileName: "ドット日和のアプリアイコン"
 createdAt: "2026-09-27"
 ---

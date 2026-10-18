@@ -3,9 +3,9 @@ title: "Mieru — 動画を、もっと心地よく。"
 description: "写真やファイルの動画を、月ごとの一覧・プレイリスト・縦フィードで。お気に入りの動画を気軽に楽しめるiPhone・iPad・Macアプリ。"
 seoTitle: "Mieru — 写真アプリの動画を心地よく見られる動画プレイヤー"
 seoDescription: "写真やファイルの動画を、月ごとの一覧・プレイリスト・縦スクロールのフィードで楽しめる動画プレイヤー。iPhone・iPad・Mac対応。無料で使え、買い切りのPlusで広告非表示・バックグラウンド再生・ピクチャ・イン・ピクチャに対応。"
-thumbnail: "/images/works/mieru.png"
-thumbnailHeight: 1024
-thumbnailWidth: 1024
+thumbnail: "/images/apps/mieru.png"
+thumbnailHeight: 512
+thumbnailWidth: 512
 thumbnailFileName: "Mieruのアプリアイコン"
 createdAt: "2026-10-02"
 ---

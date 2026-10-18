@@ -3,9 +3,9 @@ title: "かくす — 動画の顔にモザイク"
 description: "共有する前に、顔を隠して確認。iPhoneの中で加工する動画モザイクアプリ。"
 seoTitle: "かくす — 動画の顔に自動でモザイクをかけるiPhoneアプリ"
 seoDescription: "動画に写り込んだ顔を自動で検出し、モザイクや塗りつぶしで隠します。追従や1コマ単位の修正で隠し漏れも補えます。処理はiPhone内で完結。広告・透かしなし、15秒以内は無料で保存できます。"
-thumbnail: "/images/works/kakusu-icon-current.png"
-thumbnailHeight: 1024
-thumbnailWidth: 1024
+thumbnail: "/images/apps/kakusu.png"
+thumbnailHeight: 512
+thumbnailWidth: 512
 thumbnailFileName: "かくすのアプリアイコン"
 createdAt: "2026-09-07"
 ---

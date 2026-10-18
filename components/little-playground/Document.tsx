@@ -1,11 +1,13 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
 import HeadMeta from '@/components/Head';
+import AppMeta from '@/components/AppMeta';
 import Layout from '@/components/layouts/oneColumnLayout';
 
 export default function PlaygroundDocument({ title, children }: { title: string; children: ReactNode }) {
   return (
     <Layout>
+      <AppMeta slug="little-playground" />
       <HeadMeta
         type="article"
         title={`ちいさなあそびば | ${title}`}

@@ -3,9 +3,9 @@ title: "シール集め — 写真でつくるステッカー"
 description: "好きな写真を切り抜いて、集めて、ボードにぺたっと。iPhoneでつくる自分だけのシール。"
 seoTitle: "シール集め — 写真を切り抜いてステッカーを作るアプリ"
 seoDescription: "写真の対象を自動で切り抜いて、自分だけのステッカーに。ふちの色や影を調整し、コレクションやボードに貼って楽しめるiPhoneアプリ。PNG書き出しに対応。無料で始められ、サブスクはありません。"
-thumbnail: "/images/works/seal-atsume.png"
-thumbnailHeight: 1024
-thumbnailWidth: 1024
+thumbnail: "/images/apps/seal-atsume.png"
+thumbnailHeight: 512
+thumbnailWidth: 512
 thumbnailFileName: "シール集めのアプリアイコン"
 createdAt: "2026-09-20"
 ---

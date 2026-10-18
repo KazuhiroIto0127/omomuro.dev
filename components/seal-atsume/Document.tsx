@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import HeadMeta from '@/components/Head';
+import AppMeta from '@/components/AppMeta';
 import Layout from '@/components/layouts/oneColumnLayout';
 
 export default function SealDocument({
@@ -26,6 +27,7 @@ export default function SealDocument({
   const alternate = english ? router.pathname.replace('/en', '') : router.pathname.replace(base, `${base}/en`);
   return (
     <Layout>
+      <AppMeta slug="seal-atsume" language={language} structuredData={router.pathname === localizedBase} />
       <HeadMeta
         localized
         type="article"

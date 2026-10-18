@@ -3,9 +3,9 @@ title: "かぞくボード — 家族の予定とプリントを共有"
 description: "予定、やること、学校プリント、送迎や持ち物を家族で共有するiPhone・iPadアプリ。"
 seoTitle: "かぞくボード — 家族の予定・学校プリントを共有するアプリ"
 seoDescription: "家族カレンダー、やること、学校プリント、送迎や持ち物をiCloudで家族と共有。プリントは撮影して文字を読み取り、そのまま予定に登録できます。共有は無料、Proは一度の購入で家族全員に。"
-thumbnail: "/images/works/kazoku-board.png"
-thumbnailHeight: 1024
-thumbnailWidth: 1024
+thumbnail: "/images/apps/kazoku-board.png"
+thumbnailHeight: 512
+thumbnailWidth: 512
 thumbnailFileName: "かぞくボードの家のアイコン"
 createdAt: "2026-10-06"
 ---

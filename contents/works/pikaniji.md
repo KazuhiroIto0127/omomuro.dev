@@ -3,9 +3,9 @@ title: "ぴかにじ — こどものおえかき・ぬりえ"
 description: "キラキラ光るペンと、にじ色のクレヨン。小さな子どもが夢中になる、広告なしのお絵かきアプリ。"
 seoTitle: "ぴかにじ — 広告なしの子ども向けお絵かき・ぬりえアプリ"
 seoDescription: "キラキラ光るペンとにじ色クレヨンで遊べる、2〜5歳向けのお絵かき・ぬりえアプリ。広告なし・登録不要で、文字が読めなくても大きなボタンで遊べます。iPadはApple Pencilにも対応。"
-thumbnail: "/images/works/pikaniji.png"
-thumbnailHeight: 1024
-thumbnailWidth: 1024
+thumbnail: "/images/apps/pikaniji.png"
+thumbnailHeight: 512
+thumbnailWidth: 512
 thumbnailFileName: "ぴかにじのアプリアイコン"
 createdAt: "2026-09-24"
 ---

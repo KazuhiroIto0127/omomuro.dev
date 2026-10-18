@@ -8,6 +8,7 @@ import clsx from 'clsx';
 import ReactMarkdown from 'react-markdown';
 import Layout from '@/components/layouts/oneColumnLayout';
 import HeadMeta from '@/components/Head';
+import AppMeta from '@/components/AppMeta';
 import type { Work } from '@/types/work';
 import { getAllContentPaths, loadWork } from '@/lib/contentLoader';
 import { findApp } from '@/lib/apps';
@@ -19,6 +20,7 @@ export default function WorkPage({ work, hasEnglish }: { work: Work; hasEnglish:
 
   return (
     <Layout>
+      <AppMeta slug={work.slug} structuredData />
       <HeadMeta
         type="article"
         title={work.seoTitle ?? work.title}
@@ -37,7 +39,7 @@ export default function WorkPage({ work, hasEnglish }: { work: Work; hasEnglish:
           <div className="flex flex-1 flex-col gap-3.5">
             <Image
               priority
-              src={work.thumbnail}
+              src={app?.icon ?? work.thumbnail}
               alt={`${app?.name ?? work.title}のアイコン`}
               width={96}
               height={96}

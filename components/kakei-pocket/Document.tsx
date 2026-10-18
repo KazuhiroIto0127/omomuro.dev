@@ -1,4 +1,5 @@
 import HeadMeta from '@/components/Head';
+import AppMeta from '@/components/AppMeta';
 import Layout from '@/components/layouts/oneColumnLayout';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -27,6 +28,7 @@ export default function KakeiPocketDocument({
 
   return (
     <Layout>
+      <AppMeta slug="kakei-pocket" language={language} structuredData={pathname === localizedBase} />
       <HeadMeta
         localized
         type="article"
