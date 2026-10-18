@@ -1,124 +1,67 @@
 # omomuro.dev
 
-Kazuhiro Itoの個人ポートフォリオサイトです。
+イトウカズヒロが個人でつくっている iPhone・iPad アプリのサイトです。<https://omomuro.dev>
 
-## 🌟 概要
+各アプリの紹介ページに加えて、App Store Connect に登録しているサポートページとプライバシーポリシーもここで配信しています。日本語と英語に対応しています。
 
-このサイトは、Software EngineerのKazuhiro Itoの作品や経歴、読書記録などを紹介するポートフォリオサイトです。
+## ページ構成
 
-## 🚀 主な機能
+| ページ | 日本語 | 英語 |
+| --- | --- | --- |
+| トップ（アプリ一覧） | `/` | `/en` |
+| つくった人（プロフィール・ギャラリー） | `/about` | `/about/en` |
+| アプリ紹介 | `/works/<app>` | `/works/<app>/en` |
+| サポート | `/works/<app>/support` | `/works/<app>/en/support` |
+| プライバシーポリシー | `/works/<app>/privacy` | `/works/<app>/en/privacy` |
 
-- **自己紹介ページ** - プロフィール、経歴、スキルセットの紹介
-- **作品紹介** - iPhoneアプリ、ゲーム、Webサービスなどの制作物
-- **本棚** - 読んだ本の記録と感想
-- **ギャラリー** - 写真やイラストの展示
-- **ラボ** - 実験的なプロジェクトや技術検証
+サポートとプライバシーのURLは App Store Connect に登録しているので、パスを変えないでください。一覧は [docs/url-inventory.md](docs/url-inventory.md) にあります。
 
-## 🛠 技術スタック
+ブラウザの言語に日本語が含まれていない人は、日本語ページから英語ページへ自動で移動します（`proxy.ts`）。検索ロボットは対象外で、フッターやアプリページで言語を選ぶと、その選択が Cookie に保存されて優先されます。
 
-### フロントエンド
-- **Next.js 15** - Reactベースのフルスタックフレームワーク
-- **React 19** - UIライブラリ
-- **TypeScript** - 型安全な開発
-- **Tailwind CSS** - ユーティリティファーストのCSSフレームワーク
-- **Framer Motion** - アニメーションライブラリ
+## 技術スタック
 
-### UI/UX
-- **Headless UI** - アクセシブルなUIコンポーネント
-- **Radix UI** - プリミティブなUIコンポーネント
-- **Heroicons** - アイコンライブラリ
-- **React Simple Icons** - ブランドアイコン
+- Next.js 16（Pages Router）・React 19・TypeScript
+- Tailwind CSS v4（色とフォントは `styles/globals.css` のトークン）
+- Markdown（gray-matter・react-markdown）
+- Vercel（ホスティング、Analytics・Speed Insights）
 
-### アニメーション・インタラクション
-- **GSAP** - 高性能アニメーションライブラリ
-- **Rive** - インタラクティブアニメーション
-- **Three.js** - 3Dグラフィックス
+## 開発
 
-### その他
-- **Gray Matter** - Markdownのフロントマター解析
-- **React Markdown** - Markdownレンダリング
-- **Date-fns** - 日付操作ライブラリ
-- **Sharp** - 画像最適化
-
-## 📦 セットアップ
-
-### 必要な環境
-- Node.js >= 22.14.0
-- npm >= 10.9.2
-
-### インストール
+Node.js 22 以降が必要です。
 
 ```bash
-# リポジトリをクローン
-git clone https://github.com/your-username/omomuro.dev.git
-cd omomuro.dev
-
-# 依存関係をインストール
 npm install
+npm run dev     # http://localhost:3000
+npm run build   # 本番ビルド（sitemap も生成）
+npm run lint    # ESLint
+npx tsc --noEmit
 ```
 
-### 開発サーバーの起動
-
-```bash
-npm run dev
-```
-
-ブラウザで [http://localhost:3000](http://localhost:3000) を開いてサイトを確認できます。
-
-## 🔧 利用可能なスクリプト
-
-```bash
-# 開発サーバーの起動
-npm run dev
-
-# プロダクションビルド
-npm run build
-
-# プロダクションサーバーの起動
-npm start
-
-# ESLintによるコードチェック
-npm run lint
-
-# Prettierによるコードフォーマット
-npm run format
-```
-
-## 📁 プロジェクト構造
+## 主なファイル
 
 ```
-├── components/          # Reactコンポーネント
-├── contents/           # コンテンツファイル（Markdown等）
-│   ├── books/         # 本の情報
-│   └── works/         # 作品情報
-├── pages/             # Next.jsページ
-│   ├── api/          # APIルート
-│   ├── books/        # 本棚関連ページ
-│   ├── labs/         # ラボページ
-│   └── works/        # 作品ページ
-├── public/            # 静的ファイル
-├── styles/            # スタイルファイル
-├── types/             # TypeScript型定義
-├── config/            # 設定ファイル
-├── context/           # Reactコンテキスト
-└── models/            # データモデル
+lib/apps.ts            アプリの一覧（名前・説明・色・App Store URL・英語名など）
+lib/i18n.ts            日英ページの対応表、言語の判定
+proxy.ts               ブラウザの言語による英語ページへの振り分け
+components/AppHero.tsx     アプリ紹介ページ上部（アイコン・App Store ボタン・スクリーンショット）
+components/AppDocument.tsx 英語紹介・サポート・プライバシーの共通レイアウト
+components/AppMeta.tsx     Smart App Banner と構造化データ（JSON-LD）
+components/pages/      トップとつくった人のページ本体（日英共通）
+contents/works/<app>.md    日本語のアプリ紹介文
+pages/works/<app>/     サポート・プライバシー・英語ページ
+public/images/apps/    アプリアイコンと、App Store から取り込んだスクリーンショット
 ```
 
-## 🌐 デプロイ
+## アプリを追加するとき
 
-このプロジェクトはVercelでホストされています。
+1. `lib/apps.ts` にアプリを1件追加する（英語名・英語の説明・App Store URL を含む）
+2. アイコンを `public/images/apps/<app>.png` に、スクリーンショットを `public/images/apps/screens/<app>/{ja,en}/1.jpg, 2.jpg` に置く
+3. `contents/works/<app>.md` に日本語の紹介文を書く
+4. `pages/works/<app>/` にサポート・プライバシー・英語ページを作る（`components/<app>/Document.tsx` から `AppDocument` を使う）
+5. `docs/url-inventory.md` に URL を追記する
 
-## 📝 ライセンス
+アイコンとスクリーンショットは iTunes Search API（`https://itunes.apple.com/lookup?id=<id>&country=jp|us`）から取得できます。
 
-このプロジェクトは個人ポートフォリオサイトです。
+## デプロイ
 
-## 👤 作者
-
-**イトウ カズヒロ**
-- Software Engineer
-- 東京都在住
-- 1990年生まれ
-
----
-
-このサイトについてご質問やご意見がございましたら、お気軽にお声がけください。
+`main` に push すると Vercel が本番にデプロイします。ブランチを push するとプレビューが作られます。

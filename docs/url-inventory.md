@@ -1,11 +1,11 @@
 # 固定URL一覧
 
-サイト構成を変えるときに守るURLです。変える場合は必ず 301 リダイレクト（next.config.js の redirects）を入れてください。
+サイト構成を変えるときに守るURLです。変える場合は必ず 301 リダイレクト（`next.config.js` の `redirects`）を入れてください。
 正規ドメインは https://omomuro.dev（www なし）。
 
 ## 変更禁止：App Store Connect に登録しているURL
 
-サポートURL・プライバシーポリシーURLとして App Store Connect に登録しているURL。パスを変えないこと。
+サポートURL・プライバシーポリシーURLとして App Store Connect に登録しているURLです。パスを変えないでください。
 
 - https://omomuro.dev/works/dot-biyori/support
 - https://omomuro.dev/works/dot-biyori/privacy
@@ -38,6 +38,11 @@
 - https://omomuro.dev/works/seal-atsume/en/support
 - https://omomuro.dev/works/seal-atsume/en/privacy
 
+## 英語のサポート・プライバシー（2026-10-18 追加、App Store Connect には未登録）
+
+- https://omomuro.dev/works/little-playground/en/support
+- https://omomuro.dev/works/little-playground/en/privacy
+
 ## アプリ紹介ページ
 
 - https://omomuro.dev/works/dot-biyori
@@ -49,6 +54,7 @@
 - https://omomuro.dev/works/kazoku-board
 - https://omomuro.dev/works/kazoku-board/en
 - https://omomuro.dev/works/little-playground
+- https://omomuro.dev/works/little-playground/en
 - https://omomuro.dev/works/mieru
 - https://omomuro.dev/works/mieru/en
 - https://omomuro.dev/works/pikaniji
@@ -56,20 +62,13 @@
 - https://omomuro.dev/works/seal-atsume
 - https://omomuro.dev/works/seal-atsume/en
 
-## その他（2026-10-18 時点）
+## その他
 
 - https://omomuro.dev/
-- https://omomuro.dev
+- https://omomuro.dev/en
 - https://omomuro.dev/about
-- https://omomuro.dev/gallery
-- https://omomuro.dev/labs
-- https://omomuro.dev/labs/gridCssPractice
-- https://omomuro.dev/labs/radixUiPractice
-- https://omomuro.dev/labs/randomEmojiChallenge
-- https://omomuro.dev/labs/typescriptPractice
-- https://omomuro.dev/works
-- https://omomuro.dev/works/Star_Catcher
-- https://omomuro.dev/works/colorful_palette
-- https://omomuro.dev/works/simple_text_display
-- https://omomuro.dev/works/threejs_obake
-- https://omomuro.dev/works/web_helper_chrome_extension
+- https://omomuro.dev/about/en
+
+## リダイレクト（廃止したURL）
+
+`/works`・`/labs`・`/labs/*` → `/`、`/gallery` → `/about#gallery`（いずれも 308）。昔の作品ページ（Star Catcher など）は削除済みで 404。

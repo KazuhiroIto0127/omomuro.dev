@@ -50,4 +50,4 @@ When you choose a destination through the sharing feature, the edited photo or v
 
 ## Contact and changes
 
-Contact details are available on the [support page](https://www.omomuro.dev/works/kakusu/en/support). If information handling changes, the policy and its update date will be revised.
+Contact details are available on the [support page](https://omomuro.dev/works/kakusu/en/support). If information handling changes, the policy and its update date will be revised.

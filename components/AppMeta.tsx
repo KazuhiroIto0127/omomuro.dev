@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { appStoreId, findApp } from '@/lib/apps';
+import { appStoreId, findApp, screenshotSrcs } from '@/lib/apps';
 import { SITE_URL } from '@/lib/site';
 
 type Props = {
@@ -22,7 +22,7 @@ export default function AppMeta({ slug, language = 'ja', structuredData = false 
   const english = language === 'en';
   const path = english ? `/works/${slug}/en` : `/works/${slug}`;
   const storeUrl = id && (english ? `https://apps.apple.com/app/id${id}` : app.appStoreUrl);
-  const screenshots = app.screenshots?.map((s) => `${SITE_URL}${english ? s.src.replace('/ja/', '/en/') : s.src}`);
+  const screenshots = screenshotSrcs(app, language).map((src) => `${SITE_URL}${src}`);
 
   const json = structuredData
     ? {
@@ -32,7 +32,7 @@ export default function AppMeta({ slug, language = 'ja', structuredData = false 
         description: english && app.en ? app.en.description : app.summary,
         url: `${SITE_URL}${path}`,
         image: `${SITE_URL}${app.icon}`,
-        ...(screenshots && { screenshot: screenshots }),
+        ...(screenshots.length > 0 && { screenshot: screenshots }),
         operatingSystem: app.operatingSystem,
         applicationCategory: app.schemaCategory,
         inLanguage: language,

@@ -14,8 +14,8 @@ export type PublishedApp = {
   /** アプリページ上部の色（ライト時。ダーク時は自動で暗くする） */
   tint: string;
   appStoreUrl?: string;
-  /** 日本語版スクリーンショット（縦長） */
-  screenshots?: { src: string; alt: string }[];
+  /** App Store から取り込んだスクリーンショットの枚数（public/images/apps/screens/<slug>/<ja|en>/<n>.jpg） */
+  screenshotCount: number;
   pixelated?: boolean;
   /** schema.org の applicationCategory */
   schemaCategory: string;
@@ -41,6 +41,7 @@ export const publishedApps: PublishedApp[] = [
     pricing: '無料・Pro買い切り',
     catch: 'ふたりで共有できる家計簿',
     tint: '#ECE6F4',
+    screenshotCount: 2,
     schemaCategory: 'FinanceApplication',
     operatingSystem: 'iOS, iPadOS',
     en: {
@@ -63,6 +64,7 @@ export const publishedApps: PublishedApp[] = [
     pricing: '無料・Pro買い切り',
     catch: '家族の予定と学校プリントを共有',
     tint: '#F2E4D6',
+    screenshotCount: 2,
     schemaCategory: 'LifestyleApplication',
     operatingSystem: 'iOS, iPadOS',
     en: {
@@ -85,6 +87,7 @@ export const publishedApps: PublishedApp[] = [
     pricing: '無料・PRO',
     catch: 'ドット絵の景色で見る天気予報',
     tint: '#F6EAD8',
+    screenshotCount: 2,
     schemaCategory: 'LifestyleApplication',
     operatingSystem: 'iOS, iPadOS',
     en: {
@@ -108,6 +111,7 @@ export const publishedApps: PublishedApp[] = [
     pricing: '広告なし・買い切り',
     catch: '広告なしのお絵かき・ぬりえ',
     tint: '#F8E6E1',
+    screenshotCount: 2,
     schemaCategory: 'EducationalApplication',
     operatingSystem: 'iOS, iPadOS',
     en: {
@@ -129,6 +133,7 @@ export const publishedApps: PublishedApp[] = [
     pricing: '広告なし・買い切り',
     catch: '0〜5歳のタッチあそび',
     tint: '#E3EED9',
+    screenshotCount: 2,
     schemaCategory: 'GameApplication',
     operatingSystem: 'iOS, iPadOS',
     en: {
@@ -151,6 +156,7 @@ export const publishedApps: PublishedApp[] = [
     pricing: '広告なし・Pro買い切り',
     catch: '動画の顔に自動でモザイク',
     tint: '#F1E7DA',
+    screenshotCount: 2,
     schemaCategory: 'MultimediaApplication',
     operatingSystem: 'iOS',
     en: {
@@ -161,10 +167,6 @@ export const publishedApps: PublishedApp[] = [
       pricing: 'No ads · Pro one-time purchase',
     },
     appStoreUrl: 'https://apps.apple.com/jp/app/id6809350160',
-    screenshots: [
-      { src: '/images/works/kakusu/ja/01-auto-faces.png', alt: '顔を自動で検出してモザイクをかけた画面' },
-      { src: '/images/works/kakusu/ja/02-manual-range.png', alt: '隠す範囲を手動で追加する画面' },
-    ],
   },
   {
     slug: 'mieru',
@@ -177,6 +179,7 @@ export const publishedApps: PublishedApp[] = [
     pricing: '無料・Plus買い切り',
     catch: '写真アプリの動画を心地よく',
     tint: '#DFE7F3',
+    screenshotCount: 2,
     schemaCategory: 'MultimediaApplication',
     operatingSystem: 'iOS, iPadOS, macOS',
     en: {
@@ -199,6 +202,7 @@ export const publishedApps: PublishedApp[] = [
     pricing: '無料・買い切り',
     catch: '写真を切り抜いてステッカーに',
     tint: '#E2E5F5',
+    screenshotCount: 2,
     schemaCategory: 'MultimediaApplication',
     operatingSystem: 'iOS',
     en: {
@@ -213,5 +217,8 @@ export const publishedApps: PublishedApp[] = [
 ];
 
 export const appStoreId = (app: PublishedApp) => app.appStoreUrl?.match(/id(\d+)/)?.[1];
+
+export const screenshotSrcs = (app: PublishedApp, lang: 'ja' | 'en') =>
+  Array.from({ length: app.screenshotCount }, (_, i) => `/images/apps/screens/${app.slug}/${lang}/${i + 1}.jpg`);
 
 export const findApp = (slug: string) => publishedApps.find((app) => app.slug === slug);

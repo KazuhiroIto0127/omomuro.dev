@@ -1,45 +1,40 @@
- # Repository Guidelines
+# Repository Guidelines
 
- ## Project Structure & Module Organization
- - Source: `pages/` (Next.js pages router), shared UI in `components/`, utilities in `lib/`, state in `context/`, hooks in `hooks/`.
- - Content: Markdown and assets in `contents/` and `public/`.
- - Config: `config/` (headers, navigation), styling in `styles/` (Tailwind v4), types in `types/`, models in `models/`.
- - Path alias: import via `@/*` (see `tsconfig.json`).
+omomuro.dev is a Next.js 16 site (Pages Router) that presents Kazuhiro Ito's iPhone/iPad apps. It also serves the support and privacy-policy pages registered in App Store Connect. Every page exists in Japanese and English. See `README.md` for the page map.
 
- ## Build, Test, and Development Commands
- - `npm run dev`: Start local dev server on `http://localhost:3000`.
- - `npm run build`: Production build (`.next/`).
- - `npm run start`: Run the built app.
-- `npm run lint`: ESLint (Next.js rules + Prettier).
-- `npm run format`: Prettier write.
- - `npm run biome:check`: Biome lint/format check (no writes).
- - `npm run biome:fix`: Biome apply fixes and formatting.
- - `npm run biome:format`: Biome formatter only.
-- Node: use 22.x (see `package.json engines`). If using `nvm`, align `.nvmrc` accordingly. Docker files exist but are secondary to local dev.
+## Hard rules
 
- ## Coding Style & Naming Conventions
- - Formatting: Prefer Biome (120 cols, single quotes, semicolons). Keep Prettier for Tailwind class sorting if needed.
-- Linting: `eslint` extends `next/core-web-vitals` and `prettier`.
- - TypeScript: prefer explicit props types; avoid `any`. Keep modules small and focused.
- - Naming: React components `PascalCase.tsx` in `components/`; hooks `useX.ts`; utilities `camelCase.ts`; pages follow route names in `pages/`.
- - Styling: Tailwind-first; co-locate minor CSS modules in `styles/` only when needed.
+- **Never change the paths of support/privacy pages** (`/works/<app>/support`, `/works/<app>/privacy` and their `/en/` versions). They are registered in App Store Connect. The full list is in `docs/url-inventory.md`. If a public URL must change, add a 301 redirect in `next.config.js`.
+- The canonical domain is `https://omomuro.dev` (no `www`). Use `SITE_URL` from `lib/site.ts`.
+- Keep Japanese and English pages paired. When you add a page, add its counterpart and make sure `alternatePaths` in `lib/i18n.ts` maps it.
+- Do not push to `main` without the owner's explicit OK. Pushing `main` deploys to production on Vercel. Feature branches get preview deployments.
 
- ## Testing Guidelines
- - No test runner is configured yet. If adding tests:
-   - Unit: `*.test.ts(x)` colocated or under `__tests__/` using Vitest/Jest.
-   - E2E: Playwright under `e2e/` with basic page render checks.
-   - Keep PRs small and cover new utilities in `lib/`.
+## Structure
 
- ## Commit & Pull Request Guidelines
- - Commit style: Conventional Commits (used in history: `feat:`, `refactor:`, `chore:`, `update:`).
-   - Examples: `feat: add Speed Insights integration`, `refactor: extract Gallery grid util`.
- - PR checklist:
-   - Clear description, linked issue (if any), and screenshots/GIFs for UI changes.
-   - All pages build locally: `npm run build` passes; `npm run lint` is clean.
-   - Update content/config when applicable (`contents/`, `config/`).
+- `lib/apps.ts`: single source of truth for the apps (names, catch copy, pricing, tint color, App Store URL, English fields, screenshot count). The home page, app heroes, JSON-LD and Smart App Banner all read from it.
+- `lib/i18n.ts`: language detection from the path, ja⇄en path mapping, and `Accept-Language` parsing.
+- `proxy.ts`: redirects visitors whose browser languages exclude Japanese to the English page. Crawlers are excluded, and a `lang` cookie set by `LanguageLink` overrides it.
+- `components/AppHero.tsx`, `components/AppDocument.tsx`, `components/AppMeta.tsx`: shared app page parts. `components/<app>/Document.tsx` are thin wrappers around `AppDocument`.
+- `components/pages/HomePage.tsx`, `components/pages/AboutPage.tsx`: page bodies shared by `ja` and `en` routes.
+- `contents/works/<app>.md`: Japanese app intro (rendered by `pages/works/[slug].tsx`).
+- `pages/works/<app>/…`: support, privacy and English pages.
+- `styles/globals.css`: design tokens (`paper`, `card`, `ink`, `sub`, `line`, `accent`) with dark mode, and `font-maru` for headings.
+- `public/images/apps/`: app icons and App Store screenshots (`screens/<app>/{ja,en}/<n>.jpg`).
 
- ## Security & Configuration Tips
- - Secrets: use `.env.local` (never commit). Refer via `process.env.*`.
- - Images: remote hosts configured in `next.config.js`; add patterns before use.
- - Assets: place in `public/` and reference with absolute paths (e.g., `/images/...`).
- - Ignore generated artifacts (`.next/`, sitemap) in reviews unless config changes.
+## Design
+
+The look is minimal and soft: an off-white paper background, white cards, rounded-gothic headings (Zen Maru Gothic) and Zen Kaku Gothic body text. Use the color tokens instead of raw Tailwind colors so dark mode keeps working. No decorative animation.
+
+## Commands
+
+- `npm run dev`: local dev server on `http://localhost:3000`.
+- `npm run build`: production build (also generates the sitemap).
+- `npm run lint`: ESLint flat config (`eslint.config.mjs`, Next core-web-vitals + Prettier).
+- `npx tsc --noEmit`: type check.
+- `npx prettier --write <files>`: format the files you touched.
+
+Before finishing a change, run type check, lint and build. For UI changes, check light and dark mode and a 375px-wide viewport.
+
+## Commits
+
+Use Conventional Commits (`feat:`, `fix:`, `chore:`, `content:`, `design:`).

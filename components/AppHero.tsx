@@ -2,7 +2,7 @@ import type { CSSProperties } from 'react';
 import Image from 'next/image';
 import clsx from 'clsx';
 import LanguageLink from '@/components/LanguageLink';
-import { appStoreId, type PublishedApp } from '@/lib/apps';
+import { appStoreId, screenshotSrcs, type PublishedApp } from '@/lib/apps';
 
 /** アプリ紹介ページ上部：アプリの色を敷いた面に、アイコン・説明・App Store ボタン・スクリーンショット */
 export default function AppHero({
@@ -19,9 +19,9 @@ export default function AppHero({
 }) {
   const id = appStoreId(app);
   const storeUrl = id && (english ? `https://apps.apple.com/app/id${id}` : app.appStoreUrl);
-  const shots = (app.screenshots ?? []).map((s) => ({
-    src: english ? s.src.replace('/ja/', '/en/') : s.src,
-    alt: s.alt,
+  const shots = screenshotSrcs(app, english ? 'en' : 'ja').map((src, i) => ({
+    src,
+    alt: english ? `${app.en.name} screenshot ${i + 1}` : `${app.name}の画面 ${i + 1}`,
   }));
   const devices = english ? app.devices.replace(/・/g, ' · ') : app.devices;
 
@@ -78,8 +78,8 @@ export default function AppHero({
               key={shot.src}
               src={shot.src}
               alt={shot.alt}
-              width={440}
-              height={956}
+              width={600}
+              height={1304}
               sizes="(min-width: 1024px) 220px, 45vw"
               className={clsx('h-auto w-[46%] max-w-[220px] rounded-[26px]', i % 2 === 1 && 'mt-10')}
             />
