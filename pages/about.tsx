@@ -44,7 +44,7 @@ export default function About({ images }: { images: MediaData[] }) {
     <Layout>
       <HeadMeta
         type="website"
-        title="自分のこと"
+        title="つくった人"
         description="omomuro.dev でiPhone・iPadアプリをつくっている、ソフトウェアエンジニアのイトウカズヒロのプロフィールです。"
       />
 

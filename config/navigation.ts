@@ -7,7 +7,7 @@ export const navigationLinks = [
     icon: Squares2X2Icon,
   },
   {
-    title: '自分のこと',
+    title: 'つくった人',
     path: '/about',
     icon: UserIcon,
   },
