@@ -23,10 +23,10 @@ export const labsLinks = [
 export const labsLinkPattern = labsLinks.map((obj) => obj.id);
 
 export const labTitleById = (id: string) => {
-  return labsLinks.find((obj) => obj.id == id).title;
+  return labsLinks.find((obj) => obj.id == id)?.title ?? '';
 };
 
 export const LabsComponent = ({ id }: { id: string }) => {
-  const CustomTag = labsLinks.find((obj) => obj.id == id).component;
-  return <CustomTag />;
+  const CustomTag = labsLinks.find((obj) => obj.id == id)?.component;
+  return CustomTag ? <CustomTag /> : null;
 };

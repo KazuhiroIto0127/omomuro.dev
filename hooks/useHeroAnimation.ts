@@ -7,8 +7,8 @@ import { RefObject } from 'react';
 gsap.registerPlugin(SplitText);
 
 export const useHeroAnimation = (
-  titleRef: RefObject<HTMLHeadingElement>,
-  waveRef: RefObject<HTMLSpanElement>
+  titleRef: RefObject<HTMLHeadingElement | null>,
+  waveRef: RefObject<HTMLSpanElement | null>
 ) => {
   useGSAP(
     () => {

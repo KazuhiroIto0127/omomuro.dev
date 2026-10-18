@@ -1,14 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useMounted } from '@/hooks/useMounted';
 import { useTheme } from 'next-themes';
 import { MoonIcon, SunIcon, ComputerDesktopIcon, XMarkIcon } from '@heroicons/react/24/solid';
 import * as Popover from '@radix-ui/react-popover';
 import clsx from 'clsx';
 
 export const ThemeChanger = () => {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useMounted();
   const { theme, resolvedTheme, setTheme } = useTheme();
-
-  useEffect(() => setMounted(true), []);
 
   if (!mounted) {
     return null;

@@ -56,7 +56,7 @@ export async function getGalleryImages(): Promise<MediaData[]> {
         // サムネイル画像（同名jpg/png/webp優先）を探す
         const base = path.basename(file, ext);
         const posterExts = ['.png', '.jpg', '.jpeg', '.webp'];
-        let poster = undefined;
+        let poster: string | undefined = undefined;
 
         // 大文字小文字を考慮してサムネイルを検索
         for (const pExt of posterExts) {
