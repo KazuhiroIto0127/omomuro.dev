@@ -49,6 +49,7 @@ export default function AppDocument({
         type="article"
         title={seoTitle ?? `${appName} | ${title}`}
         description={seoDescription ?? description ?? title}
+        image={`/api/og?app=${slug}&lang=${language}`}
       />
 
       {isIntro ? (

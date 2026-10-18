@@ -13,7 +13,8 @@
     "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx,json}'",
     "biome:check": "biome ci .",
     "biome:fix": "biome check --apply .",
-    "biome:format": "biome format --write ."
+    "biome:format": "biome format --write .",
+    "sync:appstore": "node scripts/sync-appstore.mjs"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

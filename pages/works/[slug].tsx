@@ -18,6 +18,7 @@ export default function WorkPage({ work }: { work: Work }) {
         type="article"
         title={work.seoTitle ?? work.title}
         description={work.seoDescription ?? work.description}
+        image={`/api/og?app=${work.slug}&lang=ja`}
       />
 
       <div className="flex flex-col gap-5">

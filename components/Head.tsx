@@ -7,6 +7,8 @@ type Prop = {
   type: 'website' | 'article' | 'blog' | 'product' | 'gallery';
   title: string;
   description?: string;
+  /** OG 画像のパス（未指定なら title から生成） */
+  image?: string;
 };
 
 const siteName = 'omomuro.dev';
@@ -16,13 +18,13 @@ const siteDescription = {
 };
 const twitterID = '@KazuhiroIto0127';
 
-export default function HeadMeta({ type, title, description }: Prop) {
+export default function HeadMeta({ type, title, description, image }: Prop) {
   const router = useRouter();
   const path = router.asPath.split(/[?#]/)[0].replace(/\/$/, '') || '/';
   const lang = pathLanguage(path);
   const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : SITE_URL;
   const url = `${SITE_URL}${path === '/' ? '' : path}`;
-  const imageUrl = `${baseUrl}/api/og${title ? `?title=${encodeURIComponent(title)}` : ''}`;
+  const imageUrl = `${baseUrl}${image ?? `/api/og${title ? `?title=${encodeURIComponent(title)}` : ''}`}`;
   const pageTitle = title ? `${title} | ${siteName}` : siteName;
   const pageDescription = description || siteDescription[lang];
   const langs = alternatePaths(path);
@@ -44,6 +46,8 @@ export default function HeadMeta({ type, title, description }: Prop) {
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDescription} />
       <meta property="og:image" content={imageUrl} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={url} />
       <meta property="og:site_name" content={siteName} />

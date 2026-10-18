@@ -72,3 +72,13 @@
 ## リダイレクト（廃止したURL）
 
 `/works`・`/labs`・`/labs/*` → `/`、`/gallery` → `/about#gallery`（いずれも 308）。昔の作品ページ（Star Catcher など）は削除済みで 404。
+
+## 次のアップデート時に App Store Connect で直すこと（2026-10-19 確認）
+
+マーケティングURL・サポートURLはバージョンごとの項目なので、配信中のバージョンでは変えられません。各アプリの次のバージョンを申請するときに直してください。
+
+- **www を外す**（今もリダイレクトで開けるが、正規URLにそろえる）
+  - ドット日和（ja・en-US・ko・zh-Hant）、ちいさなあそびば（ja・en-US）、かくす（ja・en-US・en-AU・en-CA・en-GB）、Mieru（iOS・macOS の ja・en-US）
+- **ちいさなあそびばの en-US を英語ページに**
+  - マーケティングURL: https://omomuro.dev/works/little-playground/en
+  - サポートURL: https://omomuro.dev/works/little-playground/en/support
