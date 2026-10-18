@@ -90,45 +90,16 @@ export default function About({ images }: { images: MediaData[] }) {
           </div>
         </section>
 
-        <section className="grid gap-6 md:grid-cols-2">
-          <div className={clsx(card, 'flex flex-col gap-4 p-8')}>
-            <h2 className="text-xl font-bold">経歴</h2>
-            <dl className="flex flex-col gap-3">
-              {career.map((c) => (
-                <div key={c.period} className="flex flex-col gap-0.5 sm:flex-row sm:gap-4">
-                  <dt className="shrink-0 text-sm font-bold text-orange-700 sm:w-28 dark:text-orange-300">
-                    {c.period}
-                  </dt>
-                  <dd className="text-[15px] leading-7 text-stone-700 dark:text-slate-200">{c.text}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-          <div className={clsx(card, 'flex flex-col gap-4 p-8')}>
-            <h2 className="text-xl font-bold">使っている技術</h2>
-            <dl className="flex flex-col gap-3 text-[15px] leading-7">
-              <div>
-                <dt className="text-sm font-bold text-orange-700 dark:text-orange-300">アプリ開発</dt>
-                <dd className="text-stone-700 dark:text-slate-200">Swift</dd>
+        <section className={clsx(card, 'flex flex-col gap-4 p-8')}>
+          <h2 className="text-xl font-bold">経歴</h2>
+          <dl className="flex flex-col gap-3">
+            {career.map((c) => (
+              <div key={c.period} className="flex flex-col gap-0.5 sm:flex-row sm:gap-4">
+                <dt className="shrink-0 text-sm font-bold text-orange-700 sm:w-28 dark:text-orange-300">{c.period}</dt>
+                <dd className="text-[15px] leading-7 text-stone-700 dark:text-slate-200">{c.text}</dd>
               </div>
-              <div>
-                <dt className="text-sm font-bold text-orange-700 dark:text-orange-300">仕事</dt>
-                <dd className="text-stone-700 dark:text-slate-200">
-                  Ruby on Rails、Vue.js / Nuxt、TypeScript、MySQL、PostgreSQL、AWS
-                </dd>
-              </div>
-              <div>
-                <dt className="text-sm font-bold text-orange-700 dark:text-orange-300">このサイト</dt>
-                <dd className="text-stone-700 dark:text-slate-200">Next.js、React、Tailwind CSS、Vercel</dd>
-              </div>
-            </dl>
-            <Link
-              href="/"
-              className="mt-auto text-[15px] font-bold text-orange-700 hover:underline dark:text-orange-300"
-            >
-              公開中のアプリを見る
-            </Link>
-          </div>
+            ))}
+          </dl>
         </section>
 
         {images.length > 0 && (
