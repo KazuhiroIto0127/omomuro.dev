@@ -50,6 +50,7 @@ export const publishedApps: PublishedApp[] = [
     pricing: '無料・Pro買い切り',
     catch: '家族の予定と学校プリントを共有',
     tint: '#F2E4D6',
+    appStoreUrl: 'https://apps.apple.com/jp/app/id6816839974',
   },
   {
     slug: 'dot-biyori',
