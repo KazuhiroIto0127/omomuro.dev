@@ -13,7 +13,7 @@ const doc = {
   description: 'Mask faces, review the result, and share a new copy. Processing stays on your iPhone.',
   seoTitle: 'Kakusu — Blur faces in videos automatically on iPhone',
   seoDescription:
-    'Automatically detect and blur or cover faces in your videos, then fix misses frame by frame. Everything runs on your iPhone — no uploads, ads or watermarks. Save clips up to 15 seconds free.',
+    'Automatically detect and blur or cover faces in your videos, then fix misses frame by frame. Everything runs on your iPhone — no uploads or watermarks. Free with ads and no length limit; Pro removes ads with a one-time purchase.',
 } as const;
 
 export const metadata = appPageMetadata({ slug: 'kakusu', ...doc });

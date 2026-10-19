@@ -153,7 +153,7 @@ export const publishedApps: PublishedApp[] = [
     summary:
       '動画に写り込んだ顔を自動で検出し、モザイクや塗りつぶしで隠すアプリ。処理はiPhoneの中で完結し、動画をアップロードしません。',
     devices: 'iPhone',
-    pricing: '広告なし・Pro買い切り',
+    pricing: '無料（広告あり）・Pro買い切り',
     catch: '動画の顔に自動でモザイク',
     tint: '#F1E7DA',
     screenshotCount: 2,
@@ -162,9 +162,9 @@ export const publishedApps: PublishedApp[] = [
     en: {
       name: 'Kakusu',
       description:
-        'Automatically detect and blur or cover faces in your videos, then fix misses frame by frame. Everything runs on your iPhone — no uploads, ads or watermarks. Save clips up to 15 seconds free.',
+        'Automatically detect and blur or cover faces in your videos, then fix misses frame by frame. Everything runs on your iPhone — no uploads or watermarks. Free with ads and no length limit; Pro removes ads with a one-time purchase.',
       catch: 'Blur faces in videos automatically',
-      pricing: 'No ads · Pro one-time purchase',
+      pricing: 'Free with ads · Pro one-time purchase',
     },
     appStoreUrl: 'https://apps.apple.com/jp/app/id6809350160',
   },
