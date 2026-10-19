@@ -17,17 +17,17 @@ export default function Page() {
         <h2>What games are there?</h2>
         <ul>
           <li>
-            <strong>Flower Field (free)</strong>
+            <strong>Flower Garden (free)</strong>
             <br />
-            Tap or trace on the screen to make flowers bloom.
+            Tap or trace on the screen to make flowers bloom. Touch a flower again to change its color.
           </li>
           <li>
-            <strong>Peekaboo (unlocked with the pack)</strong>
+            <strong>Peekaboo! (unlocked with the pack)</strong>
             <br />
-            Tap the doors to find the hiding animals.
+            Open three doors to say hello to the hiding animals.
           </li>
           <li>
-            <strong>Shape Houses (unlocked with the pack)</strong>
+            <strong>Shape House (unlocked with the pack)</strong>
             <br />
             Move circles, triangles and squares into the house with the same shape.
           </li>
@@ -39,17 +39,18 @@ export default function Page() {
           <li>
             <strong>Animal Band (unlocked with the pack)</strong>
             <br />
-            Layer three instruments and play your own rhythm on repeat.
+            Tap an animal to play its sound and it joins the band.
           </li>
           <li>
-            <strong>Yum-Yum Kitchen (unlocked with the pack)</strong>
+            <strong>Yummy Kitchen (unlocked with the pack)</strong>
             <br />
-            Cut and mix ingredients to make a treat for the animals.
+            See what the animal wants and put it on the plate.
           </li>
           <li>
-            <strong>Rolling Toy Box (unlocked with the pack)</strong>
+            <strong>Toy Box (unlocked with the pack)</strong>
             <br />
-            Tilt the device to roll the ball to the star and make a flower bloom. Play freely with blocks and ramps.
+            Tilt the device or use your finger to roll the toys. Place blocks, or send a toy to the star to make a
+            flower bloom.
           </li>
         </ul>
         <p>

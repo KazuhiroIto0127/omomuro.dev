@@ -38,7 +38,7 @@ export const publishedApps: PublishedApp[] = [
     summary:
       'iCloudで夫婦・パートナーと共有できる家計簿アプリ。レシート読み取り、固定費の1タップ記録、「共通・自分・パートナー」の分類に対応します。',
     devices: 'iPhone・iPad',
-    pricing: '無料・Pro買い切り',
+    pricing: '無料（広告あり）・Pro買い切り',
     catch: 'ふたりで共有できる家計簿',
     tint: '#ECE6F4',
     screenshotCount: 2,
@@ -49,7 +49,7 @@ export const publishedApps: PublishedApp[] = [
       description:
         'Track spending on your own or share a household budget with your partner via iCloud. One-tap fixed costs, no bank linking. Sharing is free; Pro is a one-time purchase.',
       catch: 'A budget you can share with your partner',
-      pricing: 'Free · Pro one-time purchase',
+      pricing: 'Free with ads · Pro one-time purchase',
     },
     appStoreUrl: 'https://apps.apple.com/jp/app/id6819167469',
   },
@@ -61,7 +61,7 @@ export const publishedApps: PublishedApp[] = [
     summary:
       '家族カレンダー、やること、学校プリント、送迎や持ち物を家族で共有。プリントは撮影して文字を読み取り、そのまま予定にできます。',
     devices: 'iPhone・iPad',
-    pricing: '無料・Pro買い切り',
+    pricing: '無料（広告あり）・Pro買い切り',
     catch: '家族の予定と学校プリントを共有',
     tint: '#F2E4D6',
     screenshotCount: 2,
@@ -72,7 +72,7 @@ export const publishedApps: PublishedApp[] = [
       description:
         'Share your family calendar, to-dos, school handouts, pick-ups and things to bring via iCloud. Snap a handout to turn it into events. Sharing is free; one Pro purchase covers the whole family.',
       catch: 'Share family plans and school handouts',
-      pricing: 'Free · Pro one-time purchase',
+      pricing: 'Free with ads · Pro one-time purchase',
     },
     appStoreUrl: 'https://apps.apple.com/jp/app/id6816839974',
   },
@@ -82,9 +82,9 @@ export const publishedApps: PublishedApp[] = [
     category: 'family',
     icon: '/images/apps/dot-biyori.png',
     summary:
-      'いまの天気がドット絵の景色になる天気予報アプリ。東京タワーなど日本各地の風景とBGMで、晴れや雨、時間帯の移り変わりを眺められます。',
+      'いまの天気がドット絵の景色になる天気予報アプリ。日本と世界の景色が、その土地の今の天気と時刻で移り変わります。天気キャラクターや部屋の窓からも眺められます。',
     devices: 'iPhone・iPad',
-    pricing: '無料・PRO',
+    pricing: '無料（広告あり）・PRO',
     catch: 'ドット絵の景色で見る天気予報',
     tint: '#F6EAD8',
     screenshotCount: 2,
@@ -93,9 +93,9 @@ export const publishedApps: PublishedApp[] = [
     en: {
       name: 'Sky in Pixels',
       description:
-        'Your forecast as pixel-art landscapes of Japan that change with rain, sun and time of day. Free to start on iPhone and iPad.',
+        'Your forecast as pixel-art landscapes from Japan and around the world, each changing with its local weather and time of day. Free to start on iPhone and iPad.',
       catch: 'Weather as pixel-art landscapes',
-      pricing: 'Free · PRO',
+      pricing: 'Free with ads · PRO',
     },
     appStoreUrl: 'https://apps.apple.com/jp/app/id6815891206',
     pixelated: true,
@@ -176,7 +176,7 @@ export const publishedApps: PublishedApp[] = [
     summary:
       '写真やファイルの動画を、月ごとの一覧・プレイリスト・縦スクロールのフィードで楽しめる動画プレイヤー。Macにも対応しています。',
     devices: 'iPhone・iPad・Mac',
-    pricing: '無料・Plus買い切り',
+    pricing: '無料（広告あり）・Plus買い切り',
     catch: '写真アプリの動画を心地よく',
     tint: '#DFE7F3',
     screenshotCount: 2,
@@ -187,7 +187,7 @@ export const publishedApps: PublishedApp[] = [
       description:
         'Browse videos from Photos and Files by month, in playlists or a vertical feed, on iPhone, iPad and Mac. Free to use; Mieru Plus is a one-time purchase that adds background play and Picture in Picture.',
       catch: 'A calm player for your own videos',
-      pricing: 'Free · Plus one-time purchase',
+      pricing: 'Free with ads · Plus one-time purchase',
     },
     appStoreUrl: 'https://apps.apple.com/jp/app/id6818041206',
   },
@@ -197,20 +197,20 @@ export const publishedApps: PublishedApp[] = [
     category: 'media',
     icon: '/images/apps/seal-atsume.png',
     summary:
-      '写真の対象を自動で切り抜いて、自分だけのステッカーに。ふちの色や影を調整し、コレクションやボードに貼って楽しめます。',
-    devices: 'iPhone',
-    pricing: '無料・買い切り',
-    catch: '写真を切り抜いてステッカーに',
+      '写真からシールをつくって、集めて、貼れるアプリ。スマホケースやノートPCなど、アプリの中の持ちものを自由にデコレーションできます。',
+    devices: 'iPhone・iPad',
+    pricing: '無料（広告あり）・買い切り',
+    catch: '写真でつくるシール',
     tint: '#E2E5F5',
     screenshotCount: 2,
     schemaCategory: 'MultimediaApplication',
-    operatingSystem: 'iOS',
+    operatingSystem: 'iOS, iPadOS',
     en: {
       name: 'Sticky Club',
       description:
-        'Automatically cut out subjects from your photos and turn them into stickers. Add outlines and shadows, collect them, and arrange them on boards. Free to start, no subscription.',
+        'Turn your photos into stickers, collect them, and decorate in-app items like a phone case or laptop. Free to start on iPhone and iPad, no subscription.',
       catch: 'Turn your photos into stickers',
-      pricing: 'Free · one-time purchase',
+      pricing: 'Free with ads · one-time purchase',
     },
     appStoreUrl: 'https://apps.apple.com/jp/app/id6814130810',
   },

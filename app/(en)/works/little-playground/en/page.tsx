@@ -38,46 +38,45 @@ export default function Page() {
       <h2>Seven games</h2>
       <ul>
         <li>
-          <strong>Flower Field</strong> <span lang="ja">（ぽんぽん はなばたけ）</span>: Flowers pop up wherever you tap
-          or trace.
+          <strong>Flower Garden</strong> <span lang="ja">（ぽんぽん はなばたけ）</span>: Tap or trace to make flowers
+          bloom. Touch a flower again to change its color, and butterflies come to visit as the garden grows.
         </li>
         <li>
-          <strong>Peekaboo</strong> <span lang="ja">（いない いない ばあ）</span>: Open the doors to find out which
-          animal is hiding.
+          <strong>Peekaboo!</strong> <span lang="ja">（いない いない ばあ）</span>: Open three doors to say hello to the
+          animals. Once you&apos;ve met everyone, they hide again for the next round.
         </li>
         <li>
-          <strong>Shape Houses</strong> <span lang="ja">（かたちの おうち）</span>: Move circles, triangles and squares
+          <strong>Shape House</strong> <span lang="ja">（かたちの おうち）</span>: Move circles, triangles and squares
           into the house with the same shape. Drag or tap.
-        </li>
-        <li>
-          <strong>Rolling Toy Box</strong> <span lang="ja">（ころころ おもちゃばこ）</span>: Tilt the device to roll the
-          ball to the star and make a flower bloom. Place blocks and ramps to build things up and knock them down, or
-          move them with your finger.
         </li>
         <li>
           <strong>Bubble Sea</strong> <span lang="ja">（ふわふわ あわのうみ）</span>: Press and hold to blow a bubble,
           then float it around with your finger or by tilting. Pop a big bubble and it splits into little ones.
         </li>
         <li>
-          <strong>Animal Band</strong> <span lang="ja">（どうぶつ おんがくたい）</span>: Layer three instruments on an
-          eight-beat loop to make your own rhythm. Arrange the sounds and change the tempo.
+          <strong>Animal Band</strong> <span lang="ja">（どうぶつ おんがくたい）</span>: Tap an animal to play its sound
+          and it joins the band. The animals play along to the rhythm.
         </li>
         <li>
-          <strong>Yum-Yum Kitchen</strong> <span lang="ja">（もぐもぐ キッチン）</span>: Pick ingredients, then cut, mix
-          and feed them to the animals. The juice color and the animals&apos; reactions change with what you combine and
-          how you cook.
+          <strong>Yummy Kitchen</strong> <span lang="ja">（もぐもぐ キッチン）</span>: See what the animal wants and put
+          it on the plate. When everything is there, the animal eats and a new order begins.
+        </li>
+        <li>
+          <strong>Toy Box</strong> <span lang="ja">（ころころ おもちゃばこ）</span>: Tilt the device or use your finger
+          to roll the toys. Place blocks, or send a toy to the star to make a flower bloom.
         </li>
       </ul>
+      <p>There are no scores or time limits. Sound effects and tilt controls can be turned off in Settings.</p>
       <Image
         src="/images/works/little-playground-toybox.png"
-        alt="Rolling Toy Box: move ramps and balls to reach the star"
+        alt="Toy Box: roll the toys to reach the star"
         width={1320}
         height={2868}
         sizes="(min-width: 768px) 680px, 90vw"
       />
       <Image
         src="/images/works/little-playground-band.png"
-        alt="Animal Band: layer three instruments to make a rhythm"
+        alt="Animal Band: the animals play along to the rhythm"
         width={1320}
         height={2868}
         sizes="(min-width: 768px) 680px, 90vw"
@@ -85,14 +84,14 @@ export default function Page() {
 
       <h2>The flower game is free. More when you want it.</h2>
       <p>
-        Flower Field is free to play. The More Play Pack is a one-time purchase (¥480 in Japan) that unlocks the other
+        Flower Garden is free to play. The More Play Pack is a one-time purchase (¥480 in Japan) that unlocks the other
         six games. There is no subscription.
       </p>
       <p>
         The app has no ads, no analytics SDKs and no accounts. Purchases and external links sit behind a parent check.
         Tilt sensor readings are used on the device only to control the games and are never saved or sent.
       </p>
-      <p>Requires iOS 17 or later on iPhone, or iPadOS 17 or later on iPad. Available in Japanese.</p>
+      <p>Requires iOS 17 or later on iPhone, or iPadOS 17 or later on iPad. Available in English and Japanese.</p>
     </Document>
   );
 }

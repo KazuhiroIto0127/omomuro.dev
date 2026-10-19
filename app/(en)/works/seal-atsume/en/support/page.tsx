@@ -20,8 +20,9 @@ export default function Page() {
       </p>
       <h2>Free limits and purchase</h2>
       <p>
-        Save up to 10 stickers and 1 board for free. A one-time purchase removes these limits. Actual storage capacity
-        depends on available device space and resources.
+        Make up to 12 of your own stickers and 6 boards for free. The 23 starter stickers don&apos;t count. The free
+        version shows banner ads. A one-time purchase removes the limits and the ads. Actual storage capacity depends on
+        available device space and resources.
       </p>
       <h2>Cutout problems</h2>
       <p>

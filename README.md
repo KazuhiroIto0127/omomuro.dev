@@ -20,7 +20,7 @@
 
 ## 技術スタック
 
-- Next.js 16（Pages Router）・React 19・TypeScript
+- Next.js 16（App Router）・React 19・TypeScript
 - Tailwind CSS v4（色とフォントは `styles/globals.css` のトークン）
 - Markdown（gray-matter・react-markdown）
 - Vercel（ホスティング、Analytics・Speed Insights）
@@ -40,16 +40,24 @@ npx tsc --noEmit
 ## 主なファイル
 
 ```
-lib/apps.ts            アプリの一覧（名前・説明・色・App Store URL・英語名など）
-lib/i18n.ts            日英ページの対応表、言語の判定
-proxy.ts               ブラウザの言語による英語ページへの振り分け
+app/(ja)/                  日本語ページ（ルートレイアウトで <html lang="ja">）
+app/(en)/                  英語ページ（<html lang="en">、URL は /…/en）
+app/(ja)/works/[slug]/     日本語のアプリ紹介（contents/works/<app>.md を表示）
+app/(ja)/works/<app>/      日本語のサポート・プライバシー
+app/(en)/works/<app>/en/   英語の紹介・サポート・プライバシー
+app/global-not-found.tsx   404 ページ（日英共通）
+app/api/og/route.tsx       OG画像（?app=<slug>&lang=ja|en、または ?title=）
+lib/apps.ts                アプリの一覧（名前・説明・料金・色・App Store URL・英語名など）
+lib/metadata.ts            title・canonical・hreflang・OG・Smart App Banner をまとめて作る
+lib/i18n.ts                日英ページの対応表、言語の判定
+proxy.ts                   ブラウザの言語による英語ページへの振り分け
+components/site/           ヘッダー・フッター・ルートの共通部分
 components/AppHero.tsx     アプリ紹介ページ上部（アイコン・App Store ボタン・スクリーンショット）
 components/AppDocument.tsx 英語紹介・サポート・プライバシーの共通レイアウト
-components/AppMeta.tsx     Smart App Banner と構造化データ（JSON-LD）
-components/pages/      トップとつくった人のページ本体（日英共通）
+components/AppJsonLd.tsx   構造化データ（JSON-LD）
+components/pages/          トップとつくった人のページ本体（日英共通）
 contents/works/<app>.md    日本語のアプリ紹介文
-pages/works/<app>/     サポート・プライバシー・英語ページ
-public/images/apps/    アプリアイコンと、App Store から取り込んだスクリーンショット
+public/images/apps/        アプリアイコンと、App Store から取り込んだスクリーンショット
 ```
 
 ## アプリを追加するとき
@@ -57,10 +65,10 @@ public/images/apps/    アプリアイコンと、App Store から取り込ん�
 1. `lib/apps.ts` にアプリを1件追加する（英語名・英語の説明・App Store URL を含む）
 2. アイコンを `public/images/apps/<app>.png` に、スクリーンショットを `public/images/apps/screens/<app>/{ja,en}/1.jpg, 2.jpg` に置く
 3. `contents/works/<app>.md` に日本語の紹介文を書く
-4. `pages/works/<app>/` にサポート・プライバシー・英語ページを作る（`components/<app>/Document.tsx` から `AppDocument` を使う）
+4. `app/(ja)/works/<app>/{support,privacy}/page.tsx` と `app/(en)/works/<app>/en/{,support/,privacy/}page.tsx` を作る。各ページは `AppDocument` で本文を囲み、`export const metadata = appPageMetadata({ slug, language, page, title, description })` でメタ情報を出す
 5. `docs/url-inventory.md` に URL を追記する
 
-アイコンとスクリーンショットは iTunes Search API（`https://itunes.apple.com/lookup?id=<id>&country=jp|us`）から取得できます。
+アイコンとスクリーンショットは `npm run sync:appstore` で App Store から取り込めます（日本のストア→`ja`、米国のストア→`en`）。
 
 ## デプロイ
 
