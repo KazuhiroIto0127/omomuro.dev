@@ -9,11 +9,11 @@ const content = fs.readFileSync(path.join(process.cwd(), 'contents/kakusu/en/ind
 const doc = {
   language: 'en',
   page: 'intro',
-  title: 'Hide faces in video',
-  description: 'Mask faces, review the result, and share a new copy. Processing stays on your iPhone.',
-  seoTitle: 'Kakusu — Blur faces in videos automatically on iPhone',
+  title: 'Hide faces and backgrounds',
+  description: 'Hide faces and backgrounds in photos and videos. Everything stays on your iPhone or iPad.',
+  seoTitle: 'Kakusu — Hide faces and backgrounds in photos and videos',
   seoDescription:
-    'Automatically detect and blur or cover faces in your videos, then fix misses frame by frame. Everything runs on your iPhone — no uploads or watermarks. Free with ads and no length limit; Pro removes ads with a one-time purchase.',
+    'Automatically detect faces in photos and videos and hide them with mosaic, blur, solid fills, or stickers. Keep people and hide the background, too. Everything runs on your iPhone or iPad, with no watermarks. Free with ads; Pro removes ads with a one-time purchase.',
 } as const;
 
 export const metadata = appPageMetadata({ slug: 'kakusu', ...doc });

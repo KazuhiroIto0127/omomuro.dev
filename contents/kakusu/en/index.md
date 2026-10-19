@@ -1,44 +1,39 @@
-Keep the moment. Cover the faces.
+## Hide faces and backgrounds in photos and videos
 
-Kakusu detects faces in videos and covers them with a mosaic or solid fill. Choose a video, review the result, and save a new copy—all on your iPhone.
+Kakusu detects faces in photos and videos and hides them with mosaic, blur, solid fills, or stickers. Review the result and save a new copy on your iPhone or iPad. Your originals stay unchanged.
 
-## Automatic face masking
+## Choose a look for each face
 
-Select a video to start face detection and masking. Tracking helps bridge short gaps in detection. Adjust the mask style and extra coverage around faces.
+Turn masking on or off for individual faces. Adjust coverage while watching the preview, from the face alone to hair and neck.
 
-## Review at your own pace
+## Keep people, hide the background
 
-Slow down to inspect details or speed up to review the whole video. Compare the original and edited versions. Preview speed does not change the speed of your saved video.
+Open Background in the editor to apply mosaic, blur, or a solid fill. Hide faces and the background at the same time. Background masking applies to the entire photo or the full video.
 
-## Add masks where you need them
+## Draw a mask where you need it
 
-Draw around an area to hide it. Use Start here and End here to set when it appears. Track a moving subject, adjust its position, and undo edits.
+Add a manual mask and adjust its position and size. In videos, set its start and end times or follow a moving subject with tracking.
+
+## Review before saving
+
+- Press and hold to compare with the original
+- Adjust playback speed to review videos
+- Undo edits and resume your work
+- Export videos up to 1080p, with or without audio
+- No watermarks
 
 ## On-device processing
 
-Your videos are not uploaded to our analysis servers. No account is required. Your original video stays unchanged.
+Photos and videos are not uploaded to a server for face detection, person segmentation, or editing. No account is required.
 
-## Save and share
+## Free and Pro
 
-- Export up to 1080p
-- Keep or mute audio
-- Resume your saved project
-- No watermarks
-- Version 1.6 and later: free with ads, or ad-free with Pro
-- Light and dark appearance
-- Japanese and English (English support is included in version 1.2.0)
+The free version includes ads and has no app-imposed saving duration limit.
 
-## Free and pro
-
-In version 1.6 and later, save videos without an app-imposed duration limit for free with ads.
-
-Kakusu Pro removes ads with a one-time purchase and no subscription. Existing purchases remain valid. Use Restore purchases to recover an existing purchase. Version 1.5 and earlier limit free saving to 15 seconds, with Pro removing the duration limit.
+A one-time Kakusu Pro purchase removes ads and unlocks nine original stickers, including smiles, a flower, a cat, and a bear. Existing Pro owners get these stickers at no extra cost. No subscription. Use Restore Purchases to recover your purchase.
 
 ## Before you share
 
-Automatic detection and tracking can miss faces or lose their position, especially with profiles, small faces, low light, or fast motion. Review the entire video and add or adjust masks as needed. Text, license plates, and voices are not hidden automatically.
+Automatic detection and tracking can miss faces or lose their position, and person/background boundaries may be inaccurate. Review the entire photo or video and add manual masks as needed. Text, license plates, and voices are not hidden automatically.
 
-Longer videos need more processing time and available storage. Some videos may not be processed depending on your device, video format, or resolution.
-
-
-[Download on the App Store](https://apps.apple.com/app/id6809350160)
+Longer videos need more processing time and available storage. Keep the app open while saving videos with background masking.
