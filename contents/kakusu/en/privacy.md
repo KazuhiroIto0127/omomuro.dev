@@ -1,12 +1,14 @@
 Provider: Kazuhiro Ito (omomuro.dev)
 
-Last updated: October 14, 2026.
+Last updated: October 19, 2026.
 
 ## Photos, videos, and face data
 
 Kakusu processes only the photos and videos you select, using Apple's Vision framework on your device. Face data processed by the app includes detected face rectangles (position and size), their positions over time in videos, randomly assigned identifiers for face tracks within the current project, cropped face thumbnails, thumbnail quality scores, and numerical image feature representations of face crops for comparing their visual similarity within that project.
 
 This data is used only to find and follow faces, apply blur, mosaic, or stickers, show face-selection thumbnails, combine similar face tracks within the same project, and restore your unfinished edits. It is not used to identify a person's real-world identity, authenticate anyone, build profiles across projects, target advertisements, or train machine-learning models.
+
+For background hiding, Kakusu uses Apple's Vision framework on your device to separate people from the background in each frame of a photo or video and create a mask of the background area. The mask is used only to apply the effect and preview the result. It is not used to identify anyone, is never sent to the developer's or any third party's servers or to advertising services, and is not attached to exported files.
 
 ## Face data storage, retention, and deletion
 
