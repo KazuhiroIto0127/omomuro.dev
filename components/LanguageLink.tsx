@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { LANG_COOKIE, type Lang } from '@/lib/i18n';

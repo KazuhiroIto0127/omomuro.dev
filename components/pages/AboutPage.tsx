@@ -1,20 +1,14 @@
-import { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { SiGithub, SiQiita, SiX, SiZenn } from '@icons-pack/react-simple-icons';
 import { BookOpenIcon } from '@heroicons/react/24/outline';
-import Layout from '@/components/layouts/oneColumnLayout';
-import HeadMeta from '@/components/Head';
 import Image from 'next/image';
-import MediaGrid from '@/components/gallery/MediaGrid';
-import MediaModal from '@/components/gallery/MediaModal';
-import type { getGalleryImages } from '@/lib/galleryUtils';
+import Gallery from '@/components/pages/Gallery';
+import { getGalleryImages } from '@/lib/galleryUtils';
 import type { Lang } from '@/lib/i18n';
-
-export type MediaData = Awaited<ReturnType<typeof getGalleryImages>>[number];
 
 const card = 'rounded-3xl bg-card';
 
-const copy = {
+export const aboutCopy = {
   ja: {
     title: 'つくった人',
     description:
@@ -57,9 +51,9 @@ const copy = {
   },
 };
 
-export default function AboutPage({ lang, images }: { lang: Lang; images: MediaData[] }) {
-  const t = copy[lang];
-  const [selected, setSelected] = useState<MediaData | null>(null);
+export default async function AboutPage({ lang }: { lang: Lang }) {
+  const t = aboutCopy[lang];
+  const images = await getGalleryImages();
 
   const links = [
     { href: 'https://x.com/KazuhiroIto0127', label: 'X', Icon: SiX },
@@ -69,18 +63,8 @@ export default function AboutPage({ lang, images }: { lang: Lang; images: MediaD
     { href: 'https://booklog.jp/users/kazuhiroito0127', label: t.booklog, Icon: BookOpenIcon },
   ];
 
-  useEffect(() => {
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setSelected(null);
-    };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, []);
-
   return (
-    <Layout>
-      <HeadMeta type="website" title={t.title} description={t.description} />
-
+    <>
       <div className="mx-auto flex max-w-5xl flex-col gap-12 pt-4 md:pt-6">
         <section
           className={clsx(
@@ -144,12 +128,10 @@ export default function AboutPage({ lang, images }: { lang: Lang; images: MediaD
               <h2 className="font-maru text-2xl font-bold">{t.galleryTitle}</h2>
               <p className="text-sub mt-1">{t.galleryLead}</p>
             </div>
-            <MediaGrid images={images} filter="all" onImageClick={setSelected} />
+            <Gallery images={images} />
           </section>
         )}
       </div>
-
-      <MediaModal selectedImage={selected} onClose={() => setSelected(null)} />
-    </Layout>
+    </>
   );
 }

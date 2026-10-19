@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+'use client';
+
 import Script from 'next/script';
 
 type ContactEvent = {
@@ -43,27 +43,6 @@ export const event = ({ action, category, label, value }: Event) => {
     event_label: label,
     value: value,
   });
-};
-
-export const usePageView = () => {
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!existsGaId) {
-      return;
-    }
-
-    const handleRouteChange = (path: string) => {
-      pageview(path);
-    };
-
-    router.events.on('routeChangeComplete', handleRouteChange);
-    router.events.on('hashChangeComplete', handleRouteChange);
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-      router.events.off('hashChangeComplete', handleRouteChange);
-    };
-  }, [router.events]);
 };
 
 export const GoogleAnalytics = () => {

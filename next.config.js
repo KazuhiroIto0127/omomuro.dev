@@ -2,6 +2,10 @@ const headers = require('./config/headers');
 
 module.exports = {
   headers,
+  experimental: {
+    // 日本語・英語でルートレイアウトが分かれているため、404 は app/global-not-found.tsx で出す
+    globalNotFound: true,
+  },
   async redirects() {
     return [
       { source: '/works', destination: '/', permanent: true },

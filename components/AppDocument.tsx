@@ -1,16 +1,15 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import HeadMeta from '@/components/Head';
-import AppMeta from '@/components/AppMeta';
 import AppHero from '@/components/AppHero';
+import AppJsonLd from '@/components/AppJsonLd';
 import LanguageLink from '@/components/LanguageLink';
-import Layout from '@/components/layouts/oneColumnLayout';
 import { findApp } from '@/lib/apps';
 import { alternatePaths } from '@/lib/i18n';
+import { appPagePath, type AppPage } from '@/lib/metadata';
 
 export type AppDocumentProps = {
   language?: 'ja' | 'en';
+  page: AppPage;
   title: string;
   description?: string;
   seoTitle?: string;
@@ -19,73 +18,61 @@ export type AppDocumentProps = {
 };
 
 /**
- * アプリの英語紹介ページ・サポート・プライバシーなどの共通レイアウト。
+ * アプリの英語紹介ページ・サポート・プライバシーの共通レイアウト。
  * 紹介ページ（/works/<app>/en）では上部にアプリのヒーローを出す。
+ * メタ情報は各ページで appPageMetadata() を export する。
  */
 export default function AppDocument({
   slug,
   language = 'ja',
+  page,
   title,
   description,
-  seoTitle,
-  seoDescription,
   children,
 }: AppDocumentProps & { slug: string }) {
   const app = findApp(slug);
-  const { pathname } = useRouter();
   if (!app) throw new Error(`Unknown app: ${slug}`);
 
   const english = language === 'en';
   const appName = english ? app.en.name : app.name;
-  const intro = english ? `/works/${slug}/en` : `/works/${slug}`;
-  const isIntro = pathname === intro;
-  const alternate = alternatePaths(pathname);
+  const intro = appPagePath(slug, language, 'intro');
+  const alternate = alternatePaths(appPagePath(slug, language, page));
   const alternateHref = alternate ? (english ? alternate.ja : alternate.en) : undefined;
 
-  return (
-    <Layout>
-      <AppMeta slug={slug} language={language} structuredData={isIntro} />
-      <HeadMeta
-        type="article"
-        title={seoTitle ?? `${appName} | ${title}`}
-        description={seoDescription ?? description ?? title}
-        image={`/api/og?app=${slug}&lang=${language}`}
-      />
-
-      {isIntro ? (
-        <div className="flex flex-col gap-5">
-          <AppHero app={app} english={english} tagline={description ?? title} alternateHref={alternateHref} />
-          <article
-            lang={language}
-            className="app-prose prose md:prose-lg bg-card mx-auto w-full max-w-none rounded-3xl p-7 break-words md:p-10"
-          >
-            <div className="mx-auto max-w-[680px]">{children}</div>
-            <AppLinks slug={slug} english={english} />
-          </article>
-        </div>
-      ) : (
+  if (page === 'intro') {
+    return (
+      <div className="flex flex-col gap-5">
+        <AppJsonLd slug={slug} language={language} />
+        <AppHero app={app} english={english} tagline={description ?? title} alternateHref={alternateHref} />
         <article
           lang={language}
-          className="app-prose prose bg-card mx-auto max-w-3xl rounded-3xl p-7 break-words md:p-10"
+          className="app-prose prose md:prose-lg bg-card mx-auto w-full max-w-none rounded-3xl p-7 break-words md:p-10"
         >
-          <div className="not-prose mb-6 flex flex-wrap justify-between gap-4 text-[15px]">
-            <Link href={intro} className="text-accent hover:underline">
-              ← {appName}
-            </Link>
-            {alternateHref && (
-              <LanguageLink href={alternateHref} lang={english ? 'ja' : 'en'} className="text-accent hover:underline">
-                {english ? '日本語' : 'English'}
-              </LanguageLink>
-            )}
-          </div>
-          <p className="text-accent mb-2 text-sm font-bold">{appName}</p>
-          <h1>{title}</h1>
-          {description && <p className="lead">{description}</p>}
-          {children}
+          <div className="mx-auto max-w-[680px]">{children}</div>
           <AppLinks slug={slug} english={english} />
         </article>
-      )}
-    </Layout>
+      </div>
+    );
+  }
+
+  return (
+    <article lang={language} className="app-prose prose bg-card mx-auto max-w-3xl rounded-3xl p-7 break-words md:p-10">
+      <div className="not-prose mb-6 flex flex-wrap justify-between gap-4 text-[15px]">
+        <Link href={intro} className="text-accent hover:underline">
+          ← {appName}
+        </Link>
+        {alternateHref && (
+          <LanguageLink href={alternateHref} lang={english ? 'ja' : 'en'} className="text-accent hover:underline">
+            {english ? '日本語' : 'English'}
+          </LanguageLink>
+        )}
+      </div>
+      <p className="text-accent mb-2 text-sm font-bold">{appName}</p>
+      <h1>{title}</h1>
+      {description && <p className="lead">{description}</p>}
+      {children}
+      <AppLinks slug={slug} english={english} />
+    </article>
   );
 }
 
