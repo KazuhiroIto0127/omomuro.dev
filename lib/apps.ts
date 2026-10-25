@@ -128,7 +128,8 @@ export const publishedApps: PublishedApp[] = [
     name: 'ちいさなあそびば',
     category: 'kids',
     icon: '/images/apps/little-playground.png',
-    summary: 'さわると花が咲き、どうぶつが顔を出す。0〜5歳ごろの親子で楽しむ、7つのタッチあそびが入ったアプリです。',
+    summary:
+      'お花が咲く、どうぶつとばあ！、ピアノや水あそび。0〜5歳ごろの親子で楽しむ、7つのタッチあそびが入ったミニゲーム集です。',
     devices: 'iPhone・iPad',
     pricing: '広告なし・買い切り',
     catch: '0〜5歳のタッチあそび',
@@ -139,7 +140,7 @@ export const publishedApps: PublishedApp[] = [
     en: {
       name: 'Little Playground',
       description:
-        'Touch to make flowers bloom and animals peek out. Seven gentle games for kids aged 0–5 to play with a parent on iPhone and iPad. No ads, no accounts. The flower game is free; the rest unlock with a one-time purchase.',
+        'Make flowers bloom, play peekaboo, explore a piano and a pond. Seven gentle games for kids aged 0–5 to play with a grown-up on iPhone and iPad. No ads, no accounts. Try each game for a minute a day; a one-time purchase removes the limit.',
       catch: 'Touch-and-play games for ages 0–5',
       pricing: 'No ads · one-time purchase',
     },

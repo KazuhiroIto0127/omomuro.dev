@@ -17,53 +17,52 @@ export default function Page() {
         <h2>What games are there?</h2>
         <ul>
           <li>
-            <strong>Flower Garden (free)</strong>
+            <strong>Flower Garden</strong>
             <br />
-            Tap or trace on the screen to make flowers bloom. Touch a flower again to change its color.
+            Tap or trace to make flowers bloom and meet the creatures that come to visit.
           </li>
           <li>
-            <strong>Peekaboo! (unlocked with the pack)</strong>
+            <strong>Peekaboo</strong>
             <br />
-            Open three doors to say hello to the hiding animals.
+            Play peekaboo with friendly animals.
           </li>
           <li>
-            <strong>Shape House (unlocked with the pack)</strong>
+            <strong>Shake &amp; Play</strong>
             <br />
-            Move circles, triangles and squares into the house with the same shape.
+            Tilt the device or use your finger to roll toys around the toy box.
           </li>
           <li>
-            <strong>Bubble Sea (unlocked with the pack)</strong>
+            <strong>Piano</strong>
             <br />
-            Press and hold to blow bubbles, then move them with your finger or by tilting the device.
+            Touch the large keys to play sounds freely.
           </li>
           <li>
-            <strong>Animal Band (unlocked with the pack)</strong>
+            <strong>Pond</strong>
             <br />
-            Tap an animal to play its sound and it joins the band.
+            Make ripples in a pond with floating ducks and fish.
           </li>
           <li>
-            <strong>Yummy Kitchen (unlocked with the pack)</strong>
+            <strong>Munch Munch</strong>
             <br />
-            See what the animal wants and put it on the plate.
+            Choose the food the bear wants and feed it.
           </li>
           <li>
-            <strong>Toy Box (unlocked with the pack)</strong>
+            <strong>Flower Spinner</strong>
             <br />
-            Tilt the device or use your finger to roll the toys. Place blocks, or send a toy to the star to make a
-            flower bloom.
+            Swipe the petals to spin the flowers.
           </li>
         </ul>
         <p>
-          There are no scores or time limits. We recommend that young children play together with a parent and take
-          breaks.
+          There are no scores and no winning or losing. We recommend that young children play together with a parent and
+          take breaks.
         </p>
       </section>
       <section>
         <h2>Purchases and restoring</h2>
         <p>
-          The More Play Pack is a one-time purchase that unlocks six games. If you bought it in version 1.0, all six
-          games are included at no extra cost. The price in Japan is ¥480. There are no monthly fees or auto-renewals.
-          Please check the final price on the in-app purchase screen.
+          Each game can be tried free for one minute per day. The More Play Pack is a one-time purchase that makes every
+          game available without time limits. Existing purchasers keep access at no extra charge. The price in Japan is
+          ¥480. There are no monthly fees or auto-renewals. Please check the final price on the in-app purchase screen.
         </p>
         <p>
           Tap the settings button at the top right of the home screen and answer a math question to open the parent
@@ -90,7 +89,7 @@ export default function Page() {
         <p>
           <strong>Which devices are supported?</strong>
           <br />
-          iPhone with iOS 17 or later and iPad with iPadOS 17 or later.
+          iPhone (including iPhone Duo) with iOS 17 or later and iPad with iPadOS 17 or later.
         </p>
       </section>
       <section>
