@@ -38,7 +38,8 @@ export default function Page() {
         <li>Protect areas you don&apos;t want covered, like a camera or handle</li>
         <li>Export PNG or JPEG to Photos or Files (paper boards at 300 dpi)</li>
         <li>Sync stickers and boards through iCloud with the same Apple Account</li>
-        <li>iPhone and iPad, in English and Japanese</li>
+        <li>On iPhone Duo, your sticker book stays next to the board, and splits around the fold when half-folded</li>
+        <li>iPhone, iPad and iPhone Duo, in English and Japanese</li>
       </ul>
       <h2>Start for free</h2>
       <p>

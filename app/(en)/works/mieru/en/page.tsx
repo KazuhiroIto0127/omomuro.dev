@@ -20,8 +20,10 @@ export default function Page() {
         where you left off and watch at your preferred speed.
       </p>
       <p>
-        Mieru is available for iPhone, iPad and Mac on the App Store. On iPad in landscape, a collapsible sidebar keeps
-        your library and player side by side.
+        Mieru is available for iPhone, iPad and Mac on the App Store. On iPad, like on Mac, your library is on the left
+        with the player and a collapsible info panel on the right. On iPhone Duo, unfold for a two-column layout, or
+        hold it like a book to use each side of the fold. In the feed, vertical videos are never cropped on wide
+        screens.
       </p>
       <h2>Made for your Mac, too</h2>
       <p>

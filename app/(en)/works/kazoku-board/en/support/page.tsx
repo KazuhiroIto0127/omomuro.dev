@@ -12,7 +12,7 @@ export const metadata = appPageMetadata({ slug: 'kazoku-board', ...doc });
 export default function Page() {
   return (
     <KazokuBoardDocument {...doc}>
-      <p>Last updated: October 6, 2026 / Provider: Kazuhiro Ito (omomuro.dev)</p>
+      <p>Last updated: October 25, 2026 / Provider: Kazuhiro Ito (omomuro.dev)</p>
       <h2>Plan family life together</h2>
       <p>
         Kazoku Board helps parents organize family events, tasks, school handouts, shared links, pickups, and packing
@@ -26,9 +26,11 @@ export default function Page() {
       </p>
       <h2>Calendar and handouts</h2>
       <p>
-        Tap a calendar date to view or add events. Use the plus button on Board to scan a handout or add a link. Text
-        recognition runs on your device and suggests events and tasks. Always compare extracted information with the
-        original and correct it before saving.
+        Tap a calendar date to view or add events, or use the daily agenda and monthly event list. You can duplicate
+        events and edit or cancel a single occurrence of a recurring event; everyone in the family needs the latest
+        version to share those single-occurrence changes. Use the plus button on Board to scan a handout or add a link.
+        Text recognition runs on your device and suggests events and tasks. Always compare extracted information with
+        the original and correct it before saving.
       </p>
       <h2>Free and Pro</h2>
       <p>

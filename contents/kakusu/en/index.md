@@ -4,7 +4,7 @@ Kakusu detects faces in photos and videos and hides them with mosaic, blur, soli
 
 ## Choose a look for each face
 
-Turn masking on or off for individual faces. Adjust coverage while watching the preview, from the face alone to hair and neck.
+Turn masking on or off for individual faces. Adjust coverage while watching the preview, from the face alone to hair and neck. On iPad and iPhone Duo, the face, background or range you select is edited in a panel on the right.
 
 ## Keep people, hide the background
 
@@ -12,7 +12,7 @@ Open Background in the editor to apply mosaic, blur, or a solid fill. Hide faces
 
 ## Draw a mask where you need it
 
-Add a manual mask and adjust its position and size. In videos, set its start and end times or follow a moving subject with tracking.
+Add a manual mask and adjust its position and size. In videos, set its start and end times or follow a moving subject with tracking. Tap a range's bar to adjust its timing right on the timeline.
 
 ## Review before saving
 

@@ -20,6 +20,13 @@ export default function Page() {
         Manually record income and expenses, optionally add item details, and review receipt recognition before saving.
         Share a ledger with one partner using iCloud. No bank or card connection is required.
       </p>
+      <h2>Compare and import</h2>
+      <p>
+        Charts show how much each category went up or down compared with last month. Mid-month, the current month is
+        compared with the same number of days last month. Import a budget you kept in a spreadsheet from a CSV file
+        (Settings → Import CSV) and check the number of entries and the date range first. If your month start day falls
+        on a weekend, you can start the new month on the previous Friday.
+      </p>
       <h2>Free and Pro</h2>
       <p>
         Free includes ads, 10 successful receipt scans per calendar month per device, up to 3 custom categories, and a

@@ -19,6 +19,11 @@ export default function Page() {
         Keep family events, tasks, school handouts, links, pickups, and packing lists together. Scan handouts with
         on-device text recognition, review the results, and save suggested events or tasks.
       </p>
+      <h2>Today and the whole month</h2>
+      <p>
+        The calendar has a daily agenda and a monthly event list. Duplicate events, or edit or cancel a single
+        occurrence of a recurring event. Search your tasks and undo a completion if you tapped it by mistake.
+      </p>
       <h2>Free sharing. One purchase for family Pro.</h2>
       <p>
         Invite your family through iCloud for free. The free version includes ads and 10 handout imports per month

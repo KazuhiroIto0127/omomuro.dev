@@ -17,7 +17,8 @@ export default function Page() {
     <PikanijiDocument {...doc}>
       <p>
         Pikaniji is a drawing app for children aged about 2 to 5. Big, text-free buttons make it easy to play even
-        before kids can read. It works on both iPhone and iPad, including Apple Pencil.
+        before kids can read. It works on iPhone and iPad, including Apple Pencil, and on iPhone Duo you can draw across
+        the large unfolded display with a one-row toolbar in landscape.
       </p>
       <h2>Draw, stamp and color</h2>
       <ul>
@@ -25,7 +26,7 @@ export default function Page() {
         <li>Stamps that pop with a sound</li>
         <li>Gentle sounds while drawing: xylophone, glockenspiel, bubbles or silent</li>
         <li>Coloring pages whose outlines stay on top of every stroke</li>
-        <li>Unlimited undo and a press-and-hold clear button to prevent accidents</li>
+        <li>Unlimited undo, two- and three-finger taps for undo and redo, and a press-and-hold clear button</li>
         <li>A gallery to save drawings and continue them later</li>
       </ul>
       <h2>No ads, one-time purchase</h2>

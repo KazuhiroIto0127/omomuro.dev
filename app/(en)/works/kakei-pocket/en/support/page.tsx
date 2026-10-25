@@ -12,12 +12,22 @@ export const metadata = appPageMetadata({ slug: 'kakei-pocket', ...doc });
 export default function Page() {
   return (
     <Document {...doc}>
-      <p>Updated October 7, 2026. Provider: Kazuhiro Ito (omomuro.dev).</p>
+      <p>Updated October 25, 2026. Provider: Kazuhiro Ito (omomuro.dev).</p>
       <h2>Recording expenses</h2>
       <p>
         Tap + to enter an amount, category and date. Notes and line items are optional. Long-press the amount to paste.
-        Set the start of your bookkeeping month to any day from 1 to 28. Subscriptions and fixed expenses are recorded
-        manually when paid.
+        Set the start of your bookkeeping month to any day from 1 to 28, and optionally start the month on the previous
+        Friday when that day falls on a weekend. Subscriptions and fixed expenses are recorded manually when paid.
+      </p>
+      <h2>Importing a CSV</h2>
+      <p>
+        Bring in records from a spreadsheet with Settings → Import CSV. Check the number of entries and the date range
+        before importing. Imported entries do not notify your partner.
+      </p>
+      <h2>Charts</h2>
+      <p>
+        See how much each category went up or down compared with last month. The current month is compared with the same
+        number of days last month.
       </p>
       <h2>Sharing a ledger</h2>
       <p>
