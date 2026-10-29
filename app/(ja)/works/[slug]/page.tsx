@@ -1,6 +1,7 @@
 import ReactMarkdown from 'react-markdown';
 import AppHero from '@/components/AppHero';
 import AppJsonLd from '@/components/AppJsonLd';
+import { shotComponents } from '@/components/AppShots';
 import { appStoreId, findApp } from '@/lib/apps';
 import { getAllContentPaths, loadWork } from '@/lib/contentLoader';
 import { pageMetadata } from '@/lib/metadata';
@@ -39,7 +40,7 @@ export default async function Page({ params }: Props) {
       {app && <AppHero app={app} tagline={work.description} alternateHref={`/works/${slug}/en`} />}
       <article className="app-prose prose md:prose-lg bg-card mx-auto w-full max-w-none rounded-3xl p-7 break-words md:p-10">
         <div className="mx-auto max-w-[680px]">
-          <ReactMarkdown>{work.body}</ReactMarkdown>
+          <ReactMarkdown components={shotComponents}>{work.body}</ReactMarkdown>
         </div>
       </article>
     </div>

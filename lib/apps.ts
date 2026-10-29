@@ -60,7 +60,7 @@ export const publishedApps: PublishedApp[] = [
     icon: '/images/apps/kazoku-board.png',
     summary:
       '家族カレンダー、学校プリント、買い物や行きたいところのリスト、送迎や持ち物を家族で共有。プリントは撮影して文字を読み取り、そのまま予定にできます。',
-    devices: 'iPhone・iPad',
+    devices: 'iPhone・iPhone Duo・iPad',
     pricing: '無料（広告あり）・Pro買い切り',
     catch: '家族の予定と学校プリントを共有',
     tint: '#F2E4D6',
