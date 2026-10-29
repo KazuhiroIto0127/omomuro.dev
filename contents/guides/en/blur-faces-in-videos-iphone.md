@@ -1,55 +1,80 @@
 ---
-title: 'How to blur faces in a video on iPhone — a checklist before you post'
-description: 'Before you post a school event or holiday video, hide the faces of people who just happened to be in it. How to blur faces in videos and photos automatically on iPhone and iPad, and what to check before sharing.'
+title: 'How to blur faces in a video on iPhone (step by step, with screenshots)'
+description: 'Before you post a sports day or holiday video, hide the faces of people who happened to be in it. Seven steps, with real screenshots, to blur faces in videos automatically on iPhone and iPad with the free Kakusu app.'
 publishedAt: '2026-10-29'
 updatedAt: '2026-10-29'
 apps: ['kakusu']
 ---
 
-Videos from sports days, school concerts and trips almost always include people outside your family. Hiding their faces before you post to social media or send the video to a group chat protects their privacy. This guide shows how to blur faces in videos and photos on iPhone and iPad with the Kakusu app.
+Videos from sports days and trips often include people outside your family. Blur their faces before you post.
 
-## In a video, tracking is what matters
+This guide walks through the free Kakusu app with real screenshots. It finds the faces in your video automatically and follows them as they move.
 
-In a photo you cover a spot once and you're done. In a video, faces move with every frame, and covering them by hand frame by frame isn't realistic. The key feature is **automatic face detection that follows each face as it moves**.
+## What you need
 
-It's also worth asking **where the video is processed**. Some services upload your video to a server. Kakusu detects and blurs faces entirely on your device, with no account required.
+- An iPhone or iPad
+- The [Kakusu](/works/kakusu/en) app (free)
 
-## Blurring faces with Kakusu
+Your video is never uploaded to a server. Everything happens on your device, and there is no account to create.
 
-1. Open Kakusu and choose a video (or a photo) from your library
-2. Faces are detected automatically and covered with a mosaic
-3. For each face, turn the effect on or off and choose mosaic, blur, solid fill or a sticker
-4. Use the slider to cover just the face or extend it to the hair and neck
-5. Press and hold to compare with the original, then save
+## Steps
 
-![Video editor: faces are covered with a mosaic automatically, with a track for each face](/images/apps/screens/kakusu/en/video.jpg 'phone') ![Face settings: a size slider and the mosaic, blur, fill and sticker options](/images/apps/screens/kakusu/en/size.jpg 'phone')
+### 1. Tap “Choose a photo or video”
 
-Saving creates a new video and leaves the original untouched. Videos export at up to 1080p, with or without audio, and no watermark.
+Open the app and tap the yellow button at the bottom.
 
-## Keep your child, hide everyone else
+![Kakusu's first screen with the yellow “Choose a photo or video” button at the bottom](/images/guides/blur-faces-in-videos-iphone/en/1-home.jpg 'phone')
 
-Each face appears in its own row, so you can turn the effect off for the faces you want to keep — handy when you want to show your own child but not their classmates.
+### 2. Pick a video
 
-You can also do the opposite: keep people and **hide only the background**, for example when the view would reveal your home or neighbourhood. Choose Background in the editor and apply a mosaic, blur or fill.
+Choose the video you want to blur from your library. Kakusu can only see the items you pick here.
 
-## What isn't hidden automatically
+![The photo picker with a six-second video in the top-left corner](/images/guides/blur-faces-in-videos-iphone/en/2-picker.jpg 'phone')
 
-Automatic detection can miss faces seen from the side, very small faces, or faces that appear only for a moment. These are never hidden automatically:
+### 3. Faces are blurred automatically
 
-- **Text** such as name tags, race bibs or school badges
-- **Licence plates**
-- **Audio**, such as someone calling a child's name
+Once the video loads, every face it finds is covered with a mosaic. Each face gets its own row below the video.
 
-To cover anything that was missed, add an area with your finger. In videos you can change when it starts and ends and make it follow a moving object. If names can be heard, export without audio.
+![The editor: the three people's faces are covered with a mosaic, with a row for each face below](/images/guides/blur-faces-in-videos-iphone/en/3-editor.jpg 'phone')
 
-## Checklist before you post
+### 4. Choose the style and coverage
 
-- Watched the whole video for anything that wasn't hidden
+Tap a face row to open its settings.
+
+- **Coverage**: slide from “Face only” to “Hair & neck”
+- **Mask style**: choose Mosaic, Blur, Solid fill or Sticker
+
+![Face 1 settings: a Coverage slider and Mosaic, Blur, Solid fill and Sticker options](/images/guides/blur-faces-in-videos-iphone/en/4-face-style.jpg 'phone')
+
+### 5. Turn it off for faces you want to show
+
+For your own child or anyone you want to show, switch off “Hide this face”. Only that person is unblurred.
+
+![Face 2 settings with “Hide this face” switched off](/images/guides/blur-faces-in-videos-iphone/en/5-face-off-sheet.jpg 'phone') ![The editor: the person in the middle is visible while the other two faces stay hidden](/images/guides/blur-faces-in-videos-iphone/en/5-face-off.jpg 'phone')
+
+### 6. Cover name tags with your finger
+
+**Text such as name tags isn't hidden automatically.** Tap “Add mask” below the face rows and draw around the area with your finger.
+
+Drag the corner handles to resize it. Choose “Follow motion” for something that moves, or “Entire video” to cover it from start to finish.
+
+![Mask 1 settings with a rectangle over the name tag in the video](/images/guides/blur-faces-in-videos-iphone/en/6-manual-range.jpg 'phone')
+
+### 7. Save
+
+Tap Save in the top-right corner. A new video is saved to Photos and the original stays untouched. There is no watermark.
+
+![The finished screen: “All hidden — Saved to Photos”](/images/guides/blur-faces-in-videos-iphone/en/8-saved.jpg 'phone')
+
+## Check before you post
+
+Automatic detection can miss faces seen from the side or very small faces. Watch the saved video once to the end and check:
+
+- No faces were missed
 - No name tags, school badges or signs that reveal an address
 - No licence plates
-- No names or school names spoken aloud (export without audio if needed)
-- Not sharing with location data attached
+- No names or school names spoken aloud (turn audio off before saving if needed)
 
 ## Pricing
 
-Kakusu is free to use, with no app-imposed limit on video length. The free version shows ads. A one-time Kakusu Pro purchase removes ads and adds nine original stickers. It's not a subscription.
+Kakusu is free to use, with no limit on video length. The free version shows ads. A one-time Kakusu Pro purchase removes ads and adds original stickers. It's not a subscription.

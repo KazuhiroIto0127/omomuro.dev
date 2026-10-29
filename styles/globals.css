@@ -76,6 +76,23 @@ body {
   border-radius: 1.25rem;
 }
 
+/* 読みもの：手順の区切りを見やすく、画面写真は少し小さく */
+.guide-prose :where(h3) {
+  margin-top: 2.5em;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--line);
+}
+
+.guide-prose :where(h2 + h3) {
+  margin-top: 1em;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.guide-prose .not-prose img.max-w-\[280px\] {
+  max-width: 240px;
+}
+
 .app-prose > :first-child,
 .app-prose > div > :first-child {
   margin-top: 0;

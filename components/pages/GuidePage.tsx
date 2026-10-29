@@ -104,7 +104,7 @@ export function GuidePage({ slug, lang }: { slug: string; lang: Lang }) {
       />
       <article
         lang={lang}
-        className="app-prose prose md:prose-lg bg-card mx-auto w-full max-w-none rounded-3xl p-7 break-words md:p-10"
+        className="app-prose guide-prose prose md:prose-lg bg-card mx-auto w-full max-w-none rounded-3xl p-7 break-words md:p-10"
       >
         <div className="mx-auto max-w-[680px]">
           <div className="not-prose mb-6 flex flex-wrap items-center justify-between gap-4 text-[15px]">
