@@ -12,7 +12,7 @@ export const metadata = appPageMetadata({ slug: 'kakei-pocket', ...doc });
 export default function Page() {
   return (
     <Document {...doc}>
-      <p>Updated October 25, 2026. Provider: Kazuhiro Ito (omomuro.dev).</p>
+      <p>Updated October 30, 2026. Provider: Kazuhiro Ito (omomuro.dev).</p>
       <h2>Recording expenses</h2>
       <p>
         Tap + to enter an amount, category and date. Notes and line items are optional. Long-press the amount to paste.
@@ -24,10 +24,11 @@ export default function Page() {
         Bring in records from a spreadsheet with Settings → Import CSV. Check the number of entries and the date range
         before importing. Imported entries do not notify your partner.
       </p>
-      <h2>Charts</h2>
+      <h2>Reports and budgets</h2>
       <p>
-        See how much each category went up or down compared with last month. The current month is compared with the same
-        number of days last month.
+        The monthly report shows spending pace, category breakdowns and comparisons with last month. Set a monthly
+        budget to see the remaining amount and a daily guideline. Trends show income and expenses over time. The current
+        month is compared with the same number of days last month.
       </p>
       <h2>Sharing a ledger</h2>
       <p>
@@ -40,6 +41,12 @@ export default function Page() {
         Scan a receipt or select a photo, then check all recognized values against the original. Recognition works
         on-device and is designed for Japanese receipts. Apple Intelligence is optional. The free limit is 10 successful
         scans per calendar month per device.
+      </p>
+      <h2>Saving and exporting receipt images</h2>
+      <p>
+        Receipt images are saved with entries and can be reopened, zoomed and exported. In Settings → Data and Privacy →
+        Receipt Images, turn saving on or off, export all images or delete them all. Saved images sync through iCloud;
+        deletion also applies to your partner.
       </p>
       <h2>Pro and restoring purchases</h2>
       <p>

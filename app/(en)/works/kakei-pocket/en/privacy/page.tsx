@@ -12,7 +12,7 @@ export const metadata = appPageMetadata({ slug: 'kakei-pocket', ...doc });
 export default function Page() {
   return (
     <Document {...doc}>
-      <p>Updated October 7, 2026. Provider: Kazuhiro Ito (omomuro.dev).</p>
+      <p>Updated October 30, 2026. Provider: Kazuhiro Ito (omomuro.dev).</p>
       <h2>Ledger data and iCloud</h2>
       <p>
         Amounts, dates, categories, notes, line items, fixed expenses, member names and photos are stored on your device
@@ -23,8 +23,10 @@ export default function Page() {
       <h2>Camera, photos and on-device processing</h2>
       <p>
         The camera and selected photos are used for receipt recognition or member photos. OCR and optional AI analysis
-        run on-device without sending receipts to an external AI service. Receipt images are not stored or synced as
-        ledger records. Member photos are synced with the ledger.
+        run on-device without sending receipts to an external AI service. Receipt images are saved with entries and
+        synced through iCloud, including with your partner in a shared ledger. In Settings, you can turn off saving
+        receipt images or delete all saved images. Deletion also applies to your partner. Exporting individual images or
+        a ZIP sends them to the destination you choose. Member photos are synced with the ledger.
       </p>
       <h2>Advertising and tracking</h2>
       <p>

@@ -54,30 +54,27 @@ export const publishedApps: PublishedApp[] = [
     category: 'family',
     icon: '/images/apps/kakei-pocket.png',
     summary:
-      'iCloudで夫婦・パートナーと共有できる家計簿アプリ。レシート読み取り、固定費の1タップ記録、「共通・自分・パートナー」の分類に対応します。',
-    devices: 'iPhone・iPad',
+      'iCloudで夫婦・パートナーと共有できる家計簿アプリ。レシートの読み取りと画像保存、月予算・レポート、固定費の1タップ記録に対応します。',
+    devices: 'iPhone・iPhone Duo・iPad',
     pricing: '無料（広告あり）・Pro買い切り',
     catch: 'ふたりで共有できる家計簿',
     tint: '#ECE6F4',
     shotAlts: {
-      ja: [
-        '家計ポケットのホーム画面。今月の収支と、共通・自分・パートナーごとの支出が並ぶ',
-        '家計ポケットの記録画面。カテゴリと共通・自分・パートナーを選んで金額を入力する',
-      ],
-      en: [
-        "Kakei Pocket home screen with this month's balance and spending split into Shared and each partner",
-        'Kakei Pocket entry screen: choose a category and Shared or a partner, then type the amount',
-      ],
+      ja: ['家計ポケットのホームとレシート明細。毎月の収支と読み取った品目を確認できる'],
+      en: ['Kakei Pocket Home and receipt details, showing the monthly balance and scanned items'],
     },
     screenshotCount: 2,
+    searchImage: true,
+    ctaNote: '共有は無料。Proは買い切りで、一度の購入でふたりとも使えます。サブスクではありません。',
     schemaCategory: 'FinanceApplication',
     operatingSystem: 'iOS, iPadOS',
     en: {
       name: 'Kakei Pocket',
       description:
-        'Track spending on your own or share a household budget with your partner via iCloud. One-tap fixed costs, no bank linking. Sharing is free; Pro is a one-time purchase.',
+        'Share a household budget via iCloud. Scan and save receipts, set a monthly budget and compare spending. Sharing is free; Pro is a one-time purchase.',
       catch: 'A budget you can share with your partner',
       pricing: 'Free with ads · Pro one-time purchase',
+      ctaNote: 'Sharing is free. One Pro purchase covers both of you — no subscription.',
     },
     appStoreUrl: 'https://apps.apple.com/jp/app/id6819167469',
   },
