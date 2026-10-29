@@ -12,36 +12,24 @@ export const aboutCopy = {
   ja: {
     title: 'イトウカズヒロ｜iPhone・iPadアプリの個人開発者',
     description:
-      'ドット日和・かくす・ぴかにじなどのiPhone・iPadアプリを個人で開発しているソフトウェアエンジニア、イトウカズヒロのプロフィール。経歴、SNS、描いたイラストのギャラリーも。',
+      'ドット日和・かくす・ぴかにじなどのiPhone・iPadアプリを個人で開発しているソフトウェアエンジニア、イトウカズヒロのプロフィール。SNSや、描いたイラストのギャラリーも。',
     name: 'イトウ カズヒロ',
     facts: ['ソフトウェアエンジニア', '東京都在住'],
     intro:
-      'ソフトウェアエンジニアとして働くかたわら、個人で iPhone・iPad アプリをつくっています。企画からデザイン、開発、サポートまで、ひとりで手がけています。絵を描くのも好きです。',
+      '個人で iPhone・iPad アプリをつくっています。企画からデザイン、開発、サポートまで、ひとりで手がけています。絵を描くのも好きです。',
     booklog: 'ブクログ',
-    careerTitle: '経歴',
-    career: [
-      { period: '2021年〜', text: 'ソフトウェアエンジニア（保育Tech）' },
-      { period: '2018〜2021年', text: 'Webエンジニア（コミュニティサービス）' },
-      { period: '2014〜2018年', text: 'システムエンジニア' },
-    ],
     galleryTitle: 'ギャラリー',
     galleryLead: '描いたイラストやグラフィック、アニメーションです。',
   },
   en: {
     title: 'Kazuhiro Ito, indie iPhone & iPad app developer',
     description:
-      'Profile of Kazuhiro Ito, a Tokyo-based software engineer who makes iPhone and iPad apps on his own. Career, social links and a gallery of his illustrations.',
+      'Profile of Kazuhiro Ito, a Tokyo-based software engineer who makes iPhone and iPad apps on his own, with social links and a gallery of his illustrations.',
     name: 'Kazuhiro Ito',
     facts: ['Software engineer', 'Based in Tokyo'],
     intro:
-      "I'm a software engineer who makes iPhone and iPad apps on my own, handling everything from planning and design to development and support. I also love to draw.",
+      'I make iPhone and iPad apps on my own, handling everything from planning and design to development and support. I also love to draw.',
     booklog: 'Booklog',
-    careerTitle: 'Career',
-    career: [
-      { period: '2021–', text: 'Software engineer, childcare tech' },
-      { period: '2018–2021', text: 'Web engineer, community platform' },
-      { period: '2014–2018', text: 'Systems engineer' },
-    ],
     galleryTitle: 'Gallery',
     galleryLead: 'Illustrations, graphics and animations I’ve made.',
   },
@@ -104,18 +92,6 @@ export default async function AboutPage({ lang }: { lang: Lang }) {
               ))}
             </ul>
           </div>
-        </section>
-
-        <section className={clsx(card, 'flex flex-col gap-4 p-8')}>
-          <h2 className="font-maru text-xl font-bold">{t.careerTitle}</h2>
-          <dl className="flex flex-col gap-3">
-            {t.career.map((c) => (
-              <div key={c.period} className="flex flex-col gap-0.5 sm:flex-row sm:gap-4">
-                <dt className="text-accent shrink-0 text-sm font-bold sm:w-28">{c.period}</dt>
-                <dd className="text-sub text-[15px] leading-7">{c.text}</dd>
-              </div>
-            ))}
-          </dl>
         </section>
 
         {images.length > 0 && (
