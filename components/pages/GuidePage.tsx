@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import GuideBody from '@/components/GuideBody';
 import AppCard from '@/components/AppCard';
 import AppCta from '@/components/AppCta';
@@ -6,7 +7,7 @@ import GuideList from '@/components/GuideList';
 import JsonLd from '@/components/JsonLd';
 import LanguageLink from '@/components/LanguageLink';
 import { findApp, type PublishedApp } from '@/lib/apps';
-import { guidePath, guideSections, guidesIndexPath, loadGuide, loadGuides } from '@/lib/guides';
+import { guideCover, guidePath, guideSections, guidesIndexPath, loadGuide, loadGuides } from '@/lib/guides';
 import type { Lang } from '@/lib/i18n';
 import { SITE_URL } from '@/lib/site';
 import { article, breadcrumb, faqFromMarkdown, graph } from '@/lib/structuredData';
@@ -126,6 +127,17 @@ export function GuidePage({ slug, lang }: { slug: string; lang: Lang }) {
             <time dateTime={guide.updatedAt}>{t.updated(guide.updatedAt)}</time>
             {english ? ' · Kazuhiro Ito' : ' ・ イトウカズヒロ'}
           </p>
+          <div className="not-prose mb-8 overflow-hidden rounded-2xl">
+            <Image
+              src={guideCover(slug)}
+              alt=""
+              width={1200}
+              height={630}
+              sizes="(min-width: 1024px) 840px, (min-width: 768px) calc(100vw - 144px), calc(100vw - 80px)"
+              preload
+              className="aspect-[1200/630] h-auto w-full object-cover"
+            />
+          </div>
           <aside
             className="not-prose bg-paper mb-8 rounded-2xl p-5 sm:p-6"
             aria-label={english ? 'At a glance' : 'この記事のポイント'}
