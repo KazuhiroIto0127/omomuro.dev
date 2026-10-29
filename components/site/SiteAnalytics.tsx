@@ -4,10 +4,10 @@ import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { isAnalyticsExcluded as isPrivate } from '@/lib/analytics';
 import { GoogleAnalytics, pageview } from '@/components/gtag';
 
 /** ちいさなあそびばのサポート・プライバシー（子ども向けアプリのページ）ではアクセス解析をしない */
-const isPrivate = (path: string) => path.startsWith('/works/little-playground/');
 
 export default function SiteAnalytics() {
   const path = usePathname() ?? '/';

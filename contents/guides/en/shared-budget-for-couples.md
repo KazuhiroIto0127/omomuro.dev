@@ -80,6 +80,22 @@ A budget you kept in a spreadsheet can be imported from a CSV file in Settings. 
 
 ![The CSV import review: 11 entries to import, the date range, and the expense and income totals](/images/guides/shared-budget-for-couples/en/8-import.jpg 'phone')
 
+## If something does not work
+
+### An invitation link will not open
+
+Check that you both have Kakei Pocket installed and are signed in to iCloud. If the link does not open inside a messaging app, try Safari. Each link works once; the owner can create a new one if needed.
+
+### Your partner’s entries are missing
+
+Open the latest app on both devices and check your iCloud sign-in and internet connection. Syncing may take time. If entries have not synced, contact support before deleting the app or switching ledgers.
+
+### A receipt total was read incorrectly
+
+Compare the date, amount and items with the original receipt, and correct them before saving. Scanning is designed for Japanese receipts. Automatically filled details still need a check.
+
+See [Kakei Pocket help and support](/works/kakei-pocket/en/support) for more details.
+
 ## Pricing
 
 Recording, fixed costs, export and sharing are all free. The free version shows ads and allows 10 receipt scans a month per device.

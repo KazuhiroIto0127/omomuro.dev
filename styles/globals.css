@@ -188,3 +188,26 @@ body {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Native dialog provides focus containment and Escape-to-close. */
+.guide-image-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  padding: 0;
+  width: min(760px, calc(100vw - 24px));
+  max-width: none;
+  max-height: 90dvh;
+  border: 0;
+  border-radius: 1rem;
+  color: var(--ink);
+  background: var(--card);
+}
+.guide-image-dialog::backdrop {
+  background: rgb(0 0 0 / 0.65);
+}
+.guide-image-dialog button:focus-visible,
+.guide-image-dialog [tabindex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -3px;
+}

@@ -1,5 +1,5 @@
 import { GuidePage } from '@/components/pages/GuidePage';
-import { guidePath, guideSlugs, loadGuide } from '@/lib/guides';
+import { guideOgImage, guidePath, guideSlugs, loadGuide } from '@/lib/guides';
 import { pageMetadata } from '@/lib/metadata';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: Props) {
     title: guide.title,
     description: guide.description,
     type: 'article',
+    image: guideOgImage(slug, 'en'),
   });
 }
 

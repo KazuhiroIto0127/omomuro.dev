@@ -68,3 +68,19 @@ Seven gentle games on a wooden shelf: make flowers bloom, play peekaboo with ani
 - No ads, no analytics and no accounts
 - Purchases and outside links sit behind a parents' screen opened with a sum
 - Each game is free for one minute a day; a one-time purchase removes the limit. No monthly fee
+
+## If something does not work while trying an app
+
+### There is no sound
+
+Check the device volume and silent mode. In Pikaniji, also check that the sound is not set to None. In Little Playground, check the sound-effects setting. Both apps follow the device’s silent setting.
+
+### A purchase is not available
+
+Use the Apple Account that made the purchase, connect to the internet and try Restore Purchases from the parents’ settings screen. A purchase awaiting approval becomes available after it is approved.
+
+### Will Pikaniji drawings survive reinstalling the app?
+
+Drawings are stored on the device. Deleting the app deletes them too, so check the support guidance before trying a reinstall.
+
+See [Pikaniji support](/works/pikaniji/en/support) and [Little Playground support](/works/little-playground/en/support) for more details.

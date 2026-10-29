@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react';
 import Image from 'next/image';
+import AppStoreLink from '@/components/AppStoreLink';
 import clsx from 'clsx';
 import LanguageLink from '@/components/LanguageLink';
 import { appStoreId, screenshotSrcs, type PublishedApp } from '@/lib/apps';
@@ -58,12 +59,15 @@ export default function AppHero({
         </p>
         <div className="mt-1.5 flex flex-wrap items-center gap-x-5 gap-y-3">
           {storeUrl && (
-            <a
+            <AppStoreLink
               href={storeUrl}
+              app={app.slug}
+              language={english ? 'en' : 'ja'}
+              placement="app_hero"
               className="bg-ink text-paper rounded-full px-6 py-3.5 text-[15px] font-bold transition-opacity hover:opacity-85"
             >
               {english ? 'View on the App Store' : 'App Store で見る'}
-            </a>
+            </AppStoreLink>
           )}
           {alternateHref && (
             <LanguageLink

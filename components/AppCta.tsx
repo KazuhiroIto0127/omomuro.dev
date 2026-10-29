@@ -1,10 +1,20 @@
 import type { CSSProperties } from 'react';
 import Image from 'next/image';
+import AppStoreLink from '@/components/AppStoreLink';
 import clsx from 'clsx';
+import type { StorePlacement } from '@/lib/analytics';
 import { appStoreId, type PublishedApp } from '@/lib/apps';
 
 /** アプリ紹介ページの最後：本文を読み終えた人がそのまま App Store へ進めるように */
-export default function AppCta({ app, english = false }: { app: PublishedApp; english?: boolean }) {
+export default function AppCta({
+  app,
+  english = false,
+  placement = 'app_footer',
+}: {
+  app: PublishedApp;
+  english?: boolean;
+  placement?: StorePlacement;
+}) {
   const id = appStoreId(app);
   if (!id) return null;
   const storeUrl = english ? `https://apps.apple.com/app/id${id}` : app.appStoreUrl;
@@ -29,12 +39,15 @@ export default function AppCta({ app, english = false }: { app: PublishedApp; en
       <p className="text-ink/70 max-w-md text-[15px] leading-7">
         {(english ? app.en.ctaNote : app.ctaNote) ?? (english ? app.en.pricing : app.pricing)}
       </p>
-      <a
-        href={storeUrl}
+      <AppStoreLink
+        href={storeUrl!}
+        app={app.slug}
+        language={english ? 'en' : 'ja'}
+        placement={placement}
         className="bg-ink text-paper mt-1 rounded-full px-7 py-3.5 text-[15px] font-bold transition-opacity hover:opacity-85"
       >
         {english ? `Get ${name} on the App Store` : `${name}を App Store で見る`}
-      </a>
+      </AppStoreLink>
     </section>
   );
 }

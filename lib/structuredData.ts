@@ -77,8 +77,8 @@ export function article({
     datePublished: publishedAt,
     dateModified: updatedAt,
     image: abs(image),
-    author: { '@id': personId },
-    publisher: { '@id': personId },
+    author: person(lang),
+    publisher: person(lang),
   };
 }
 

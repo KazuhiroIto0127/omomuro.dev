@@ -7,6 +7,7 @@ import type { Lang } from '@/lib/i18n';
 export type Guide = {
   slug: string;
   title: string;
+  imageTitle: string[];
   description: string;
   publishedAt: string;
   updatedAt: string;
@@ -33,6 +34,7 @@ export function loadGuide(slug: string, lang: Lang): Guide {
   return {
     slug,
     title: String(data.title),
+    imageTitle: (data.imageTitle as string[] | undefined) ?? [String(data.title)],
     description: String(data.description),
     publishedAt: String(data.publishedAt),
     updatedAt: String(data.updatedAt ?? data.publishedAt),
@@ -68,3 +70,5 @@ export function guideSections(body: string) {
 }
 
 export const guideCover = (slug: string) => `/images/guides/covers/${slug}.webp`;
+
+export const guideOgImage = (slug: string, lang: Lang) => `/api/og?guide=${encodeURIComponent(slug)}&lang=${lang}`;

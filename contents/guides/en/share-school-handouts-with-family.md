@@ -63,6 +63,22 @@ Tasks with a due date also appear on the calendar.
 
 Invite family members through iCloud from family sharing in Settings. Everyone you invite can see and edit the same events, tasks and handouts.
 
+## If something does not work
+
+### A date or packing item was read incorrectly
+
+Compare the suggestions with the original handout before adding them. Correct dates and times, and switch off suggestions you do not need. Treat the scan as a starting point to check, rather than a verified copy.
+
+### An invitation link will not open
+
+Both the person inviting and the person joining need to be signed in to iCloud. If the link does not open inside a messaging app, try Safari. You can belong to only one family at a time.
+
+### Plans are missing on another family member’s device
+
+Make sure everyone has the latest app, is signed in to iCloud and has an internet connection. Changes can take time to arrive. If content has not synced, contact support before deleting the app or switching families.
+
+See [Kazoku Board help and support](/works/kazoku-board/en/support) for more details.
+
 ## Pricing
 
 Family sharing and adding events and tasks are free and unlimited. The free version shows ads and allows 10 handout imports a month for the whole family.

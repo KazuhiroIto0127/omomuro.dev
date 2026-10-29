@@ -1,4 +1,8 @@
 import { ImageResponse } from 'next/og';
+import { readFile } from 'node:fs/promises';
+import path from 'node:path';
+import sharp from 'sharp';
+import { guideCover, guideSlugs, loadGuide } from '@/lib/guides';
 import { findApp } from '@/lib/apps';
 
 const W = 1200;
@@ -35,10 +39,57 @@ export async function GET(request: Request) {
   const app = findApp(searchParams.get('app') ?? '');
   const english = searchParams.get('lang') === 'en';
 
+  const guideSlug = searchParams.get('guide');
+  if (guideSlug && !guideSlugs(english ? 'en' : 'ja').includes(guideSlug))
+    return new Response('Not found', { status: 404 });
+
   let element: React.ReactElement;
   let text: string;
 
-  if (app) {
+  if (guideSlug) {
+    const guide = loadGuide(guideSlug, english ? 'en' : 'ja');
+    const cover = (
+      await sharp(await readFile(path.join(process.cwd(), 'public', guideCover(guideSlug))))
+        .png()
+        .toBuffer()
+    ).toString('base64');
+    text = `${guide.imageTitle.join('')}${english ? 'GUIDES' : '読みもの'}omomuro.dev`;
+    element = (
+      <div
+        style={{
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          alignItems: 'center',
+          background: PAPER,
+          fontFamily: 'Maru',
+          padding: 56,
+          gap: 32,
+        }}
+      >
+        <div style={{ display: 'flex', flexDirection: 'column', width: 540, gap: 26 }}>
+          <div style={{ fontSize: 24, color: SUB }}>{english ? 'GUIDES' : '読みもの'}</div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              fontSize: 48,
+              lineHeight: 1.4,
+              color: INK,
+              fontWeight: 700,
+            }}
+          >
+            {guide.imageTitle.map((line) => (
+              <div key={line}>{line}</div>
+            ))}
+          </div>
+          <div style={{ fontSize: 26, color: SUB }}>omomuro.dev</div>
+        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={`data:image/png;base64,${cover}`} alt="" width={516} height={271} style={{ borderRadius: 28 }} />
+      </div>
+    );
+  } else if (app) {
     const icon = Buffer.from(await (await fetch(`${origin}${app.icon}`)).arrayBuffer()).toString('base64');
     const name = english ? app.en.name : app.name;
     const catchCopy = english ? app.en.catch : app.catch;

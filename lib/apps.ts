@@ -11,6 +11,8 @@ export type PublishedApp = {
   catch: string;
   devices: string;
   pricing: string;
+  /** Free features shown in guide introductions. */
+  freeTier?: { ja: string; en: string };
   /** アプリページ上部の色（ライト時。ダーク時は自動で暗くする） */
   tint: string;
   appStoreUrl?: string;
@@ -44,6 +46,10 @@ export const appCategories: { id: AppCategory; title: string; titleEn: string }[
 export const publishedApps: PublishedApp[] = [
   {
     slug: 'kakei-pocket',
+    freeTier: {
+      ja: '家計簿の記録・共有は無料（広告あり）。レシート読み取りは端末ごとに月10回まで。',
+      en: 'Recording and sharing are free with ads. Includes 10 receipt scans per device each month.',
+    },
     name: '家計ポケット',
     category: 'family',
     icon: '/images/apps/kakei-pocket.png',
@@ -77,6 +83,10 @@ export const publishedApps: PublishedApp[] = [
   },
   {
     slug: 'kazoku-board',
+    freeTier: {
+      ja: '家族の共有・予定の追加は無料（広告あり）。プリント取り込みは家族全体で月10件まで。',
+      en: 'Family sharing and events are free with ads. Includes 10 handout imports per family each month.',
+    },
     name: 'かぞくボード',
     category: 'family',
     icon: '/images/apps/kazoku-board.png',
@@ -141,6 +151,10 @@ export const publishedApps: PublishedApp[] = [
   },
   {
     slug: 'pikaniji',
+    freeTier: {
+      ja: '広告なし。ぬりえ1枚・スタンプ2種・絵の保存2枚まで無料で試せます。',
+      en: 'Ad-free. Try one colouring page, two stamps and storage for two drawings for free.',
+    },
     name: 'ぴかにじ',
     category: 'kids',
     icon: '/images/apps/pikaniji.png',
@@ -174,6 +188,10 @@ export const publishedApps: PublishedApp[] = [
   },
   {
     slug: 'little-playground',
+    freeTier: {
+      ja: '広告なし。7つの遊びをそれぞれ1日1分まで無料で試せます。',
+      en: 'Ad-free. Try each of the seven games for one minute a day for free.',
+    },
     name: 'ちいさなあそびば',
     category: 'kids',
     icon: '/images/apps/little-playground.png',
@@ -207,6 +225,10 @@ export const publishedApps: PublishedApp[] = [
   },
   {
     slug: 'kakusu',
+    freeTier: {
+      ja: '写真・動画の加工は無料（広告あり）。動画の長さによる保存制限なし。',
+      en: 'Photo and video editing is free with ads, with no video-length limit on saving.',
+    },
     name: 'かくす',
     category: 'media',
     icon: '/images/apps/kakusu.png',

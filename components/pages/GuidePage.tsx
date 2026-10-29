@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import GuideBody from '@/components/GuideBody';
 import AppCard from '@/components/AppCard';
+import GuideApps from '@/components/GuideApps';
 import AppCta from '@/components/AppCta';
 import GuideList from '@/components/GuideList';
 import JsonLd from '@/components/JsonLd';
@@ -93,7 +94,7 @@ export function GuidePage({ slug, lang }: { slug: string; lang: Lang }) {
             lang,
             publishedAt: guide.publishedAt,
             updatedAt: guide.updatedAt,
-            image: `/api/og?title=${encodeURIComponent(guide.title)}`,
+            image: guideCover(slug),
           }),
           breadcrumb([
             { name: english ? 'Apps' : 'アプリ', path: english ? '/en' : '/' },
@@ -125,7 +126,10 @@ export function GuidePage({ slug, lang }: { slug: string; lang: Lang }) {
           <h1 className="text-[28px] leading-snug md:text-[38px]">{guide.title}</h1>
           <p className="text-sub not-prose mb-8 text-sm">
             <time dateTime={guide.updatedAt}>{t.updated(guide.updatedAt)}</time>
-            {english ? ' · Kazuhiro Ito' : ' ・ イトウカズヒロ'}
+            {' · '}
+            <Link href={english ? '/about/en' : '/about'} rel="author" className="underline underline-offset-4">
+              {english ? 'Kazuhiro Ito' : 'イトウカズヒロ'}
+            </Link>
           </p>
           <div className="not-prose mb-8 overflow-hidden rounded-2xl">
             <Image
@@ -154,7 +158,9 @@ export function GuidePage({ slug, lang }: { slug: string; lang: Lang }) {
               ))}
             </ul>
           </aside>
+          <GuideApps apps={apps} lang={lang} />
           <nav
+            id="guide-contents"
             className="not-prose guide-toc border-line mb-10 border-y py-5"
             aria-label={english ? 'On this page' : '目次'}
           >
@@ -184,7 +190,13 @@ export function GuidePage({ slug, lang }: { slug: string; lang: Lang }) {
               </ol>
             </details>
           </nav>
-          <GuideBody body={guide.body} />
+          <GuideBody body={guide.body} lang={lang} />
+          <a
+            href="#guide-contents"
+            className="not-prose text-accent mt-8 inline-block py-3 text-sm underline underline-offset-4"
+          >
+            {english ? 'Back to contents ↑' : '目次に戻る ↑'}
+          </a>
         </div>
       </article>
 
@@ -203,7 +215,7 @@ export function GuidePage({ slug, lang }: { slug: string; lang: Lang }) {
         </section>
       )}
 
-      {apps[0] && <AppCta app={apps[0]} english={english} />}
+      {apps[0] && <AppCta app={apps[0]} english={english} placement="guide_footer" />}
 
       <GuideList lang={lang} exclude={slug} heading={t.more} showAllLink />
     </div>

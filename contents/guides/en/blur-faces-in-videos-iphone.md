@@ -79,6 +79,22 @@ Automatic detection can miss faces seen from the side or very small faces. Watch
 - No licence plates
 - No names or school names spoken aloud (turn audio off before saving if needed)
 
+## If something does not work
+
+### A face becomes visible partway through
+
+Detection or tracking may miss side profiles, small faces, dark scenes or fast movement. Add a manual mask over the missed area, then play the surrounding frames to check the coverage.
+
+### A manually added mask stays still
+
+A new mask starts as a fixed area. Position it over the subject at the start of the movement and run tracking. Changing its time range or position clears tracking, so run it again after making those changes.
+
+### The video will not save to Photos
+
+Check permission to add photos from Settings & Help, and check the free space on your device. Long or high-resolution videos need more processing time and storage.
+
+See [Kakusu help and support](/works/kakusu/en/support) for more details.
+
 ## Pricing
 
 Kakusu is free to use, with no limit on video length. The free version shows ads. A one-time Kakusu Pro purchase removes ads and adds original stickers. It's not a subscription.
