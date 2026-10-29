@@ -5,9 +5,9 @@ import clsx from 'clsx';
 
 /** 本文に載せるスクリーンショットの種類と、書き出したときのピクセル数 */
 const kinds = {
-  phone: { width: 660, height: 1434, className: 'max-w-[280px] min-w-0 flex-1' },
-  ipad: { width: 1032, height: 1376, className: 'w-full max-w-[440px]' },
-  duo: { width: 1200, height: 844, className: 'w-full' },
+  phone: { width: 660, height: 1434, className: 'max-w-[280px] min-w-0 flex-1 rounded-[28px]' },
+  ipad: { width: 1032, height: 1376, className: 'w-full max-w-[440px] rounded-[1.25rem]' },
+  duo: { width: 1200, height: 844, className: 'w-full rounded-[1.25rem]' },
 } as const;
 
 export type ShotKind = keyof typeof kinds;
@@ -24,7 +24,8 @@ export function Shot({ src, alt, kind = 'phone' }: { src: string; alt: string; k
       width={width}
       height={height}
       sizes={kind === 'phone' ? '280px' : '(min-width: 768px) 680px, 100vw'}
-      className={clsx('m-0 h-auto rounded-[1.25rem]', className)}
+      // 白い画面がカードに溶けないように、アイコンと同じ薄い枠を付ける
+      className={clsx('app-icon m-0 h-auto', className)}
     />
   );
 }
