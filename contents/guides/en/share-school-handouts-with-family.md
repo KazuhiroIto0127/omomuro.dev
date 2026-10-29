@@ -1,50 +1,68 @@
 ---
-title: 'How to share school and nursery handouts with your family — snap them into plans'
-description: 'Stop missing deadlines and things to bring. How to photograph paper handouts from school or nursery, turn them into events and to-dos, and share them with your family.'
+title: 'How to share school and nursery handouts with your family (step by step)'
+description: 'Stop missing deadlines and things to bring. Real screenshots showing how to snap paper handouts into events and to-dos and share them with your family in the free Kazoku Board app.'
 publishedAt: '2026-10-29'
 updatedAt: '2026-10-29'
 apps: ['kazoku-board']
 ---
 
-Handouts from school or nursery are full of important details: event dates, forms to return, things to bring. On paper, though, only the person who read it knows what it says, and "nobody told me" or "that was due today?" follow. This guide shows how to share handouts with your family so less slips through.
+On paper, only the person who read a school handout knows what it says. Sharing handouts with the whole family is the easiest way to stop “nobody told me” and “that was due today?”.
 
-## Common ways to share, and where they fall short
+This guide walks through photographing handouts and sharing them with your family in the free Kazoku Board app, with real screenshots.
 
-- **Sticking it on the fridge**: you can only check it at home
-- **Sending a photo in a chat**: the photo scrolls away and is hard to find later
-- **Typing it into a shared calendar**: reliable, but entering each date and item takes time
+## What you need
 
-What you want is both: **the handout itself, easy to look up later**, and **its dates and items as events on the family calendar**.
+- An iPhone or iPad for each family member (iOS / iPadOS 26 or later)
+- The [Kazoku Board](/works/kazoku-board/en) app (free, family sharing included)
 
-## Sharing handouts with Kazoku Board
+## Steps
 
-Kazoku Board is an iPhone and iPad app for sharing a family calendar, school handouts, and to-do and shopping lists through iCloud. You add a handout by taking a photo.
+### 1. Photograph the handout
 
-1. Photograph the handout in Kazoku Board (multi-page handouts can be saved together)
-2. Text is read on your device, and dates and items become suggested events and to-dos
-3. Check and edit the suggestions, then save
-4. The handout is kept on the Board, where your family can look it up later
+Open Board and photograph the handout from the + button at the bottom right. Multi-page handouts can be saved together.
 
-![Handout scan results: dates and things to bring suggested as events and to-dos](/images/apps/screens/kazoku-board/en/import.jpg 'phone') ![The Board: handouts and links listed with previews](/images/apps/screens/kazoku-board/en/board.jpg 'phone')
+![The Board: handouts such as sports day photos, the lunch menu and the year newsletter shown as cards, with a + button at the bottom right](/images/guides/share-school-handouts-with-family/en/1-prints.jpg 'phone')
 
-## Pick-ups and things to bring, right on the calendar
+Your handouts collect on the Board. Use the search field at the top to find one by what's in it.
 
-Open a date to see that day's events. Each event can note who is doing the pick-up and what to bring, so "who's collecting tomorrow?" and "is it PE kit day?" are answered at a glance.
+### 2. Check what was read, then add it
 
-![Things to bring for each event](/images/apps/screens/kazoku-board/en/belongings.jpg 'phone') ![Lists: switch between tasks, shopping and places to go](/images/apps/screens/kazoku-board/en/lists.jpg 'phone')
+Text is read on your device, and dates and things to bring become suggested events and to-dos.
 
-Forms to return and family errands go in the task list. Tasks with a due date also appear on the calendar, so deadlines don't get missed. Shopping lists and a list of places to go at the weekend live in the same app.
+![Scan results: a school trip event, things to bring (lunch, water bottle, picnic mat, rain gear) and a form to hand in, with an add button at the bottom](/images/guides/share-school-handouts-with-family/en/3-scan.jpg 'phone')
 
-## Inviting your family
+Switch off anything you don't need and tap the add button. You can fix dates and times before adding.
 
-Invite family members through iCloud, and everyone can view and edit the same events and lists on iPhone and iPad. Family sharing and adding events and tasks are free and unlimited.
+### 3. Events land on the family calendar
 
-The free version shows ads and allows 10 handout imports a month for the whole family. When the owner makes a one-time Pro purchase, everyone in the family gets no ads and unlimited imports. It's not a subscription.
+Added events appear on everyone's calendar. Use the names at the top to show one child at a time.
 
-## Tips for keeping it going
+![The calendar for October, with a filter for Everyone and each family member at the top](/images/guides/share-school-handouts-with-family/en/5-calendar.jpg 'phone')
 
-- **Snap it the day it arrives**: photograph the handout as soon as it comes out of the school bag
-- **Recycle the paper**: the handout stays on the Board, so the original can go once the event is over
-- **Write down who's doing it**: noting who handles each task saves checking with each other
+### 4. Decide pick-ups and things to bring
 
-Kazoku Board supports Japanese and English and requires iOS / iPadOS 26 or later. School year calculations follow the Japanese school system.
+Open an event to note who is going or doing the pick-up, and what to bring.
+
+![A school trip to Yoyogi Park: below the map, a packing list of lunch, water bottle, picnic blanket and rain gear](/images/guides/share-school-handouts-with-family/en/6-event.jpg 'phone')
+
+“Who's collecting tomorrow?” and “what do they need to pack?” are answered just by looking at the event.
+
+### 5. Track forms to hand in under Tasks
+
+Forms to return go into Tasks. The ones due soonest come first, with the days left.
+
+![Tasks: under Due soon, the school trip permission slip and washing indoor shoes with the days left](/images/guides/share-school-handouts-with-family/en/7-todo.jpg 'phone')
+
+Tasks with a due date also appear on the calendar.
+
+### 6. Invite your family
+
+Invite family members through iCloud from family sharing in Settings. Everyone you invite can see and edit the same events, tasks and handouts.
+
+## Pricing
+
+Family sharing and adding events and tasks are free and unlimited. The free version shows ads and allows 10 handout imports a month for the whole family.
+
+When the owner buys Pro once, everyone in the family gets no ads and unlimited imports. It's not a subscription.
+
+School years follow the Japanese school system.

@@ -1,37 +1,45 @@
 ---
-title: 'How to choose safe, ad-free apps for toddlers — 5 things parents should check'
-description: 'What to check before handing an iPhone or iPad app to a small child: ads, purchases, personal data and screen time. Plus two drawing and play apps for ages 0–5.'
+title: 'How to choose safe, ad-free apps for toddlers (5 things parents should check)'
+description: 'Before handing an iPhone or iPad app to a small child, check these five things: ads, parent gates, personal data, pricing and screen time. Explained with real app screenshots.'
 publishedAt: '2026-10-29'
 updatedAt: '2026-10-29'
 apps: ['pikaniji', 'little-playground']
 ---
 
-You install a kids' app to keep your toddler busy for a few minutes, and soon ads keep popping up and one tap sends them off to another app. For small children, what matters isn't only whether an app is fun but also **whether it keeps them inside the app**. Here is what to look for.
+You install a kids' app, and soon ads keep popping up and one tap sends your child off to another app.
 
-## 1. No ads
+For small children, what matters isn't only whether an app is fun but also **whether it keeps them inside the app**. Here are five things to check, with real screenshots.
 
-Many free apps earn money from ads. Small children can't tell ads from the game, so they tap them and end up in the App Store or on a website.
+## Five things to check
 
-Read the description on the App Store page and pick apps that **clearly say they have no ads**.
+### 1. No ads
 
-## 2. A parent check before purchases and settings
+Small children can't tell ads from the game. They tap them and end up in the App Store or on a website.
 
-Make sure a child can't reach in-app purchases or outside links on their own. A **check only a grown-up can pass**, such as a sum or a long press, is reassuring.
+Check that the App Store description clearly says there are no ads, and play for a minute to make sure no ad banners appear.
 
-## 3. No account needed
+### 2. A parent check before purchases and settings
 
-A kids' app rarely needs an email address or name. Look for apps that work without signing up and state that they **don't collect or send children's information**. You can check the privacy policy and the App Privacy section on the App Store.
+Make sure a child can't reach purchases or outside links on their own. A check only a grown-up can pass, such as a sum, is reassuring.
 
-## 4. Simple pricing
+![Pikaniji's parent check: “6 × 6 = ?” with a number pad](/images/guides/ad-free-apps-for-toddlers/en/pikaniji-3-gate.jpg 'phone') ![Little Playground's parent check: a sum and an “Open Settings” button](/images/guides/ad-free-apps-for-toddlers/en/playground-4-gate.jpg 'phone')
+
+### 3. No account needed
+
+A kids' app rarely needs a name or email address. Pick apps that work without signing up and say they don't collect or send children's information.
+
+You can check this in the App Privacy section of the app's App Store page.
+
+### 4. Simple pricing
 
 Auto-renewing subscriptions keep charging if you forget to cancel. For kids' apps, a **one-time purchase** with a clear list of what it unlocks is easier to manage.
 
-## 5. Limits on time and switching apps
+### 5. Limits on time and switching apps
 
-Your iPhone and iPad have tools for this, separate from the app itself:
+Your iPhone and iPad have tools for this, separate from the app:
 
 - **Guided Access** keeps your child in a single app (Settings → Accessibility → Guided Access)
-- **Screen Time** limits how long apps can be used
+- **Screen Time** sets how long apps can be used
 
 For small children, playing together with a grown-up and taking breaks works best.
 
@@ -39,16 +47,20 @@ For small children, playing together with a grown-up and taking breaks works bes
 
 ### Pikaniji (drawing and colouring for ages 2–5)
 
-Draw with glowing pens and rainbow pens that change colour as you draw. Notes play depending on where you draw, and in colouring pages the outlines always stay on top, so colouring outside the lines is fine.
+Draw with glowing pens and rainbow pens that change colour as you draw. In colouring pages, the outlines stay on top, so colouring outside the lines is fine.
 
-![Pikaniji drawing screen with glowing and rainbow pen strokes](/images/apps/screens/pikaniji/en/1.jpg 'phone') ![Pikaniji colouring page: the cat's outline stays on top of the colour](/images/apps/screens/pikaniji/en/2.jpg 'phone')
+![Pikaniji drawing: a rainbow, a heart and stars drawn with glowing pens, with big pen and colour buttons below](/images/guides/ad-free-apps-for-toddlers/en/pikaniji-1-draw.jpg 'phone') ![Pikaniji colouring: the cat's outline stays on top of the colour](/images/guides/ad-free-apps-for-toddlers/en/pikaniji-2-coloring.jpg 'phone')
 
-There are no ads and no accounts, and the purchase and settings screens sit behind a parent check. The free version includes one colouring page, two stamps and more; a one-time purchase unlocks all pages, stamps and sounds. There is no subscription.
+- No ads, no accounts
+- A parent check before purchases and settings
+- Free to try; a one-time purchase unlocks everything. No subscription
 
 ### Little Playground (touch-and-play for ages 0–5)
 
-Seven gentle games: make flowers bloom in the garden, play peekaboo with animals, explore a piano and a pond, and more. There are no scores and no winning or losing.
+Seven gentle games on a wooden shelf: make flowers bloom, play peekaboo with animals, explore a piano and a pond, and more. No scores, no winning or losing.
 
-![Little Playground home: seven games on a wooden shelf](/images/apps/screens/little-playground/en/1.jpg 'phone') ![The pond: tap to make ripples around the ducks and fish](/images/apps/screens/little-playground/en/2.jpg 'phone')
+![Little Playground home: games such as Garden, Peekaboo, Piano and Pond on a wooden shelf](/images/guides/ad-free-apps-for-toddlers/en/playground-1-home.jpg 'phone') ![The pond: tap to make ripples around the ducks and fish](/images/guides/ad-free-apps-for-toddlers/en/playground-3-pond.jpg 'phone')
 
-No ads, no analytics SDKs and no accounts. Purchases, restoring and outside links are behind a parents' screen opened with a sum. Each game can be tried for one minute a day for free, and a one-time purchase removes the limit. There is no monthly fee or auto-renewal.
+- No ads, no analytics and no accounts
+- Purchases and outside links sit behind a parents' screen opened with a sum
+- Each game is free for one minute a day; a one-time purchase removes the limit. No monthly fee
