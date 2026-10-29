@@ -59,7 +59,7 @@ export const publishedApps: PublishedApp[] = [
     category: 'family',
     icon: '/images/apps/kazoku-board.png',
     summary:
-      '家族カレンダー、やること、学校プリント、送迎や持ち物を家族で共有。プリントは撮影して文字を読み取り、そのまま予定にできます。',
+      '家族カレンダー、学校プリント、買い物や行きたいところのリスト、送迎や持ち物を家族で共有。プリントは撮影して文字を読み取り、そのまま予定にできます。',
     devices: 'iPhone・iPad',
     pricing: '無料（広告あり）・Pro買い切り',
     catch: '家族の予定と学校プリントを共有',
@@ -70,7 +70,7 @@ export const publishedApps: PublishedApp[] = [
     en: {
       name: 'Kazoku Board',
       description:
-        'Share your family calendar, to-dos, school handouts, pick-ups and things to bring via iCloud. Snap a handout to turn it into events. Sharing is free; one Pro purchase covers the whole family.',
+        'Share your family calendar, school handouts, shopping and places-to-go lists, pick-ups and things to bring via iCloud. Snap a handout to turn it into events. Sharing is free; one Pro purchase covers the whole family.',
       catch: 'Share family plans and school handouts',
       pricing: 'Free with ads · Pro one-time purchase',
     },
