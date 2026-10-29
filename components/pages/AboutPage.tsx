@@ -10,9 +10,9 @@ const card = 'rounded-3xl bg-card';
 
 export const aboutCopy = {
   ja: {
-    title: 'つくった人',
+    title: 'イトウカズヒロ｜iPhone・iPadアプリの個人開発者',
     description:
-      'omomuro.dev でiPhone・iPadアプリをつくっている、ソフトウェアエンジニアのイトウカズヒロのプロフィールです。',
+      'ドット日和・かくす・ぴかにじなどのiPhone・iPadアプリを個人で開発しているソフトウェアエンジニア、イトウカズヒロのプロフィール。経歴、SNS、描いたイラストのギャラリーも。',
     name: 'イトウ カズヒロ',
     facts: ['ソフトウェアエンジニア', '東京都在住', '大分県出身'],
     intro:
@@ -29,8 +29,9 @@ export const aboutCopy = {
     galleryLead: '描いたイラストやグラフィック、アニメーションです。',
   },
   en: {
-    title: 'About',
-    description: 'Kazuhiro Ito, the software engineer who makes the iPhone and iPad apps on omomuro.dev.',
+    title: 'Kazuhiro Ito, indie iPhone & iPad app developer',
+    description:
+      'Profile of Kazuhiro Ito, a Tokyo-based software engineer who makes iPhone and iPad apps on his own. Career, social links and a gallery of his illustrations.',
     name: 'Kazuhiro Ito',
     facts: ['Software engineer', 'Based in Tokyo', 'From Oita, Japan'],
     intro:

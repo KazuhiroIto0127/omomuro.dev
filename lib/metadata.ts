@@ -20,6 +20,7 @@ export function pageMetadata({
   image,
   type = 'website',
   itunesAppId,
+  noindex = false,
 }: {
   path: string;
   title: string;
@@ -28,6 +29,8 @@ export function pageMetadata({
   image?: string;
   type?: 'website' | 'article';
   itunesAppId?: string;
+  /** 検索結果に出さない（リンクはたどらせる） */
+  noindex?: boolean;
 }): Metadata {
   const lang = pathLanguage(path);
   const url = absolute(path);
@@ -57,6 +60,7 @@ export function pageMetadata({
     },
     twitter: { card: 'summary_large_image', site: twitterId, creator: twitterId },
     icons: { icon: '/favicon.ico' },
+    ...(noindex && { robots: { index: false, follow: true } }),
     ...(itunesAppId && { itunes: { appId: itunesAppId } }),
   };
 }
@@ -94,5 +98,7 @@ export function appPageMetadata({
     image: `/api/og?app=${slug}&lang=${language}`,
     type: 'article',
     itunesAppId: appStoreId(app),
+    // プライバシーポリシーは App Store 審査用。検索結果ではアプリ紹介ページを優先させる
+    noindex: page === 'privacy',
   });
 }
