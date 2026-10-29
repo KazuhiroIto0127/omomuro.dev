@@ -13,6 +13,8 @@
 | アプリ紹介 | `/works/<app>` | `/works/<app>/en` |
 | サポート | `/works/<app>/support` | `/works/<app>/en/support` |
 | プライバシーポリシー | `/works/<app>/privacy` | `/works/<app>/en/privacy` |
+| 読みもの（一覧） | `/guides` | `/guides/en` |
+| 読みもの（記事） | `/guides/<slug>` | `/guides/<slug>/en` |
 
 サポートとプライバシーのURLは App Store Connect に登録しているので、パスを変えないでください。一覧は [docs/url-inventory.md](docs/url-inventory.md) にあります。
 
@@ -57,6 +59,7 @@ components/AppDocument.tsx 英語紹介・サポート・プライバシーの�
 components/AppJsonLd.tsx   構造化データ（JSON-LD）
 components/pages/          トップとつくった人のページ本体（日英共通）
 contents/works/<app>.md    日本語のアプリ紹介文
+contents/guides/<slug>.md  読みもの（日本語）。英語は contents/guides/en/<slug>.md。frontmatter は title・description・publishedAt・updatedAt・apps
 public/images/apps/        アプリアイコンと、App Store から取り込んだスクリーンショット
 ```
 

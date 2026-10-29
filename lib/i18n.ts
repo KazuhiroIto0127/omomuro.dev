@@ -19,11 +19,16 @@ export const pathLanguage = (path: string): Lang => {
  * - / ↔ /en
  * - /about ↔ /about/en
  * - /works/<app>(/support|/privacy) ↔ /works/<app>/en(/support|/privacy)
+ * - /guides ↔ /guides/en、/guides/<slug> ↔ /guides/<slug>/en
  */
 export const alternatePaths = (path: string): { ja: string; en: string } | null => {
   const p = normalize(path);
   if (p === '/' || p === '/en') return { ja: '/', en: '/en' };
   if (p === '/about' || p === '/about/en') return { ja: '/about', en: '/about/en' };
+  if (p === '/guides' || p === '/guides/en') return { ja: '/guides', en: '/guides/en' };
+  // 記事は日英の両方を必ずつくる（contents/guides と contents/guides/en）
+  const g = p.match(/^\/guides\/([a-z0-9-]+)(\/en)?$/);
+  if (g) return { ja: `/guides/${g[1]}`, en: `/guides/${g[1]}/en` };
   const m = p.match(/^\/works\/([^/]+)(\/en)?(\/(?:support|privacy))?$/);
   if (m && appSlugs.has(m[1])) {
     const sub = m[3] ?? '';

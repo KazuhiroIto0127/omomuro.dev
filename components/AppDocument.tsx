@@ -3,6 +3,7 @@ import Link from 'next/link';
 import AppCta from '@/components/AppCta';
 import AppHero from '@/components/AppHero';
 import AppJsonLd from '@/components/AppJsonLd';
+import GuideList from '@/components/GuideList';
 import LanguageLink from '@/components/LanguageLink';
 import { findApp } from '@/lib/apps';
 import { alternatePaths } from '@/lib/i18n';
@@ -53,6 +54,7 @@ export default function AppDocument({
           <AppLinks slug={slug} english={english} />
         </article>
         <AppCta app={app} english={english} />
+        <GuideList lang={language} app={slug} heading={english ? 'Related guides' : '関連する読みもの'} />
       </div>
     );
   }

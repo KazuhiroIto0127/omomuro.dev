@@ -1,23 +1,34 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import clsx from 'clsx';
+import AppCard from '@/components/AppCard';
+import GuideList from '@/components/GuideList';
+import JsonLd from '@/components/JsonLd';
 import { appCategories, publishedApps } from '@/lib/apps';
 import type { Lang } from '@/lib/i18n';
+import { graph, person, website } from '@/lib/structuredData';
 
 export const homeCopy = {
   ja: {
     title: '暮らしと家族のiPhone・iPadアプリ',
     description:
       '家計簿の共有、家族の予定、こどものお絵かき、動画の顔モザイクまで。個人開発者イトウカズヒロがApp Storeで公開しているiPhone・iPadアプリの一覧です。',
+    eyebrow: '個人開発の iPhone・iPad アプリ',
     heading: ['暮らしと家族の、', 'ちいさな困りごとに。'],
-    lead: ['一人でつくっている iPhone・iPad アプリです。', 'どれも App Store から無料でダウンロードできます。'],
+    lead: [
+      '家計簿の共有、家族の予定、こどものお絵かき、写真・動画の顔モザイクまで。',
+      '一人でつくっていて、どれも App Store から無料でダウンロードできます。',
+    ],
+    guides: '悩みから探す',
   },
   en: {
     title: 'iPhone & iPad apps for everyday family life',
     description:
       'A shared budget, a family board, kids’ drawing, face blurring for videos and more. iPhone and iPad apps made by indie developer Kazuhiro Ito, available on the App Store.',
+    eyebrow: 'Indie iPhone & iPad apps',
     heading: ['Little apps for', 'everyday family life.'],
-    lead: ['iPhone and iPad apps I make on my own.', 'All of them are free to download on the App Store.'],
+    lead: [
+      'A shared budget, family plans, kids’ drawing, and face blurring for photos and videos.',
+      'I make them on my own, and all of them are free to download on the App Store.',
+    ],
+    guides: 'Find by what you need',
   },
 };
 
@@ -27,8 +38,12 @@ export default function HomePage({ lang }: { lang: Lang }) {
 
   return (
     <div className="flex flex-col gap-14">
+      <JsonLd data={graph(website(lang), person(lang))} />
       <section className="flex flex-col items-center gap-4 pt-6 text-center md:pt-10">
         <h1 className="font-maru text-[30px] leading-snug font-bold sm:text-4xl md:text-[46px]">
+          <span className="text-sub mb-3 block font-sans text-sm font-medium tracking-wide md:text-[15px]">
+            {t.eyebrow}
+          </span>
           {t.heading[0]}
           <br />
           {t.heading[1]}
@@ -49,30 +64,14 @@ export default function HomePage({ lang }: { lang: Lang }) {
               .filter((app) => app.category === c.id)
               .map((app) => (
                 <li key={app.slug}>
-                  <Link
-                    href={english ? `/works/${app.slug}/en` : `/works/${app.slug}`}
-                    className="bg-card flex h-full items-center gap-[18px] rounded-3xl p-5 transition hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(30,28,25,0.08)]"
-                  >
-                    <Image
-                      src={app.icon}
-                      alt=""
-                      width={72}
-                      height={72}
-                      className={clsx(
-                        'app-icon h-[72px] w-[72px] shrink-0 rounded-[17px]',
-                        app.pixelated && '[image-rendering:pixelated]',
-                      )}
-                    />
-                    <span className="flex min-w-0 flex-col gap-1">
-                      <span className="font-maru text-lg font-bold">{english ? app.en.name : app.name}</span>
-                      <span className="text-sub text-sm leading-6">{english ? app.en.catch : app.catch}</span>
-                    </span>
-                  </Link>
+                  <AppCard app={app} english={english} />
                 </li>
               ))}
           </ul>
         </section>
       ))}
+
+      <GuideList lang={lang} heading={t.guides} limit={4} showAllLink />
     </div>
   );
 }

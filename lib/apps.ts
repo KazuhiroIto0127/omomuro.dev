@@ -21,6 +21,11 @@ export type PublishedApp = {
    * あるときはページ上部でスクリーンショットの代わりに出す
    */
   searchImage?: boolean;
+  /**
+   * ページ上部の画像の説明（alt）。画面に何が写っているかを書く。
+   * searchImage があるアプリは 1 つ目が検索結果画像、ないアプリはスクリーンショットの順
+   */
+  shotAlts?: { ja: string[]; en: string[] };
   /** 紹介ページ最後の App Store ボタンの上に出すひとこと（なければ料金） */
   ctaNote?: string;
   pixelated?: boolean;
@@ -48,6 +53,16 @@ export const publishedApps: PublishedApp[] = [
     pricing: '無料（広告あり）・Pro買い切り',
     catch: 'ふたりで共有できる家計簿',
     tint: '#ECE6F4',
+    shotAlts: {
+      ja: [
+        '家計ポケットのホーム画面。今月の収支と、共通・自分・パートナーごとの支出が並ぶ',
+        '家計ポケットの記録画面。カテゴリと共通・自分・パートナーを選んで金額を入力する',
+      ],
+      en: [
+        "Kakei Pocket home screen with this month's balance and spending split into Shared and each partner",
+        'Kakei Pocket entry screen: choose a category and Shared or a partner, then type the amount',
+      ],
+    },
     screenshotCount: 2,
     schemaCategory: 'FinanceApplication',
     operatingSystem: 'iOS, iPadOS',
@@ -71,6 +86,10 @@ export const publishedApps: PublishedApp[] = [
     pricing: '無料（広告あり）・Pro買い切り',
     catch: '家族の予定と学校プリントを共有',
     tint: '#F2E4D6',
+    shotAlts: {
+      ja: ['かぞくボードのリスト・カレンダー・ボードの3画面。予定も買い物もお知らせもひとつに'],
+      en: ["Kazoku Board's Lists, Calendar and Board screens: plans, shopping and school updates in one place"],
+    },
     screenshotCount: 2,
     searchImage: true,
     ctaNote: '家族の共有は無料。Proは買い切りで、一度の購入で家族みんなが使えます。サブスクではありません。',
@@ -97,6 +116,16 @@ export const publishedApps: PublishedApp[] = [
     pricing: '無料（広告あり）・PRO',
     catch: 'ドット絵の景色で見る天気予報',
     tint: '#F6EAD8',
+    shotAlts: {
+      ja: [
+        'ドット日和の天気画面。顔のついたドット絵の太陽と、気温・1時間ごとの予報',
+        'ドット日和のへや表示。畳の部屋の窓から雨のドット絵の景色を眺める',
+      ],
+      en: [
+        'Sky in Pixels weather screen: a pixel-art sun with a face, the temperature and an hourly forecast',
+        'Sky in Pixels room view: watching pixel-art rain from the window of a tatami room',
+      ],
+    },
     screenshotCount: 2,
     schemaCategory: 'LifestyleApplication',
     operatingSystem: 'iOS, iPadOS',
@@ -121,6 +150,16 @@ export const publishedApps: PublishedApp[] = [
     pricing: '広告なし・買い切り',
     catch: '広告なしのお絵かき・ぬりえ',
     tint: '#F8E6E1',
+    shotAlts: {
+      ja: [
+        'ぴかにじのお絵かき画面。キラキラ光るペンやにじ色のペンで描いた絵',
+        'ぴかにじのぬりえ画面。はみ出して塗っても、ねこの線が色の上に残っている',
+      ],
+      en: [
+        'Pikaniji drawing screen with glowing and rainbow pen strokes',
+        "Pikaniji colouring page: the cat's outline stays on top of the colour",
+      ],
+    },
     screenshotCount: 2,
     schemaCategory: 'EducationalApplication',
     operatingSystem: 'iOS, iPadOS',
@@ -144,6 +183,16 @@ export const publishedApps: PublishedApp[] = [
     pricing: '広告なし・買い切り',
     catch: '0〜5歳のタッチあそび',
     tint: '#E3EED9',
+    shotAlts: {
+      ja: [
+        'ちいさなあそびばのホーム画面。木の棚に7つのあそびが並ぶ',
+        'ちいさなあそびばの池の水あそび。さわると波紋が広がり、ひよこや魚が浮かぶ',
+      ],
+      en: [
+        'Little Playground home: seven games on a wooden shelf',
+        'Little Playground pond: tap to make ripples around the ducks and fish',
+      ],
+    },
     screenshotCount: 2,
     schemaCategory: 'GameApplication',
     operatingSystem: 'iOS, iPadOS',
@@ -167,6 +216,10 @@ export const publishedApps: PublishedApp[] = [
     pricing: '無料（広告あり）・Pro買い切り',
     catch: '写真・動画の顔や背景をかくす',
     tint: '#F1E7DA',
+    shotAlts: {
+      ja: ['かくすで写真の人物の顔に自動でモザイクがかかった画面。顔を自動検出、モザイクもスタンプも'],
+      en: ['Kakusu automatically covering faces in a photo with a mosaic. Mosaic or stickers, your choice'],
+    },
     screenshotCount: 2,
     searchImage: true,
     ctaNote: '無料で使えて、動画の長さによる保存制限もありません。Proは買い切りで、サブスクではありません。',
@@ -193,6 +246,13 @@ export const publishedApps: PublishedApp[] = [
     pricing: '無料（広告あり）・Plus買い切り',
     catch: '写真アプリの動画を心地よく',
     tint: '#DFE7F3',
+    shotAlts: {
+      ja: [
+        'Mieruの縦フィード画面。写真アプリの動画を縦スクロールで再生する',
+        'Mieruの一覧画面。動画が月ごとにまとまって並ぶ',
+      ],
+      en: ['Mieru vertical feed playing a video from Photos', 'Mieru library: videos grouped by month'],
+    },
     screenshotCount: 2,
     schemaCategory: 'MultimediaApplication',
     operatingSystem: 'iOS, iPadOS, macOS',
@@ -216,6 +276,16 @@ export const publishedApps: PublishedApp[] = [
     pricing: '無料（広告あり）・買い切り',
     catch: '写真でつくるシール',
     tint: '#E2E5F5',
+    shotAlts: {
+      ja: [
+        'シール集めのボード画面。写真の上にハートやスマイルのシールを貼っている',
+        'シール集めのシール編集画面。切り抜いた人物にフチの太さと色を選ぶ',
+      ],
+      en: [
+        'Sticky Club board: hearts, smileys and other stickers on a photo',
+        'Sticky Club sticker editor: choose the border width and colour for a cut-out photo',
+      ],
+    },
     screenshotCount: 2,
     schemaCategory: 'MultimediaApplication',
     operatingSystem: 'iOS, iPadOS',

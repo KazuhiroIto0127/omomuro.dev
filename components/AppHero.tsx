@@ -19,13 +19,14 @@ export default function AppHero({
 }) {
   const id = appStoreId(app);
   const storeUrl = id && (english ? `https://apps.apple.com/app/id${id}` : app.appStoreUrl);
+  const alts = app.shotAlts?.[english ? 'en' : 'ja'] ?? [];
   const shots = screenshotSrcs(app, english ? 'en' : 'ja').map((src, i) => ({
     src,
-    alt: english ? `${app.en.name} screenshot ${i + 1}` : `${app.name}の画面 ${i + 1}`,
+    alt: alts[i] ?? (english ? `${app.en.name} screenshot ${i + 1}` : `${app.name}の画面 ${i + 1}`),
   }));
   const searchImage = app.searchImage && {
     src: `/images/apps/screens/${app.slug}/${english ? 'en' : 'ja'}/search.jpg`,
-    alt: english ? `${app.en.name} on the App Store` : `${app.name}の画面`,
+    alt: alts[0] ?? (english ? `${app.en.name} on the App Store` : `${app.name}の画面`),
   };
   const devices = english ? app.devices.replace(/・/g, ' · ') : app.devices;
 

@@ -69,6 +69,12 @@
 - https://omomuro.dev/about
 - https://omomuro.dev/about/en
 
+## 読みもの
+
+- https://omomuro.dev/guides
+- https://omomuro.dev/guides/en
+- 記事：`/guides/<slug>` と `/guides/<slug>/en`（slug は contents/guides のファイル名）
+
 ## リダイレクト（廃止したURL）
 
 `/works`・`/labs`・`/labs/*` → `/`、`/gallery` → `/about#gallery`（いずれも 308）。昔の作品ページ（Star Catcher など）は削除済みで 404。
