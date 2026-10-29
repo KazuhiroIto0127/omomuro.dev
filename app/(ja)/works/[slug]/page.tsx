@@ -1,4 +1,5 @@
 import ReactMarkdown from 'react-markdown';
+import AppCta from '@/components/AppCta';
 import AppHero from '@/components/AppHero';
 import AppJsonLd from '@/components/AppJsonLd';
 import { shotComponents } from '@/components/AppShots';
@@ -43,6 +44,7 @@ export default async function Page({ params }: Props) {
           <ReactMarkdown components={shotComponents}>{work.body}</ReactMarkdown>
         </div>
       </article>
+      {app && <AppCta app={app} />}
     </div>
   );
 }

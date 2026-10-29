@@ -21,11 +21,13 @@ export type PublishedApp = {
    * あるときはページ上部でスクリーンショットの代わりに出す
    */
   searchImage?: boolean;
+  /** 紹介ページ最後の App Store ボタンの上に出すひとこと（なければ料金） */
+  ctaNote?: string;
   pixelated?: boolean;
   /** schema.org の applicationCategory */
   schemaCategory: string;
   operatingSystem: string;
-  en: { name: string; description: string; catch: string; pricing: string };
+  en: { name: string; description: string; catch: string; pricing: string; ctaNote?: string };
 };
 
 export const appCategories: { id: AppCategory; title: string; titleEn: string }[] = [
@@ -71,6 +73,7 @@ export const publishedApps: PublishedApp[] = [
     tint: '#F2E4D6',
     screenshotCount: 2,
     searchImage: true,
+    ctaNote: '家族の共有は無料。Proは買い切りで、一度の購入で家族みんなが使えます。サブスクではありません。',
     schemaCategory: 'LifestyleApplication',
     operatingSystem: 'iOS, iPadOS',
     en: {
@@ -79,6 +82,7 @@ export const publishedApps: PublishedApp[] = [
         'Share your family calendar, school handouts, shopping and places-to-go lists, pick-ups and things to bring via iCloud. Snap a handout to turn it into events. Sharing is free; one Pro purchase covers the whole family.',
       catch: 'Share family plans and school handouts',
       pricing: 'Free with ads · Pro one-time purchase',
+      ctaNote: 'Family sharing is free. Pro is a one-time purchase that covers the whole family — no subscription.',
     },
     appStoreUrl: 'https://apps.apple.com/jp/app/id6816839974',
   },

@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
+import AppCta from '@/components/AppCta';
 import AppHero from '@/components/AppHero';
 import AppJsonLd from '@/components/AppJsonLd';
 import LanguageLink from '@/components/LanguageLink';
@@ -51,6 +52,7 @@ export default function AppDocument({
           <div className="mx-auto max-w-[680px]">{children}</div>
           <AppLinks slug={slug} english={english} />
         </article>
+        <AppCta app={app} english={english} />
       </div>
     );
   }
