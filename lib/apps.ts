@@ -163,11 +163,13 @@ export const publishedApps: PublishedApp[] = [
     icon: '/images/apps/kakusu.png',
     summary:
       '写真・動画に写った顔を自動で検出し、モザイク・ぼかし・塗りつぶし・スタンプで隠すアプリ。人物を残して背景だけを隠すこともできます。処理は端末の中で完結します。',
-    devices: 'iPhone・iPad',
+    devices: 'iPhone・iPhone Duo・iPad',
     pricing: '無料（広告あり）・Pro買い切り',
     catch: '写真・動画の顔や背景をかくす',
     tint: '#F1E7DA',
     screenshotCount: 2,
+    searchImage: true,
+    ctaNote: '無料で使えて、動画の長さによる保存制限もありません。Proは買い切りで、サブスクではありません。',
     schemaCategory: 'MultimediaApplication',
     operatingSystem: 'iOS, iPadOS',
     en: {
@@ -176,6 +178,7 @@ export const publishedApps: PublishedApp[] = [
         'Automatically detect faces in photos and videos and hide them with mosaic, blur, solid fills, or stickers. Keep people and hide the background, too. Everything runs on your iPhone or iPad, with no watermarks. Free with ads; Pro removes ads with a one-time purchase.',
       catch: 'Hide faces and backgrounds in photos and videos',
       pricing: 'Free with ads · Pro one-time purchase',
+      ctaNote: 'Free to use, with no length limit on saved videos. Pro is a one-time purchase — no subscription.',
     },
     appStoreUrl: 'https://apps.apple.com/jp/app/id6809350160',
   },
