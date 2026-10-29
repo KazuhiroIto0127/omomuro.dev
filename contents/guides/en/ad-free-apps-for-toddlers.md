@@ -1,8 +1,12 @@
 ---
-title: 'How to choose safe, ad-free apps for toddlers (5 things parents should check)'
+title: 'Choosing ad-free apps for toddlers: five things to check'
 description: 'Before handing an iPhone or iPad app to a small child, check these five things: ads, parent gates, personal data, pricing and screen time. Explained with real app screenshots.'
 publishedAt: '2026-10-29'
 updatedAt: '2026-10-29'
+summary:
+  - 'Try ads, purchase screens and outside links yourself first'
+  - 'Check what data is needed and what is free to play'
+  - 'Decide on play time and try the app together'
 apps: ['pikaniji', 'little-playground']
 ---
 
@@ -20,7 +24,7 @@ Check that the App Store description clearly says there are no ads, and play for
 
 ### 2. A parent check before purchases and settings
 
-Make sure a child can't reach purchases or outside links on their own. A check only a grown-up can pass, such as a sum, is reassuring.
+Make sure a child can't reach purchases or outside links on their own. Try the parent check yourself. A sum adds a barrier, but some children may solve it, so check the purchase settings too.
 
 ![Pikaniji's parent check: “6 × 6 = ?” with a number pad](/images/guides/ad-free-apps-for-toddlers/en/pikaniji-3-gate.jpg 'phone') ![Little Playground's parent check: a sum and an “Open Settings” button](/images/guides/ad-free-apps-for-toddlers/en/playground-4-gate.jpg 'phone')
 

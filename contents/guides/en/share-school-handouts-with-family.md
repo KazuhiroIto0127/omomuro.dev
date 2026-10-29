@@ -1,8 +1,12 @@
 ---
-title: 'How to share school and nursery handouts with your family (step by step)'
+title: 'How to share school handouts with your family'
 description: 'Stop missing deadlines and things to bring. Real screenshots showing how to snap paper handouts into events and to-dos and share them with your family in the free Kazoku Board app.'
 publishedAt: '2026-10-29'
 updatedAt: '2026-10-29'
+summary:
+  - 'Photograph handouts to read events, packing lists and deadlines'
+  - 'Check the details before adding events and tasks'
+  - 'Invite your family to view and edit the same handouts and plans'
 apps: ['kazoku-board']
 ---
 
@@ -35,7 +39,7 @@ Switch off anything you don't need and tap the add button. You can fix dates and
 
 ### 3. Events land on the family calendar
 
-Added events appear on everyone's calendar. Use the names at the top to show one child at a time.
+Added events appear in the app’s calendar. Once you invite your family in step 6, they can see the same events. Use the names at the top to show one child at a time.
 
 ![The calendar for October, with a filter for Everyone and each family member at the top](/images/guides/share-school-handouts-with-family/en/5-calendar.jpg 'phone')
 

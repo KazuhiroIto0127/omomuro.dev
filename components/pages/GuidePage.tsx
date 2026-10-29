@@ -1,13 +1,12 @@
 import Link from 'next/link';
-import ReactMarkdown from 'react-markdown';
+import GuideBody from '@/components/GuideBody';
 import AppCard from '@/components/AppCard';
 import AppCta from '@/components/AppCta';
-import { shotComponents } from '@/components/AppShots';
 import GuideList from '@/components/GuideList';
 import JsonLd from '@/components/JsonLd';
 import LanguageLink from '@/components/LanguageLink';
 import { findApp, type PublishedApp } from '@/lib/apps';
-import { guidePath, guidesIndexPath, loadGuide, loadGuides } from '@/lib/guides';
+import { guidePath, guideSections, guidesIndexPath, loadGuide, loadGuides } from '@/lib/guides';
 import type { Lang } from '@/lib/i18n';
 import { SITE_URL } from '@/lib/site';
 import { article, breadcrumb, faqFromMarkdown, graph } from '@/lib/structuredData';
@@ -79,6 +78,7 @@ export function GuidePage({ slug, lang }: { slug: string; lang: Lang }) {
   const t = guidesCopy[lang];
   const guide = loadGuide(slug, lang);
   const path = guidePath(slug, lang);
+  const sections = guideSections(guide.body).filter((section) => section.title);
   const apps = guide.apps.map(findApp).filter((app): app is PublishedApp => Boolean(app));
 
   return (
@@ -104,9 +104,9 @@ export function GuidePage({ slug, lang }: { slug: string; lang: Lang }) {
       />
       <article
         lang={lang}
-        className="app-prose guide-prose prose md:prose-lg bg-card mx-auto w-full max-w-none rounded-3xl p-7 break-words md:p-10"
+        className="app-prose guide-prose prose bg-card mx-auto w-full max-w-none rounded-3xl px-5 py-7 break-words sm:px-8 md:p-12"
       >
-        <div className="mx-auto max-w-[680px]">
+        <div className="mx-auto max-w-[840px]">
           <div className="not-prose mb-6 flex flex-wrap items-center justify-between gap-4 text-[15px]">
             <nav aria-label={english ? 'Breadcrumb' : 'パンくず'}>
               <Link href={guidesIndexPath(lang)} className="text-accent hover:underline">
@@ -126,7 +126,53 @@ export function GuidePage({ slug, lang }: { slug: string; lang: Lang }) {
             <time dateTime={guide.updatedAt}>{t.updated(guide.updatedAt)}</time>
             {english ? ' · Kazuhiro Ito' : ' ・ イトウカズヒロ'}
           </p>
-          <ReactMarkdown components={shotComponents}>{guide.body}</ReactMarkdown>
+          <aside
+            className="not-prose bg-paper mb-8 rounded-2xl p-5 sm:p-6"
+            aria-label={english ? 'At a glance' : 'この記事のポイント'}
+          >
+            <p className="font-maru mb-3 font-bold">{english ? 'At a glance' : 'この記事のポイント'}</p>
+            <ul className="space-y-3 text-[15px] leading-7">
+              {guide.summary.map((point) => (
+                <li key={point} className="flex gap-3">
+                  <span className="text-accent" aria-hidden="true">
+                    ✓
+                  </span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </aside>
+          <nav
+            className="not-prose guide-toc border-line mb-10 border-y py-5"
+            aria-label={english ? 'On this page' : '目次'}
+          >
+            <details>
+              <summary className="font-maru cursor-pointer py-2 font-bold">
+                {english ? 'On this page' : '目次 — 読みたいところへ'}
+              </summary>
+              <ol className="mt-4 space-y-3 text-[15px] leading-7">
+                {sections.map((section) => (
+                  <li key={section.id}>
+                    <a href={`#${section.id}`} className="text-accent hover:underline">
+                      {section.title}
+                    </a>
+                    {section.steps.length > 0 && (
+                      <ol className="border-line mt-2 space-y-2 border-l pl-4">
+                        {section.steps.map((step) => (
+                          <li key={step.id}>
+                            <a href={`#${step.id}`} className="text-sub hover:text-accent hover:underline">
+                              {step.title}
+                            </a>
+                          </li>
+                        ))}
+                      </ol>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </details>
+          </nav>
+          <GuideBody body={guide.body} />
         </div>
       </article>
 

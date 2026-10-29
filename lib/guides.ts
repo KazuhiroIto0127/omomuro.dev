@@ -12,6 +12,7 @@ export type Guide = {
   updatedAt: string;
   /** 記事で紹介するアプリ（lib/apps.ts の slug）。先頭が主役 */
   apps: string[];
+  summary: string[];
   body: string;
 };
 
@@ -36,6 +37,7 @@ export function loadGuide(slug: string, lang: Lang): Guide {
     publishedAt: String(data.publishedAt),
     updatedAt: String(data.updatedAt ?? data.publishedAt),
     apps: (data.apps as string[] | undefined) ?? [],
+    summary: (data.summary as string[] | undefined) ?? [],
     body: content,
   };
 }
@@ -46,3 +48,23 @@ export function loadGuides(lang: Lang): Guide[] {
     .map((slug) => loadGuide(slug, lang))
     .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt) || a.slug.localeCompare(b.slug));
 }
+
+/** Stable anchors shared by the contents navigation and article body. */
+export function guideSections(body: string) {
+  return body.split(/^## /m).map((chunk, index) => {
+    if (index === 0) return { id: 'intro', title: '', body: chunk, steps: [] };
+    const [title, ...lines] = chunk.split('\n');
+    const [intro, ...steps] = lines.join('\n').split(/^### /m);
+    return {
+      id: `section-${index}`,
+      title,
+      body: intro,
+      steps: steps.map((step, i) => {
+        const [heading, ...text] = step.split('\n');
+        return { id: `section-${index}-step-${i + 1}`, title: heading, body: text.join('\n') };
+      }),
+    };
+  });
+}
+
+export const guideCover = (slug: string) => `/images/guides/covers/${slug}.webp`;

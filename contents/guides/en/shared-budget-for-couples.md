@@ -1,12 +1,16 @@
 ---
-title: 'How to share a household budget with your partner (step by step, no bank linking)'
+title: 'How to share a budget with your partner, without bank linking'
 description: 'Want to keep a budget together without handing your bank or card details to an app? Real screenshots showing how to share and keep a budget with your partner in the free Kakei Pocket app.'
 publishedAt: '2026-10-29'
 updatedAt: '2026-10-29'
+summary:
+  - 'Share one ledger through an iCloud invitation'
+  - 'Separate shared living costs from personal spending'
+  - 'Export existing entries first: joining replaces the invited partner’s ledger'
 apps: ['kakei-pocket']
 ---
 
-If you keep a budget as a couple, sharing one ledger between you is what makes it stick.
+If you keep a budget as a couple, sharing one ledger helps you see your household spending in one place.
 
 This guide walks through sharing a budget in the free Kakei Pocket app, with real screenshots. No bank account or credit card is connected.
 

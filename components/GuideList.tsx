@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { guidePath, guidesIndexPath, loadGuides } from '@/lib/guides';
+import Image from 'next/image';
+import { guideCover, guidePath, guidesIndexPath, loadGuides } from '@/lib/guides';
 import type { Lang } from '@/lib/i18n';
 
 /** 読みものの一覧。app を渡すと、そのアプリを紹介している記事だけ */
@@ -41,10 +42,23 @@ export default function GuideList({
           <li key={g.slug}>
             <Link
               href={guidePath(g.slug, lang)}
-              className="bg-card flex h-full flex-col gap-2 rounded-3xl p-6 transition hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(30,28,25,0.08)]"
+              className="bg-card group border-line focus-visible:outline-accent hover:border-accent flex h-full flex-col overflow-hidden rounded-3xl border focus-visible:outline-2 focus-visible:outline-offset-4"
             >
-              <span className="font-maru text-[17px] leading-7 font-bold">{g.title}</span>
-              <span className="text-sub text-sm leading-6">{g.description}</span>
+              <Image
+                src={guideCover(g.slug)}
+                alt=""
+                width={1200}
+                height={630}
+                sizes="(min-width: 768px) 500px, 100vw"
+                className="aspect-[1200/630] w-full object-cover"
+              />
+              <div className="flex flex-1 flex-col gap-3 p-6">
+                <span className="font-maru text-[17px] leading-7 font-bold">{g.title}</span>
+                <span className="text-sub text-sm leading-7">{g.description}</span>
+                <span className="text-accent mt-auto pt-2 text-sm font-medium group-hover:underline">
+                  {english ? 'Read the guide →' : '記事を読む →'}
+                </span>
+              </div>
             </Link>
           </li>
         ))}

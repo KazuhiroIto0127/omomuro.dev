@@ -76,21 +76,101 @@ body {
   border-radius: 1.25rem;
 }
 
-/* 読みもの：手順の区切りを見やすく、画面写真は少し小さく */
+/* Guides: readable line lengths, anchored steps and full-sized phone screens. */
+.guide-prose {
+  font-size: 1rem;
+  line-height: 1.95;
+}
+.guide-prose :where(h1) {
+  max-width: 26em;
+  text-wrap: pretty;
+}
+.guide-prose :where(h2, h3) {
+  scroll-margin-top: 6rem;
+}
+.guide-prose :where(h2) {
+  margin-top: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
 .guide-prose :where(h3) {
-  margin-top: 2.5em;
-  padding-top: 1.5em;
+  margin: 0 0 1.25rem;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+.guide-step {
+  margin-top: 2rem;
+  padding-top: 2rem;
   border-top: 1px solid var(--line);
 }
-
-.guide-prose :where(h2 + h3) {
-  margin-top: 1em;
-  padding-top: 0;
+.guide-prose h2 + .guide-step {
   border-top: 0;
+  padding-top: 0.5rem;
 }
-
-.guide-prose .not-prose img.max-w-\[280px\] {
-  max-width: 240px;
+.guide-copy {
+  min-width: 0;
+  max-width: 42rem;
+}
+.guide-copy > :first-child {
+  margin-top: 0;
+}
+.guide-copy > :last-child {
+  margin-bottom: 0;
+}
+.guide-copy blockquote {
+  padding: 1rem 1.25rem;
+  background: var(--paper);
+  border-color: var(--accent);
+  font-weight: 400;
+  font-style: normal;
+  border-radius: 0 0.75rem 0.75rem 0;
+}
+.guide-copy blockquote p::before,
+.guide-copy blockquote p::after {
+  content: none;
+}
+.guide-passage {
+  display: grid;
+  gap: 1.75rem;
+  align-items: start;
+}
+.guide-figures {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.guide-figure {
+  width: 240px;
+  max-width: 100%;
+  margin: 0;
+}
+.guide-figure figcaption {
+  margin-top: 0.75rem;
+  color: var(--sub);
+  font-size: 0.75rem;
+  line-height: 1.8;
+}
+.guide-screens {
+  min-width: 0;
+}
+.guide-toc a {
+  display: inline-block;
+  padding-block: 0.125rem;
+}
+@media (min-width: 768px) {
+  .guide-prose {
+    font-size: 1.0625rem;
+  }
+  .guide-passage {
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 2.5rem;
+  }
+  .guide-figure {
+    width: 220px;
+  }
 }
 
 .app-prose > :first-child,
@@ -101,4 +181,10 @@ body {
 /* 白地のアイコンがカードに溶けないように */
 .app-icon {
   box-shadow: 0 0 0 1px rgb(30 28 25 / 0.08);
+}
+
+@media (min-width: 768px) {
+  .guide-passage-pair {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

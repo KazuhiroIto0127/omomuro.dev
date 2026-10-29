@@ -1,8 +1,12 @@
 ---
-title: 'How to blur faces in a video on iPhone (step by step, with screenshots)'
+title: 'How to blur faces in a video on iPhone'
 description: 'Before you post a sports day or holiday video, hide the faces of people who happened to be in it. Seven steps, with real screenshots, to blur faces in videos automatically on iPhone and iPad with the free Kakusu app.'
 publishedAt: '2026-10-29'
 updatedAt: '2026-10-29'
+summary:
+  - 'Choose a video to cover the faces the app detects'
+  - 'Unhide selected faces and cover name tags manually'
+  - 'Watch the saved video all the way through to check for missed faces'
 apps: ['kakusu']
 ---
 
