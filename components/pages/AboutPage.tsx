@@ -56,7 +56,8 @@ export default async function AboutPage({ lang }: { lang: Lang }) {
             'flex flex-col items-center gap-6 p-8 text-center md:flex-row md:items-start md:text-left',
           )}
         >
-          <div className="bg-paper shrink-0 rounded-full p-3">
+          {/* 黒いペンギンが暗い背景に溶けないよう、ダークモードでも明るい地にする */}
+          <div className="bg-paper shrink-0 rounded-full p-3 dark:bg-[#e9e4dc]">
             <Image
               src="/images/penguin_with_pc.png"
               alt=""
