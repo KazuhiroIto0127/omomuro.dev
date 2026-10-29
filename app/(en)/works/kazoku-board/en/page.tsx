@@ -48,9 +48,9 @@ export default function Page() {
       </p>
       <h2>Made for iPad and iPhone Duo, too</h2>
       <p>
-        On iPad and on an unfolded iPhone Duo in landscape, Home switches to two columns so upcoming events, tasks and
-        things to bring sit side by side. The calendar shows the selected day&apos;s plans to the right, so you can see
-        the month and the day at once.
+        On iPad and on an unfolded iPhone Duo in landscape, Home switches to two columns so upcoming events and tasks
+        sit side by side. The calendar shows the selected day&apos;s plans to the right, so you can see the month and
+        the day at once.
       </p>
       <Shots>
         <Shot kind="duo" src={img('duo-home')} alt="Two-column Home on an unfolded iPhone Duo in landscape" />
