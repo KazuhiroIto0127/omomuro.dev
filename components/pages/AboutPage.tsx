@@ -14,7 +14,7 @@ export const aboutCopy = {
     description:
       'ドット日和・かくす・ぴかにじなどのiPhone・iPadアプリを個人で開発しているソフトウェアエンジニア、イトウカズヒロのプロフィール。経歴、SNS、描いたイラストのギャラリーも。',
     name: 'イトウ カズヒロ',
-    facts: ['ソフトウェアエンジニア', '東京都在住', '大分県出身'],
+    facts: ['ソフトウェアエンジニア', '東京都在住'],
     intro:
       'ソフトウェアエンジニアとして働くかたわら、個人で iPhone・iPad アプリをつくっています。企画からデザイン、開発、サポートまで、ひとりで手がけています。絵を描くのも好きです。',
     booklog: 'ブクログ',
@@ -23,7 +23,6 @@ export const aboutCopy = {
       { period: '2021年〜', text: 'ソフトウェアエンジニア（保育Tech）' },
       { period: '2018〜2021年', text: 'Webエンジニア（コミュニティサービス）' },
       { period: '2014〜2018年', text: 'システムエンジニア' },
-      { period: '2014年', text: '大分大学大学院 工学研究科 修了' },
     ],
     galleryTitle: 'ギャラリー',
     galleryLead: '描いたイラストやグラフィック、アニメーションです。',
@@ -33,7 +32,7 @@ export const aboutCopy = {
     description:
       'Profile of Kazuhiro Ito, a Tokyo-based software engineer who makes iPhone and iPad apps on his own. Career, social links and a gallery of his illustrations.',
     name: 'Kazuhiro Ito',
-    facts: ['Software engineer', 'Based in Tokyo', 'From Oita, Japan'],
+    facts: ['Software engineer', 'Based in Tokyo'],
     intro:
       "I'm a software engineer who makes iPhone and iPad apps on my own, handling everything from planning and design to development and support. I also love to draw.",
     booklog: 'Booklog',
@@ -42,7 +41,6 @@ export const aboutCopy = {
       { period: '2021–', text: 'Software engineer, childcare tech' },
       { period: '2018–2021', text: 'Web engineer, community platform' },
       { period: '2014–2018', text: 'Systems engineer' },
-      { period: '2014', text: 'M.Eng., Oita University' },
     ],
     galleryTitle: 'Gallery',
     galleryLead: 'Illustrations, graphics and animations I’ve made.',
