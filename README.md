@@ -29,10 +29,13 @@
 
 ## 開発
 
-Node.js 22 以降が必要です。
+Node.js 24.22.2（24系LTS）・npm 12.2.1 を使います。`.nvmrc` と `.node-version` で開発環境を揃え、Vercelも `package.json` の `engines.node` により24系でビルドします。
 
 ```bash
-npm install
+nvm install
+nvm use
+npm install --global npm@12.2.1
+npm ci
 npm run dev     # http://localhost:3000
 npm run build   # 本番ビルド（sitemap も生成）
 npm run lint    # ESLint
@@ -76,3 +79,7 @@ public/images/apps/        アプリアイコンと、App Store から取り込�
 ## デプロイ
 
 `main` に push すると Vercel が本番にデプロイします。ブランチを push するとプレビューが作られます。
+
+依存更新時は `npm outdated` で確認してください。ESLintはReactプラグインが対応する9系、TypeScriptはtypescript-eslintが対応する6.0系の最新を使用しています。各プラグインの対応後にメジャー更新します。`.claude/` のローカルツールはサイトのlint対象外です。
+
+`@tailwindcss/typography` が固定している `postcss-selector-parser` は、GHSA-rj75-hqrm-r3gf の修正版6.1.5へ `overrides` で更新しています。上流が修正版へ更新されたら、この指定を削除できます。
