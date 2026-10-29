@@ -16,6 +16,11 @@ export type PublishedApp = {
   appStoreUrl?: string;
   /** App Store から取り込んだスクリーンショットの枚数（public/images/apps/screens/<slug>/<ja|en>/<n>.jpg） */
   screenshotCount: number;
+  /**
+   * App Store の検索結果画像（横長 1 枚、public/images/apps/screens/<slug>/<ja|en>/search.jpg、1200×800）。
+   * あるときはページ上部でスクリーンショットの代わりに出す
+   */
+  searchImage?: boolean;
   pixelated?: boolean;
   /** schema.org の applicationCategory */
   schemaCategory: string;
@@ -65,6 +70,7 @@ export const publishedApps: PublishedApp[] = [
     catch: '家族の予定と学校プリントを共有',
     tint: '#F2E4D6',
     screenshotCount: 2,
+    searchImage: true,
     schemaCategory: 'LifestyleApplication',
     operatingSystem: 'iOS, iPadOS',
     en: {

@@ -23,6 +23,10 @@ export default function AppHero({
     src,
     alt: english ? `${app.en.name} screenshot ${i + 1}` : `${app.name}の画面 ${i + 1}`,
   }));
+  const searchImage = app.searchImage && {
+    src: `/images/apps/screens/${app.slug}/${english ? 'en' : 'ja'}/search.jpg`,
+    alt: english ? `${app.en.name} on the App Store` : `${app.name}の画面`,
+  };
   const devices = english ? app.devices.replace(/・/g, ' · ') : app.devices;
 
   return (
@@ -71,21 +75,35 @@ export default function AppHero({
           )}
         </div>
       </div>
-      {shots.length > 0 && (
-        <div className="flex flex-1 items-start justify-center gap-3.5">
-          {shots.map((shot, i) => (
-            <Image
-              key={shot.src}
-              priority={i === 0}
-              src={shot.src}
-              alt={shot.alt}
-              width={600}
-              height={1304}
-              sizes="(min-width: 1024px) 220px, 45vw"
-              className={clsx('h-auto w-[46%] max-w-[220px] rounded-[26px]', i % 2 === 1 && 'mt-10')}
-            />
-          ))}
+      {searchImage ? (
+        <div className="flex flex-1 justify-center">
+          <Image
+            priority
+            src={searchImage.src}
+            alt={searchImage.alt}
+            width={1200}
+            height={800}
+            sizes="(min-width: 1024px) 560px, 90vw"
+            className="h-auto w-full max-w-[560px] rounded-[26px]"
+          />
         </div>
+      ) : (
+        shots.length > 0 && (
+          <div className="flex flex-1 items-start justify-center gap-3.5">
+            {shots.map((shot, i) => (
+              <Image
+                key={shot.src}
+                priority={i === 0}
+                src={shot.src}
+                alt={shot.alt}
+                width={600}
+                height={1304}
+                sizes="(min-width: 1024px) 220px, 45vw"
+                className={clsx('h-auto w-[46%] max-w-[220px] rounded-[26px]', i % 2 === 1 && 'mt-10')}
+              />
+            ))}
+          </div>
+        )
       )}
     </section>
   );
