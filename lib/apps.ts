@@ -286,19 +286,19 @@ export const publishedApps: PublishedApp[] = [
   },
   {
     slug: 'seal-atsume',
-    name: 'シール集め',
+    name: 'きりぺた',
     category: 'media',
     icon: '/images/apps/seal-atsume.png',
     summary:
       '写真からシールをつくって、集めて、貼れるアプリ。スマホケースやノートPCなど、アプリの中の持ちものを自由にデコレーションできます。',
     devices: 'iPhone・iPad',
     pricing: '無料（広告あり）・買い切り',
-    catch: '写真でつくるシール',
+    catch: '写真切り抜きコラージュ',
     tint: '#E2E5F5',
     shotAlts: {
       ja: [
-        'シール集めのボード画面。写真の上にハートやスマイルのシールを貼っている',
-        'シール集めのシール編集画面。切り抜いた人物にフチの太さと色を選ぶ',
+        'きりぺたのボード画面。写真の上にハートやスマイルのシールを貼っている',
+        'きりぺたのシール編集画面。切り抜いた人物にフチの太さと色を選ぶ',
       ],
       en: [
         'Sticky Club board: hearts, smileys and other stickers on a photo',

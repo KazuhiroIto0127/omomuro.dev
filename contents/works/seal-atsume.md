@@ -1,12 +1,12 @@
 ---
-title: "シール集め — 写真でつくるシール"
-description: "わたしの好き、ぜんぶ貼ろう。写真からシールをつくって、集めて、好きな持ちものにぺたっと貼れるアプリ。"
-seoTitle: "シール集め — 写真を切り抜いてシールをつくるアプリ"
+title: "きりぺた — 写真切り抜きコラージュ"
+description: "文字と手描きのシールで、思い出をかわいく。写真を切り抜いてシールをつくり、自由にコラージュできるアプリ。"
+seoTitle: "きりぺた — 写真切り抜きコラージュ"
 seoDescription: "写真の対象を自動で切り抜いて、自分だけのシールに。スマホケースやノートPCなどの持ちものに貼ってデコレーションできるiPhone・iPadアプリ。最初から23種類のシール入り、PNG・JPEGで書き出せます。無料で始められ、サブスクはありません。"
 thumbnail: "/images/apps/seal-atsume.png"
 thumbnailHeight: 512
 thumbnailWidth: 512
-thumbnailFileName: "シール集めのアプリアイコン"
+thumbnailFileName: "きりぺたのアプリアイコン"
 createdAt: "2026-09-20"
 ---
 

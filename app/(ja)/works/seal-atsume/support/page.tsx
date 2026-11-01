@@ -4,7 +4,7 @@ const doc = {
   language: 'ja',
   page: 'support',
   title: '使い方・サポート',
-  description: 'シール集めのご案内',
+  description: 'きりぺたのご案内',
 } as const;
 
 export const metadata = appPageMetadata({ slug: 'seal-atsume', ...doc });
